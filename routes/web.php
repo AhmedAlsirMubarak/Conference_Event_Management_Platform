@@ -8,7 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Middleware\IsAdmin;
 
 Route::get('/', function () {
-    return view('landing');
+    return view('welcome');
 });
 
 Route::fallback(fn() => view('404'))->name('404');
