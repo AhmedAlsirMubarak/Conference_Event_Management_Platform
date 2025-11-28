@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Saudi Climate Week 2026 - Driving Regional Climate Action & Clean Energy Innovation in Riyadh, May 24-27, 2026">
+    <meta name="description"
+        content="Saudi Climate Week 2026 - Driving Regional Climate Action & Clean Energy Innovation in Riyadh, May 24-27, 2026">
     <meta name="keywords" content="Saudi Climate Week, SCW 2026, Climate Action, Clean Energy, Sustainability">
     @vite('resources/css/app.css')
     <title>Saudi Climate Week 2026 - Climate Action & Clean Energy</title>
@@ -22,7 +23,8 @@
                 </div>
                 <div class="hidden sm:flex items-center gap-4">
                     <span class="text-white text-sm font-medium">May 24-27, 2026 • Riyadh</span>
-                    <a href="#contact" class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md text-sm font-medium transition-colors">
+                    <a href="#contact"
+                        class="px-4 py-2 bg-blue-500 hover:bg-blue-600 text-white rounded-md text-sm font-medium transition-colors">
                         Get Involved
                     </a>
                 </div>
@@ -53,10 +55,12 @@
                         Driving Regional Climate Action & Clean Energy Innovation
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                        <a href="#contact" class="px-6 sm:px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors text-center">
+                        <a href="#contact"
+                            class="px-6 sm:px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg transition-colors text-center">
                             Join the Movement
                         </a>
-                        <a href="#about" class="px-6 sm:px-8 py-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold rounded-lg transition-colors text-center">
+                        <a href="#about"
+                            class="px-6 sm:px-8 py-3 border-2 border-blue-500 text-blue-500 hover:bg-blue-500 hover:text-white font-semibold rounded-lg transition-colors text-center">
                             Learn More
                         </a>
                     </div>
@@ -66,9 +70,13 @@
                 <div class="bg-zinc-900/80 backdrop-blur border border-zinc-800 rounded-2xl p-6 sm:p-8">
                     <div class="space-y-6">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                                    </path>
                                 </svg>
                             </div>
                             <div>
@@ -78,10 +86,15 @@
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z">
+                                    </path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                                 </svg>
                             </div>
                             <div>
@@ -91,9 +104,13 @@
                         </div>
 
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            <div
+                                class="w-12 h-12 rounded-full bg-blue-500/20 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z">
+                                    </path>
                                 </svg>
                             </div>
                             <div>
@@ -122,35 +139,44 @@
             <div class="text-center mb-12 sm:mb-16">
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">About the Event</h2>
                 <p class="text-lg text-gray-300 max-w-2xl mx-auto">
-                    Saudi Climate Week 2026 brings together global leaders, innovators, and stakeholders to drive regional climate action and advance clean energy solutions.
+                    Saudi Climate Week 2026 brings together global leaders, innovators, and stakeholders to drive
+                    regional climate action and advance clean energy solutions.
                 </p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-blue-500 transition-colors">
+                <div
+                    class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-blue-500 transition-colors">
                     <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Innovation</h3>
                     <p class="text-gray-300">Cutting-edge clean energy technologies and sustainable solutions</p>
                 </div>
 
-                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-blue-500 transition-colors">
+                <div
+                    class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-blue-500 transition-colors">
                     <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Collaboration</h3>
                     <p class="text-gray-300">Connect with regional and global climate leaders and innovators</p>
                 </div>
 
-                <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-blue-500 transition-colors">
+                <div
+                    class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 sm:p-8 hover:border-blue-500 transition-colors">
                     <div class="w-12 h-12 rounded-lg bg-blue-500/20 flex items-center justify-center mb-4">
                         <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z">
+                            </path>
                         </svg>
                     </div>
                     <h3 class="text-xl font-bold text-white mb-3">Sustainability</h3>
@@ -197,15 +223,13 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-white text-sm font-semibold mb-2">Full Name *</label>
-                            <input type="text" name="name" required minlength="2" maxlength="100"
-                                placeholder="John Doe"
+                            <input type="text" name="name" required minlength="2" maxlength="100" placeholder="John Doe"
                                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors @error('name') border-red-500 @enderror">
                             @error('name')<span class="text-red-400 text-xs mt-1 block">{{ $message }}</span>@enderror
                         </div>
                         <div>
                             <label class="block text-white text-sm font-semibold mb-2">Designation</label>
-                            <input type="text" name="designation" maxlength="100"
-                                placeholder="CEO, Manager, etc."
+                            <input type="text" name="designation" maxlength="100" placeholder="CEO, Manager, etc."
                                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors">
                         </div>
                     </div>
@@ -214,16 +238,15 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-white text-sm font-semibold mb-2">Company</label>
-                            <input type="text" name="company" maxlength="100"
-                                placeholder="Your Company Name"
+                            <input type="text" name="company" maxlength="100" placeholder="Your Company Name"
                                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors">
                         </div>
                         <div>
                             <label class="block text-white text-sm font-semibold mb-2">Website</label>
-                            <input type="url" name="website" maxlength="255"
-                                placeholder="https://example.com"
+                            <input type="url" name="website" maxlength="255" placeholder="https://example.com"
                                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors @error('website') border-red-500 @enderror">
-                            @error('website')<span class="text-red-400 text-xs mt-1 block">{{ $message }}</span>@enderror
+                            @error('website')<span
+                            class="text-red-400 text-xs mt-1 block">{{ $message }}</span>@enderror
                         </div>
                     </div>
 
@@ -231,15 +254,13 @@
                     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label class="block text-white text-sm font-semibold mb-2">Email *</label>
-                            <input type="email" name="email" required
-                                placeholder="you@example.com"
+                            <input type="email" name="email" required placeholder="you@example.com"
                                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors @error('email') border-red-500 @enderror">
                             @error('email')<span class="text-red-400 text-xs mt-1 block">{{ $message }}</span>@enderror
                         </div>
                         <div>
                             <label class="block text-white text-sm font-semibold mb-2">Phone *</label>
-                            <input type="tel" name="phone" required
-                                pattern="(\+\d{1,3})?[\s]?[\d\s\-]{8,15}"
+                            <input type="tel" name="phone" required pattern="(\+\d{1,3})?[\s]?[\d\s\-]{8,15}"
                                 placeholder="+968 95123456"
                                 class="w-full px-4 py-2.5 bg-zinc-800 border border-zinc-700 rounded-lg text-white placeholder-gray-400 focus:border-blue-500 focus:outline-none transition-colors @error('phone') border-red-500 @enderror">
                             @error('phone')<span class="text-red-400 text-xs mt-1 block">{{ $message }}</span>@enderror
@@ -247,7 +268,8 @@
                     </div>
 
                     <!-- Submit Button -->
-                    <button type="submit" class="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold rounded-lg transition-colors">
+                    <button type="submit"
+                        class="w-full px-6 py-3 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 text-white font-semibold rounded-lg transition-colors">
                         Send Information
                     </button>
                     <p class="text-center text-gray-400 text-xs">* Required fields</p>
@@ -264,12 +286,15 @@
                 <div class="flex items-center gap-4">
                     <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
                         <svg class="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                            </path>
                         </svg>
                     </div>
                     <div>
                         <p class="text-white text-sm font-semibold">Contact Us</p>
-                        <a href="mailto:Sales@brba.om" class="text-blue-400 hover:text-blue-300 text-sm transition-colors">Sales@brba.om</a>
+                        <a href="mailto:Sales@brba.om"
+                            class="text-blue-400 hover:text-blue-300 text-sm transition-colors">Sales@brba.om</a>
                     </div>
                 </div>
 

@@ -14,7 +14,7 @@
     <title>Saudi Climate Week 2026</title>
 </head>
 
-<body class="bg-black" <!-- Desktop View (1512px and above) -->
+<body class="bg-black" Desktop View (1512px and above) -->
     <div class="hidden xl:block w-[1512px] h-28 relative">
         <div class="w-[1512px] h-28 left-0 top-0 absolute bg-zinc-900"></div>
         <div class="w-44 h-7 left-[317px] top-[31px] absolute justify-center"><span
@@ -256,7 +256,7 @@
                                         <input type="tel" name="phone" required
                                             pattern="(\+\d{1,3})?[\s]?[\d\s\-]{8,15}"
                                             class="flex-1 pl-3 pr-4 py-2 bg-white/5 rounded-md outline-1 outline-slate-300/30 text-slate-300 text-sm font-['Montserrat'] placeholder-slate-400 focus:outline-blue-500 focus:bg-white/10 @error('phone') outline-2 outline-red-500 @enderror"
-                                            placeholder="Phone Number or +968 95123456" />
+                                            placeholder="+968 95123456" />
                                     </div>
                                     @error('phone')<span class="text-red-400 text-xs">{{ $message }}</span>@enderror
                                 </div>
@@ -424,7 +424,7 @@
                             <label class="text-white text-xs sm:text-sm font-medium font-['Montserrat']">Phone</label>
                             <div class="flex gap-2">
                                 <input type="tel" name="phone" required pattern="(\+\d{1,3})?[\s]?[\d\s\-]{8,15}"
-                                    placeholder="+968 95123456 or 95123456"
+                                    placeholder="+968 95123456"
                                     class="flex-1 px-3 py-2 sm:py-2.5 bg-white/5 rounded-md outline-1 outline-slate-300/30 text-slate-300 text-xs sm:text-sm font-['Montserrat'] placeholder-slate-500 focus:outline-blue-500 focus:bg-white/10 transition-all @error('phone') outline-2 outline-red-500 @enderror" />
                             </div>
                             @error('phone')<span class="text-red-400 text-xs">{{ $message }}</span>@enderror
