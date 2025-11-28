@@ -98,7 +98,7 @@
         <div class="flex">
             <div>
                 <div class="w-2xl h-16 left-[171px] top-[80px] absolute">
-                    <img src="/images/section.png" />
+                    <img src="/images/section.webp" />
                 </div>
             </div>
             <div
@@ -293,7 +293,7 @@
         <div class="absolute inset-0 flex flex-col  px-4 sm:px-6 md:px-8 py-12 sm:py-16 ">
             <!-- Section Icon -->
             <div class="mb-4 sm:mb-6">
-                <img src="/images/section.png" class="h-14 sm:h-8 md:h-10 w-auto" alt="Section Icon" />
+                <img src="/images/section.webp" class="h-14 sm:h-8 md:h-10 w-auto" alt="Section Icon" />
             </div>
 
             <!-- Main Title -->
