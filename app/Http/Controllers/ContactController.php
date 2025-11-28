@@ -1,0 +1,164 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use App\Models\contacts;
+use Illuminate\Auth\Events\Validated;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+
+class ContactController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     */
+    public function getallContacts()
+    {
+        try {
+            $contacts = contacts::all()->sortBy('created_at')->reverse();
+            return view('admin.contacts.index', compact('contacts'));
+        } catch (\Exception $e) {
+            return view('admin.contacts.index', ['contacts' => collect()]); 
+        }
+    }
+
+    /**
+     * Display a specific contact.
+     */
+    public function getcontactById($id)
+    {
+        try {
+            $contact = contacts::findOrFail($id);
+            return view('admin.contacts.show', compact('contact'));
+        } catch (\Exception $e) {
+            return redirect(route('getAllContacts'))->with('error', 'Contact not found.');
+        }
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     */
+    public function create()
+    {
+        try { 
+            $validated = request()->validate([
+                'name' => 'required|string|min:2|max:100',
+                'email' => 'required|email|max:255',
+                'phone' => 'required|string|regex:/^(\+\d{1,3})?\s?[\d\s\-]{8,15}$/|max:20',
+                'designation' => 'nullable|string|max:100',
+                'company' => 'nullable|string|max:100',
+                'website' => 'nullable|url|max:255',
+            ], [
+                'name.required' => 'Full name is required.',
+                'name.min' => 'Full name must be at least 2 characters.',
+                'name.max' => 'Full name cannot exceed 100 characters.',
+                'email.required' => 'Email is required.',
+                'email.email' => 'Please enter a valid email address.',
+                'email.max' => 'Email cannot exceed 255 characters.',
+                'phone.required' => 'Phone number is required.',
+                'phone.regex' => 'Phone number must be 8-15 digits with optional country code (e.g., +968 95123456 or 95123456).',
+                'phone.max' => 'Phone number cannot exceed 20 characters.',
+                'designation.max' => 'Designation cannot exceed 100 characters.',
+                'company.max' => 'Company name cannot exceed 100 characters.',
+                'website.url' => 'Please enter a valid website URL.',
+                'website.max' => 'Website URL cannot exceed 255 characters.',
+            ]);
+
+            Log::info('Form validation passed', $validated);
+
+            // Map lowercase field names to uppercase for model
+            $contact = contacts::create([
+                'Name' => $validated['name'],
+                'Email' => $validated['email'],
+                'Phone' => $validated['phone'],
+                'Designation' => $validated['designation'] ?? null,
+                'Company' => $validated['company'] ?? null,
+                'Website' => $validated['website'] ?? null,
+            ]);
+
+            Log::info('Contact created successfully', ['contact_id' => $contact->id]);
+        
+            return redirect('/')->with('success', 'Thank you! We will contact you soon!');
+        } catch (\Exception $e) {
+            Log::error('Contact form error: ' . $e->getMessage(), ['exception' => $e]);
+            // Handle case where table doesn't exist yet
+            return redirect('/')->with('error', 'Error: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Export contacts to Excel
+     */
+    public function exportExcel()
+    {
+        try {
+            $contacts = contacts::all();
+            
+            // Create CSV content for simple export
+            $csvContent = "Name,Email,Phone,Designation,Company,Website,Submitted Date\n";
+            
+            foreach ($contacts as $contact) {
+                $row = [
+                    $contact->Name,
+                    $contact->Email,
+                    $contact->Phone,
+                    $contact->Designation ?? '',
+                    $contact->Company ?? '',
+                    $contact->Website ?? '',
+                    $contact->created_at->format('Y-m-d H:i:s')
+                ];
+                
+                $csvContent .= implode(',', array_map(function($field) {
+                    return $this->escapeCsv($field);
+                }, $row)) . "\n";
+            }
+            
+            $filename = 'contacts_' . date('Y-m-d_H-i-s') . '.csv';
+            
+            return response($csvContent)
+                ->header('Content-Type', 'text/csv; charset=UTF-8')
+                ->header('Content-Disposition', 'attachment; filename="' . $filename . '"');
+        } catch (\Exception $e) {
+            Log::error('Excel export error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to export contacts.');
+        }
+    }
+    
+    /**
+     * Escape CSV fields
+     */
+    private function escapeCsv($value)
+    {
+        if (empty($value)) {
+            return '';
+        }
+        
+        if (strpos($value, ',') !== false || strpos($value, '"') !== false || strpos($value, "\n") !== false) {
+            return '"' . str_replace('"', '""', $value) . '"';
+        }
+        
+        return $value;
+    }
+
+    /**
+     * Delete a contact
+     */
+    public function delete($id)
+    {
+        try {
+            // Check if user has admin role
+            if (Auth::user()->role !== 'admin') {
+                return redirect('/contacts')->with('error', 'You do not have permission to delete contacts.');
+            }
+
+            $contact = contacts::findOrFail($id);
+            $contact->delete();
+
+            return redirect('/contacts')->with('success', 'Contact deleted successfully!');
+        } catch (\Exception $e) {
+            return redirect('/contacts')->with('error', 'Unable to delete contact or database unavailable.');
+        }
+    }
+}
