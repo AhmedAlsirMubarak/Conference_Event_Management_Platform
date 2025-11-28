@@ -285,26 +285,27 @@
     </div>
 
     <!-- Mobile & Tablet View (Below 1280px) - Hero Section -->
-    <div class="xl:hidden w-full min-h-screen relative flex flex-col">
-        <img class="w-full h-64 sm:h-96 md:h-[500px] object-cover" src="/images/bg-scw.webp" />
-        <div class="absolute inset-0 bg-linear-to-b from-black via-black/50 to-black opacity-70"></div>
+    <div class="xl:hidden w-full relative">
+        <img class="w-full h-80 sm:h-[500px] md:h-[600px] object-cover" src="/images/bg-scw.webp" />
+        <div class="absolute inset-0 bg-linear-to-b from-black/60 via-black/70 to-black opacity-80"></div>
 
         <!-- Content Overlay -->
-        <div class="absolute inset-0 flex flex-col  px-4 sm:px-6 md:px-8 py-12 sm:py-16">
+        <div
+            class="absolute inset-0 h-80 sm:h-[500px] md:h-[600px] flex flex-col justify-center items-center px-4 sm:px-6 md:px-8 z-10">
             <!-- Section Icon -->
-            <div class="mb-4 sm:mb-6">
-                <img src="/images/section.png" class="h-14 sm:h-8 md:h-10 w-auto" alt="Section Icon" />
+            <div class="mb-6 sm:mb-8 md:mb-10 animate-fade-in">
+                <img src="/images/section.png" class="h-16 sm:h-20 md:h-24 w-auto drop-shadow-lg" alt="Section Icon" />
             </div>
 
             <!-- Main Title -->
             <h1
-                class="text-2xl sm:text-3xl md:text-5xl font-bold font-['montserrat'] text-white leading-tight mb-3 sm:mb-4 md:mb-6 text-center">
+                class="text-3xl sm:text-4xl md:text-6xl font-bold font-['montserrat'] text-white leading-tight mb-4 sm:mb-6 md:mb-8 text-center drop-shadow-md">
                 Saudi Climate<br />Week 2026
             </h1>
 
             <!-- Subtitle -->
             <p
-                class="w-50 text-sm sm:text-base md:text-lg text-gray-100 font-['montserrat'] leading-relaxed mb-6 sm:mb-10 max-w-sm sm:max-w-md text-center mx-auto">
+                class="text-sm sm:text-base md:text-lg text-gray-50 font-['montserrat'] leading-relaxed mb-0 max-w-sm sm:max-w-md text-center mx-auto drop-shadow">
                 Driving Regional Climate Action & Clean Energy Innovation
             </p>
         </div>
