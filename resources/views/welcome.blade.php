@@ -453,7 +453,7 @@
                         Contact us
                     </div>
                     <div class="text-blue-500 font-['Montserrat'] hover:text-blue-400 transition-colors">
-                        <a href="mailto:Sales@brba.om">Sales@brba.om</a>
+                        <a href="mailto:Sales@birba.om">Sales@birba.om</a>
                     </div>
                 </div>
             </div>
