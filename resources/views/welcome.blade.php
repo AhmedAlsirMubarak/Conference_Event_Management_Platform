@@ -18,8 +18,8 @@
     <div class="hidden xl:block w-[1512px] h-28 relative">
         <div class="w-[1512px] h-28 left-0 top-0 absolute bg-zinc-900"></div>
         <div class="w-44 h-7 left-[317px] top-[31px] absolute justify-center"><span
-                class="text-white text-2xl font-bold font-['Montserrat'] leading-7">24 - 27 </span><span
-                class="text-white text-base font-medium font-['Montserrat'] leading-7">May, 2026</span></div>
+                class="text-white text-2xl font-bold font-['Montserrat'] leading-7 hidden">24 - 27 </span><span
+                class="text-white text-base font-medium font-['Montserrat'] leading-7">September, 2026</span></div>
         <div
             class="w-64 h-5 left-[317px] top-[67px] absolute justify-center text-white text-base font-medium font-['Montserrat'] leading-5">
             Riyadh, Saudi Arabia</div>
@@ -461,7 +461,7 @@
             <!-- Right: Copyright -->
             <div
                 class="text-white text-xs sm:text-sm font-medium font-['Montserrat'] leading-6 text-left sm:text-right">
-                © Copyright 2025 . All rights reserved Birba.
+                © Copyright 2025 . All rights reserved Saudi Climate Week.
             </div>
         </div>
     </div>
