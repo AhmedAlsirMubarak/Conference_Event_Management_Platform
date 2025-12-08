@@ -143,6 +143,31 @@ class ContactController extends Controller
     }
 
     /**
+     * Search contacts
+     */
+    public function search(Request $request)
+    {
+        try {
+            $query = $request->input('q', '');
+            
+            if (empty($query)) {
+                return redirect(route('getAllContacts'));
+            }
+            
+            $contacts = contacts::where('Name', 'like', "%{$query}%")
+                ->orWhere('Email', 'like', "%{$query}%")
+                ->orWhere('Phone', 'like', "%{$query}%")
+                ->orWhere('Company', 'like', "%{$query}%")
+                ->orderBy('created_at', 'desc')
+                ->get();
+            
+            return view('admin.contacts.index', compact('contacts'))->with('searchQuery', $query);
+        } catch (\Exception $e) {
+            return redirect(route('getAllContacts'))->with('error', 'Search error: ' . $e->getMessage());
+        }
+    }
+
+    /**
      * Delete a contact
      */
     public function delete($id)

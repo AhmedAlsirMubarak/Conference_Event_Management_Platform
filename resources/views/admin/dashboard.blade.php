@@ -112,8 +112,7 @@
                                     <a href="mailto:{{ $contact->Email }}"
                                         class="text-blue-600 hover:text-blue-800 text-sm">{{ $contact->Email }}</a>
                                 </td>
-                                <td class="px-6 py-4 text-sm text-gray-600">
-                                    +968 {{ $contact->Phone }}
+                                <td class="px-6 py-4 text-sm text-gray-600"> {{ $contact->Phone }}
                                 </td>
                                 <td class="px-6 py-4 text-sm text-gray-600">
                                     {{ $contact->created_at->format('M d, Y') }}

@@ -94,6 +94,31 @@ class UserController extends Controller
     }
 
     /**
+     * Search contacts
+     */
+    public function searchContacts($q = null)
+    {
+        try {
+            $query = request()->input('q', $q ?? '');
+            
+            if (empty($query)) {
+                return redirect(route('user.contacts.index'));
+            }
+            
+            $contacts = contacts::where('Name', 'like', "%{$query}%")
+                ->orWhere('Email', 'like', "%{$query}%")
+                ->orWhere('Phone', 'like', "%{$query}%")
+                ->orWhere('Company', 'like', "%{$query}%")
+                ->orderBy('created_at', 'desc')
+                ->get();
+            
+            return view('user.contacts.index', compact('contacts'))->with('searchQuery', $query);
+        } catch (\Exception $e) {
+            return redirect(route('user.contacts.index'))->with('error', 'Search error: ' . $e->getMessage());
+        }
+    }
+
+    /**
      * Escape CSV fields
      */
     private function escapeCsv($value)

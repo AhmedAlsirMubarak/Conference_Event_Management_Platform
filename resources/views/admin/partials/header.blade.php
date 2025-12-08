@@ -10,8 +10,14 @@
         <div class="flex items-center gap-4">
             <!-- Search (optional) -->
             <div class="hidden sm:block relative">
-                <input type="text" placeholder="Search..."
-                    class="pl-4 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                <form action="{{ route('searchContacts') }}" method="GET" class="flex items-center">
+                    <input type="text" name="q" placeholder="Search..." value="{{ request('q', '') }}"
+                        class="pl-4 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                    <button type="submit"
+                        class="ml-2 px-3 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition">
+                        Search
+                    </button>
+                </form>
             </div>
 
             <!-- User Menu -->
@@ -21,7 +27,7 @@
                     <p class="text-xs text-gray-500">Administrator</p>
                 </div>
                 <div
-                    class="w-10 h-10 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
+                    class="w-10 h-10 bg-linear-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center text-white font-bold">
                     A
                 </div>
             </div>
