@@ -5,6 +5,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SponsorController;
 use App\Http\Middleware\IsAdmin;
 
 Route::get('/', function () {
@@ -31,6 +32,8 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::get('/contacts/{id}', [ContactController::class, 'getcontactById'])->name('getcontactById');
     Route::post('/contacts/{id}/notes', [ContactController::class, 'updateAdminNotes'])->name('updateAdminNotes');
     Route::delete('/contacts/{id}', [ContactController::class, 'delete'])->name('deleteContact');
+    Route::get('/sponsors/search', [SponsorController::class, 'search'])->name('sponsors.search');
+    Route::resource('sponsors', SponsorController::class);
 });
 
 // User Routes
@@ -40,5 +43,8 @@ Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () 
     Route::get('/contacts/search', [UserController::class, 'searchContacts'])->name('contacts.search');
     Route::get('/contacts/{id}', [UserController::class, 'showContact'])->name('contacts.show');
     Route::post('/contacts/{id}/notes', [UserController::class, 'updateNotes'])->name('contacts.updateNotes');
+    Route::get('/sponsors', [UserController::class, 'indexSponsors'])->name('sponsors.index');
+    Route::get('/sponsors/search', [UserController::class, 'searchSponsors'])->name('sponsors.search');
+    Route::get('/sponsors/{id}', [UserController::class, 'showSponsor'])->name('sponsors.show');
     Route::get('/export', [UserController::class, 'exportContacts'])->name('export');
 });

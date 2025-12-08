@@ -58,13 +58,13 @@
             </div>
         </div>
 
-        <!-- Quick Actions Card -->
+        <!-- Total Sponsors Card -->
         <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Quick Action</p>
-                    <p class="text-sm text-gray-600 mt-2">View & export contacts</p>
-                    <a href="{{ route('user.contacts.index') }}"
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Total Sponsors</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalSponsors ?? 0 }}</p>
+                    <a href="{{ route('user.sponsors.index') }}"
                         class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-green-500 hover:bg-green-600 text-white rounded text-xs font-medium transition-colors">
                         View All
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@
                         </svg>
                     </a>
                 </div>
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
+                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -151,6 +151,61 @@
                 </svg>
                 <h3 class="text-lg font-medium text-gray-900 mb-2">No contacts yet</h3>
                 <p class="text-gray-500">Contact submissions will appear here.</p>
+            </div>
+        @endif
+    </div>
+
+    <!-- Recent Sponsors -->
+    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden mt-8">
+        <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
+            <h3 class="font-semibold text-gray-900">Recent Sponsors</h3>
+            <a href="{{ route('user.sponsors.index') }}"
+                class="text-green-600 hover:text-green-800 text-sm font-medium">View
+                all</a>
+        </div>
+        @if ($recentSponsors && count($recentSponsors) > 0)
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
+                @foreach ($recentSponsors as $sponsor)
+                    <div class="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow">
+                        <!-- Logo Section -->
+                        <div class="h-32 bg-gray-100 flex items-center justify-center overflow-hidden">
+                            @if ($sponsor->logo)
+                                <img src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }}"
+                                    class="w-full h-full object-contain">
+                            @else
+                                <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                            @endif
+                        </div>
+
+                        <!-- Content Section -->
+                        <div class="p-4">
+                            <h4 class="font-semibold text-gray-900 truncate">{{ $sponsor->name }}</h4>
+                            @if ($sponsor->category)
+                                <p class="text-xs text-green-600 mt-1">{{ $sponsor->category }}</p>
+                            @endif
+                            <div class="mt-3 pt-3 border-t border-gray-200">
+                                <a href="{{ route('user.sponsors.show', $sponsor->id) }}"
+                                    class="inline-flex items-center gap-2 text-green-600 hover:text-green-800 text-sm font-medium">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                    </svg>
+                                    View Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        @else
+            <div class="p-8 text-center">
+                <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <h3 class="text-lg font-medium text-gray-900 mb-2">No sponsors yet</h3>
+                <p class="text-gray-500">Sponsors will appear here.</p>
             </div>
         @endif
     </div>

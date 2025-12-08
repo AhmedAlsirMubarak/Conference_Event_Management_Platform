@@ -58,13 +58,13 @@
             </div>
         </div>
 
-        <!-- Quick Actions Card -->
+        <!-- Total Sponsors Card -->
         <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
             <div class="flex items-start justify-between">
                 <div>
-                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Quick Action</p>
-                    <p class="text-sm text-gray-600 mt-2">Manage contacts</p>
-                    <a href="{{ route('getAllContacts') }}"
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Total Sponsors</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalSponsors ?? 0 }}</p>
+                    <a href="{{ route('sponsors.index') }}"
                         class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white rounded text-xs font-medium transition-colors">
                         View All
                         <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@
                         </svg>
                     </a>
                 </div>
-                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
+                <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center text-indigo-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             d="M13 10V3L4 14h7v7l9-11h-7z" />

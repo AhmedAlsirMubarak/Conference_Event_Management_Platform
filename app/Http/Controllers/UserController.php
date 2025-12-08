@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\contacts;
+use App\Models\Sponsor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -18,15 +19,19 @@ class UserController extends Controller
             $totalContacts = contacts::count();
             $thisWeekContacts = contacts::where('created_at', '>=', Carbon::now()->startOfWeek())->count();
             $todayContacts = contacts::whereDate('created_at', Carbon::today())->count();
+            $totalSponsors = Sponsor::count();
             $recentContacts = contacts::orderBy('created_at', 'desc')->limit(5)->get();
+            $recentSponsors = Sponsor::orderBy('created_at', 'desc')->limit(3)->get();
 
-            return view('user.dashboard', compact('totalContacts', 'thisWeekContacts', 'todayContacts', 'recentContacts'));
+            return view('user.dashboard', compact('totalContacts', 'thisWeekContacts', 'todayContacts', 'totalSponsors', 'recentContacts', 'recentSponsors'));
         } catch (\Exception $e) {
             return view('user.dashboard', [
                 'totalContacts' => 0,
                 'thisWeekContacts' => 0,
                 'todayContacts' => 0,
-                'recentContacts' => collect()
+                'totalSponsors' => 0,
+                'recentContacts' => collect(),
+                'recentSponsors' => collect()
             ]);
         }
     }
@@ -152,7 +157,54 @@ class UserController extends Controller
 
             return redirect(route('user.contacts.show', $id))->with('success', 'Notes updated successfully!');
         } catch (\Exception $e) {
-            return redirect()->back()->with('error', 'Failed to update notes: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'Failed to update notes.');
+        }
+    }
+
+    /**
+     * Display all sponsors for user (read-only)
+     */
+    public function indexSponsors()
+    {
+        try {
+            $sponsors = Sponsor::all();
+            return view('user.sponsors.index', compact('sponsors'));
+        } catch (\Exception $e) {
+            return view('user.sponsors.index', ['sponsors' => collect()]);
+        }
+    }
+
+    /**
+     * Display specific sponsor for user (read-only)
+     */
+    public function showSponsor($id)
+    {
+        try {
+            $sponsor = Sponsor::findOrFail($id);
+            return view('user.sponsors.show', compact('sponsor'));
+        } catch (\Exception $e) {
+            return redirect(route('user.sponsors.index'))->with('error', 'Sponsor not found.');
+        }
+    }
+
+    /**
+     * Search sponsors for user
+     */
+    public function searchSponsors(Request $request)
+    {
+        try {
+            $query = $request->input('q', '');
+            
+            $sponsors = Sponsor::query()
+                ->where('name', 'like', '%' . $query . '%')
+                ->orWhere('category', 'like', '%' . $query . '%')
+                ->orWhere('website', 'like', '%' . $query . '%')
+                ->orderBy('created_at', 'desc')
+                ->get();
+
+            return view('user.sponsors.index', compact('sponsors'));
+        } catch (\Exception $e) {
+            return redirect(route('user.sponsors.index'))->with('error', 'Search error: ' . $e->getMessage());
         }
     }
 }
