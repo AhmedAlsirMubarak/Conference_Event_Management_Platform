@@ -20,7 +20,7 @@
             <!-- Logo Section -->
             <div class="h-48 bg-gray-100 flex items-center justify-center">
                 @if ($sponsor->logo)
-                    <img src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }}"
+                    <img src="/storage/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}"
                         class="max-w-[150px] h-full object-contain">
                 @else
                     <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

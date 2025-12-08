@@ -37,7 +37,7 @@
                     <label for="logo" class="block text-sm font-medium text-gray-700 mb-2">Logo</label>
                     @if ($sponsor->logo)
                         <div class="mb-4">
-                            <img src="{{ asset('storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }}"
+                            <img src="/storage/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}"
                                 class="h-32 rounded-lg object-cover">
                             <p class="text-sm text-gray-500 mt-2">Current logo</p>
                         </div>
