@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\contacts;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use Carbon\Carbon;
 
 class UserController extends Controller
@@ -132,5 +133,26 @@ class UserController extends Controller
         }
 
         return $value;
+    }
+
+    /**
+     * Update contact notes
+     */
+    public function updateNotes(Request $request, $id)
+    {
+        try {
+            $validated = $request->validate([
+                'notes' => 'nullable|string|max:1000',
+            ]);
+
+            $contact = contacts::findOrFail($id);
+            $contact->notes = $validated['notes'];
+            $contact->last_communicated_at = now();
+            $contact->save();
+
+            return redirect(route('user.contacts.show', $id))->with('success', 'Notes updated successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to update notes: ' . $e->getMessage());
+        }
     }
 }

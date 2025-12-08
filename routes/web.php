@@ -29,6 +29,7 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::get('/contacts/search', [ContactController::class, 'search'])->name('searchContacts');
     Route::get('/contacts/export/excel', [ContactController::class, 'exportExcel'])->name('exportExcel');
     Route::get('/contacts/{id}', [ContactController::class, 'getcontactById'])->name('getcontactById');
+    Route::post('/contacts/{id}/notes', [ContactController::class, 'updateAdminNotes'])->name('updateAdminNotes');
     Route::delete('/contacts/{id}', [ContactController::class, 'delete'])->name('deleteContact');
 });
 
@@ -38,5 +39,6 @@ Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () 
     Route::get('/contacts', [UserController::class, 'indexContacts'])->name('contacts.index');
     Route::get('/contacts/search', [UserController::class, 'searchContacts'])->name('contacts.search');
     Route::get('/contacts/{id}', [UserController::class, 'showContact'])->name('contacts.show');
+    Route::post('/contacts/{id}/notes', [UserController::class, 'updateNotes'])->name('contacts.updateNotes');
     Route::get('/export', [UserController::class, 'exportContacts'])->name('export');
 });

@@ -186,4 +186,29 @@ class ContactController extends Controller
             return redirect('/contacts')->with('error', 'Unable to delete contact or database unavailable.');
         }
     }
+
+    /**
+     * Update contact notes (admin)
+     */
+    public function updateAdminNotes(Request $request, $id)
+    {
+        try {
+            if (Auth::user()->role !== 'admin') {
+                return redirect('/contacts')->with('error', 'You do not have permission to update notes.');
+            }
+
+            $validated = $request->validate([
+                'notes' => 'nullable|string|max:1000',
+            ]);
+
+            $contact = contacts::findOrFail($id);
+            $contact->notes = $validated['notes'];
+            $contact->last_communicated_at = now();
+            $contact->save();
+
+            return redirect(route('getcontactById', $id))->with('success', 'Notes updated successfully!');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to update notes: ' . $e->getMessage());
+        }
+    }
 }

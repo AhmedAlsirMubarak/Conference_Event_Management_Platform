@@ -52,6 +52,7 @@
                                 <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Email</th>
                                 <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Phone</th>
                                 <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Company</th>
+                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Notes</th>
                                 <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Submitted</th>
                                 <th class="px-6 py-3 text-right text-sm font-semibold text-gray-900">Actions</th>
                             </tr>
@@ -62,7 +63,7 @@
                                     <td class="px-6 py-4">
                                         <div class="flex items-center gap-3">
                                             <div
-                                                class="w-10 h-10 bg-gradient-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0">
+                                                class="w-10 h-10 bg-linear-to-br from-blue-400 to-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0">
                                                 {{ strtoupper(substr($contact->Name, 0, 1)) }}
                                             </div>
                                             <div>
@@ -83,6 +84,35 @@
                                     </td>
                                     <td class="px-6 py-4">
                                         <span class="text-gray-700 text-sm">{{ $contact->Company ?? '-' }}</span>
+                                    </td>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center gap-2">
+                                            @if ($contact->notes)
+                                                <div class="flex-1 max-w-xs">
+                                                    <p class="text-sm text-gray-700 line-clamp-2" title="{{ $contact->notes }}">
+                                                        {{ Str::limit($contact->notes, 50) }}
+                                                    </p>
+                                                </div>
+                                                <button type="button"
+                                                    onclick="openNoteModal({{ $contact->id }}, '{{ addslashes($contact->notes) }}')"
+                                                    class="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded text-xs font-medium transition-colors">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                    </svg>
+                                                    Edit
+                                                </button>
+                                            @else
+                                                <button type="button" onclick="openNoteModal({{ $contact->id }}, '')"
+                                                    class="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium transition-colors">
+                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                            d="M12 4v16m8-8H4" />
+                                                    </svg>
+                                                    Add Note
+                                                </button>
+                                            @endif
+                                        </div>
                                     </td>
                                     <td class="px-6 py-4 text-sm text-gray-600">
                                         {{ $contact->created_at->format('M d, Y') }}
@@ -124,4 +154,54 @@
             @endif
         </div>
     </div>
+
+    <!-- Notes Modal -->
+    <div id="noteModal" class="fixed inset-0 bg-black/50 items-center justify-center z-50 p-4" style="display: none;">
+        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6">
+            <h3 class="text-lg font-semibold text-gray-900 mb-4">Add/Edit Note</h3>
+
+            <form action="" id="noteForm" method="POST">
+                @csrf
+                <div class="mb-4">
+                    <label for="noteText" class="block text-sm font-medium text-gray-700 mb-2">Note</label>
+                    <textarea id="noteText" name="notes" rows="4"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                        placeholder="Add communication notes..."></textarea>
+                    <p class="text-xs text-gray-500 mt-1">Max 1000 characters</p>
+                </div>
+
+                <div class="flex gap-3 justify-end">
+                    <button type="button" onclick="closeNoteModal()"
+                        class="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg font-medium transition-colors">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="px-4 py-2 text-white bg-blue-600 hover:bg-blue-700 rounded-lg font-medium transition-colors">
+                        Save Note
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function openNoteModal(contactId, noteText) {
+            const form = document.getElementById('noteForm');
+            form.action = `/contacts/${contactId}/notes`;
+            document.getElementById('noteText').value = noteText;
+            document.getElementById('noteModal').style.display = 'flex';
+        }
+
+        function closeNoteModal() {
+            document.getElementById('noteModal').style.display = 'none';
+            document.getElementById('noteText').value = '';
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('noteModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeNoteModal();
+            }
+        });
+    </script>
 @endsection

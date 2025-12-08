@@ -106,6 +106,66 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Communication Notes Section -->
+                <div class="mt-10 pt-8 border-t border-gray-200">
+                    <div class="flex items-center justify-between mb-4">
+                        <h3 class="text-xl font-semibold text-gray-900">Communication Notes</h3>
+                        @if ($contact->last_communicated_at)
+                            <span class="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                                Last update: {{ $contact->last_communicated_at->diffForHumans() }}
+                            </span>
+                        @else
+                            <span class="inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium">
+                                No communication yet
+                            </span>
+                        @endif
+                    </div>
+
+                    <form action="{{ route('user.contacts.updateNotes', $contact->id) }}" method="POST" class="space-y-4">
+                        @csrf
+                        <div>
+                            <label for="notes" class="block text-sm font-medium text-gray-700 mb-2">
+                                Add or update notes about your communication with this contact
+                            </label>
+                            <textarea name="notes" id="notes" rows="5"
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                placeholder="e.g., Called on Dec 8, interested in partnership. Follow-up scheduled for next week.">{{ $contact->notes }}</textarea>
+                            <p class="text-xs text-gray-500 mt-2">Max 1000 characters</p>
+                        </div>
+
+                        <div class="flex items-center gap-3">
+                            <button type="submit"
+                                class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7" />
+                                </svg>
+                                Save Notes
+                            </button>
+                            @if ($contact->notes)
+                                <button type="button" onclick="clearNotes()"
+                                    class="inline-flex items-center gap-2 px-4 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium transition-colors">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                    </svg>
+                                    Clear Notes
+                                </button>
+                            @endif
+                        </div>
+
+                        @if ($errors->any())
+                            <div class="p-4 bg-red-50 border border-red-200 rounded-lg">
+                                <ul class="list-disc list-inside text-sm text-red-700">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                    </form>
+                </div>
             </div>
         </div>
     </div>
@@ -113,6 +173,10 @@
     <script>
         function replyContact(email) {
             window.location.href = 'mailto:' + email;
+        }
+
+        function clearNotes() {
+            document.getElementById('notes').value = '';
         }
     </script>
 @endsection

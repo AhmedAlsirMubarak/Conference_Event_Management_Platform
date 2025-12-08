@@ -12,7 +12,14 @@ class contacts extends Model
         'Phone',
         'Designation',
         'Company',
-        'Website'
-        
+        'Website',
+        'notes',
+        'last_communicated_at'
+    ];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'last_communicated_at' => 'datetime',
     ];
 }
