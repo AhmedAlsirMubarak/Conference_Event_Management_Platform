@@ -78,7 +78,7 @@
                                             class="text-blue-600 hover:text-blue-800 text-sm">{{ $contact->Email }}</a>
                                     </td>
                                     <td class="px-6 py-4">
-                                        <a href="tel:+968{{ $contact->Phone }}" class="text-gray-700 text-sm">+968
+                                        <a href="tel:+968{{ $contact->Phone }}" class="text-gray-700 text-sm">
                                             {{ $contact->Phone }}</a>
                                     </td>
                                     <td class="px-6 py-4">
