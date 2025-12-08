@@ -42,14 +42,14 @@
         </div>
 
         <!-- Sponsors Grid -->
-        <div class="max-w-4xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             @forelse ($sponsors as $sponsor)
                 <div class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
                     <!-- Logo Section -->
-                    <div class=" h-35 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <div class="h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($sponsor->logo)
                             <img src="/storage/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}"
-                                class="w-full h-full object-contain">
+                                class="max-w-[150px] h-full object-contain">
                         @else
                             <div class="text-gray-400 text-center">
                                 <svg class="w-12 h-12 mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">

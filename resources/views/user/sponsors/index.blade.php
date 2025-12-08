@@ -37,7 +37,7 @@
             @forelse ($sponsors as $sponsor)
                 <div class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
                     <!-- Logo Section -->
-                    <div class="h-35 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <div class="h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($sponsor->logo)
                             <img src="/storage/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}"
                                 class="max-w-[150px] h-full object-contain">
