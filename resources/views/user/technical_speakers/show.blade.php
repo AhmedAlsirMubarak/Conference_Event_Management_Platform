@@ -22,7 +22,8 @@
                 <div class="flex items-start gap-6">
                     <!-- Photo -->
                     <div class="shrink-0">
-                        <div class="w-32 h-32 bg-white rounded-xl border-2 border-indigo-200 flex items-center justify-center overflow-hidden shadow-md">
+                        <div
+                            class="w-32 h-32 bg-white rounded-xl border-2 border-indigo-200 flex items-center justify-center overflow-hidden shadow-md">
                             @if ($speaker->photo)
                                 <img src="/storage/{{ $speaker->photo }}" alt="{{ $speaker->name }}"
                                     class="w-full h-full object-cover">

@@ -19,7 +19,7 @@
         <!-- Main Card -->
         <div class="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
             <!-- Header with Background -->
-            <div class="bg-gradient-to-r from-blue-50 to-indigo-50 px-8 py-8">
+            <div class="bg-linear-to-r from-blue-50 to-indigo-50 px-8 py-8">
                 <div class="flex items-start gap-6">
                     <!-- Photo -->
                     <div class="flex-shrink-0">
