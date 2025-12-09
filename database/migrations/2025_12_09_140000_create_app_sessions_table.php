@@ -19,8 +19,8 @@ return new class extends Migration
             $table->text('user_agent')->nullable();
             $table->string('browser')->nullable();
             $table->string('platform')->nullable();
-            $table->timestamp('login_at');
-            $table->timestamp('last_activity_at');
+            $table->timestamp('login_at')->nullable()->useCurrent();
+            $table->timestamp('last_activity_at')->nullable()->useCurrent();
             $table->timestamp('logout_at')->nullable();
             $table->boolean('is_active')->default(true);
             $table->boolean('is_suspicious')->default(false);
