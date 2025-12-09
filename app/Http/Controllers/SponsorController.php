@@ -82,6 +82,10 @@ class SponsorController extends Controller
 
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
+            // Delete old logo if it exists
+            if ($sponsor->logo && file_exists(storage_path('app/public/' . $sponsor->logo))) {
+                unlink(storage_path('app/public/' . $sponsor->logo));
+            }
             $path = $request->file('logo')->store('sponsor_logos', 'public');
             $validated['logo'] = $path;
         }
