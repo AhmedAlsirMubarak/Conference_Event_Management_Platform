@@ -1,27 +1,28 @@
 @extends('admin.layouts.app')
 
-@section('title', $sponsor->name . ' | Sponsors')
+@section('title', $member->name . ' | Technical Committee')
 
-@section('header-title', 'Sponsor Details')
-@section('header-subtitle', 'View sponsor information')
+@section('header-title', 'Member Details')
+@section('header-subtitle', 'View member information')
 
 @section('content')
+
     <div class="w-full">
-        <a href="{{ route('sponsors.index') }}"
+        <a href="{{ route('technical_committees.index') }}"
             class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Sponsors
+            Back to Members
         </a>
 
         <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
             <div class="grid grid-cols-3 gap-6 p-6">
-                <!-- Left: Logo Section -->
+                <!-- Left: Photo Section -->
                 <div>
-                    <div class="h-32 bg-gray-100 flex items-center justify-center rounded-lg">
-                        @if ($sponsor->logo)
-                            <img src="/storage/{{ $sponsor->logo }}" alt="{{ $sponsor->name }}"
+                    <div class="h-40 bg-gray-100 flex items-center justify-center rounded-lg">
+                        @if ($member->photo)
+                            <img src="/storage/{{ $member->photo }}" alt="{{ $member->name }}"
                                 class="w-full h-full object-contain">
                         @else
                             <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -30,6 +31,16 @@
                             </svg>
                         @endif
                     </div>
+
+                    <!-- Logo Section -->
+                    @if ($member->logo)
+                        <div class="mt-4">
+                            <label class="text-xs font-medium text-gray-500 uppercase">Logo</label>
+                            <div class="mt-2 w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
+                                <img src="/storage/{{ $member->logo }}" alt="Logo" class="max-w-[90px] h-full object-contain">
+                            </div>
+                        </div>
+                    @endif
                 </div>
 
                 <!-- Right: Info Section -->
@@ -37,31 +48,30 @@
                     <!-- Name -->
                     <div>
                         <label class="text-xs font-medium text-gray-500 uppercase">Name</label>
-                        <p class="text-xl font-bold text-gray-900 mt-1">{{ $sponsor->name }}</p>
+                        <p class="text-xl font-bold text-gray-900 mt-1">{{ $member->name }}</p>
                     </div>
 
-                    <!-- Category -->
-                    @if ($sponsor->category)
+                    <!-- Title -->
+                    @if ($member->title)
                         <div>
-                            <label class="text-xs font-medium text-gray-500 uppercase">Category</label>
-                            <p class="mt-1">
-                                <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                                    {{ $sponsor->category }}
-                                </span>
-                            </p>
+                            <label class="text-xs font-medium text-gray-500 uppercase">Title</label>
+                            <p class="text-gray-900 mt-1 text-sm">{{ $member->title }}</p>
                         </div>
                     @endif
 
-                    <!-- Website -->
-                    @if ($sponsor->website)
+                    <!-- Company -->
+                    @if ($member->company)
                         <div>
-                            <label class="text-xs font-medium text-gray-500 uppercase">Website</label>
-                            <p class="mt-1">
-                                <a href="{{ $sponsor->website }}" target="_blank"
-                                    class="text-sm text-blue-600 hover:text-blue-800 break-all">
-                                    {{ $sponsor->website }}
-                                </a>
-                            </p>
+                            <label class="text-xs font-medium text-gray-500 uppercase">Company</label>
+                            <p class="text-gray-900 mt-1 text-sm">{{ $member->company }}</p>
+                        </div>
+                    @endif
+
+                    <!-- Bio -->
+                    @if ($member->bio)
+                        <div>
+                            <label class="text-xs font-medium text-gray-500 uppercase">Biography</label>
+                            <p class="text-gray-600 mt-1 text-sm whitespace-pre-wrap line-clamp-3">{{ $member->bio }}</p>
                         </div>
                     @endif
 
@@ -69,17 +79,17 @@
                     <div class="grid grid-cols-2 gap-4 pt-3 border-t border-gray-200">
                         <div>
                             <label class="text-xs font-medium text-gray-500 uppercase">Created</label>
-                            <p class="text-gray-900 mt-1 text-sm">{{ $sponsor->created_at->format('M d, Y') }}</p>
+                            <p class="text-gray-900 mt-1 text-sm">{{ $member->created_at->format('M d, Y') }}</p>
                         </div>
                         <div>
                             <label class="text-xs font-medium text-gray-500 uppercase">Updated</label>
-                            <p class="text-gray-900 mt-1 text-sm">{{ $sponsor->updated_at->format('M d, Y') }}</p>
+                            <p class="text-gray-900 mt-1 text-sm">{{ $member->updated_at->format('M d, Y') }}</p>
                         </div>
                     </div>
 
                     <!-- Actions -->
                     <div class="flex items-center gap-3 pt-3 border-t border-gray-200">
-                        <a href="{{ route('sponsors.edit', $sponsor->id) }}"
+                        <a href="{{ route('technical_committees.edit', $member->id) }}"
                             class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -87,8 +97,8 @@
                             </svg>
                             Edit
                         </a>
-                        <form action="{{ route('sponsors.destroy', $sponsor->id) }}" method="POST" class="flex-1"
-                            onsubmit="return confirm('Are you sure?');">
+                        <form action="{{ route('technical_committees.destroy', $member->id) }}" method="POST" class="flex-1"
+                            onsubmit="return confirm('Are you sure?')">
                             @csrf
                             @method('DELETE')
                             <button type="submit"
@@ -104,6 +114,5 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
 @endsection

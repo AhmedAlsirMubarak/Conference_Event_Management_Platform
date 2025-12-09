@@ -43,6 +43,56 @@
             </svg>
             <span>Sponsors</span>
         </a>
+
+        <!-- Strategic Committee -->
+        <a href="{{ route('strategic_committees.index') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors @if (request()->routeIs('strategic_committees.index', 'strategic_committees.create', 'strategic_committees.show', 'strategic_committees.edit')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M17 20h5v-2a3 3 0 00-5.856-1.487M15 10a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+            <span>Strategic Committee</span>
+        </a>
+
+        <!-- Technical Committee -->
+        <a href="{{ route('technical_committees.index') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors @if (request()->routeIs('technical_committees.index', 'technical_committees.create', 'technical_committees.show', 'technical_committees.edit')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+            <span>Technical Committee</span>
+        </a>
+
+        <!-- Strategic Speakers -->
+        <a href="{{ route('strategic_speakers.index') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors @if (request()->routeIs('strategic_speakers.index', 'strategic_speakers.create', 'strategic_speakers.show', 'strategic_speakers.edit')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <span>Strategic Speakers</span>
+        </a>
+
+        <!-- Technical Speakers -->
+        <a href="{{ route('technical_speakers.index') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors @if (request()->routeIs('technical_speakers.index', 'technical_speakers.create', 'technical_speakers.show', 'technical_speakers.edit')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M15 3h6v6m0-6L9 15M3 3h6v6M3 3L15 15" />
+            </svg>
+            <span>Technical Speakers</span>
+        </a>
+
+        <!-- Sessions Management -->
+        <a href="{{ route('sessions.my') }}"
+            class="flex items-center gap-3 px-4 py-3 rounded-lg font-medium transition-colors @if (request()->routeIs('sessions.*')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Sessions</span>
+        </a>
     </nav>
 
     <!-- Footer Section -->

@@ -7,6 +7,11 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Middleware\IsAdmin;
+use App\Http\Controllers\StrategicCommitteeController;
+use App\Http\Controllers\TechnicalCommitteeController;
+use App\Http\Controllers\StrategicSpeakerController;
+use App\Http\Controllers\TechnicalSpeakerController;
+use App\Http\Controllers\SessionController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,6 +28,8 @@ Route::get('/login', [AuthController::class, 'getLoginPage'])
 
 Route::post('/contacts', [ContactController::class, 'create'])->name('create');
 
+
+
 // Admin Routes
 Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
@@ -34,6 +41,21 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::delete('/contacts/{id}', [ContactController::class, 'delete'])->name('deleteContact');
     Route::get('/sponsors/search', [SponsorController::class, 'search'])->name('sponsors.search');
     Route::resource('sponsors', SponsorController::class);
+    Route::resource('strategic_committees', StrategicCommitteeController::class);
+    Route::resource('technical_committees', TechnicalCommitteeController::class);
+    Route::resource('strategic_speakers', StrategicSpeakerController::class);
+    Route::resource('technical_speakers', TechnicalSpeakerController::class);
+
+    // Session Management Routes
+    Route::get('/sessions', [SessionController::class, 'adminSessions'])->name('sessions.index');
+    Route::get('/sessions/my-sessions', [SessionController::class, 'mySessions'])->name('sessions.my');
+    Route::delete('/sessions/{session}/terminate', [SessionController::class, 'terminateSession'])->name('sessions.terminate');
+    Route::post('/sessions/terminate-others', [SessionController::class, 'terminateOtherSessions'])->name('sessions.terminateOthers');
+    Route::get('/sessions/{session}', [SessionController::class, 'show'])->name('sessions.show');
+    Route::get('/sessions/activity/{userId?}', [SessionController::class, 'activityHistory'])->name('sessions.activity');
+    Route::get('/sessions-suspicious', [SessionController::class, 'suspiciousSessions'])->name('sessions.suspicious');
+    Route::get('/sessions/export/logs', [SessionController::class, 'exportLogs'])->name('sessions.export');
+    Route::post('/sessions/clear-old', [SessionController::class, 'clearOldSessions'])->name('sessions.clearOld');
 });
 
 // User Routes
@@ -47,4 +69,17 @@ Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () 
     Route::get('/sponsors/search', [UserController::class, 'searchSponsors'])->name('sponsors.search');
     Route::get('/sponsors/{id}', [UserController::class, 'showSponsor'])->name('sponsors.show');
     Route::get('/export', [UserController::class, 'exportContacts'])->name('export');
+    Route::get(uri: '/technical-committees', action: [UserController::class, 'listTechnicalCommittees'])->name(name: 'technical_committees.index');
+    Route::get(uri: '/technical-committees/{id}', action: [UserController::class, 'showTechnicalCommittee'])->name(name: 'technical_committees.show');
+    Route::get(uri: '/strategic-committees', action: [UserController::class, 'listStrategicCommittees'])->name(name: 'strategic_committees.index');
+    Route::get(uri: '/strategic-committees/{id}', action: [UserController::class, 'showStrategicCommittee'])->name(name: 'strategic_committees.show');
+    Route::get(uri: '/strategic-speakers', action: [UserController::class, 'listStrategicSpeakers'])->name(name: 'strategic_speakers.index');
+    Route::get(uri: '/strategic-speakers/{id}', action: [UserController::class, 'showStrategicSpeaker'])->name(name: 'strategic_speakers.show');
+    Route::get(uri: '/technical-speakers', action: [UserController::class, 'listTechnicalSpeakers'])->name(name: 'technical_speakers.index');
+    Route::get(uri: '/technical-speakers/{id}', action: [UserController::class, 'showTechnicalSpeaker'])->name(name: 'technical_speakers.show');
+
+    // User Session Routes
+    Route::get('/sessions/my-sessions', [SessionController::class, 'mySessions'])->name('sessions.my');
+    Route::delete('/sessions/{session}/terminate', [SessionController::class, 'terminateSession'])->name('sessions.terminate');
+    Route::post('/sessions/terminate-others', [SessionController::class, 'terminateOtherSessions'])->name('sessions.terminateOthers');
 });

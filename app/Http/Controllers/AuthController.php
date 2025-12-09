@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Services\SessionService;
 
 
 class AuthController extends Controller
@@ -32,6 +33,10 @@ class AuthController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
             
+            // Create session record
+            $appSession = SessionService::createSession($request, $user);
+            session()->put('app_session_id', $appSession->id);
+            
             // Redirect based on user role
             if ($user->role === 'admin') {
                 return redirect()->intended('/dashboard');
@@ -44,8 +49,15 @@ class AuthController extends Controller
             'email' => 'The provided credentials do not match our records.',
         ])->onlyInput('email');
     }
+    
     public function logout(Request $request) {
+        $user = Auth::user();
+        $sessionId = session()->get('app_session_id');
         
+        // End session record
+        if ($user && $sessionId) {
+            SessionService::endSession($user->id, $sessionId);
+        }
        
         Auth::logout();
         $request->session()->invalidate(); 

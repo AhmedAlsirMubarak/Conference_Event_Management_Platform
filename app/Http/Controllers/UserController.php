@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\contacts;
 use App\Models\Sponsor;
+use App\Models\StrategicCommittee;
+use App\Models\TechnicalCommittee;
+use App\Models\StrategicSpeaker;
+use App\Models\TechnicalSpeaker;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
@@ -205,6 +209,146 @@ class UserController extends Controller
             return view('user.sponsors.index', compact('sponsors'));
         } catch (\Exception $e) {
             return redirect(route('user.sponsors.index'))->with('error', 'Search error: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Display all strategic committee members for user (read-only)
+     */
+    public function listStrategicCommittees()
+    {
+        try {
+            $search = request('search');
+            $query = StrategicCommittee::query();
+            
+            if ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                      ->orWhere('title', 'like', '%' . $search . '%')
+                      ->orWhere('company', 'like', '%' . $search . '%');
+            }
+            
+            $members = $query->get();
+            return view('user.strategic_committees.index', compact('members', 'search'));
+        } catch (\Exception $e) {
+            return view('user.strategic_committees.index', ['members' => collect(), 'search' => null]);
+        }
+    }
+
+    /**
+     * Display specific strategic committee member for user (read-only)
+     */
+    public function showStrategicCommittee($id)
+    {
+        try {
+            $member = StrategicCommittee::findOrFail($id);
+            return view('user.strategic_committees.show', compact('member'));
+        } catch (\Exception $e) {
+            return redirect(route('user.strategic_committees.index'))->with('error', 'Member not found.');
+        }
+    }
+
+    /**
+     * Display all technical committee members for user (read-only)
+     */
+    public function listTechnicalCommittees()
+    {
+        try {
+            $search = request('search');
+            $query = TechnicalCommittee::query();
+            
+            if ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                      ->orWhere('title', 'like', '%' . $search . '%')
+                      ->orWhere('company', 'like', '%' . $search . '%');
+            }
+            
+            $members = $query->get();
+            return view('user.technical_committees.index', compact('members', 'search'));
+        } catch (\Exception $e) {
+            return view('user.technical_committees.index', ['members' => collect(), 'search' => null]);
+        }
+    }
+
+    /**
+     * Display specific technical committee member for user (read-only)
+     */
+    public function showTechnicalCommittee($id)
+    {
+        try {
+            $member = TechnicalCommittee::findOrFail($id);
+            return view('user.technical_committees.show', compact('member'));
+        } catch (\Exception $e) {
+            return redirect(route('user.technical_committees.index'))->with('error', 'Member not found.');
+        }
+    }
+
+    /**
+     * Display all strategic speakers for user (read-only)
+     */
+    public function listStrategicSpeakers()
+    {
+        try {
+            $search = request('search');
+            $query = StrategicSpeaker::query();
+            
+            if ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                      ->orWhere('title', 'like', '%' . $search . '%')
+                      ->orWhere('company', 'like', '%' . $search . '%');
+            }
+            
+            $speakers = $query->get();
+            return view('user.strategic_speakers.index', compact('speakers', 'search'));
+        } catch (\Exception $e) {
+            return view('user.strategic_speakers.index', ['speakers' => collect(), 'search' => null]);
+        }
+    }
+
+    /**
+     * Display specific strategic speaker for user (read-only)
+     */
+    public function showStrategicSpeaker($id)
+    {
+        try {
+            $speaker = StrategicSpeaker::findOrFail($id);
+            return view('user.strategic_speakers.show', compact('speaker'));
+        } catch (\Exception $e) {
+            return redirect(route('user.strategic_speakers.index'))->with('error', 'Speaker not found.');
+        }
+    }
+
+    /**
+     * Display all technical speakers for user (read-only)
+     */
+    public function listTechnicalSpeakers()
+    {
+        try {
+            $search = request('search');
+            $query = TechnicalSpeaker::query();
+            
+            if ($search) {
+                $query->where('name', 'like', '%' . $search . '%')
+                      ->orWhere('title', 'like', '%' . $search . '%')
+                      ->orWhere('company', 'like', '%' . $search . '%');
+            }
+            
+            $speakers = $query->get();
+            return view('user.technical_speakers.index', compact('speakers', 'search'));
+        } catch (\Exception $e) {
+            return view('user.technical_speakers.index', ['speakers' => collect(), 'search' => null]);
+        }
+    }
+
+    /**
+     * Display specific technical speaker for user (read-only)
+     */
+    public function showTechnicalSpeaker($id)
+    {
+        try {
+            $speaker = TechnicalSpeaker::findOrFail($id);
+            return view('user.technical_speakers.show', compact('speaker'));
+        } catch (\Exception $e) {
+            return redirect(route('user.technical_speakers.index'))->with('error', 'Speaker not found.');
         }
     }
 }
