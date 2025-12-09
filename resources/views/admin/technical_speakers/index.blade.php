@@ -49,9 +49,10 @@
             @forelse ($speakers as $speaker)
                 <div class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
                     <!-- Photo Section -->
-                    <div class="h-32 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <div class="h-24 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($speaker->photo)
-                            <img src="/storage/{{ $speaker->photo }}" alt="{{ $speaker->name }}" class="w-full h-full object-contain">
+                            <img src="/storage/{{ $speaker->photo }}" alt="{{ $speaker->name }}"
+                                class="w-full h-full object-contain">
                         @else
                             <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -78,7 +79,7 @@
                         <!-- Logo -->
                         @if ($speaker->logo)
                             <div class="flex justify-center mb-4">
-                                <img src="/storage/{{ $speaker->logo }}" alt="Logo" class="h-12 w-12 object-contain">
+                                <img src="/storage/{{ $speaker->logo }}" alt="Logo" class="h-16 w-16 object-contain">
                             </div>
                         @endif
 

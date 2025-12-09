@@ -49,7 +49,7 @@
             @forelse ($members as $member)
                 <div class="bg-white rounded-lg border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow">
                     <!-- Photo Section -->
-                    <div class="h-32 bg-gray-100 flex items-center justify-center overflow-hidden">
+                    <div class="h-24 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($member->photo)
                             <img src="/storage/{{ $member->photo }}" alt="{{ $member->name }}" class="w-full h-full object-contain">
                         @else
@@ -78,7 +78,7 @@
                         <!-- Logo -->
                         @if ($member->logo)
                             <div class="flex justify-center mb-4">
-                                <img src="/storage/{{ $member->logo }}" alt="Logo" class="h-12 w-12 object-contain">
+                                <img src="/storage/{{ $member->logo }}" alt="Logo" class="h-16 w-16 object-contain">
                             </div>
                         @endif
 
