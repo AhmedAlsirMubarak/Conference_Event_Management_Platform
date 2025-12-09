@@ -28,8 +28,20 @@
                 @endif
             </form>
 
-            <h3 class="text-lg font-semibold text-gray-900">All Members</h3>
-            <p class="text-sm text-gray-500 mt-1">Total: {{ count($members) }} members</p>
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900">All Members</h3>
+                    <p class="text-sm text-gray-500 mt-1">Total: {{ count($members) }} members</p>
+                </div>
+                <a href="{{ route('user.strategic_committees.export') }}"
+                    class="inline-flex items-center gap-2 px-4 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg font-medium transition-colors">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    Export CSV
+                </a>
+            </div>
         </div>
 
         <!-- Members Grid -->

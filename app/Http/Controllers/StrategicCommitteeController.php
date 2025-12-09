@@ -161,4 +161,37 @@ class StrategicCommitteeController extends Controller
 
         return redirect()->route('strategic_committees.index')->with('success', 'Committee member deleted successfully.');
     }
+
+    /**
+     * Export all committee members as CSV
+     */
+    public function export()
+    {
+        $members = StrategicCommittee::all();
+        
+        $filename = 'strategic_committees_' . date('Y-m-d_H-i-s') . '.csv';
+        $headers = [
+            'Content-Type' => 'text/csv; charset=UTF-8',
+            'Content-Disposition' => "attachment; filename=\"$filename\""
+        ];
+
+        $callback = function () use ($members) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, ['Name', 'Title', 'Company', 'Biography', 'Created At', 'Updated At']);
+            
+            foreach ($members as $member) {
+                fputcsv($file, [
+                    $member->name,
+                    $member->title,
+                    $member->company,
+                    $member->bio,
+                    $member->created_at->format('Y-m-d H:i:s'),
+                    $member->updated_at->format('Y-m-d H:i:s'),
+                ]);
+            }
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
 }

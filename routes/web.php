@@ -41,6 +41,13 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::delete('/contacts/{id}', [ContactController::class, 'delete'])->name('deleteContact');
     Route::get('/sponsors/search', [SponsorController::class, 'search'])->name('sponsors.search');
     Route::resource('sponsors', SponsorController::class);
+
+    // Export Routes (Admin) - Must come BEFORE resource routes
+    Route::get('/strategic_speakers/export', [StrategicSpeakerController::class, 'export'])->name('strategic_speakers.export');
+    Route::get('/technical_speakers/export', [TechnicalSpeakerController::class, 'export'])->name('technical_speakers.export');
+    Route::get('/strategic_committees/export', [StrategicCommitteeController::class, 'export'])->name('strategic_committees.export');
+    Route::get('/technical_committees/export', [TechnicalCommitteeController::class, 'export'])->name('technical_committees.export');
+
     Route::resource('strategic_committees', StrategicCommitteeController::class);
     Route::resource('technical_committees', TechnicalCommitteeController::class);
     Route::resource('strategic_speakers', StrategicSpeakerController::class);
@@ -77,4 +84,10 @@ Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () 
     Route::get(uri: '/strategic-speakers/{id}', action: [UserController::class, 'showStrategicSpeaker'])->name(name: 'strategic_speakers.show');
     Route::get(uri: '/technical-speakers', action: [UserController::class, 'listTechnicalSpeakers'])->name(name: 'technical_speakers.index');
     Route::get(uri: '/technical-speakers/{id}', action: [UserController::class, 'showTechnicalSpeaker'])->name(name: 'technical_speakers.show');
+
+    // Export Routes (User)
+    Route::get('/export/strategic-speakers', [UserController::class, 'exportStrategicSpeakers'])->name('strategic_speakers.export');
+    Route::get('/export/technical-speakers', [UserController::class, 'exportTechnicalSpeakers'])->name('technical_speakers.export');
+    Route::get('/export/strategic-committees', [UserController::class, 'exportStrategicCommittees'])->name('strategic_committees.export');
+    Route::get('/export/technical-committees', [UserController::class, 'exportTechnicalCommittees'])->name('technical_committees.export');
 });

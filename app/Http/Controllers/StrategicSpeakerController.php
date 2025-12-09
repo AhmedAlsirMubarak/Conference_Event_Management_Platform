@@ -129,4 +129,37 @@ class StrategicSpeakerController extends Controller
         $speaker->delete();
         return redirect()->route('strategic_speakers.index')->with('success', 'Speaker deleted successfully.');
     }
+
+    /**
+     * Export all speakers as CSV
+     */
+    public function export()
+    {
+        $speakers = StrategicSpeaker::all();
+        
+        $filename = 'strategic_speakers_' . date('Y-m-d_H-i-s') . '.csv';
+        $headers = [
+            'Content-Type' => 'text/csv; charset=UTF-8',
+            'Content-Disposition' => "attachment; filename=\"$filename\""
+        ];
+
+        $callback = function () use ($speakers) {
+            $file = fopen('php://output', 'w');
+            fputcsv($file, ['Name', 'Title', 'Company', 'Biography', 'Created At', 'Updated At']);
+            
+            foreach ($speakers as $speaker) {
+                fputcsv($file, [
+                    $speaker->name,
+                    $speaker->title,
+                    $speaker->company,
+                    $speaker->bio,
+                    $speaker->created_at->format('Y-m-d H:i:s'),
+                    $speaker->updated_at->format('Y-m-d H:i:s'),
+                ]);
+            }
+            fclose($file);
+        };
+
+        return response()->stream($callback, 200, $headers);
+    }
 }

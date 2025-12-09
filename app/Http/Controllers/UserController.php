@@ -351,4 +351,152 @@ class UserController extends Controller
             return redirect(route('user.technical_speakers.index'))->with('error', 'Speaker not found.');
         }
     }
+
+    /**
+     * Export strategic speakers as CSV (user)
+     */
+    public function exportStrategicSpeakers()
+    {
+        try {
+            $speakers = StrategicSpeaker::all();
+            
+            $filename = 'strategic_speakers_' . date('Y-m-d_H-i-s') . '.csv';
+            $headers = [
+                'Content-Type' => 'text/csv; charset=UTF-8',
+                'Content-Disposition' => "attachment; filename=\"$filename\""
+            ];
+
+            $callback = function () use ($speakers) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, ['Name', 'Title', 'Company', 'Biography', 'Created At', 'Updated At']);
+                
+                foreach ($speakers as $speaker) {
+                    fputcsv($file, [
+                        $speaker->name,
+                        $speaker->title,
+                        $speaker->company,
+                        $speaker->bio,
+                        $speaker->created_at->format('Y-m-d H:i:s'),
+                        $speaker->updated_at->format('Y-m-d H:i:s'),
+                    ]);
+                }
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to export speakers.');
+        }
+    }
+
+    /**
+     * Export technical speakers as CSV (user)
+     */
+    public function exportTechnicalSpeakers()
+    {
+        try {
+            $speakers = TechnicalSpeaker::all();
+            
+            $filename = 'technical_speakers_' . date('Y-m-d_H-i-s') . '.csv';
+            $headers = [
+                'Content-Type' => 'text/csv; charset=UTF-8',
+                'Content-Disposition' => "attachment; filename=\"$filename\""
+            ];
+
+            $callback = function () use ($speakers) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, ['Name', 'Title', 'Company', 'Biography', 'Created At', 'Updated At']);
+                
+                foreach ($speakers as $speaker) {
+                    fputcsv($file, [
+                        $speaker->name,
+                        $speaker->title,
+                        $speaker->company,
+                        $speaker->bio,
+                        $speaker->created_at->format('Y-m-d H:i:s'),
+                        $speaker->updated_at->format('Y-m-d H:i:s'),
+                    ]);
+                }
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to export speakers.');
+        }
+    }
+
+    /**
+     * Export strategic committees as CSV (user)
+     */
+    public function exportStrategicCommittees()
+    {
+        try {
+            $members = StrategicCommittee::all();
+            
+            $filename = 'strategic_committees_' . date('Y-m-d_H-i-s') . '.csv';
+            $headers = [
+                'Content-Type' => 'text/csv; charset=UTF-8',
+                'Content-Disposition' => "attachment; filename=\"$filename\""
+            ];
+
+            $callback = function () use ($members) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, ['Name', 'Title', 'Company', 'Biography', 'Created At', 'Updated At']);
+                
+                foreach ($members as $member) {
+                    fputcsv($file, [
+                        $member->name,
+                        $member->title,
+                        $member->company,
+                        $member->bio,
+                        $member->created_at->format('Y-m-d H:i:s'),
+                        $member->updated_at->format('Y-m-d H:i:s'),
+                    ]);
+                }
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to export committees.');
+        }
+    }
+
+    /**
+     * Export technical committees as CSV (user)
+     */
+    public function exportTechnicalCommittees()
+    {
+        try {
+            $members = TechnicalCommittee::all();
+            
+            $filename = 'technical_committees_' . date('Y-m-d_H-i-s') . '.csv';
+            $headers = [
+                'Content-Type' => 'text/csv; charset=UTF-8',
+                'Content-Disposition' => "attachment; filename=\"$filename\""
+            ];
+
+            $callback = function () use ($members) {
+                $file = fopen('php://output', 'w');
+                fputcsv($file, ['Name', 'Title', 'Company', 'Biography', 'Created At', 'Updated At']);
+                
+                foreach ($members as $member) {
+                    fputcsv($file, [
+                        $member->name,
+                        $member->title,
+                        $member->company,
+                        $member->bio,
+                        $member->created_at->format('Y-m-d H:i:s'),
+                        $member->updated_at->format('Y-m-d H:i:s'),
+                    ]);
+                }
+                fclose($file);
+            };
+
+            return response()->stream($callback, 200, $headers);
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Failed to export committees.');
+        }
+    }
 }
