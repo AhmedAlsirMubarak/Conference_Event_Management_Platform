@@ -77,9 +77,4 @@ Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () 
     Route::get(uri: '/strategic-speakers/{id}', action: [UserController::class, 'showStrategicSpeaker'])->name(name: 'strategic_speakers.show');
     Route::get(uri: '/technical-speakers', action: [UserController::class, 'listTechnicalSpeakers'])->name(name: 'technical_speakers.index');
     Route::get(uri: '/technical-speakers/{id}', action: [UserController::class, 'showTechnicalSpeaker'])->name(name: 'technical_speakers.show');
-
-    // User Session Routes
-    Route::get('/sessions/my-sessions', [SessionController::class, 'mySessions'])->name('sessions.my');
-    Route::delete('/sessions/{session}/terminate', [SessionController::class, 'terminateSession'])->name('sessions.terminate');
-    Route::post('/sessions/terminate-others', [SessionController::class, 'terminateOtherSessions'])->name('sessions.terminateOthers');
 });
