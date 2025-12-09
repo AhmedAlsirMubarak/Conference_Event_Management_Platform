@@ -7,10 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite('resources/css/app.css')
     <title>@yield('title', 'User Dashboard')</title>
+    <style>
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50">
-    <div class="flex h-screen overflow-hidden">
+<body class="bg-gray-50 w-full h-full">
+    <div class="flex h-screen w-screen overflow-hidden">
         <!-- Sidebar -->
         @include('user.partials.sidebar')
 
