@@ -68,13 +68,18 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
 // User Routes
 Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    
+    // Contacts routes - search BEFORE show to avoid {id} conflict
     Route::get('/contacts', [UserController::class, 'indexContacts'])->name('contacts.index');
     Route::get('/contacts/search', [UserController::class, 'searchContacts'])->name('contacts.search');
     Route::get('/contacts/{id}', [UserController::class, 'showContact'])->name('contacts.show');
     Route::post('/contacts/{id}/notes', [UserController::class, 'updateNotes'])->name('contacts.updateNotes');
+    
+    // Sponsors routes - search BEFORE show to avoid {id} conflict
     Route::get('/sponsors', [UserController::class, 'indexSponsors'])->name('sponsors.index');
     Route::get('/sponsors/search', [UserController::class, 'searchSponsors'])->name('sponsors.search');
     Route::get('/sponsors/{id}', [UserController::class, 'showSponsor'])->name('sponsors.show');
+    
     Route::get('/export', [UserController::class, 'exportContacts'])->name('export');
     Route::get(uri: '/technical-committees', action: [UserController::class, 'listTechnicalCommittees'])->name(name: 'technical_committees.index');
     Route::get(uri: '/technical-committees/{id}', action: [UserController::class, 'showTechnicalCommittee'])->name(name: 'technical_committees.show');
