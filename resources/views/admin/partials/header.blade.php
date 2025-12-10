@@ -10,8 +10,8 @@
         <div class="flex items-center gap-4">
             <!-- Search (optional) -->
             <div class="hidden sm:block relative">
-                <form action="{{ route('searchContacts') }}" method="GET" class="flex items-center">
-                    <input type="text" name="q" placeholder="Search..." value="{{ request('q', '') }}"
+                <form action="{{ route('admin.search') }}" method="GET" class="flex items-center">
+                    <input type="text" name="q" placeholder="Search all..." value="{{ request('q', '') }}"
                         class="pl-4 pr-4 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
                     <button type="submit"
                         class="ml-2 px-3 py-2 bg-blue-500 text-white rounded-lg text-sm hover:bg-blue-600 transition">

@@ -33,6 +33,8 @@ Route::post('/contacts', [ContactController::class, 'create'])->name('create');
 // Admin Routes
 Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/search', [DashboardController::class, 'globalSearch'])->name('admin.search');
+    
     Route::get('/contacts', [ContactController::class, 'getAllContacts'])->name('getAllContacts');
     Route::get('/contacts/search', [ContactController::class, 'search'])->name('searchContacts');
     Route::get('/contacts/export/excel', [ContactController::class, 'exportExcel'])->name('exportExcel');
@@ -68,6 +70,7 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
 // User Routes
 Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/search', [UserController::class, 'globalSearch'])->name('search');
     
     // Contacts routes - search BEFORE show to avoid {id} conflict
     Route::get('/contacts', [UserController::class, 'indexContacts'])->name('contacts.index');

@@ -82,59 +82,99 @@
         </div>
     </div>
 
-    <!-- Recent Contacts -->
-    <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
-        <div class="px-6 py-4 border-b border-gray-200 flex items-center justify-between">
-            <h3 class="text-lg font-semibold text-gray-900">Recent Contacts</h3>
-            <a href="{{ route('getAllContacts') }}" class="text-blue-600 hover:text-blue-800 text-sm font-medium">View
-                All →</a>
+    <!-- Speakers and Committees Stats -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <!-- Strategic Speakers Card -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Strategic Speakers</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalStrategicSpeakers ?? 0 }}</p>
+                    <a href="{{ route('strategic_speakers.index') }}"
+                        class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-blue-500 hover:bg-blue-600 text-white rounded text-xs font-medium transition-colors">
+                        View All
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                </div>
+            </div>
         </div>
 
-        @if (isset($recentContacts) && $recentContacts->count() > 0)
-            <div class="overflow-x-auto">
-                <table class="w-full">
-                    <thead>
-                        <tr class="border-b border-gray-200 bg-gray-50">
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Name</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Email</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Phone</th>
-                            <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Submitted</th>
-                            <th class="px-6 py-3 text-right text-sm font-semibold text-gray-900">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-200">
-                        @foreach ($recentContacts as $contact)
-                            <tr class="hover:bg-gray-50 transition-colors">
-                                <td class="px-6 py-4">
-                                    <p class="font-medium text-gray-900">{{ $contact->Name }}</p>
-                                </td>
-                                <td class="px-6 py-4">
-                                    <a href="mailto:{{ $contact->Email }}"
-                                        class="text-blue-600 hover:text-blue-800 text-sm">{{ $contact->Email }}</a>
-                                </td>
-                                <td class="px-6 py-4 text-sm text-gray-600"> {{ $contact->Phone }}
-                                </td>
-                                <td class="px-6 py-4 text-sm text-gray-600">
-                                    {{ $contact->created_at->format('M d, Y') }}
-                                </td>
-                                <td class="px-6 py-4 text-right">
-                                    <a href="{{ route('getcontactById', $contact->id) }}"
-                                        class="text-blue-600 hover:text-blue-800 text-sm font-medium">View →</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+        <!-- Technical Speakers Card -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Technical Speakers</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalTechnicalSpeakers ?? 0 }}</p>
+                    <a href="{{ route('technical_speakers.index') }}"
+                        class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 text-white rounded text-xs font-medium transition-colors">
+                        View All
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                </div>
             </div>
-        @else
-            <div class="p-8 text-center">
-                <svg class="w-16 h-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                        d="M12 4.354a4 4 0 110 5.292M15 12H9m4 5h-4m7-12a8 8 0 100 16 8 8 0 000-16z" />
-                </svg>
-                <h3 class="text-lg font-medium text-gray-900 mb-2">No contacts yet</h3>
-                <p class="text-gray-500">Contact submissions will appear here.</p>
+        </div>
+
+        <!-- Strategic Committees Card -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Strategic Committees</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalStrategicCommittees ?? 0 }}</p>
+                    <a href="{{ route('strategic_committees.index') }}"
+                        class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-cyan-500 hover:bg-cyan-600 text-white rounded text-xs font-medium transition-colors">
+                        View All
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-12 h-12 bg-cyan-100 rounded-lg flex items-center justify-center text-cyan-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 12H9m4 5h-4m7-12a8 8 0 100 16 8 8 0 000-16z" />
+                    </svg>
+                </div>
             </div>
-        @endif
+        </div>
+
+        <!-- Technical Committees Card -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Technical Committees</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalTechnicalCommittees ?? 0 }}</p>
+                    <a href="{{ route('technical_committees.index') }}"
+                        class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-red-500 hover:bg-red-600 text-white rounded text-xs font-medium transition-colors">
+                        View All
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center text-red-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 12H9m4 5h-4m7-12a8 8 0 100 16 8 8 0 000-16z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
+
 @endsection
