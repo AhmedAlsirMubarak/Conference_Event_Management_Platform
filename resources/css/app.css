@@ -9,3 +9,25 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Explicit responsive styles to ensure they work */
+@media (max-width: 767px) {
+    #mobile-menu-btn {
+        display: block !important;
+    }
+    .desktop-sidebar {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    #mobile-menu-btn {
+        display: none !important;
+    }
+    .desktop-sidebar {
+        display: block !important;
+    }
+    #mobile-sidebar-container {
+        display: none !important;
+    }
+}

@@ -20,9 +20,29 @@
 </head>
 
 <body class="bg-gray-50 w-full h-full">
-    <div class="flex h-screen w-screen overflow-hidden">
-        <!-- Sidebar -->
-        @include('user.partials.sidebar')
+    <!-- Responsive Mode Indicator (Remove in production) -->
+    <div class="fixed bottom-4 right-4 z-40 px-4 py-2 bg-green-600 text-white text-sm rounded-lg font-medium shadow-lg">
+        <span class="md:hidden">📱 MOBILE MODE</span>
+        <span class="hidden md:inline">🖥️ DESKTOP MODE</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row h-screen w-screen overflow-hidden">
+        <!-- Sidebar - Hidden on mobile, visible on desktop -->
+        <div class="user-sidebar hidden md:block md:w-64">
+            @include('user.partials.sidebar')
+        </div>
+
+        <!-- Mobile Sidebar Toggle Container -->
+        <div id="mobile-sidebar-container" class="fixed md:hidden inset-0 z-50 hidden">
+            <!-- Overlay -->
+            <div id="mobile-overlay" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300">
+            </div>
+            <!-- Sidebar Content -->
+            <div class="absolute top-0 left-0 h-full w-64 bg-white border-r border-gray-200 flex flex-col overflow-y-auto transition-transform duration-300 transform -translate-x-full"
+                id="mobile-sidebar-panel">
+                @include('user.partials.sidebar')
+            </div>
+        </div>
 
         <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
@@ -30,7 +50,7 @@
             @include('user.partials.header')
 
             <!-- Page Content -->
-            <main class="flex-1 overflow-y-auto bg-gray-50 p-6">
+            <main class="flex-1 overflow-y-auto bg-gray-50 p-3 sm:p-6">
                 <!-- Breadcrumb -->
                 @if (isset($breadcrumbs))
                     <div class="mb-6">
@@ -41,7 +61,7 @@
                                         <li class="text-gray-500 text-sm">{{ $breadcrumb['name'] }}</li>
                                     @else
                                         <li>
-                                            <a href="{{ $breadcrumb['url'] }}" class="text-blue-600 hover:text-blue-800 text-sm">
+                                            <a href="{{ $breadcrumb['url'] }}" class="text-green-600 hover:text-green-800 text-sm">
                                                 {{ $breadcrumb['name'] }}
                                             </a>
                                         </li>
@@ -87,6 +107,52 @@
             </main>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Mobile Menu Init');
+
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileOverlay = document.getElementById('mobile-overlay');
+            const mobileSidebarContainer = document.getElementById('mobile-sidebar-container');
+            const mobileSidebarPanel = document.getElementById('mobile-sidebar-panel');
+
+            if (!mobileMenuBtn || !mobileSidebarContainer) {
+                console.log('Mobile menu elements not found');
+                return;
+            }
+
+            // Toggle sidebar on hamburger click
+            mobileMenuBtn.addEventListener('click', function () {
+                console.log('Menu button clicked');
+                const isHidden = mobileSidebarContainer.classList.contains('hidden');
+                if (isHidden) {
+                    mobileSidebarContainer.classList.remove('hidden');
+                    mobileSidebarPanel.classList.remove('-translate-x-full');
+                } else {
+                    mobileSidebarContainer.classList.add('hidden');
+                    mobileSidebarPanel.classList.add('-translate-x-full');
+                }
+            });
+
+            // Close sidebar on overlay click
+            mobileOverlay.addEventListener('click', function () {
+                console.log('Overlay clicked');
+                mobileSidebarContainer.classList.add('hidden');
+                mobileSidebarPanel.classList.add('-translate-x-full');
+            });
+
+            // Close sidebar on nav link click
+            const navLinks = mobileSidebarPanel.querySelectorAll('a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    console.log('Nav link clicked');
+                    mobileSidebarContainer.classList.add('hidden');
+                    mobileSidebarPanel.classList.add('-translate-x-full');
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -20,9 +20,29 @@
 </head>
 
 <body class="bg-gray-50 w-full h-full">
-    <div class="flex h-screen w-screen overflow-hidden">
-        <!-- Sidebar -->
-        @include('admin.partials.sidebar')
+    <!-- Responsive Mode Indicator (Remove in production) -->
+    <div class="fixed bottom-4 right-4 z-40 px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium shadow-lg">
+        <span class="md:hidden">📱 MOBILE MODE</span>
+        <span class="hidden md:inline">🖥️ DESKTOP MODE</span>
+    </div>
+
+    <div class="flex flex-col md:flex-row h-screen w-screen overflow-hidden">
+        <!-- Sidebar - Hidden on mobile, visible on desktop -->
+        <div class="desktop-sidebar hidden md:block md:w-64">
+            @include('admin.partials.sidebar')
+        </div>
+
+        <!-- Mobile Sidebar Toggle Container -->
+        <div id="mobile-sidebar-container" class="fixed md:hidden inset-0 z-50 hidden">
+            <!-- Overlay -->
+            <div id="mobile-overlay" class="absolute inset-0 bg-black bg-opacity-50 transition-opacity duration-300">
+            </div>
+            <!-- Sidebar Content -->
+            <div class="absolute top-0 left-0 h-full w-64 bg-white border-r border-gray-200 flex flex-col overflow-y-auto transition-transform duration-300 transform -translate-x-full"
+                id="mobile-sidebar-panel">
+                @include('admin.partials.sidebar')
+            </div>
+        </div>
 
         <!-- Main Content -->
         <div class="flex-1 flex flex-col overflow-hidden">
@@ -30,7 +50,7 @@
             @include('admin.partials.header')
 
             <!-- Page Content -->
-            <main class="flex-1 overflow-y-auto bg-gray-50 p-6">
+            <main class="flex-1 overflow-y-auto bg-gray-50 p-3 sm:p-6">
                 <!-- Breadcrumb -->
                 @if (isset($breadcrumbs))
                     <div class="mb-6">
@@ -87,6 +107,86 @@
             </main>
         </div>
     </div>
+
+    <script>
+        // Mobile sidebar toggle
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const sidebarContainer = document.getElementById('mobile-sidebar-container');
+            const sidebarPanel = document.getElementById('mobile-sidebar-panel');
+            const overlay = document.getElementById('mobile-overlay');
+
+            console.log('Mobile Menu Init:', {
+                btn: !!mobileMenuBtn,
+                container: !!sidebarContainer,
+                panel: !!sidebarPanel,
+                overlay: !!overlay
+            });
+
+            if (!mobileMenuBtn || !sidebarContainer) {
+                console.error('Mobile menu elements not found');
+                return;
+            }
+
+            // Toggle sidebar visibility
+            mobileMenuBtn.addEventListener('click', function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+
+                console.log('Menu button clicked');
+
+                const isHidden = sidebarContainer.classList.contains('hidden');
+                console.log('Sidebar hidden:', isHidden);
+
+                if (isHidden) {
+                    // Show sidebar
+                    console.log('Opening sidebar');
+                    sidebarContainer.classList.remove('hidden');
+                    setTimeout(() => {
+                        if (sidebarPanel) {
+                            sidebarPanel.classList.remove('-translate-x-full');
+                            console.log('Panel translated');
+                        }
+                    }, 10);
+                } else {
+                    // Hide sidebar
+                    console.log('Closing sidebar');
+                    if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        sidebarContainer.classList.add('hidden');
+                        console.log('Sidebar hidden');
+                    }, 300);
+                }
+            });
+
+            // Close sidebar when clicking overlay
+            if (overlay) {
+                overlay.addEventListener('click', function () {
+                    console.log('Overlay clicked');
+                    if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        sidebarContainer.classList.add('hidden');
+                    }, 300);
+                });
+            }
+
+            // Close sidebar when clicking on a link
+            const sidebarLinks = sidebarContainer.querySelectorAll('a');
+            console.log('Sidebar links found:', sidebarLinks.length);
+
+            sidebarLinks.forEach(function (link) {
+                link.addEventListener('click', function () {
+                    console.log('Link clicked');
+                    if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
+                    setTimeout(() => {
+                        sidebarContainer.classList.add('hidden');
+                    }, 300);
+                });
+            });
+
+            console.log('Mobile menu initialized successfully');
+        });
+    </script>
 </body>
 
 </html>

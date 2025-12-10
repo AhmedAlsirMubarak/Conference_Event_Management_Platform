@@ -6,16 +6,17 @@
 @section('header-subtitle', 'Create a new technical speaker')
 
 @section('content')
-    <div class="max-w-2xl">
+    <div class="w-full max-w-2xl mx-auto px-0">
         <a href="{{ route('technical_speakers.index') }}"
-            class="inline-flex items-center gap-2 px-4 py-2 mb-6 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium transition-colors">
+            class="inline-flex items-center gap-2 px-3 sm:px-4 py-2 mb-4 sm:mb-6 bg-gray-100 hover:bg-gray-200 text-gray-700 rounded-lg font-medium text-sm sm:text-base transition-colors">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
             </svg>
-            Back to Speakers
+            <span class="hidden sm:inline">Back to Speakers</span>
+            <span class="sm:hidden">Back</span>
         </a>
 
-        <div class="bg-white rounded-lg border border-gray-200 p-8">
+        <div class="bg-white rounded-lg border border-gray-200 p-4 sm:p-8">
             <form action="{{ route('technical_speakers.store') }}" method="POST" enctype="multipart/form-data"
                 class="space-y-6">
                 @csrf
@@ -100,4 +101,59 @@
             </form>
         </div>
     </div>
+
+    <script>
+        // Image preview functionality with separate containers
+        function setupImagePreview(inputId, previewContainerId) {
+            const input = document.getElementById(inputId);
+
+            input.addEventListener('change', function () {
+                if (!this.files || !this.files[0]) return;
+
+                const file = this.files[0];
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    // Get the specific preview container
+                    const container = document.getElementById(previewContainerId);
+
+                    // Clear previous preview
+                    container.innerHTML = `
+                                <div class="relative inline-block">
+                                    <img src="${e.target.result}" alt="Preview" class="w-32 h-32 object-cover rounded-lg border border-gray-300">
+                                    <button type="button" onclick="document.getElementById('${previewContainerId}').innerHTML = ''" class="absolute top-0 right-0 bg-red-500 hover:bg-red-600 text-white rounded-full p-1 transition-colors">
+                                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <p class="text-xs text-gray-600 mt-2">${file.name}</p>
+                            `;
+                };
+
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // Create preview containers after each input
+        const logoInput = document.getElementById('logo');
+        const photoInput = document.getElementById('photo');
+
+        if (logoInput) {
+            const logoContainer = document.createElement('div');
+            logoContainer.id = 'logo-preview';
+            logoContainer.className = 'mt-4';
+            logoInput.closest('div').parentElement.appendChild(logoContainer);
+        }
+
+        if (photoInput) {
+            const photoContainer = document.createElement('div');
+            photoContainer.id = 'photo-preview';
+            photoContainer.className = 'mt-4';
+            photoInput.closest('div').parentElement.appendChild(photoContainer);
+        }
+
+        setupImagePreview('logo', 'logo-preview');
+        setupImagePreview('photo', 'photo-preview');
+    </script>
 @endsection
