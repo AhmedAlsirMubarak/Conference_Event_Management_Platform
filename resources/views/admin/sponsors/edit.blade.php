@@ -51,56 +51,54 @@
                 <div class="col-span-2 space-y-4">
                     <!-- Name Field -->
                     <div>
-                            <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Sponsor Name *</label>
-                            <input type="text" name="name" id="name" required
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                                placeholder="Enter sponsor name" value="{{ old('name', $sponsor->name) }}">
-                            @error('name')
-                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
+                        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Sponsor Name *</label>
+                        <input type="text" name="name" id="name" required
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                            placeholder="Enter sponsor name" value="{{ old('name', $sponsor->name) }}">
+                        @error('name')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                        <!-- Website Field -->
-                        <div>
-                            <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Website</label>
-                            <input type="url" name="website" id="website"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                                placeholder="https://example.com" value="{{ old('website', $sponsor->website) }}">
-                            @error('website')
-                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
+                    <!-- Website Field -->
+                    <div>
+                        <label for="website" class="block text-sm font-medium text-gray-700 mb-1">Website</label>
+                        <input type="url" name="website" id="website"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                            placeholder="https://example.com" value="{{ old('website', $sponsor->website) }}">
+                        @error('website')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                        <!-- Category Field -->
-                        <div>
-                            <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
-                            <input type="text" name="category" id="category"
-                                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
-                                placeholder="e.g., Technology, Hospitality"
-                                value="{{ old('category', $sponsor->category) }}">
-                            @error('category')
-                                <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
-                            @enderror
-                        </div>
+                    <!-- Category Field -->
+                    <div>
+                        <label for="category" class="block text-sm font-medium text-gray-700 mb-1">Category</label>
+                        <input type="text" name="category" id="category"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                            placeholder="e.g., Technology, Hospitality" value="{{ old('category', $sponsor->category) }}">
+                        @error('category')
+                            <p class="text-red-500 text-xs mt-1">{{ $message }}</p>
+                        @enderror
+                    </div>
 
-                        <!-- Buttons -->
-                        <div class="flex items-center gap-3 pt-4 border-t border-gray-200">
-                            <button type="submit"
-                                class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors">
-                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M5 13l4 4L19 7" />
-                                </svg>
-                                Update
-                            </button>
-                            <a href="{{ route('sponsors.index') }}"
-                                class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium text-sm transition-colors">
-                                Cancel
-                            </a>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                    <!-- Buttons -->
+                    <div class="flex items-center gap-3 pt-4 border-t border-gray-200">
+                        <button type="submit"
+                            class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-medium text-sm transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                            Update
+                        </button>
+                        <a href="{{ route('sponsors.index') }}"
+                            class="flex-1 inline-flex items-center justify-center gap-2 px-3 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-lg font-medium text-sm transition-colors">
+                            Cancel
+                        </a>
+                    </div>
+            </form>
         </div>
+    </div>
+    </div>
     </div>
 @endsection
