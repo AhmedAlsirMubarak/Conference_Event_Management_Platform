@@ -45,46 +45,46 @@
                 </div>
             @else
                 <div class="overflow-x-auto">
-                    <table class="w-full">
+                    <table class="w-full text-sm">
                         <thead>
                             <tr class="border-b border-gray-200 bg-gray-50">
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Name</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Email</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Phone</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Company</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Notes</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Submitted</th>
-                                <th class="px-6 py-3 text-right text-sm font-semibold text-gray-900">Actions</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Name</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Email</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Phone</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Company</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Notes</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Submitted</th>
+                                <th class="px-4 py-3 text-right font-semibold text-gray-900 whitespace-nowrap">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200">
                             @foreach ($contacts as $contact)
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center gap-2">
                                             <div
-                                                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0">
+                                                class="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white font-semibold text-xs shrink-0">
                                                 {{ strtoupper(substr($contact->Name, 0, 1)) }}
                                             </div>
-                                            <div>
-                                                <p class="font-medium text-gray-900">{{ $contact->Name }}</p>
+                                            <div class="min-w-0">
+                                                <p class="font-medium text-gray-900 truncate">{{ $contact->Name }}</p>
                                                 @if ($contact->Designation)
-                                                    <p class="text-xs text-gray-500">{{ $contact->Designation }}</p>
+                                                    <p class="text-xs text-gray-500 truncate">{{ $contact->Designation }}</p>
                                                 @endif
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-3">
                                         <a href="mailto:{{ $contact->Email }}"
-                                            class="text-green-600 hover:text-green-800 text-sm">{{ $contact->Email }}</a>
+                                            class="text-green-600 hover:text-green-800 text-xs break-all">{{ $contact->Email }}</a>
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <a href="tel:{{ $contact->Phone }}" class="text-gray-700 text-sm">{{ $contact->Phone }}</a>
+                                    <td class="px-4 py-3">
+                                        <a href="tel:{{ $contact->Phone }}" class="text-gray-700 text-xs">{{ $contact->Phone }}</a>
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <span class="text-gray-700 text-sm">{{ $contact->Company ?? '-' }}</span>
+                                    <td class="px-4 py-3">
+                                        <span class="text-gray-700 text-xs truncate">{{ $contact->Company ?? '-' }}</span>
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-3">
                                         <div class="flex items-center gap-2">
                                             @if ($contact->notes)
                                                 <div class="flex-1 max-w-xs">
@@ -113,13 +113,13 @@
                                             @endif
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">
+                                    <td class="px-4 py-3 text-xs text-gray-600">
                                         {{ $contact->created_at->format('M d, Y') }}
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-3">
                                         <div class="flex items-center justify-end">
                                             <a href="{{ route('user.contacts.show', $contact->id) }}"
-                                                class="inline-flex items-center gap-2 px-3 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors text-sm font-medium">
+                                                class="inline-flex items-center gap-2 px-3 py-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors text-xs font-medium">
                                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />

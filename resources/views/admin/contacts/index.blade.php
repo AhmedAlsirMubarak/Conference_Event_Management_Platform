@@ -45,58 +45,58 @@
                 </div>
             @else
                 <div class="overflow-x-auto">
-                    <table class="w-full">
+                    <table class="w-full text-sm">
                         <thead>
                             <tr class="border-b border-gray-200 bg-gray-50">
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Name</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Email</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Phone</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Company</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Notes</th>
-                                <th class="px-6 py-3 text-left text-sm font-semibold text-gray-900">Submitted</th>
-                                <th class="px-6 py-3 text-right text-sm font-semibold text-gray-900">Actions</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Name</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Email</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Phone</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Company</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Notes</th>
+                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Submitted</th>
+                                <th class="px-4 py-3 text-right font-semibold text-gray-900 whitespace-nowrap">Actions</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200">
                             @foreach ($contacts as $contact)
                                 <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-3">
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center gap-2">
                                             <div
-                                                class="w-10 h-10 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-sm shrink-0">
+                                                class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-xs shrink-0">
                                                 {{ strtoupper(substr($contact->Name, 0, 1)) }}
                                             </div>
-                                            <div>
-                                                <p class="font-medium text-gray-900">{{ $contact->Name }}</p>
+                                            <div class="min-w-0">
+                                                <p class="font-medium text-gray-900 truncate">{{ $contact->Name }}</p>
                                                 @if ($contact->Designation)
-                                                    <p class="text-xs text-gray-500">{{ $contact->Designation }}</p>
+                                                    <p class="text-xs text-gray-500 truncate">{{ $contact->Designation }}</p>
                                                 @endif
                                             </div>
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4">
+                                    <td class="px-4 py-3">
                                         <a href="mailto:{{ $contact->Email }}"
-                                            class="text-blue-600 hover:text-blue-800 text-sm">{{ $contact->Email }}</a>
+                                            class="text-blue-600 hover:text-blue-800 text-xs break-all">{{ $contact->Email }}</a>
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <a href="tel:+968{{ $contact->Phone }}" class="text-gray-700 text-sm">
+                                    <td class="px-4 py-3">
+                                        <a href="tel:+968{{ $contact->Phone }}" class="text-gray-700 text-xs whitespace-nowrap">
                                             {{ $contact->Phone }}</a>
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <span class="text-gray-700 text-sm">{{ $contact->Company ?? '-' }}</span>
+                                    <td class="px-4 py-3">
+                                        <span class="text-gray-700 text-xs">{{ $contact->Company ?? '-' }}</span>
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center gap-2">
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center gap-1">
                                             @if ($contact->notes)
-                                                <div class="flex-1 max-w-xs">
-                                                    <p class="text-sm text-gray-700 line-clamp-2" title="{{ $contact->notes }}">
-                                                        {{ Str::limit($contact->notes, 50) }}
+                                                <div class="flex-1 min-w-0">
+                                                    <p class="text-xs text-gray-700 line-clamp-1" title="{{ $contact->notes }}">
+                                                        {{ Str::limit($contact->notes, 30) }}
                                                     </p>
                                                 </div>
                                                 <button type="button"
                                                     onclick="openNoteModal({{ $contact->id }}, '{{ addslashes($contact->notes) }}')"
-                                                    class="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded text-xs font-medium transition-colors">
-                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    class="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded text-xs font-medium transition-colors whitespace-nowrap">
+                                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                             d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
                                                     </svg>
@@ -114,14 +114,14 @@
                                             @endif
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 text-sm text-gray-600">
+                                    <td class="px-4 py-3 text-xs text-gray-600 whitespace-nowrap">
                                         {{ $contact->created_at->format('M d, Y') }}
                                     </td>
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-end gap-2">
+                                    <td class="px-4 py-3">
+                                        <div class="flex items-center justify-end gap-1">
                                             <a href="{{ route('getcontactById', $contact->id) }}"
-                                                class="inline-flex items-center gap-2 px-3 py-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors text-sm font-medium">
-                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                class="inline-flex items-center gap-1 px-2 py-1 text-blue-600 hover:bg-blue-50 rounded transition-colors text-xs font-medium whitespace-nowrap">
+                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -134,8 +134,8 @@
                                                     onsubmit="return confirm('Are you sure you want to delete this contact?');">
                                                     @csrf
                                                     @method('DELETE')
-                                                    <button type="submit"
-                                                        class="inline-flex items-center gap-2 px-3 py-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors text-sm font-medium">
+                                                <button type="submit"
+                                                    class="inline-flex items-center gap-1 px-2 py-1 text-red-600 hover:bg-red-50 rounded transition-colors text-xs font-medium whitespace-nowrap">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                                                 d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
