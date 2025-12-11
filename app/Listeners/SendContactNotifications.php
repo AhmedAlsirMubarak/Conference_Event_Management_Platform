@@ -25,13 +25,13 @@ class SendContactNotifications
         try {
             $contact = $event->contact;
             
-            // Get all users
+            // Get all users (both admin and regular users)
             $users = User::all();
             
             if ($users->count() > 0) {
                 foreach ($users as $user) {
                     try {
-                        // Create entry in contact_notifications table
+                        // Create entry in contact_notifications table for each user
                         ContactNotification::create([
                             'user_id' => $user->id,
                             'contact_id' => $contact->id,

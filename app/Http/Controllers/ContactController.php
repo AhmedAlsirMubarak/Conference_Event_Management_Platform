@@ -179,23 +179,23 @@ class ContactController extends Controller
             
             // Check if user is authenticated
             if (!$user) {
-                return redirect('/login')->with('error', 'You must be logged in to delete contacts.');
+                return response()->json(['error' => 'You must be logged in to delete contacts.'], 401);
             }
             
             // Check if user has admin role
             if ($user->role !== 'admin') {
                 Log::warning('Delete attempt by non-admin user', ['user_id' => $user->id, 'user_role' => $user->role]);
-                return redirect('/contacts')->with('error', 'You do not have permission to delete contacts.');
+                return response()->json(['error' => 'You do not have permission to delete contacts.'], 403);
             }
 
             $contact = contacts::findOrFail($id);
             $contact->delete();
             Log::info('Contact deleted', ['contact_id' => $id, 'deleted_by' => $user->id]);
 
-            return redirect('/contacts')->with('success', 'Contact deleted successfully!');
+            return response()->json(['success' => 'Contact deleted successfully!'], 200);
         } catch (\Exception $e) {
             Log::error('Error deleting contact: ' . $e->getMessage());
-            return redirect('/contacts')->with('error', 'Unable to delete contact or database unavailable.');
+            return response()->json(['error' => 'Unable to delete contact or database unavailable.'], 500);
         }
     }
 

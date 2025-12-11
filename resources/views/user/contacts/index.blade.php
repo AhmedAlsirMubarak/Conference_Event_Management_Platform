@@ -60,6 +60,8 @@
             </form>
         </div>
 
+
+
         <!-- Contacts Table -->
         <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
             @if ($contacts->isEmpty())
@@ -85,7 +87,7 @@
                                 <th class="px-4 py-3 text-right font-semibold text-gray-900 whitespace-nowrap">Actions</th>
                             </tr>
                         </thead>
-                        <tbody class="divide-y divide-gray-200">
+                        <tbody class="divide-y divide-gray-200" id="contactsTableBody">
                             @foreach ($contacts as $contact)
                                 <tr class="hover:bg-gray-50 transition-colors">
                                     <td class="px-4 py-3">
@@ -215,5 +217,7 @@
                 closeNoteModal();
             }
         });
+
+
     </script>
 @endsection

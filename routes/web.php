@@ -71,7 +71,7 @@ Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
     Route::get('/notifications', [NotificationController::class, 'adminIndex'])->name('admin.notifications.index');
     Route::get('/api/notifications', [NotificationController::class, 'getAll'])->name('admin.notifications.all');
     Route::get('/api/notifications/unread', [NotificationController::class, 'getUnread'])->name('admin.notifications.unread');
-    Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('admin.notifications.markAllRead');
+    Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsReadAdmin'])->name('admin.notifications.markAllRead');
     Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('admin.notifications.delete');
 });
 
@@ -111,7 +111,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::get('/notifications', [NotificationController::class, 'userIndex'])->name('notifications.index');
     Route::get('/api/notifications', [NotificationController::class, 'getAll'])->name('notifications.all');
     Route::get('/api/notifications/unread', [NotificationController::class, 'getUnread'])->name('notifications.unread');
-    Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('notifications.markAllRead');
+    Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsReadUser'])->name('notifications.markAllRead');
     Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('notifications.delete');
 });
 

@@ -134,12 +134,10 @@
                     setTimeout(() => {
                         if (sidebarPanel) {
                             sidebarPanel.classList.remove('-translate-x-full');
-                            console.log('Panel translated');
                         }
                     }, 10);
                 } else {
                     // Hide sidebar
-                    console.log('Closing sidebar');
                     if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
                     setTimeout(() => {
                         sidebarContainer.classList.add('hidden');

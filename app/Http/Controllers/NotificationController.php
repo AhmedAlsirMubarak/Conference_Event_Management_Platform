@@ -69,6 +69,12 @@ class NotificationController extends Controller
                 return response()->json(['count' => 0, 'notifications' => []], 401);
             }
 
+            Log::info('Getting unread notifications', [
+                'user_id' => $user->id,
+                'user_name' => $user->name,
+                'user_role' => $user->role,
+            ]);
+
             // Fetch from contact_notifications table for reliable storage
             $unreadNotifications = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
@@ -108,9 +114,9 @@ class NotificationController extends Controller
     }
 
     /**
-     * Mark all notifications as read
+     * Mark all admin notifications as read
      */
-    public function markAllAsRead()
+    public function markAllAsReadAdmin()
     {
         try {
             $user = Auth::user();
@@ -118,13 +124,49 @@ class NotificationController extends Controller
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
 
-            ContactNotification::where('user_id', $user->id)
+            $updated = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->update(['read_at' => now()]);
             
-            return response()->json(['success' => true]);
+            Log::info('Admin notifications marked as read', [
+                'user_id' => $user->id,
+                'user_name' => $user->name,
+                'user_role' => $user->role,
+                'updated_count' => $updated,
+            ]);
+            
+            return response()->json(['success' => true, 'updated' => $updated]);
         } catch (\Exception $e) {
-            Log::error('Error marking all notifications as read: ' . $e->getMessage());
+            Log::error('Error marking admin notifications as read: ' . $e->getMessage());
+            return response()->json(['error' => 'Failed to mark all as read'], 500);
+        }
+    }
+
+    /**
+     * Mark all user notifications as read
+     */
+    public function markAllAsReadUser()
+    {
+        try {
+            $user = Auth::user();
+            if (!$user) {
+                return response()->json(['error' => 'Unauthorized'], 401);
+            }
+
+            $updated = ContactNotification::where('user_id', $user->id)
+                ->whereNull('read_at')
+                ->update(['read_at' => now()]);
+            
+            Log::info('User notifications marked as read', [
+                'user_id' => $user->id,
+                'user_name' => $user->name,
+                'user_role' => $user->role,
+                'updated_count' => $updated,
+            ]);
+            
+            return response()->json(['success' => true, 'updated' => $updated]);
+        } catch (\Exception $e) {
+            Log::error('Error marking user notifications as read: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to mark all as read'], 500);
         }
     }

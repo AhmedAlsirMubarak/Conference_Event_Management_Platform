@@ -10,13 +10,7 @@
         data-unread-url="{{ $isAdminRole ? route('admin.notifications.unread') : route('user.notifications.unread') }}"
         data-mark-all-url="{{ $isAdminRole ? route('admin.notifications.markAllRead') : route('user.notifications.markAllRead') }}"
         data-index-url="{{ $isAdminRole ? route('admin.notifications.index') : route('user.notifications.index') }}"
-        data-delete-prefix="{{ $isAdminRole ? '/api/notifications' : '/user/api/notifications' }}"
-        data-admin-unread-url="{{ route('admin.notifications.unread') }}"
-        data-user-unread-url="{{ route('user.notifications.unread') }}"
-        data-admin-mark-all-url="{{ route('admin.notifications.markAllRead') }}"
-        data-user-mark-all-url="{{ route('user.notifications.markAllRead') }}"
-        data-admin-index-url="{{ route('admin.notifications.index') }}"
-        data-user-index-url="{{ route('user.notifications.index') }}">
+        data-delete-prefix="{{ $isAdminRole ? '/api/notifications' : '/user/api/notifications' }}">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                 d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
@@ -83,19 +77,6 @@
         const notificationsIndexUrl = bell.getAttribute('data-index-url');
         const deleteUrlPrefix = bell.getAttribute('data-delete-prefix');
 
-        // Also get the role-specific URLs directly
-        const adminUnreadUrl = bell.getAttribute('data-admin-unread-url');
-        const userUnreadUrl = bell.getAttribute('data-user-unread-url');
-        const adminMarkAllUrl = bell.getAttribute('data-admin-mark-all-url');
-        const userMarkAllUrl = bell.getAttribute('data-user-mark-all-url');
-        const adminIndexUrl = bell.getAttribute('data-admin-index-url');
-        const userIndexUrl = bell.getAttribute('data-user-index-url');
-
-        // Determine correct URLs based on user role
-        const actualUnreadUrl = isAdmin ? adminUnreadUrl : userUnreadUrl;
-        const actualMarkAllUrl = isAdmin ? adminMarkAllUrl : userMarkAllUrl;
-        const actualIndexUrl = isAdmin ? adminIndexUrl : userIndexUrl;
-
         // Toggle dropdown
         bell.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -114,7 +95,7 @@
 
         // Load notifications
         function loadNotifications() {
-            fetch(actualUnreadUrl + '?t=' + Date.now())
+            fetch(unreadUrl + '?t=' + Date.now())
                 .then(response => {
                     if (!response.ok) throw new Error('Failed to load notifications');
                     return response.json();
@@ -189,7 +170,7 @@
         // Mark all as read
         markAllRead.addEventListener('click', function (e) {
             e.preventDefault();
-            fetch(actualMarkAllUrl + '?t=' + Date.now(), {
+            fetch(markAllUrl + '?t=' + Date.now(), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -207,13 +188,13 @@
         if (viewAllBtn) {
             viewAllBtn.addEventListener('click', function (e) {
                 e.preventDefault();
-                window.location.href = actualIndexUrl;
+                window.location.href = notificationsIndexUrl;
             });
         }
 
         // Delete notification
         window.deleteNotification = function (id) {
-            const deleteUrl = userRole === 'admin'
+            const deleteUrl = isAdmin
                 ? `/api/notifications/${id}`
                 : `/user/api/notifications/${id}`;
             fetch(deleteUrl, {
