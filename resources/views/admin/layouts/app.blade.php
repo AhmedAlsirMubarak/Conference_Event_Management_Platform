@@ -22,10 +22,8 @@
 
 <body class="bg-gray-50 w-full h-full">
     <!-- Responsive Mode Indicator (Remove in production) -->
-    <div class="fixed bottom-4 right-4 z-40 px-4 py-2 bg-blue-600 text-white text-sm rounded-lg font-medium shadow-lg">
-        <span class="md:hidden">📱 MOBILE MODE</span>
-        <span class="hidden md:inline">🖥️ DESKTOP MODE</span>
-    </div>
+
+
 
     <div class="flex flex-col md:flex-row h-screen w-screen overflow-hidden">
         <!-- Sidebar - Hidden on mobile, visible on desktop -->
@@ -106,6 +104,15 @@
                 <!-- Page Content -->
                 @yield('content')
             </main>
+
+            <!-- Footer -->
+            <footer class="bg-white border-t border-gray-200 px-3 sm:px-6 py-4">
+                <div class="text-center text-xs text-gray-600">
+                    <p>© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
+                            rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 font-medium">Ahmed Alsir
+                            Mubarak</a>. All rights reserved.</p>
+                </div>
+            </footer>
         </div>
     </div>
 

@@ -107,7 +107,9 @@
 
         <!-- Footer -->
         <div class="mt-8 text-center text-sm text-gray-600">
-            <p>© 2025 Ahmed Alsir Mubarak. All rights reserved.</p>
+            <p>© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
+                    rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 font-medium">Ahmed Alsir
+                    Mubarak</a>. All rights reserved.</p>
         </div>
     </div>
 </body>
