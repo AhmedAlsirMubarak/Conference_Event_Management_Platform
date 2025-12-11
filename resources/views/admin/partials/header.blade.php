@@ -33,6 +33,9 @@
                 </form>
             </div>
 
+            <!-- Notification Bell -->
+            @include('components.notification-bell', ['notificationRole' => 'admin'])
+
             <!-- User Menu -->
             <div class="flex items-center gap-2 sm:gap-4 pl-2 sm:pl-4 border-l border-gray-200">
                 <div class="text-right hidden sm:block">

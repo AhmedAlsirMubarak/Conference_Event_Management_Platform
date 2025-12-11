@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\Events\ContactSubmitted;
+use App\Listeners\SendContactNotifications;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        // Register event listeners
+        $this->app['events']->listen(
+            ContactSubmitted::class,
+            SendContactNotifications::class
+        );
     }
 }

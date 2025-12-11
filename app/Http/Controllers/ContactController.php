@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\contacts;
-use Illuminate\Auth\Events\Validated;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 
@@ -79,6 +78,9 @@ class ContactController extends Controller
             ]);
 
             Log::info('Contact created successfully', ['contact_id' => $contact->id]);
+
+            // The model event will automatically dispatch ContactSubmitted event
+            // which triggers SendContactNotifications listener to create notifications
         
             return redirect('/')->with('success', 'Thank you! We will contact you soon!');
         } catch (\Exception $e) {
@@ -173,16 +175,26 @@ class ContactController extends Controller
     public function delete($id)
     {
         try {
+            $user = Auth::user();
+            
+            // Check if user is authenticated
+            if (!$user) {
+                return redirect('/login')->with('error', 'You must be logged in to delete contacts.');
+            }
+            
             // Check if user has admin role
-            if (Auth::user()->role !== 'admin') {
+            if ($user->role !== 'admin') {
+                Log::warning('Delete attempt by non-admin user', ['user_id' => $user->id, 'user_role' => $user->role]);
                 return redirect('/contacts')->with('error', 'You do not have permission to delete contacts.');
             }
 
             $contact = contacts::findOrFail($id);
             $contact->delete();
+            Log::info('Contact deleted', ['contact_id' => $id, 'deleted_by' => $user->id]);
 
             return redirect('/contacts')->with('success', 'Contact deleted successfully!');
         } catch (\Exception $e) {
+            Log::error('Error deleting contact: ' . $e->getMessage());
             return redirect('/contacts')->with('error', 'Unable to delete contact or database unavailable.');
         }
     }

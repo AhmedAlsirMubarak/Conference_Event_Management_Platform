@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/webp" href="{{ asset('images/scw-logo.webp') }}">
     @vite('resources/css/app.css')
     <title>@yield('title', 'Admin Dashboard')</title>
@@ -116,15 +117,7 @@
             const sidebarPanel = document.getElementById('mobile-sidebar-panel');
             const overlay = document.getElementById('mobile-overlay');
 
-            console.log('Mobile Menu Init:', {
-                btn: !!mobileMenuBtn,
-                container: !!sidebarContainer,
-                panel: !!sidebarPanel,
-                overlay: !!overlay
-            });
-
             if (!mobileMenuBtn || !sidebarContainer) {
-                console.error('Mobile menu elements not found');
                 return;
             }
 
@@ -133,14 +126,10 @@
                 e.preventDefault();
                 e.stopPropagation();
 
-                console.log('Menu button clicked');
-
                 const isHidden = sidebarContainer.classList.contains('hidden');
-                console.log('Sidebar hidden:', isHidden);
 
                 if (isHidden) {
                     // Show sidebar
-                    console.log('Opening sidebar');
                     sidebarContainer.classList.remove('hidden');
                     setTimeout(() => {
                         if (sidebarPanel) {
@@ -154,7 +143,6 @@
                     if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
                     setTimeout(() => {
                         sidebarContainer.classList.add('hidden');
-                        console.log('Sidebar hidden');
                     }, 300);
                 }
             });
@@ -162,7 +150,6 @@
             // Close sidebar when clicking overlay
             if (overlay) {
                 overlay.addEventListener('click', function () {
-                    console.log('Overlay clicked');
                     if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
                     setTimeout(() => {
                         sidebarContainer.classList.add('hidden');
@@ -172,19 +159,15 @@
 
             // Close sidebar when clicking on a link
             const sidebarLinks = sidebarContainer.querySelectorAll('a');
-            console.log('Sidebar links found:', sidebarLinks.length);
 
             sidebarLinks.forEach(function (link) {
                 link.addEventListener('click', function () {
-                    console.log('Link clicked');
                     if (sidebarPanel) sidebarPanel.classList.add('-translate-x-full');
                     setTimeout(() => {
                         sidebarContainer.classList.add('hidden');
                     }, 300);
                 });
             });
-
-            console.log('Mobile menu initialized successfully');
         });
     </script>
 </body>

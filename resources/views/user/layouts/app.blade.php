@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/webp" href="{{ asset('images/scw-logo.webp') }}">
     @vite('resources/css/app.css')
     <title>@yield('title', 'User Dashboard')</title>
@@ -110,21 +111,17 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            console.log('Mobile Menu Init');
-
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileOverlay = document.getElementById('mobile-overlay');
             const mobileSidebarContainer = document.getElementById('mobile-sidebar-container');
             const mobileSidebarPanel = document.getElementById('mobile-sidebar-panel');
 
             if (!mobileMenuBtn || !mobileSidebarContainer) {
-                console.log('Mobile menu elements not found');
                 return;
             }
 
             // Toggle sidebar on hamburger click
             mobileMenuBtn.addEventListener('click', function () {
-                console.log('Menu button clicked');
                 const isHidden = mobileSidebarContainer.classList.contains('hidden');
                 if (isHidden) {
                     mobileSidebarContainer.classList.remove('hidden');
@@ -137,7 +134,6 @@
 
             // Close sidebar on overlay click
             mobileOverlay.addEventListener('click', function () {
-                console.log('Overlay clicked');
                 mobileSidebarContainer.classList.add('hidden');
                 mobileSidebarPanel.classList.add('-translate-x-full');
             });
@@ -146,7 +142,6 @@
             const navLinks = mobileSidebarPanel.querySelectorAll('a');
             navLinks.forEach(link => {
                 link.addEventListener('click', function () {
-                    console.log('Nav link clicked');
                     mobileSidebarContainer.classList.add('hidden');
                     mobileSidebarPanel.classList.add('-translate-x-full');
                 });

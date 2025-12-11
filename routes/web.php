@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\NotificationController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\StrategicCommitteeController;
 use App\Http\Controllers\TechnicalCommitteeController;
@@ -31,7 +32,7 @@ Route::post('/contacts', [ContactController::class, 'create'])->name('create');
 
 
 // Admin Routes
-Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
+Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/search', [DashboardController::class, 'globalSearch'])->name('admin.search');
     
@@ -65,10 +66,17 @@ Route::group(['auth:sanctum', 'middleware' => IsAdmin::class], function () {
     Route::get('/sessions-suspicious', [SessionController::class, 'suspiciousSessions'])->name('sessions.suspicious');
     Route::get('/sessions/export/logs', [SessionController::class, 'exportLogs'])->name('sessions.export');
     Route::post('/sessions/clear-old', [SessionController::class, 'clearOldSessions'])->name('sessions.clearOld');
+    
+    // Admin Notification Routes
+    Route::get('/notifications', [NotificationController::class, 'adminIndex'])->name('admin.notifications.index');
+    Route::get('/api/notifications', [NotificationController::class, 'getAll'])->name('admin.notifications.all');
+    Route::get('/api/notifications/unread', [NotificationController::class, 'getUnread'])->name('admin.notifications.unread');
+    Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('admin.notifications.markAllRead');
+    Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('admin.notifications.delete');
 });
 
 // User Routes
-Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('/search', [UserController::class, 'globalSearch'])->name('search');
     
@@ -98,4 +106,12 @@ Route::group(['auth:sanctum', 'prefix' => 'user', 'as' => 'user.'], function () 
     Route::get('/export/technical-speakers', [UserController::class, 'exportTechnicalSpeakers'])->name('technical_speakers.export');
     Route::get('/export/strategic-committees', [UserController::class, 'exportStrategicCommittees'])->name('strategic_committees.export');
     Route::get('/export/technical-committees', [UserController::class, 'exportTechnicalCommittees'])->name('technical_committees.export');
+    
+    // User Notification Routes
+    Route::get('/notifications', [NotificationController::class, 'userIndex'])->name('notifications.index');
+    Route::get('/api/notifications', [NotificationController::class, 'getAll'])->name('notifications.all');
+    Route::get('/api/notifications/unread', [NotificationController::class, 'getUnread'])->name('notifications.unread');
+    Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsRead'])->name('notifications.markAllRead');
+    Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('notifications.delete');
 });
+

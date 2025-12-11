@@ -33,6 +33,9 @@
                 </form>
             </div>
 
+            <!-- Notification Bell -->
+            @include('components.notification-bell', ['notificationRole' => 'user'])
+
             <!-- User Menu -->
             <div class="flex items-center gap-2 sm:gap-4 pl-2 sm:pl-4 border-l border-gray-200">
                 <div class="text-right hidden sm:block">
@@ -40,7 +43,7 @@
                     <p class="text-xs text-gray-500">User</p>
                 </div>
                 <div
-                    class="w-9 sm:w-10 h-9 sm:h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                    class="w-9 sm:w-10 h-9 sm:h-10 bg-linear-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
                     {{ strtoupper(substr(Auth::user()?->name ?? 'U', 0, 1)) }}
                 </div>
             </div>

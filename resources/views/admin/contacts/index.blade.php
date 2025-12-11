@@ -72,112 +72,115 @@
                     <p class="text-gray-500">Contact submissions will appear here.</p>
                 </div>
             @else
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="border-b border-gray-200 bg-gray-50">
-                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Name</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Email</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Phone</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Company</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Notes</th>
-                                <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Submitted</th>
-                                <th class="px-4 py-3 text-right font-semibold text-gray-900 whitespace-nowrap">Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            @foreach ($contacts as $contact)
-                                <tr class="hover:bg-gray-50 transition-colors">
-                                    <td class="px-4 py-3">
-                                        <div class="flex items-center gap-2">
-                                            <div
-                                                class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-xs shrink-0">
-                                                {{ strtoupper(substr($contact->Name, 0, 1)) }}
-                                            </div>
-                                            <div class="min-w-0">
-                                                <p class="font-medium text-gray-900 truncate">{{ $contact->Name }}</p>
-                                                @if ($contact->Designation)
-                                                    <p class="text-xs text-gray-500 truncate">{{ $contact->Designation }}</p>
-                                                @endif
-                                            </div>
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        <a href="mailto:{{ $contact->Email }}"
-                                            class="text-blue-600 hover:text-blue-800 text-xs break-all">{{ $contact->Email }}</a>
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        <a href="tel:+968{{ $contact->Phone }}" class="text-gray-700 text-xs whitespace-nowrap">
-                                            {{ $contact->Phone }}</a>
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        <span class="text-gray-700 text-xs">{{ $contact->Company ?? '-' }}</span>
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        <div class="flex items-center gap-1">
-                                            @if ($contact->notes)
-                                                <div class="flex-1 min-w-0">
-                                                    <p class="text-xs text-gray-700 line-clamp-1" title="{{ $contact->notes }}">
-                                                        {{ Str::limit($contact->notes, 30) }}
-                                                    </p>
+                <div class="bg-white rounded-lg border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-gray-200 bg-gray-50">
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Name</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Email</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Phone</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Company</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Notes</th>
+                                    <th class="px-4 py-3 text-left font-semibold text-gray-900 whitespace-nowrap">Submitted</th>
+                                    <th class="px-4 py-3 text-right font-semibold text-gray-900 whitespace-nowrap">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-gray-200">
+                                @foreach ($contacts as $contact)
+                                    <tr class="hover:bg-gray-50 transition-colors">
+                                        <td class="px-4 py-3">
+                                            <div class="flex items-center gap-2">
+                                                <div
+                                                    class="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white font-semibold text-xs shrink-0">
+                                                    {{ strtoupper(substr($contact->Name, 0, 1)) }}
                                                 </div>
-                                                <button type="button"
-                                                    onclick="openNoteModal({{ $contact->id }}, '{{ addslashes($contact->notes) }}')"
-                                                    class="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded text-xs font-medium transition-colors whitespace-nowrap">
-                                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                    </svg>
-                                                    Edit
-                                                </button>
-                                            @else
-                                                <button type="button" onclick="openNoteModal({{ $contact->id }}, '')"
-                                                    class="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium transition-colors">
-                                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                            d="M12 4v16m8-8H4" />
-                                                    </svg>
-                                                    Add Note
-                                                </button>
-                                            @endif
-                                        </div>
-                                    </td>
-                                    <td class="px-4 py-3 text-xs text-gray-600 whitespace-nowrap">
-                                        {{ $contact->created_at->format('M d, Y') }}
-                                    </td>
-                                    <td class="px-4 py-3">
-                                        <div class="flex items-center justify-end gap-1">
-                                            <a href="{{ route('getcontactById', $contact->id) }}"
-                                                class="inline-flex items-center gap-1 px-2 py-1 text-blue-600 hover:bg-blue-50 rounded transition-colors text-xs font-medium whitespace-nowrap">
-                                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                                </svg>
-                                                View
-                                            </a>
-                                            @if (Auth::user()->role === 'admin')
-                                                <form action="{{ route('deleteContact', $contact->id) }}" method="POST" class="inline"
-                                                    onsubmit="return confirm('Are you sure you want to delete this contact?');">
-                                                    @csrf
-                                                    @method('DELETE')
-                                                    <button type="submit"
-                                                        class="inline-flex items-center gap-1 px-2 py-1 text-red-600 hover:bg-red-50 rounded transition-colors text-xs font-medium whitespace-nowrap">
+                                                <div class="min-w-0">
+                                                    <p class="font-medium text-gray-900 truncate">{{ $contact->Name }}</p>
+                                                    @if ($contact->Designation)
+                                                        <p class="text-xs text-gray-500 truncate">{{ $contact->Designation }}</p>
+                                                    @endif
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            <a href="mailto:{{ $contact->Email }}"
+                                                class="text-blue-600 hover:text-blue-800 text-xs break-all">{{ $contact->Email }}</a>
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            <a href="tel:+968{{ $contact->Phone }}" class="text-gray-700 text-xs whitespace-nowrap">
+                                                {{ $contact->Phone }}</a>
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            <span class="text-gray-700 text-xs">{{ $contact->Company ?? '-' }}</span>
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            <div class="flex items-center gap-1">
+                                                @if ($contact->notes)
+                                                    <div class="flex-1 min-w-0">
+                                                        <p class="text-xs text-gray-700 line-clamp-1" title="{{ $contact->notes }}">
+                                                            {{ Str::limit($contact->notes, 30) }}
+                                                        </p>
+                                                    </div>
+                                                    <button type="button"
+                                                        onclick="openNoteModal({{ $contact->id }}, '{{ addslashes($contact->notes) }}')"
+                                                        class="inline-flex items-center gap-1 px-2 py-1 bg-blue-100 text-blue-700 hover:bg-blue-200 rounded text-xs font-medium transition-colors whitespace-nowrap">
+                                                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                                d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                        </svg>
+                                                        Edit
+                                                    </button>
+                                                @else
+                                                    <button type="button" onclick="openNoteModal({{ $contact->id }}, '')"
+                                                        class="inline-flex items-center gap-1 px-3 py-1 bg-gray-100 text-gray-700 hover:bg-gray-200 rounded text-sm font-medium transition-colors">
                                                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                                                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                                d="M12 4v16m8-8H4" />
                                                         </svg>
-                                                        Delete
+                                                        Add Note
                                                     </button>
-                                                </form>
-                                            @endif
-                                        </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
-                    </table>
+                                                @endif
+                                            </div>
+                                        </td>
+                                        <td class="px-4 py-3 text-xs text-gray-600 whitespace-nowrap">
+                                            {{ $contact->created_at->format('M d, Y') }}
+                                        </td>
+                                        <td class="px-4 py-3">
+                                            <div class="flex items-center justify-end gap-1">
+                                                <a href="{{ route('getcontactById', $contact->id) }}"
+                                                    class="inline-flex items-center gap-1 px-2 py-1 text-blue-600 hover:bg-blue-50 rounded transition-colors text-xs font-medium whitespace-nowrap">
+                                                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                            d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                            d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                                    </svg>
+                                                    View
+                                                </a>
+                                                @if (Auth::check())
+                                                    <form action="{{ route('deleteContact', $contact->id) }}" method="POST"
+                                                        class="inline"
+                                                        onsubmit="return confirm('Are you sure you want to delete this contact?');">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <button type="submit"
+                                                            class="inline-flex items-center gap-1 px-2 py-1 text-red-600 hover:bg-red-50 rounded transition-colors text-xs font-medium whitespace-nowrap">
+                                                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                            </svg>
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                @endif
+                                            </div>
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             @endif
         </div>
