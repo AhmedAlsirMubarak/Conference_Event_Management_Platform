@@ -44,6 +44,16 @@
             <span class="truncate">Sponsors</span>
         </a>
 
+        <!-- Exhibitors -->
+        <a href="{{ route('exhibitors.index') }}"
+            class="flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('exhibitors.index', 'exhibitors.create', 'exhibitors.show', 'exhibitors.edit')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">
+            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" />
+            </svg>
+            <span class="truncate">Exhibitors</span>
+        </a>
+
         <!-- Strategic Committee -->
         <a href="{{ route('strategic_committees.index') }}"
             class="flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('strategic_committees.index', 'strategic_committees.create', 'strategic_committees.show', 'strategic_committees.edit')) bg-blue-50 text-blue-600 @else text-gray-700 hover:bg-gray-50 @endif">

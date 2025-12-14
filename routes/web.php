@@ -6,6 +6,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SponsorController;
+use App\Http\Controllers\ExhibitorController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\StrategicCommitteeController;
@@ -44,6 +45,8 @@ Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
     Route::delete('/contacts/{id}', [ContactController::class, 'delete'])->name('deleteContact');
     Route::get('/sponsors/search', [SponsorController::class, 'search'])->name('sponsors.search');
     Route::resource('sponsors', SponsorController::class);
+    Route::get('/exhibitors/search', [ExhibitorController::class, 'search'])->name('exhibitors.search');
+    Route::resource('exhibitors', ExhibitorController::class);
 
     // Export Routes (Admin) - Must come BEFORE resource routes
     Route::get('/strategic_speakers/export', [StrategicSpeakerController::class, 'export'])->name('strategic_speakers.export');
@@ -90,6 +93,11 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::get('/sponsors', [UserController::class, 'indexSponsors'])->name('sponsors.index');
     Route::get('/sponsors/search', [UserController::class, 'searchSponsors'])->name('sponsors.search');
     Route::get('/sponsors/{id}', [UserController::class, 'showSponsor'])->name('sponsors.show');
+    
+    // Exhibitors routes - search BEFORE show to avoid {id} conflict
+    Route::get('/exhibitors', [UserController::class, 'indexExhibitors'])->name('exhibitors.index');
+    Route::get('/exhibitors/search', [UserController::class, 'searchExhibitors'])->name('exhibitors.search');
+    Route::get('/exhibitors/{id}', [UserController::class, 'showExhibitor'])->name('exhibitors.show');
     
     Route::get('/export', [UserController::class, 'exportContacts'])->name('export');
     Route::get(uri: '/technical-committees', action: [UserController::class, 'listTechnicalCommittees'])->name(name: 'technical_committees.index');

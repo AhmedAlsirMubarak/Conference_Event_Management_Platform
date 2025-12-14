@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\contacts;
 use App\Models\Sponsor;
+use App\Models\Exhibitor;
 use App\Models\StrategicCommittee;
 use App\Models\TechnicalCommittee;
 use App\Models\StrategicSpeaker;
@@ -329,6 +330,52 @@ class UserController extends Controller
             return view('user.sponsors.index', compact('sponsors'));
         } catch (\Exception $e) {
             return redirect(route('user.sponsors.index'))->with('error', 'Search error: ' . $e->getMessage());
+        }
+    }
+
+    /**
+     * Display all exhibitors for user (read-only)
+     */
+    public function indexExhibitors()
+    {
+        try {
+            $exhibitors = Exhibitor::all();
+            return view('user.exhibitors.index', compact('exhibitors'));
+        } catch (\Exception $e) {
+            return view('user.exhibitors.index', ['exhibitors' => collect()]);
+        }
+    }
+
+    /**
+     * Display specific exhibitor for user (read-only)
+     */
+    public function showExhibitor($id)
+    {
+        try {
+            $exhibitor = Exhibitor::findOrFail($id);
+            return view('user.exhibitors.show', compact('exhibitor'));
+        } catch (\Exception $e) {
+            return redirect(route('user.exhibitors.index'))->with('error', 'Exhibitor not found.');
+        }
+    }
+
+    /**
+     * Search exhibitors for user
+     */
+    public function searchExhibitors(Request $request)
+    {
+        try {
+            $query = $request->input('q', '');
+            
+            $exhibitors = Exhibitor::query()
+                ->where('name', 'like', '%' . $query . '%')
+                ->orWhere('website', 'like', '%' . $query . '%')
+                ->orderBy('created_at', 'desc')
+                ->get();
+
+            return view('user.exhibitors.index', compact('exhibitors'));
+        } catch (\Exception $e) {
+            return redirect(route('user.exhibitors.index'))->with('error', 'Search error: ' . $e->getMessage());
         }
     }
 
