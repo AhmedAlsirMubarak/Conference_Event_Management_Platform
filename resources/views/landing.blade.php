@@ -124,9 +124,9 @@
                         <div class="pt-4 border-t border-zinc-700">
                             <p class="text-gray-400 text-sm mb-4">Organized by:</p>
                             <div class="flex items-center gap-4">
-                                <img src="/storage/footer-img/ecocode-logo.webp" alt="Ecocode" class="h-8 w-auto">
+                                <img src="/storage/nav-img/ecocode-logo.webp" alt="Ecocode" class="h-8 w-auto">
                                 <div class="w-px h-8 bg-zinc-700"></div>
-                                <img src="/storage/footer-img/birba-logo-white.webp" alt="Birba" class="h-8 w-auto">
+                                <img src="/storage/nav-img/birba-logo-white.webp" alt="Birba" class="h-8 w-auto">
                             </div>
                         </div>
                     </div>
