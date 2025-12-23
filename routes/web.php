@@ -27,17 +27,7 @@ Route::get('/lang/{locale}', function($locale) {
     return redirect($url . $separator . 'locale=' . $locale);
 })->name('lang.switch');
 
-// Debug route
-Route::get('/debug/locale', function() {
-    return response()->json([
-        'app_locale' => app()->getLocale(),
-        'session_locale' => session('locale'),
-        'cookie_locale' => request()->cookie('locale'),
-        'query_locale' => request()->query('locale'),
-        'config_locale' => config('app.locale'),
-        'session_all' => session()->all(),
-    ]);
-});
+
 
 // Home Test Route
 Route::get('/test/home', function () {
@@ -151,4 +141,3 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsReadUser'])->name('notifications.markAllRead');
     Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('notifications.delete');
 });
-

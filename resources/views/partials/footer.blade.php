@@ -21,7 +21,8 @@
                     <!-- Date -->
                     <div class="flex items-center gap-3">
                         <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                            <img src="/storage/footer-img/calendar 1.svg" alt="Date" class="w-full h-full object-contain">
+                            <img src="/storage/footer-img/calendar 1.svg" alt="Date"
+                                class="w-full h-full object-contain">
                         </div>
                         <div
                             class="w-24 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
@@ -163,12 +164,15 @@
         <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Twitter">
             <img src="/storage/footer-img/x.svg" alt="Twitter" class="w-full h-full">
         </a>
-        <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Instagram">
+        <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            class="w-6 h-6 relative hover:opacity-70 transition" title="Instagram" target="_blank"
+            rel="noopener noreferrer">
             <img src="/storage/footer-img/insta.svg" alt="Instagram" class="w-full h-full">
         </a>
         <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Facebook">
             <img src="/storage/footer-img/facebook.svg" alt="Facebook" class="w-full h-full">
         </a>
+
     </div>
 
     <!-- Partners Section Label (Desktop Only) -->
@@ -305,12 +309,15 @@
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Twitter">
                         <img src="/storage/footer-img/x.svg" alt="Twitter">
                     </a>
-                    <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Instagram">
+                    <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        class="w-6 h-6 text-white hover:text-blue-400 transition" title="Instagram" target="_blank"
+                        rel="noopener noreferrer">
                         <img src="/storage/footer-img/insta.svg" alt="Instagram">
                     </a>
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Facebook">
                         <img src="/storage/footer-img/facebook.svg" alt="Facebook">
                     </a>
+
                 </div>
             </div>
 
