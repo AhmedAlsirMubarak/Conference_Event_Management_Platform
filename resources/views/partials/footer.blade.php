@@ -10,7 +10,7 @@
             <div
                 class="self-stretch w-32 h-18 justify-center {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }}">
                 <a href="https://saudiclimateweek.com/">
-                    <img class="w-[100px] h-[69px]" src="/storage/footer-img/scw-logo.webp" alt="SCW Logo" />
+                    <img class="w-[100px] h-[69px]" src="{{ asset('storage/footer-img/scw-logo.webp') }}" alt="SCW Logo" />
                 </a>
             </div>
 
@@ -23,7 +23,7 @@
                     <!-- Date -->
                     <div class="flex items-center gap-3">
                         <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                            <img src="/storage/footer-img/calendar 1.svg" alt="Date"
+                            <img src="{{ asset('storage/footer-img/calendar 1.svg') }}" alt="Date"
                                 class="w-full h-full object-contain">
                         </div>
                         <div
@@ -38,7 +38,7 @@
                     <!-- Location -->
                     <div class="flex items-center gap-3">
                         <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                            <img src="/storage/footer-img/map.svg" alt="Location" class="w-full h-full object-contain">
+                            <img src="{{ asset('storage/footer-img/map.svg') }}" alt="Location" class="w-full h-full object-contain">
                         </div>
                         <div
                             class="w-25 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
@@ -165,20 +165,20 @@
         dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
         <a href="https://twitter.com/WeekSaudi87319" target="_blank" rel="noopener noreferrer"
             class="w-6 h-6 relative hover:opacity-70 transition" title="Twitter">
-            <img src="/storage/footer-img/x.svg" alt="Twitter" class="w-full h-full">
+            <img src="{{ asset('storage/footer-img/x.svg') }}" alt="Twitter" class="w-full h-full">
         </a>
         <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
             class="w-6 h-6 relative hover:opacity-70 transition" title="Instagram" target="_blank"
             rel="noopener noreferrer">
-            <img src="/storage/footer-img/insta.svg" alt="Instagram" class="w-full h-full">
+            <img src="{{ asset('storage/footer-img/insta.svg') }}" alt="Instagram" class="w-full h-full">
         </a>
         <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Facebook">
-            <img src="/storage/footer-img/facebook.svg" alt="Facebook" class="w-full h-full">
+            <img src="{{ asset('storage/footer-img/facebook.svg') }}" alt="Facebook" class="w-full h-full">
         </a>
 
         <a href="https://www.linkedin.com/company/saudi-climate-week/" target="_blank" rel="noopener noreferrer"
             class="w-6 h-6 relative hover:opacity-70 transition" title="LinkedIn">
-            <img src="/storage/footer-img/linkedin.svg" alt="LinkedIn" class="w-full h-full">
+            <img src="{{ asset('storage/footer-img/linkedin.svg') }}" alt="LinkedIn" class="w-full h-full">
         </a>
 
     </div>
@@ -194,7 +194,7 @@
         dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
         <div class="flex justify-start items-center gap-8">
             <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                <img class="w-20 h-10" src="/storage/footer-img/birba-logo-white.webp" alt="Partner 2" />
+                <img class="w-20 h-10" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}" alt="Partner 2" />
             </a>
             <div class="w-60 h-14 opacity-80 justify-center text-white text-xs font-normal leading-6">
                 {{ __('footer.partner_2_desc') }}
@@ -204,7 +204,7 @@
         <div class="w-px h-10 bg-zinc-600"></div>
         <div class="flex justify-start items-center gap-7">
             <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
-                <img class="w-20 h-10" src="/storage/footer-img/ecocode-logo.webp" alt="Partner 1" />
+                <img class="w-20 h-10" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}" alt="Partner 1" />
             </a>
             <div class="w-52 h-14 opacity-80  justify-center text-white text-xs font-normal leading-6">
                 {{ __('footer.partner_1_desc') }}
@@ -220,7 +220,7 @@
             <!-- Mobile Logo and Description -->
             <div class="space-y-2 text-center">
                 <a href="https://saudiclimateweek.com/">
-                    <img src="/storage/footer-img/scw-logo.webp" alt="SCW Logo" class="w-12 h-auto mx-auto pb-2">
+                    <img src="{{ asset('storage/footer-img/scw-logo.webp') }}" alt="SCW Logo" class="w-12 h-auto mx-auto pb-2">
                 </a>
                 <p class="text-xs text-gray-400 leading-tight">
                     {{ __('footer.about_description') }}
@@ -303,7 +303,7 @@
                 <div class="space-y-4">
                     <div class="space-y-2">
                         <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                            <img class="w-16 h-auto mx-auto" src="/storage/footer-img/birba-logo-white.webp"
+                            <img class="w-16 h-auto mx-auto" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}"
                                 alt="Birba" />
                         </a>
                         <p class="text-xs text-gray-400">
@@ -313,7 +313,7 @@
                     <div class="w-px h-4 bg-zinc-600 mx-auto"></div>
                     <div class="space-y-2">
                         <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
-                            <img class="w-16 h-auto mx-auto" src="/storage/footer-img/ecocode-logo.webp"
+                            <img class="w-16 h-auto mx-auto" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}"
                                 alt="Ecocode" />
                         </a>
                         <p class="text-xs text-gray-400">
@@ -328,20 +328,20 @@
                 <div class="flex justify-center  gap-6">
                     <a href="https://twitter.com/WeekSaudi87319" target="_blank" rel="noopener noreferrer"
                         class="w-6 h-6 text-white hover:text-blue-400 transition" title="Twitter">
-                        <img src="/storage/footer-img/x.svg" alt="Twitter">
+                        <img src="{{ asset('storage/footer-img/x.svg') }}" alt="Twitter">
                     </a>
                     <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                         class="w-6 h-6 text-white hover:text-blue-400 transition" title="Instagram" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="/storage/footer-img/insta.svg" alt="Instagram">
+                        <img src="{{ asset('storage/footer-img/insta.svg') }}" alt="Instagram">
                     </a>
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Facebook">
-                        <img src="/storage/footer-img/facebook.svg" alt="Facebook">
+                        <img src="{{ asset('storage/footer-img/facebook.svg') }}" alt="Facebook">
                     </a>
                     <a href="https://www.linkedin.com/company/saudi-climate-week/" target="_blank"
                         rel="noopener noreferrer" class="w-6 h-6 text-white hover:text-blue-400 transition"
                         title="LinkedIn">
-                        <img src="/storage/footer-img/linkedin.svg" alt="LinkedIn">
+                        <img src="{{ asset('storage/footer-img/linkedin.svg') }}" alt="LinkedIn">
 
                 </div>
             </div>
