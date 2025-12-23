@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Navigation Test - SCW</title>
+    <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -197,7 +198,8 @@
                     <div class="mb-4">
                         <div class="flex items-center gap-2 mb-4">
                             <div>
-                                <img src="/storage/mix/Radar-animation.gif" class="h-[45px] w-[45px]" alt="Pillars Icon" />
+                                <img src="/storage/mix/Radar-animation.gif" class="h-[45px] w-[45px]"
+                                    alt="Pillars Icon" />
                             </div>
                             <h3
                                 class="text-xl font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
@@ -736,7 +738,8 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="/storage/mix/book.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[45px] flex-shrink-0" alt="">
+                    <img src="/storage/mix/book.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[45px] flex-shrink-0"
+                        alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
                             {{ __('hero.attendee_research_institutions') }}
@@ -752,7 +755,8 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="/storage/mix/world.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
+                    <img src="/storage/mix/world.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                        alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
                             {{ __('hero.attendee_international_orgs') }}
@@ -766,7 +770,8 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="/storage/mix/chart.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
+                    <img src="/storage/mix/chart.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                        alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
                             {{ __('hero.attendee_investors_banks') }}
@@ -832,8 +837,8 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg sm:col-span-2 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="/storage/mix/newspaper.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
-                        alt="">
+                    <img src="/storage/mix/newspaper.svg"
+                        class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
                             {{ __('hero.attendee_media_outlets') }}
@@ -887,7 +892,8 @@
 
                     <!-- FULL TOP BACKGROUND IMAGE -->
                     <div class="relative h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
 
                         <!-- ICON -->
@@ -915,7 +921,8 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
                             <img src="/storage/mix/graduation-cap.svg" alt="" class="h-10 w-10" />
@@ -940,7 +947,8 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
                             <img src="/storage/mix/bubble.svg" alt="" class="h-10 w-10" />
@@ -965,7 +973,8 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
                             <img src="/storage/mix/discussion.svg" alt="" class="h-10 w-10" />
@@ -1028,7 +1037,8 @@
 
                     <!-- FULL TOP BACKGROUND IMAGE -->
                     <div class="relative h-28 md:h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
 
                         <!-- ICON -->
@@ -1056,7 +1066,8 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-28 md:h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
                             <img src="/storage/mix/graduation-cap.svg" alt="" class="h-8 md:h-10 w-8 md:w-10" />
@@ -1081,7 +1092,8 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-28 md:h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
                             <img src="/storage/mix/bubble.svg" alt="" class="h-8 md:h-10 w-8 md:w-10" />
@@ -1106,7 +1118,8 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-28 md:h-36">
-                        <img src="/storage/mix/back-icon.webp" alt="" class="absolute inset-0 h-full w-full object-cover" />
+                        <img src="/storage/mix/back-icon.webp" alt=""
+                            class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
                             <img src="/storage/mix/discussion.svg" alt="" class="h-8 md:h-10 w-8 md:w-10" />
