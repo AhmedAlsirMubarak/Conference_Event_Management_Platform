@@ -15,6 +15,19 @@ use App\Http\Controllers\StrategicSpeakerController;
 use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
 
+// Language Switcher
+Route::get('/lang/{locale}', function($locale) {
+    if(in_array($locale, ['ar', 'en'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('lang.switch');
+
+// Home Test Route
+Route::get('/test/home', function () {
+    return view('Home-test');
+})->name('test.home');
+
 Route::get('/', function () {
     return view('welcome');
 });
