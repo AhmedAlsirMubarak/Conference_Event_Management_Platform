@@ -9,7 +9,7 @@
             class="self-stretch flex flex-col justify-start {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }} gap-8">
             <div
                 class="self-stretch w-32 h-18 justify-center {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }}">
-                <img class="w-[100px] h-[69px]" src="/images/scw-logo.webp" alt="SCW Logo" />
+                <img class="w-[100px] h-[69px]" src="/storage/footer-img/scw-logo.webp" alt="SCW Logo" />
             </div>
 
             <div class="self-stretch flex flex-col justify-start items-center gap-2.5">
@@ -21,7 +21,7 @@
                     <!-- Date -->
                     <div class="flex items-center gap-3">
                         <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                            <img src="/images/calendar 1.svg" alt="Date" class="w-full h-full object-contain">
+                            <img src="/storage/footer-img/calendar 1.svg" alt="Date" class="w-full h-full object-contain">
                         </div>
                         <div
                             class="w-24 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
@@ -35,7 +35,7 @@
                     <!-- Location -->
                     <div class="flex items-center gap-3">
                         <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                            <img src="/images/map.svg" alt="Location" class="w-full h-full object-contain">
+                            <img src="/storage/footer-img/map.svg" alt="Location" class="w-full h-full object-contain">
                         </div>
                         <div
                             class="w-25 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
@@ -161,13 +161,13 @@
     <div class="hidden lg:inline-flex w-40 h-8 {{ app()->getLocale() === 'ar' ? 'left-[426px]' : 'left-[358px]' }} top-72 absolute gap-6"
         dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
         <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Twitter">
-            <img src="/images/x.svg" alt="Twitter" class="w-full h-full">
+            <img src="/storage/footer-img/x.svg" alt="Twitter" class="w-full h-full">
         </a>
         <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Instagram">
-            <img src="/images/insta.svg" alt="Instagram" class="w-full h-full">
+            <img src="/storage/footer-img/insta.svg" alt="Instagram" class="w-full h-full">
         </a>
         <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Facebook">
-            <img src="/images/facebook.svg" alt="Facebook" class="w-full h-full">
+            <img src="/storage/footer-img/facebook.svg" alt="Facebook" class="w-full h-full">
         </a>
     </div>
 
@@ -181,7 +181,7 @@
     <div class="hidden lg:flex left-[386px] top-[460px] absolute justify-center items-center gap-11"
         dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
         <div class="flex justify-start items-center gap-8">
-            <img class="w-20 h-10" src="/images/birba-logo-white.webp" alt="Partner 2" />
+            <img class="w-20 h-10" src="/storage/footer-img/birba-logo-white.webp" alt="Partner 2" />
             <div class="w-60 h-14 opacity-80 justify-center text-white text-xs font-normal leading-6">
                 {{ __('footer.partner_2_desc') }}
             </div>
@@ -189,7 +189,7 @@
 
         <div class="w-px h-10 bg-zinc-600"></div>
         <div class="flex justify-start items-center gap-7">
-            <img class="w-20 h-10" src="/images/ecocode-logo.webp" alt="Partner 1" />
+            <img class="w-20 h-10" src="/storage/footer-img/ecocode-logo.webp" alt="Partner 1" />
             <div class="w-52 h-14 opacity-80  justify-center text-white text-xs font-normal leading-6">
                 {{ __('footer.partner_1_desc') }}
             </div>
@@ -203,7 +203,7 @@
         <div class="max-w-full mx-auto space-y-5">
             <!-- Mobile Logo and Description -->
             <div class="space-y-2 text-center">
-                <img src="/images/scw-logo.webp" alt="SCW Logo" class="w-12 h-auto mx-auto">
+                <img src="/storage/footer-img/scw-logo.webp" alt="SCW Logo" class="w-12 h-auto mx-auto">
                 <p class="text-xs text-gray-400 leading-tight">
                     {{ __('footer.about_description') }}
                 </p>
@@ -284,14 +284,14 @@
                 <h4 class="text-xs font-bold text-white mb-4">{{ __('footer.organizers') }}</h4>
                 <div class="space-y-4">
                     <div class="space-y-2">
-                        <img class="w-16 h-auto mx-auto" src="/images/birba-logo-white.webp" alt="Birba" />
+                        <img class="w-16 h-auto mx-auto" src="/storage/footer-img/birba-logo-white.webp" alt="Birba" />
                         <p class="text-xs text-gray-400">
                             {{ __('footer.partner_2_desc') }}
                         </p>
                     </div>
                     <div class="w-px h-4 bg-zinc-600 mx-auto"></div>
                     <div class="space-y-2">
-                        <img class="w-16 h-auto mx-auto" src="/images/ecocode-logo.webp" alt="Ecocode" />
+                        <img class="w-16 h-auto mx-auto" src="/storage/footer-img/ecocode-logo.webp" alt="Ecocode" />
                         <p class="text-xs text-gray-400">
                             {{ __('footer.partner_1_desc') }}
                         </p>
@@ -303,13 +303,13 @@
             <div class="pt-4 border-t border-gray-800">
                 <div class="flex justify-center  gap-6">
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Twitter">
-                        <img src="/images/x.svg" alt="Twitter">
+                        <img src="/storage/footer-img/x.svg" alt="Twitter">
                     </a>
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Instagram">
-                        <img src="/images/insta.svg" alt="Instagram">
+                        <img src="/storage/footer-img/insta.svg" alt="Instagram">
                     </a>
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Facebook">
-                        <img src="/images/facebook.svg" alt="Facebook">
+                        <img src="/storage/footer-img/facebook.svg" alt="Facebook">
                     </a>
                 </div>
             </div>
