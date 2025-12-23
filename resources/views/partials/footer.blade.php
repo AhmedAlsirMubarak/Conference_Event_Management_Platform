@@ -161,7 +161,8 @@
     <!-- Social Media Icons (Desktop Only) -->
     <div class="hidden lg:inline-flex w-40 h-8 {{ app()->getLocale() === 'ar' ? 'left-[426px]' : 'left-[358px]' }} top-72 absolute gap-6"
         dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
-        <a href="#" class="w-6 h-6 relative hover:opacity-70 transition" title="Twitter">
+        <a href="https://x.com/WeekSaudi87319" target="_blank" rel="noopener noreferrer"
+            class="w-6 h-6 relative hover:opacity-70 transition" title="Twitter">
             <img src="/storage/footer-img/x.svg" alt="Twitter" class="w-full h-full">
         </a>
         <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
@@ -306,7 +307,8 @@
             <!-- Social Media Icons (Mobile) -->
             <div class="pt-4 border-t border-gray-800">
                 <div class="flex justify-center  gap-6">
-                    <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Twitter">
+                    <a href="https://x.com/WeekSaudi87319" target="_blank" rel="noopener noreferrer"
+                        class="w-6 h-6 text-white hover:text-blue-400 transition" title="Twitter">
                         <img src="/storage/footer-img/x.svg" alt="Twitter">
                     </a>
                     <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="

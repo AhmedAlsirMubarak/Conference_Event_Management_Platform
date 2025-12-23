@@ -37,7 +37,8 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="{{ asset('storage/mix/hero-homeeng.webp') }}" alt="Saudi Climate Week">
+            <img class="w-full h-full object-cover" src="{{ asset('storage/mix/hero-homeeng.webp') }}"
+                alt="Saudi Climate Week">
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
         </div>
 
@@ -124,9 +125,11 @@
                         <div class="pt-4 border-t border-zinc-700">
                             <p class="text-gray-400 text-sm mb-4">Organized by:</p>
                             <div class="flex items-center gap-4">
-                                <img src="{{ asset('storage/nav-img/ecocode-logo.webp') }}" alt="Ecocode" class="h-8 w-auto">
+                                <img src="{{ asset('storage/nav-img/ecocode-logo.webp') }}" alt="Ecocode"
+                                    class="h-8 w-auto">
                                 <div class="w-px h-8 bg-zinc-700"></div>
-                                <img src="{{ asset('storage/nav-img/birba-logo-white.webp') }}" alt="Birba" class="h-8 w-auto">
+                                <img src="{{ asset('storage/nav-img/birba-logo-white.webp') }}" alt="Birba"
+                                    class="h-8 w-auto">
                             </div>
                         </div>
                     </div>
