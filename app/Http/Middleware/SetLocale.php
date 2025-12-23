@@ -15,8 +15,11 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Get locale from session, query parameter, or default to 'ar'
-        $locale = session('locale') ?? $request->query('locale') ?? config('app.locale');
+        // Priority: URL parameter > session > cookie > default config
+        $locale = $request->query('locale') 
+            ?? session('locale') 
+            ?? $request->cookie('locale')
+            ?? config('app.locale');
         
         // Validate locale
         if (!in_array($locale, ['ar', 'en'])) {
@@ -26,8 +29,9 @@ class SetLocale
         // Set application locale
         app()->setLocale($locale);
         
-        // Store in session for persistence
+        // Store in session AND cookie for persistence
         session(['locale' => $locale]);
+        \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
         
         return $next($request);
     }

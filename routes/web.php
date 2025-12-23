@@ -19,6 +19,7 @@ use App\Http\Controllers\SessionController;
 Route::get('/lang/{locale}', function($locale) {
     if(in_array($locale, ['ar', 'en'])) {
         session(['locale' => $locale]);
+        \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
     }
     return redirect()->back();
 })->name('lang.switch');
