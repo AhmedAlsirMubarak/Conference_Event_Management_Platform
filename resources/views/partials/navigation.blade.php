@@ -18,7 +18,7 @@
                         {{ __('navigation.organized_by') }}
                     </span>
                     <div class="flex items-center gap-3">
-                        <a href="https://birba.sa/" target="_blank">
+                        <a href="https://birba.om/" target="_blank">
                             <img src="/storage/nav-img/birba-logo-white.webp" alt="Organizer 1" class="h-10 rounded">
                         </a>
 
