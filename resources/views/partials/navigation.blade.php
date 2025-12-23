@@ -6,7 +6,8 @@
             <div class="flex items-center justify-between h-20">
                 <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
+                    <a href="https://saudiclimateweek.com/"
+                        class="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
                         <img src="/storage/nav-img/scw-logo.webp" alt="SCW Logo" class="w-[97.99px] h-[69px]">
                     </a>
                 </div>
@@ -17,9 +18,14 @@
                         {{ __('navigation.organized_by') }}
                     </span>
                     <div class="flex items-center gap-3">
-                        <img src="/storage/nav-img/birba-logo-white.webp" alt="Organizer 1" class="h-10 rounded">
+                        <a href="https://birba.sa/" target="_blank">
+                            <img src="/storage/nav-img/birba-logo-white.webp" alt="Organizer 1" class="h-10 rounded">
+                        </a>
+
                         <div class="w-px h-6 bg-gray-700"></div>
-                        <img src="/storage/nav-img/ecocode-logo.webp" alt="Organizer 2" class="h-10 rounded">
+                        <a href="https://ecocode.sa/" target="_blank">
+                            <img src="/storage/nav-img/ecocode-logo.webp" alt="Organizer 2" class="h-10 rounded">
+                        </a>
                     </div>
                 </div>
 
