@@ -176,6 +176,11 @@
             <img src="/storage/footer-img/facebook.svg" alt="Facebook" class="w-full h-full">
         </a>
 
+        <a href="https://www.linkedin.com/company/saudi-climate-week/" target="_blank" rel="noopener noreferrer"
+            class="w-6 h-6 relative hover:opacity-70 transition" title="LinkedIn">
+            <img src="/storage/footer-img/linkedin.svg" alt="LinkedIn" class="w-full h-full">
+        </a>
+
     </div>
 
     <!-- Partners Section Label (Desktop Only) -->
@@ -215,7 +220,7 @@
             <!-- Mobile Logo and Description -->
             <div class="space-y-2 text-center">
                 <a href="https://saudiclimateweek.com/">
-                    <img src="/storage/footer-img/scw-logo.webp" alt="SCW Logo" class="w-12 h-auto mx-auto">
+                    <img src="/storage/footer-img/scw-logo.webp" alt="SCW Logo" class="w-12 h-auto mx-auto pb-2">
                 </a>
                 <p class="text-xs text-gray-400 leading-tight">
                     {{ __('footer.about_description') }}
@@ -333,6 +338,10 @@
                     <a href="#" class="w-6 h-6 text-white hover:text-blue-400 transition" title="Facebook">
                         <img src="/storage/footer-img/facebook.svg" alt="Facebook">
                     </a>
+                    <a href="https://www.linkedin.com/company/saudi-climate-week/" target="_blank"
+                        rel="noopener noreferrer" class="w-6 h-6 text-white hover:text-blue-400 transition"
+                        title="LinkedIn">
+                        <img src="/storage/footer-img/linkedin.svg" alt="LinkedIn">
 
                 </div>
             </div>
