@@ -15,14 +15,29 @@ use App\Http\Controllers\StrategicSpeakerController;
 use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
 
-// Language Switcher
+// Language Switcher - stores in session and redirects with query param for immediate effect
 Route::get('/lang/{locale}', function($locale) {
     if(in_array($locale, ['ar', 'en'])) {
         session(['locale' => $locale]);
         \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
     }
-    return redirect()->back();
+    // Redirect back with locale query parameter for immediate application
+    $url = redirect()->back()->getTargetUrl();
+    $separator = strpos($url, '?') === false ? '?' : '&';
+    return redirect($url . $separator . 'locale=' . $locale);
 })->name('lang.switch');
+
+// Debug route
+Route::get('/debug/locale', function() {
+    return response()->json([
+        'app_locale' => app()->getLocale(),
+        'session_locale' => session('locale'),
+        'cookie_locale' => request()->cookie('locale'),
+        'query_locale' => request()->query('locale'),
+        'config_locale' => config('app.locale'),
+        'session_all' => session()->all(),
+    ]);
+});
 
 // Home Test Route
 Route::get('/test/home', function () {
