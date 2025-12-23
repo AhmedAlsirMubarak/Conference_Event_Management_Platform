@@ -8,6 +8,7 @@
     <meta name="description"
         content="Saudi Climate Week 2026 - Driving Regional Climate Action & Clean Energy Innovation in Riyadh, May 24-27, 2026">
     <meta name="keywords" content="Saudi Climate Week, SCW 2026, Climate Action, Clean Energy, Sustainability">
+    <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
     @vite('resources/css/app.css')
     <title>Saudi Climate Week 2026 - Climate Action & Clean Energy</title>
 </head>
@@ -19,7 +20,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <div class="flex items-center">
-                    <img class="h-10 sm:h-12 w-auto" src="/images/scw-logo.webp" alt="SCW Logo">
+                    <img class="h-10 sm:h-12 w-auto" src="/storage/nav-img/scw-logo.webp" alt="SCW Logo">
                 </div>
                 <div class="hidden sm:flex items-center gap-4">
                     <span class="text-white text-sm font-medium">May 24-27, 2026 • Riyadh</span>
@@ -36,7 +37,7 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="/images/bg-scw.webp" alt="Saudi Climate Week">
+            <img class="w-full h-full object-cover" src="/storage/mix/hero-homeeng.webp" alt="Saudi Climate Week">
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
         </div>
 
@@ -46,7 +47,8 @@
                 <!-- Left Content -->
                 <div class="flex flex-col gap-6 sm:gap-8">
                     <div>
-                        <img src="/images/section.png" alt="Section Icon" class="h-8 sm:h-10 w-auto mb-4 sm:mb-6">
+                        <img src="/storage/mix/back-icon.webp" alt="Section Icon"
+                            class="h-8 sm:h-10 w-auto mb-4 sm:mb-6">
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                         Saudi Climate <span class="text-blue-500">Week 2026</span>
@@ -122,9 +124,9 @@
                         <div class="pt-4 border-t border-zinc-700">
                             <p class="text-gray-400 text-sm mb-4">Organized by:</p>
                             <div class="flex items-center gap-4">
-                                <img src="/images/ecocode-logo.webp" alt="Ecocode" class="h-8 w-auto">
+                                <img src="/storage/footer-img/ecocode-logo.webp" alt="Ecocode" class="h-8 w-auto">
                                 <div class="w-px h-8 bg-zinc-700"></div>
-                                <img src="/images/birba-logo-white.webp" alt="Birba" class="h-8 w-auto">
+                                <img src="/storage/footer-img/birba-logo-white.webp" alt="Birba" class="h-8 w-auto">
                             </div>
                         </div>
                     </div>
