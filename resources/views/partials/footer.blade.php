@@ -10,7 +10,8 @@
             <div
                 class="self-stretch w-32 h-18 justify-center {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }}">
                 <a href="https://saudiclimateweek.com/">
-                    <img class="w-[100px] h-[69px]" src="{{ asset('storage/footer-img/scw-logo.webp') }}" alt="SCW Logo" />
+                    <img class="w-[100px] h-[69px]" src="{{ asset('storage/footer-img/scw-logo.webp') }}"
+                        alt="SCW Logo" />
                 </a>
             </div>
 
@@ -38,7 +39,8 @@
                     <!-- Location -->
                     <div class="flex items-center gap-3">
                         <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                            <img src="{{ asset('storage/footer-img/map.svg') }}" alt="Location" class="w-full h-full object-contain">
+                            <img src="{{ asset('storage/footer-img/map.svg') }}" alt="Location"
+                                class="w-full h-full object-contain">
                         </div>
                         <div
                             class="w-25 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
@@ -220,7 +222,8 @@
             <!-- Mobile Logo and Description -->
             <div class="space-y-2 text-center">
                 <a href="https://saudiclimateweek.com/">
-                    <img src="{{ asset('storage/footer-img/scw-logo.webp') }}" alt="SCW Logo" class="w-12 h-auto mx-auto pb-2">
+                    <img src="{{ asset('storage/footer-img/scw-logo.webp') }}" alt="SCW Logo"
+                        class="w-12 h-auto mx-auto pb-2">
                 </a>
                 <p class="text-xs text-gray-400 leading-tight">
                     {{ __('footer.about_description') }}
@@ -303,8 +306,8 @@
                 <div class="space-y-4">
                     <div class="space-y-2">
                         <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                            <img class="w-16 h-auto mx-auto" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}"
-                                alt="Birba" />
+                            <img class="w-16 h-auto mx-auto"
+                                src="{{ asset('storage/footer-img/birba-logo-white.webp') }}" alt="Birba" />
                         </a>
                         <p class="text-xs text-gray-400">
                             {{ __('footer.partner_2_desc') }}
