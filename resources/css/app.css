@@ -8,6 +8,30 @@
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-montserrat: 'Montserrat', sans-serif;
+    --font-din-arabic: 'DIN_Next_LT_Arabic', sans-serif;
+}
+
+/* Global font for English (LTR) */
+html[dir="ltr"],
+html[dir="ltr"] body,
+html:not([dir="rtl"]) {
+    font-family: var(--font-montserrat);
+}
+
+/* Global font for Arabic (RTL) */
+html[dir="rtl"],
+html[dir="rtl"] body {
+    font-family: var(--font-din-arabic);
+}
+
+/* Ensure sections with dir attribute also respect font */
+section[dir="ltr"] {
+    font-family: var(--font-montserrat);
+}
+
+section[dir="rtl"] {
+    font-family: var(--font-din-arabic);
 }
 
 /* Explicit responsive styles to ensure they work */

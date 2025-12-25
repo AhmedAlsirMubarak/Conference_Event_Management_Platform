@@ -29,7 +29,7 @@
                 <span
                     class="w-[390px] h-[37px] inline-flex items-center justify-center rounded-full bg-[#211d1d4d] text-[19px] ring-1 ring-[#E6813E]/40 backdrop-blur-md">
                     <span
-                        class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} line-clamp-2 px-1">
+                        class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent line-clamp-2 px-1">
                         {{ __('hero.badge') }}
                     </span>
                 </span>
@@ -38,8 +38,7 @@
             {{-- Main Headline --}}
             <div
                 class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-35 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                <h1
-                    class="text-[80px] font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-[95px] max-w-[538px]">
+                <h1 class="text-[80px] font-bold text-white leading-[95px] max-w-[538px]">
                     {{ __('hero.headline') }}
                 </h1>
             </div>
@@ -47,8 +46,7 @@
             {{-- Subtitle --}}
             <div
                 class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-85 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                <p
-                    class="text-2xl font-medium text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-10 max-w-[570px]">
+                <p class="text-2xl font-medium text-white leading-10 max-w-[570px]">
                     {{ __('hero.subtitle') }}
                 </p>
             </div>
@@ -58,12 +56,10 @@
                 class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-[425px] flex items-end gap-8">
                 {{-- Location --}}
                 <div class="flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                    <span
-                        class="text-4xl font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-tight">
+                    <span class="text-4xl font-bold text-white leading-tight">
                         {{ __('hero.location_city') }}
                     </span>
-                    <span
-                        class="text-2xl font-medium text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-snug">
+                    <span class="text-2xl font-medium text-white leading-snug">
                         {{ __('hero.location_country') }}
                     </span>
                 </div>
@@ -73,10 +69,10 @@
 
                 {{-- Date --}}
                 <div class="flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                    <span class="text-4xl font-bold text-white font-[Montserrat] leading-tight">
+                    <span class="text-4xl font-bold text-white leading-tight">
                         {{ __('hero.date') }}
                     </span>
-                    <span class="text-2xl font-medium text-white font-[Montserrat] leading-snug">
+                    <span class="text-2xl font-medium text-white leading-snug">
                         {{ __('hero.date_month') }}
                     </span>
                 </div>
@@ -104,7 +100,7 @@
                     <span
                         class="w-auto px-3 md:px-6 h-[24px] md:h-[35px] inline-flex items-center justify-center rounded-full bg-[#211d1d4d] text-[9px] md:text-base ring-1 ring-[#E6813E]/40 backdrop-blur-md whitespace-normal text-center">
                         <span
-                            class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} line-clamp-2">
+                            class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent line-clamp-2">
                             {{ __('hero.badge') }}
                         </span>
                     </span>
@@ -113,8 +109,7 @@
                 {{-- Main Headline --}}
                 <div
                     class="flex flex-col {{ app()->getLocale() === 'ar' ? 'items-end text-right w-[160px] ' : 'items-start text-left w-[200px]' }} mb-3 md:mb-4">
-                    <h1
-                        class="text-2xl md:text-5xl font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-tight max-w-xs md:max-w-2xl">
+                    <h1 class="text-2xl md:text-5xl font-bold text-white leading-tight max-w-xs md:max-w-2xl">
                         {{ __('hero.headline') }}
                     </h1>
                 </div>
@@ -123,7 +118,7 @@
                 <div
                     class="flex flex-col {{ app()->getLocale() === 'ar' ? 'items-end text-right w-[160px] ' : 'items-start text-left w-[170px]' }} mb-6 md:mb-8">
                     <p
-                        class="text-[10px] md:text-base font-medium text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-relaxed md:leading-7 max-w-[260px] md:max-w-xl">
+                        class="text-[10px] md:text-base font-medium text-white leading-relaxed md:leading-7 max-w-[260px] md:max-w-xl">
                         {{ __('hero.subtitle') }}
                     </p>
                 </div>
@@ -132,12 +127,10 @@
                 <div class="flex flex-col items-center text-center gap-3 md:gap-4">
                     {{-- Location --}}
                     <div class="flex flex-col items-center gap-0.5">
-                        <span
-                            class="text-lg md:text-2xl font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-tight">
+                        <span class="text-lg md:text-2xl font-bold text-white leading-tight">
                             {{ __('hero.location_city') }}
                         </span>
-                        <span
-                            class="text-xs md:text-sm font-medium text-white/80 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-snug">
+                        <span class="text-xs md:text-sm font-medium text-white/80 leading-snug">
                             {{ __('hero.location_country') }}
                         </span>
                     </div>
@@ -147,10 +140,10 @@
 
                     {{-- Date --}}
                     <div class="flex flex-col items-center gap-0.5">
-                        <span class="text-lg md:text-2xl font-bold text-white font-[Montserrat] leading-tight">
+                        <span class="text-lg md:text-2xl font-bold text-white leading-tight">
                             {{ __('hero.date') }}
                         </span>
-                        <span class="text-xs md:text-sm font-medium text-white/80 font-[Montserrat] leading-snug">
+                        <span class="text-xs md:text-sm font-medium text-white/80 leading-snug">
                             {{ __('hero.date_month') }}
                         </span>
                     </div>
@@ -172,25 +165,21 @@
                     class="w-1/2 flex flex-col justify-center p-12 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
 
                     {{-- Small Label --}}
-                    <span
-                        class="text-[#E6813E] text-base font-semibold mb-2 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                    <span class="text-[#E6813E] text-base font-semibold mb-2">
                         {{ __('hero.event_label') }}
                     </span>
 
                     {{-- Main Title --}}
-                    <h2
-                        class="text-4xl font-bold text-white mb-4 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                    <h2 class="text-4xl font-bold text-white mb-4">
                         {{ __('hero.event_title') }}
                     </h2>
 
                     {{-- Description --}}
-                    <p
-                        class="text-gray-300 text-base mb-2 leading-relaxed {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                    <p class="text-gray-300 text-base mb-2 leading-relaxed">
                         {{ __('hero.event_desc_1') }}
                     </p>
 
-                    <p
-                        class="text-gray-300 text-base mb-6 leading-relaxed {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                    <p class="text-gray-300 text-base mb-6 leading-relaxed">
                         {{ __('hero.event_desc_2') }}
                     </p>
 
@@ -201,8 +190,7 @@
                                 <img src="/storage/mix/Radar-animation.gif" class="h-[45px] w-[45px]"
                                     alt="Pillars Icon" />
                             </div>
-                            <h3
-                                class="text-xl font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                            <h3 class="text-xl font-bold text-white">
                                 {{ __('hero.event_pillars') }}
                             </h3>
                         </div>
@@ -211,29 +199,25 @@
                         <div class="grid grid-cols-2 gap-3">
                             <div class="flex items-center gap-2">
                                 <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_1') }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_2') }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_3') }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2">
                                 <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_4') }}
                                 </span>
                             </div>
@@ -270,25 +254,21 @@
                 <div class="w-full flex flex-col items-center justify-start p-6 md:p-8 text-center">
 
                     {{-- Small Label --}}
-                    <span
-                        class="text-[#E6813E] text-sm md:text-base font-semibold mb-2 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                    <span class="text-[#E6813E] text-sm md:text-base font-semibold mb-2">
                         {{ __('hero.event_label') }}
                     </span>
 
                     {{-- Main Title --}}
-                    <h2
-                        class="text-xl md:text-2xl font-bold text-white mb-3 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                    <h2 class="text-xl md:text-2xl font-bold text-white mb-3">
                         {{ __('hero.event_title') }}
                     </h2>
 
                     {{-- Description --}}
-                    <p
-                        class="text-gray-300 text-xs md:text-sm mb-2 leading-relaxed {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} line-clamp-3">
+                    <p class="text-gray-300 text-xs md:text-sm mb-2 leading-relaxed line-clamp-3">
                         {{ __('hero.event_desc_1') }}
                     </p>
 
-                    <p
-                        class="text-gray-300 text-xs md:text-sm mb-4 leading-relaxed {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} line-clamp-3">
+                    <p class="text-gray-300 text-xs md:text-sm mb-4 leading-relaxed line-clamp-3">
                         {{ __('hero.event_desc_2') }}
                     </p>
 
@@ -299,8 +279,7 @@
                                 <img src="/storage/mix/Radar-animation.gif" class="h-8 w-8 md:h-10 md:w-10"
                                     alt="Pillars Icon" />
                             </div>
-                            <h3
-                                class="text-sm md:text-base font-bold text-white {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                            <h3 class="text-sm md:text-base font-bold text-white">
                                 {{ __('hero.event_pillars') }}
                             </h3>
                         </div>
@@ -309,29 +288,25 @@
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-sm mx-auto">
                             <div class="flex items-center justify-center gap-2">
                                 <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-xs md:text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_1') }}
                                 </span>
                             </div>
                             <div class="flex items-center justify-center gap-2">
                                 <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-xs md:text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_2') }}
                                 </span>
                             </div>
                             <div class="flex items-center justify-center gap-2">
                                 <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-xs md:text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_3') }}
                                 </span>
                             </div>
                             <div class="flex items-center justify-center gap-2">
                                 <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
-                                <span
-                                    class="text-gray-300 text-xs md:text-sm {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                                <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_4') }}
                                 </span>
                             </div>
@@ -349,8 +324,7 @@
     <section class="hidden lg:block bg-[#121D24] text-white mt-[-15%] pt-[250px]  relative">
         <div class="mx-auto max-w-6xl px-4 py-10 sm:py-12">
             <!-- Title -->
-            <h3
-                class="text-center text-2xl font-extrabold tracking-wide {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+            <h3 class="text-center text-2xl font-extrabold tracking-wide">
                 {{ __('hero.event_state_title') }}
             </h3>
 
@@ -393,8 +367,7 @@
     <section class="lg:hidden bg-[#121D24] text-white mt-8 md:mt-12 relative">
         <div class="mx-auto max-w-6xl px-4 py-8 md:py-12">
             <!-- Title -->
-            <h3
-                class="text-center text-xl md:text-2xl font-extrabold tracking-wide {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} mb-8">
+            <h3 class="text-center text-xl md:text-2xl font-extrabold tracking-wide mb-8">
                 {{ __('hero.event_state_title') }}
             </h3>
 
@@ -445,8 +418,7 @@
                 </div>
                 {{-- Banner Text --}}
                 <div class="flex items-center justify-center">
-                    <span
-                        class="text-white text-sm md:text-xl font-bold {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} leading-6 md:leading-8">
+                    <span class="text-white text-sm md:text-xl font-bold leading-6 md:leading-8">
                         {{ __('hero.speaker_banner') }}
                     </span>
                 </div>
@@ -459,16 +431,13 @@
         <div class="mx-auto max-w-6xl px-4">
             <!-- Heading -->
             <div class="text-center pb-6">
-                <p
-                    class="text-xl font-bold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="text-xl font-bold text-orange-500">
                     {{ __('hero.about_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">
                     {{ __('hero.about_title') }}
                 </h2>
-                <p
-                    class="mt-3 text-[15px] sm:text-base text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="mt-3 text-[15px] sm:text-base text-slate-500">
                     {{ __('hero.about_subtitle') }}
                 </p>
             </div>
@@ -487,12 +456,10 @@
 
                     <!-- Body -->
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3
-                            class="text-[18px] sm:text-[20px] font-extrabold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
                             {{ __('hero.card_1_title') }}
                         </h3>
-                        <p
-                            class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
                             {{ __('hero.card_1_desc') }}
                         </p>
                     </div>
@@ -506,12 +473,10 @@
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3
-                            class="text-[18px] sm:text-[20px] font-extrabold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
                             {{ __('hero.card_2_title') }}
                         </h3>
-                        <p
-                            class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
                             {{ __('hero.card_2_desc') }}
                         </p>
                     </div>
@@ -525,12 +490,10 @@
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3
-                            class="text-[18px] sm:text-[20px] font-extrabold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
                             {{ __('hero.card_3_title') }}
                         </h3>
-                        <p
-                            class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
                             {{ __('hero.card_3_desc') }}
                         </p>
                     </div>
@@ -544,12 +507,10 @@
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3
-                            class="text-[18px] sm:text-[20px] font-extrabold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
                             {{ __('hero.card_4_title') }}
                         </h3>
-                        <p
-                            class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
                             {{ __('hero.card_4_desc') }}
                         </p>
                     </div>
@@ -568,16 +529,13 @@
 
             <!-- Heading -->
             <div class="text-center">
-                <p
-                    class="text-xl font-bold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="text-xl font-bold text-orange-500">
                     {{ __('hero.attendee_title_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-3xl sm:text-3xl font-bold text-[#121D24] {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <h2 class="mt-2 text-3xl sm:text-3xl font-bold text-[#121D24]">
                     {{ __('hero.attendee_title') }}
                 </h2>
-                <p
-                    class="mt-3 mx-auto max-w-2xl text-sm sm:text-base text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="mt-3 mx-auto max-w-2xl text-sm sm:text-base text-slate-500">
                     {{ __('hero.attendee_subtitle') }}
                 </p>
             </div>
@@ -717,16 +675,13 @@
 
             <!-- Heading -->
             <div class="text-center mb-8">
-                <p
-                    class="text-lg sm:text-xl font-bold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="text-lg sm:text-xl font-bold text-orange-500">
                     {{ __('hero.attendee_title_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-2xl sm:text-3xl font-bold text-[#121D24] {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-[#121D24]">
                     {{ __('hero.attendee_title') }}
                 </h2>
-                <p
-                    class="mt-3 mx-auto max-w-2xl text-xs sm:text-sm text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="mt-3 mx-auto max-w-2xl text-xs sm:text-sm text-slate-500">
                     {{ __('hero.attendee_subtitle') }}
                 </p>
             </div>
@@ -868,16 +823,13 @@
 
             <!-- Heading -->
             <div class="text-center">
-                <p
-                    class="text-xl font-bold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="text-xl font-bold text-orange-500">
                     {{ __('hero.program_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-2xl sm:text-3xl font-extrabold {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">
                     {{ __('hero.program_title') }}
                 </h2>
-                <p
-                    class="mt-3 text-sm sm:text-base text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="mt-3 text-sm sm:text-base text-white/70">
                     {{ __('hero.program_subtitle') }}
                 </p>
             </div>
@@ -904,12 +856,10 @@
 
                     <!-- CONTENT -->
                     <div class="p-6 text-center">
-                        <h3
-                            class="text-lg font-extrabold leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-lg font-extrabold leading-8">
                             {{ __('hero.program_card_1_title') }}
                         </h3>
-                        <p
-                            class="mt-4 text-sm leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-4 text-sm leading-7 text-white/70">
                             {{ __('hero.program_card_1_desc') }}
                         </p>
                     </div>
@@ -930,12 +880,10 @@
                     </div>
 
                     <div class="p-6 text-center">
-                        <h3
-                            class="text-lg font-extrabold leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-lg font-extrabold leading-8">
                             {{ __('hero.program_card_2_title') }}
                         </h3>
-                        <p
-                            class="mt-4 text-sm leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-4 text-sm leading-7 text-white/70">
                             {{ __('hero.program_card_2_desc') }}
                         </p>
                     </div>
@@ -956,12 +904,10 @@
                     </div>
 
                     <div class="p-6 text-center">
-                        <h3
-                            class="text-lg font-extrabold leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-lg font-extrabold leading-8">
                             {{ __('hero.program_card_3_title') }}
                         </h3>
-                        <p
-                            class="mt-4 text-sm leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-4 text-sm leading-7 text-white/70">
                             {{ __('hero.program_card_3_desc') }}
                         </p>
                     </div>
@@ -982,12 +928,10 @@
                     </div>
 
                     <div class="p-6 text-center">
-                        <h3
-                            class="text-lg font-extrabold leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-lg font-extrabold leading-8">
                             {{ __('hero.program_card_4_title') }}
                         </h3>
-                        <p
-                            class="mt-4 text-sm leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-4 text-sm leading-7 text-white/70">
                             {{ __('hero.program_card_4_desc') }}
                         </p>
                     </div>
@@ -1013,16 +957,13 @@
 
             <!-- Heading -->
             <div class="text-center mb-8">
-                <p
-                    class="text-xs md:text-sm font-extrabold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="text-xs md:text-sm font-extrabold text-orange-500">
                     {{ __('hero.program_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-xl md:text-2xl font-extrabold {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <h2 class="mt-2 text-xl md:text-2xl font-extrabold">
                     {{ __('hero.program_title') }}
                 </h2>
-                <p
-                    class="mt-2 md:mt-3 text-xs md:text-sm text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                <p class="mt-2 md:mt-3 text-xs md:text-sm text-white/70">
                     {{ __('hero.program_subtitle') }}
                 </p>
             </div>
@@ -1049,12 +990,10 @@
 
                     <!-- CONTENT -->
                     <div class="p-4 md:p-6 text-center">
-                        <h3
-                            class="text-base md:text-lg font-extrabold leading-6 md:leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
                             {{ __('hero.program_card_1_title') }}
                         </h3>
-                        <p
-                            class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
                             {{ __('hero.program_card_1_desc') }}
                         </p>
                     </div>
@@ -1075,12 +1014,10 @@
                     </div>
 
                     <div class="p-4 md:p-6 text-center">
-                        <h3
-                            class="text-base md:text-lg font-extrabold leading-6 md:leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
                             {{ __('hero.program_card_2_title') }}
                         </h3>
-                        <p
-                            class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
                             {{ __('hero.program_card_2_desc') }}
                         </p>
                     </div>
@@ -1101,12 +1038,10 @@
                     </div>
 
                     <div class="p-4 md:p-6 text-center">
-                        <h3
-                            class="text-base md:text-lg font-extrabold leading-6 md:leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
                             {{ __('hero.program_card_3_title') }}
                         </h3>
-                        <p
-                            class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
                             {{ __('hero.program_card_3_desc') }}
                         </p>
                     </div>
@@ -1127,12 +1062,10 @@
                     </div>
 
                     <div class="p-4 md:p-6 text-center">
-                        <h3
-                            class="text-base md:text-lg font-extrabold leading-6 md:leading-8 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
                             {{ __('hero.program_card_4_title') }}
                         </h3>
-                        <p
-                            class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }}">
+                        <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
                             {{ __('hero.program_card_4_desc') }}
                         </p>
                     </div>
@@ -1148,16 +1081,13 @@
         <div class="mx-auto max-w-6xl px-4">
             <!-- Heading -->
             <div class="text-center mb-4">
-                <p
-                    class="text-xl font-bold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} animate-fade-in">
+                <p class="text-xl font-bold text-orange-500 animate-fade-in">
                     {{ __('hero.sponsors_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} animate-fade-in-up">
+                <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900 animate-fade-in-up">
                     {{ __('hero.sponsors_title') }}
                 </h2>
-                <p
-                    class="mt-3 mx-auto max-w-2xl text-sm sm:text-base text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} animate-fade-in-up">
+                <p class="mt-3 mx-auto max-w-2xl text-sm sm:text-base text-slate-500 animate-fade-in-up">
                     {{ __('hero.sponsors_subtitle') }}
                 </p>
             </div>
@@ -1283,16 +1213,13 @@
         <div class="mx-auto max-w-6xl px-4">
             <!-- Heading -->
             <div class="text-center mb-4">
-                <p
-                    class="text-sm font-extrabold text-orange-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} animate-fade-in">
+                <p class="text-sm font-extrabold text-orange-500 animate-fade-in">
                     {{ __('hero.sponsors_label') }}
                 </p>
-                <h2
-                    class="mt-2 text-xl sm:text-2xl font-extrabold text-slate-900 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} animate-fade-in-up">
+                <h2 class="mt-2 text-xl sm:text-2xl font-extrabold text-slate-900 animate-fade-in-up">
                     {{ __('hero.sponsors_title') }}
                 </h2>
-                <p
-                    class="mt-3 mx-auto max-w-2xl text-xs sm:text-sm text-slate-500 {{ app()->getLocale() === 'ar' ? 'font-[DIN_Next_LT_Arabic]' : 'font-[Montserrat]' }} animate-fade-in-up">
+                <p class="mt-3 mx-auto max-w-2xl text-xs sm:text-sm text-slate-500 animate-fade-in-up">
                     {{ __('hero.sponsors_subtitle') }}
                 </p>
             </div>
