@@ -434,7 +434,7 @@
                 <p class="text-xl font-bold text-orange-500">
                     {{ __('hero.about_label') }}
                 </p>
-                <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold text-slate-900">
+                <h2 class="mt-2 text-2xl sm:text-3xl font-bold text-slate-900">
                     {{ __('hero.about_title') }}
                 </h2>
                 <p class="mt-3 text-[15px] sm:text-base text-slate-500">
@@ -456,7 +456,7 @@
 
                     <!-- Body -->
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-slate-900">
                             {{ __('hero.card_1_title') }}
                         </h3>
                         <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
@@ -473,7 +473,7 @@
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-slate-900">
                             {{ __('hero.card_2_title') }}
                         </h3>
                         <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
@@ -490,7 +490,7 @@
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-slate-900">
                             {{ __('hero.card_3_title') }}
                         </h3>
                         <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
@@ -507,7 +507,7 @@
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                        <h3 class="text-[18px] sm:text-[20px] font-extrabold text-slate-900">
+                        <h3 class="text-[18px] sm:text-[20px] font-bold text-slate-900">
                             {{ __('hero.card_4_title') }}
                         </h3>
                         <p class="mt-3 text-[14px] sm:text-[15px] leading-6 text-slate-500">
@@ -957,10 +957,10 @@
 
             <!-- Heading -->
             <div class="text-center mb-8">
-                <p class="text-xs md:text-sm font-extrabold text-orange-500">
+                <p class="text-xs md:text-sm font-bold text-orange-500">
                     {{ __('hero.program_label') }}
                 </p>
-                <h2 class="mt-2 text-xl md:text-2xl font-extrabold">
+                <h2 class="mt-2 text-xl md:text-2xl font-bold">
                     {{ __('hero.program_title') }}
                 </h2>
                 <p class="mt-2 md:mt-3 text-xs md:text-sm text-white/70">
