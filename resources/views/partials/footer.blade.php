@@ -310,16 +310,25 @@
             <!-- Contact Section -->
             <div class="text-center">
                 <h4 class="text-xs font-bold text-white mb-2">{{ __('footer.contact_title') }}</h4>
-                <ul class="space-y-1">
-                    <li>
-                        <p class="text-xs text-gray-400">{{ __('footer.sales_team') }}</p>
-                    </li>
-                    <li><a href="mailto:info@saudiclimateweek.com"
-                            class="text-xs text-gray-400 hover:text-white transition break-all">info@saudiclimateweek.com</a>
-                    </li>
-                    <li><a href="tel:+966xxxxxxxxx" class="text-xs text-gray-400 hover:text-white transition"
-                            dir="ltr">+966 xxxxxxxxx</a></li>
-                </ul>
+                <div class="space-y-2">
+                    <p class="text-xs text-gray-400">{{ __('footer.sales_team') }}</p>
+                    <a href="mailto:info@saudiclimateweek.com"
+                        class="text-xs text-gray-400 hover:text-white transition break-all block">
+                        info@saudiclimateweek.com
+                    </a>
+                    <div class="flex items-center justify-center gap-2">
+                        <img src="{{ asset('storage/footer-img/call.svg') }}" alt="Phone" class="w-4 h-4">
+                        <a href="tel:+966559509832" class="text-xs text-gray-400 hover:text-white transition" dir="ltr">
+                            +966 55 950 9832
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center gap-2">
+                        <img src="{{ asset('storage/footer-img/whatsapp.svg') }}" alt="WhatsApp" class="w-4 h-4">
+                        <a href="https://wa.me/966510831535" class="text-xs text-gray-400 hover:text-white transition" dir="ltr">
+                            +966 51 083 1535
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Organizers Section (Mobile) -->
