@@ -58,8 +58,8 @@
                 <!-- Date and Location -->
                 <div class="flex flex-col gap-1">
                     <div class="flex flex-wrap gap-2 items-center">
-                        <span class="text-lg sm:text-2xl font-bold font-['Montserrat'] text-white">24 - 27</span>
-                        <span class="text-sm sm:text-base font-medium font-['Montserrat'] text-white">May, 2026</span>
+                        <span class="text-lg sm:text-2xl font-bold font-['Montserrat'] text-white">06 - 10</span>
+                        <span class="text-sm sm:text-base font-medium font-['Montserrat'] text-white">sep, 2026</span>
                     </div>
                     <div class="text-sm sm:text-base font-medium font-['Montserrat'] text-white">
                         Riyadh, Saudi Arabia

@@ -84,7 +84,7 @@
                             </div>
                             <div>
                                 <h3 class="text-white font-semibold text-lg">Event Dates</h3>
-                                <p class="text-gray-300 text-sm">May 24-27, 2026</p>
+                                <p class="text-gray-300 text-sm">sep 06-10, 2026</p>
                             </div>
                         </div>
 

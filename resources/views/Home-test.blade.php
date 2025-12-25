@@ -156,13 +156,13 @@
 
     <!-- Event Info Section - Desktop (lg and above) -->
     <section class="hidden lg:block relative z-10">
-        <div class="w-full max-w-[1168px] h-[490px] bg-gray-900 rounded-[20px] mx-auto mt-20 mb-0 overflow-hidden">
+        <div class="w-full max-w-[1168px] h-[490px] bg-gray-900 rounded-[20px] mx-auto mt-20 mb-0 overflow-hidden  ">
 
-            <div class="flex flex-row h-full">
+            <div class="flex flex-row h-full ">
 
                 {{-- Left Container - Content --}}
                 <div
-                    class="w-1/2 flex flex-col justify-center p-12 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
+                    class="w-1/2 pt-20  flex flex-col justify-center pl-12 pb-12 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
 
                     {{-- Small Label --}}
                     <span class="text-[#E6813E] text-base font-semibold mb-2">
