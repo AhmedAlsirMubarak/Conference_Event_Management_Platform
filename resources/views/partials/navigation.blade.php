@@ -30,7 +30,7 @@
                 </div>
 
                 <!-- Right: Auth & Language Switcher -->
-                <div class="flex items-center gap-2 sm:gap-3">
+                <div class="flex items-center gap-1 sm:gap-3">
                     <!-- Language Switcher -->
                     <div class="flex items-center bg-gray-800 rounded-lg p-0.5 gap-1">
                         @if(app()->getLocale() === 'ar')
@@ -60,7 +60,7 @@
 
                     <!-- Partner Button -->
                     <a href="#"
-                        class="hidden sm:block px-3 py-2 bg-[#3C94C5] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm">
+                        class="px-2 py-1 sm:px-3 sm:py-2 bg-[#3C94C5] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm">
                         {{ __('navigation.become_partner') }}
                     </a>
 
