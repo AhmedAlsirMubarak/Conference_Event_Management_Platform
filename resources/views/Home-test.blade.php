@@ -162,7 +162,7 @@
 
                 {{-- Left Container - Content --}}
                 <div
-                    class="w-1/2 pt-20  flex flex-col justify-center pl-12 pb-12 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
+                    class="w-1/2 pt-20  flex flex-col justify-center pl-12 pb-12 pr-12 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
 
                     {{-- Small Label --}}
                     <span class="text-[#E6813E] text-base font-semibold mb-2">
