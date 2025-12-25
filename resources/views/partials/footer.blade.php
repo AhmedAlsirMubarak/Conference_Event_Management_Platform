@@ -109,7 +109,7 @@
                         <img src="{{ asset('storage/footer-img/call.svg') }}" alt="Phone"
                             class="w-full h-full object-contain">
                     </div>
-                    <a href="tel:+966559509832"
+                    <a href="tel:+966559509832" target="_blank" rel="noopener noreferrer"
                         class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition"
                         dir="ltr">
                         +966 55 950 9832
@@ -118,10 +118,10 @@
 
                 <div class="self-stretch flex items-center gap-3">
                     <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
-                        <img src="{{ asset('storage/footer-img/whatsapp.svg') }}" alt="Phone"
+                        <img src="{{ asset('storage/footer-img/whatsapp.svg') }}" alt="whatsapp"
                             class="w-full h-full object-contain">
                     </div>
-                    <a href="https://wa.me/966510831535"
+                    <a href="https://wa.me/966510831535" target="_blank" rel="noopener noreferrer"
                         class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition"
                         dir="ltr">
                         +966 51 083 1535
@@ -318,14 +318,14 @@
                     </a>
                     <div class="flex items-center justify-center gap-2">
                         <img src="{{ asset('storage/footer-img/call.svg') }}" alt="Phone" class="w-4 h-4">
-                        <a href="tel:+966559509832" target="_blank"
+                        <a href="tel:+966559509832" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-gray-400 hover:text-white transition" dir="ltr">
                             +966 55 950 9832
                         </a>
                     </div>
                     <div class="flex items-center justify-center gap-2">
                         <img src="{{ asset('storage/footer-img/whatsapp.svg') }}" alt="WhatsApp" class="w-4 h-4">
-                        <a href="https://wa.me/966510831535" target="_blank"
+                        <a href="https://wa.me/966510831535" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-gray-400 hover:text-white transition" dir="ltr">
                             +966 51 083 1535
                         </a>
