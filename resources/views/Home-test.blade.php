@@ -98,7 +98,7 @@
                 {{-- Badge/Welcome Message --}}
                 <div class="flex items-center justify-center mb-4 md:mb-6">
                     <span
-                        class="w-auto px-3 md:px-6 h-[24px] md:h-[35px] inline-flex items-center justify-center rounded-full bg-[#211d1d4d] text-[9px] md:text-base ring-1 ring-[#E6813E]/40 backdrop-blur-md whitespace-normal text-center">
+                        class="w-auto px-3 md:px-6 h-[24px] md:h-[35px] inline-flex items-center justify-center rounded-full bg-[#211d1d4d] text-[8.6px] md:text-base ring-1 ring-[#E6813E]/40 backdrop-blur-md whitespace-normal text-center max-w-[200px] md:max-w-full">
                         <span
                             class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent line-clamp-2">
                             {{ __('hero.badge') }}
