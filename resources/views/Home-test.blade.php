@@ -156,13 +156,13 @@
 
     <!-- Event Info Section - Desktop (lg and above) -->
     <section class="hidden lg:block relative z-10">
-        <div class="w-full max-w-[1168px] h-[490px] bg-gray-900 rounded-[20px] mx-auto mt-20 mb-0 overflow-hidden  ">
+        <div class="w-full max-w-[1168px] h-[498px] bg-gray-900 rounded-[20px] mx-auto mt-20 mb-0 overflow-hidden  ">
 
             <div class="flex flex-row h-full ">
 
                 {{-- Left Container - Content --}}
                 <div
-                    class="w-1/2 pt-20  flex flex-col justify-center pl-12 pb-12 pr-12 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
+                    class="w-1/2 pt-20 pb-12 {{ app()->getLocale() === 'ar' ? 'pl-12 pr-20 text-right' : 'pl-20 pr-12 text-left' }} flex flex-col justify-center">
 
                     {{-- Small Label --}}
                     <span class="text-[#E6813E] text-base font-semibold mb-2">
@@ -215,7 +215,7 @@
                                     {{ __('hero.pillar_3') }}
                                 </span>
                             </div>
-                            <div class="flex items-center gap-2">
+                            <div class="flex items-center gap-2 ">
                                 <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
                                 <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_4') }}
@@ -324,39 +324,39 @@
     <section class="hidden lg:block bg-[#121D24] text-white mt-[-15%] pt-[250px]  relative">
         <div class="mx-auto max-w-6xl px-4 py-10 sm:py-12">
             <!-- Title -->
-            <h3 class="text-center text-2xl font-extrabold tracking-wide">
+            <h3 class="text-center text-2xl font-bold tracking-wide">
                 {{ __('hero.event_state_title') }}
             </h3>
 
             <!-- Stats row -->
             <div class="mt-10 grid grid-cols-2 gap-y-10 text-center sm:grid-cols-3 lg:grid-cols-6">
                 <div>
-                    <div class="text-2xl font-extrabold counter" data-target="200">0</div>
+                    <div class="text-2xl font-bold counter" data-target="200">0</div>
                     <div class="mt-2 text-[20px] text-white/70">{{ __('hero.stat_speakers') }}</div>
                 </div>
 
                 <div>
-                    <div class="text-2xl font-extrabold counter" data-target="1700">0</div>
+                    <div class="text-2xl font-bold counter" data-target="1700">0</div>
                     <div class="mt-2 text-[20px] text-white/70">{{ __('hero.stat_participants') }}</div>
                 </div>
 
                 <div>
-                    <div class="text-2xl font-extrabold counter" data-target="8000">0</div>
+                    <div class="text-2xl font-bold counter" data-target="8000">0</div>
                     <div class="mt-2 text-[20px] text-white/70">{{ __('hero.stat_visitors') }}</div>
                 </div>
 
                 <div>
-                    <div class="text-2xl font-extrabold counter" data-target="45">0</div>
+                    <div class="text-2xl font-bold counter" data-target="45">0</div>
                     <div class="mt-2 text-[20px] text-white/70">{{ __('hero.stat_exhibitors') }}</div>
                 </div>
 
                 <div>
-                    <div class="text-2xl font-extrabold counter" data-target="40">0</div>
+                    <div class="text-2xl font-bold counter" data-target="40">0</div>
                     <div class="mt-2 text-[20px] text-white/70">{{ __('hero.stat_countries') }}</div>
                 </div>
 
                 <div>
-                    <div class="text-2xl font-extrabold counter-4m" data-target="4">0</div>
+                    <div class="text-2xl font-bold counter-4m" data-target="4">0</div>
                     <div class="mt-2 text-[20px] text-white/70">{{ __('hero.stat_media_impact') }}</div>
                 </div>
             </div>
@@ -367,39 +367,39 @@
     <section class="lg:hidden bg-[#121D24] text-white mt-8 md:mt-12 relative">
         <div class="mx-auto max-w-6xl px-4 py-8 md:py-12">
             <!-- Title -->
-            <h3 class="text-center text-xl md:text-2xl font-extrabold tracking-wide mb-8">
+            <h3 class="text-center text-xl md:text-2xl font-bold  tracking-wide mb-8">
                 {{ __('hero.event_state_title') }}
             </h3>
 
             <!-- Stats Grid - 2 columns on mobile, 3 on tablet -->
             <div class="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                 <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-extrabold counter" data-target="200">0</div>
+                    <div class="text-2xl md:text-3xl font-bold counter" data-target="200">0</div>
                     <div class="mt-2 text-sm md:text-base text-white/70">{{ __('hero.stat_speakers') }}</div>
                 </div>
 
                 <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-extrabold counter" data-target="1700">0</div>
+                    <div class="text-2xl md:text-3xl font-bold counter" data-target="1700">0</div>
                     <div class="mt-2 text-sm md:text-base text-white/70">{{ __('hero.stat_participants') }}</div>
                 </div>
 
                 <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-extrabold counter" data-target="8000">0</div>
+                    <div class="text-2xl md:text-3xl font-bold counter" data-target="8000">0</div>
                     <div class="mt-2 text-sm md:text-base text-white/70">{{ __('hero.stat_visitors') }}</div>
                 </div>
 
                 <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-extrabold counter" data-target="45">0</div>
+                    <div class="text-2xl md:text-3xl font-bold counter" data-target="45">0</div>
                     <div class="mt-2 text-sm md:text-base text-white/70">{{ __('hero.stat_exhibitors') }}</div>
                 </div>
 
                 <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-extrabold counter" data-target="40">0</div>
+                    <div class="text-2xl md:text-3xl font-bold counter" data-target="40">0</div>
                     <div class="mt-2 text-sm md:text-base text-white/70">{{ __('hero.stat_countries') }}</div>
                 </div>
 
                 <div class="text-center">
-                    <div class="text-2xl md:text-3xl font-extrabold counter-4m" data-target="4">0</div>
+                    <div class="text-2xl md:text-3xl font-bold counter-4m" data-target="4">0</div>
                     <div class="mt-2 text-xs md:text-sm text-white/70">{{ __('hero.stat_media_impact') }}</div>
                 </div>
             </div>
@@ -826,7 +826,7 @@
                 <p class="text-xl font-bold text-orange-500">
                     {{ __('hero.program_label') }}
                 </p>
-                <h2 class="mt-2 text-2xl sm:text-3xl font-extrabold">
+                <h2 class="mt-2 text-2xl sm:text-3xl font-bold">
                     {{ __('hero.program_title') }}
                 </h2>
                 <p class="mt-3 text-sm sm:text-base text-white/70">
@@ -856,7 +856,7 @@
 
                     <!-- CONTENT -->
                     <div class="p-6 text-center">
-                        <h3 class="text-lg font-extrabold leading-8">
+                        <h3 class="text-lg font-bold leading-8">
                             {{ __('hero.program_card_1_title') }}
                         </h3>
                         <p class="mt-4 text-sm leading-7 text-white/70">
@@ -880,7 +880,7 @@
                     </div>
 
                     <div class="p-6 text-center">
-                        <h3 class="text-lg font-extrabold leading-8">
+                        <h3 class="text-lg font-bold leading-8">
                             {{ __('hero.program_card_2_title') }}
                         </h3>
                         <p class="mt-4 text-sm leading-7 text-white/70">
@@ -904,7 +904,7 @@
                     </div>
 
                     <div class="p-6 text-center">
-                        <h3 class="text-lg font-extrabold leading-8">
+                        <h3 class="text-lg font-bold leading-8">
                             {{ __('hero.program_card_3_title') }}
                         </h3>
                         <p class="mt-4 text-sm leading-7 text-white/70">
@@ -928,7 +928,7 @@
                     </div>
 
                     <div class="p-6 text-center">
-                        <h3 class="text-lg font-extrabold leading-8">
+                        <h3 class="text-lg font-bold leading-8">
                             {{ __('hero.program_card_4_title') }}
                         </h3>
                         <p class="mt-4 text-sm leading-7 text-white/70">
@@ -990,7 +990,7 @@
 
                     <!-- CONTENT -->
                     <div class="p-4 md:p-6 text-center">
-                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
+                        <h3 class="text-base md:text-lg font-bold leading-6 md:leading-8">
                             {{ __('hero.program_card_1_title') }}
                         </h3>
                         <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
@@ -1014,7 +1014,7 @@
                     </div>
 
                     <div class="p-4 md:p-6 text-center">
-                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
+                        <h3 class="text-base md:text-lg font-bold leading-6 md:leading-8">
                             {{ __('hero.program_card_2_title') }}
                         </h3>
                         <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
@@ -1038,7 +1038,7 @@
                     </div>
 
                     <div class="p-4 md:p-6 text-center">
-                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
+                        <h3 class="text-base md:text-lg font-bold leading-6 md:leading-8">
                             {{ __('hero.program_card_3_title') }}
                         </h3>
                         <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
@@ -1062,7 +1062,7 @@
                     </div>
 
                     <div class="p-4 md:p-6 text-center">
-                        <h3 class="text-base md:text-lg font-extrabold leading-6 md:leading-8">
+                        <h3 class="text-base md:text-lg font-bold leading-6 md:leading-8">
                             {{ __('hero.program_card_4_title') }}
                         </h3>
                         <p class="mt-3 md:mt-4 text-xs md:text-sm leading-5 md:leading-7 text-white/70">
@@ -1213,10 +1213,10 @@
         <div class="mx-auto max-w-6xl px-4">
             <!-- Heading -->
             <div class="text-center mb-4">
-                <p class="text-sm font-extrabold text-orange-500 animate-fade-in">
+                <p class="text-sm font-bold text-orange-500 animate-fade-in">
                     {{ __('hero.sponsors_label') }}
                 </p>
-                <h2 class="mt-2 text-xl sm:text-2xl font-extrabold text-slate-900 animate-fade-in-up">
+                <h2 class="mt-2 text-xl sm:text-2xl font-bold text-slate-900 animate-fade-in-up">
                     {{ __('hero.sponsors_title') }}
                 </h2>
                 <p class="mt-3 mx-auto max-w-2xl text-xs sm:text-sm text-slate-500 animate-fade-in-up">
