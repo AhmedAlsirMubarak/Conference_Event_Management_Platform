@@ -17,7 +17,7 @@
 
             <div class="self-stretch flex flex-col justify-start items-center gap-2.5">
                 <div
-                    class="self-stretch h-20 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center text-zinc-400 text-xs font-normal font-['DIN_Next_LT_Arabic'] leading-6">
+                    class="self-stretch h-20 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center text-zinc-400 text-xs font-normal leading-6">
                     {{ __('footer.about_description') }}
                 </div>
                 <div class="self-stretch inline-flex justify-end items-center gap-6">
@@ -29,9 +29,9 @@
                         </div>
                         <div
                             class="w-24 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
-                            <span class="text-white text-base font-bold font-['Montserrat'] leading-6" dir="ltr">06 -
+                            <span class="text-white text-base font-bold leading-6" dir="ltr">06 -
                                 10<br /></span>
-                            <span class="text-white text-xs font-normal font-['Montserrat'] leading-6">
+                            <span class="text-white text-xs font-normal leading-6">
                                 {{ __('footer.date_month_year') }}
                             </span>
                         </div>
@@ -44,10 +44,10 @@
                         </div>
                         <div
                             class="w-25 h-16 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} justify-center">
-                            <span class="text-white text-base font-bold font-['DIN_Next_LT_Arabic'] leading-6">
+                            <span class="text-white text-base font-bold leading-6">
                                 {{ __('footer.location_city') }}<br />
                             </span>
-                            <span class="text-white text-xs font-normal font-['DIN_Next_LT_Arabic'] leading-6">
+                            <span class="text-white text-xs font-normal leading-6">
                                 {{ __('footer.location_country') }}
                             </span>
                         </div>
@@ -89,7 +89,7 @@
     <div
         class="hidden lg:inline-flex w-56 left-[358px] top-[102px] absolute flex-col justify-center {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }} gap-6 pb-12">
         <div
-            class="self-stretch h-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-base font-bold font-['DIN_Next_LT_Arabic'] leading-6">
+            class="self-stretch h-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-base font-bold leading-6">
             {{ __('footer.contact_title') }}
         </div>
         <div
@@ -97,18 +97,37 @@
             <div
                 class="self-stretch flex flex-col justify-start {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }} gap-2.5">
                 <div
-                    class="self-stretch h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-zinc-400 text-sm font-normal font-['DIN_Next_LT_Arabic'] leading-6">
+                    class="self-stretch h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-zinc-400 text-sm font-normal leading-6">
                     {{ __('footer.sales_team') }}
                 </div>
                 <a href="mailto:info@saudiclimateweek.com"
-                    class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal font-['Montserrat'] leading-6 hover:opacity-100 transition">
+                    class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                     info@saudiclimateweek.com
                 </a>
-                <a href="tel:+966xxxxxxxxx"
-                    class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal font-['Montserrat'] leading-6 hover:opacity-100 transition"
-                    dir="ltr">
-                    +966 xxxxxxxxx
-                </a>
+                <div class="self-stretch flex items-center gap-3">
+                    <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
+                        <img src="{{ asset('storage/footer-img/call.svg') }}" alt="Phone"
+                            class="w-full h-full object-contain">
+                    </div>
+                    <a href="tel:+966559509832"
+                        class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition"
+                        dir="ltr">
+                        +966 55 950 9832
+                    </a>
+                </div>
+
+                <div class="self-stretch flex items-center gap-3">
+                    <div class="w-5 h-5 relative flex-shrink-0 flex items-center justify-center">
+                        <img src="{{ asset('storage/footer-img/whatsapp.svg') }}" alt="Phone"
+                            class="w-full h-full object-contain">
+                    </div>
+                    <a href="https://wa.me/966510831535"
+                        class="self-stretch opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition"
+                        dir="ltr">
+                        +966 51 083 1535
+                    </a>
+                </div>
+
             </div>
         </div>
     </div>
@@ -185,25 +204,16 @@
 
     </div>
 
-    <!-- Partners Section Label (Desktop Only) -->
+    <!-- organizers Section Label (Desktop Only) -->
     <div
         class="hidden lg:block w-44 h-7 left-1/2 -translate-x-1/2 top-[406px] absolute text-center justify-center text-white text-xs font-normal leading-6">
         {{ __('footer.organizers') }}
     </div>
 
-    <!-- Partners (Desktop Only) -->
+    <!-- organizers (Desktop Only) -->
     <div class="hidden lg:flex left-[386px] top-[460px] absolute justify-center items-center gap-11"
         dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
-        <div class="flex justify-start items-center gap-8">
-            <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                <img class="w-20 h-10" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}" alt="Partner 2" />
-            </a>
-            <div class="w-60 h-14 opacity-80 justify-center text-white text-xs font-normal leading-6">
-                {{ __('footer.partner_2_desc') }}
-            </div>
-        </div>
 
-        <div class="w-px h-10 bg-zinc-600"></div>
         <div class="flex justify-start items-center gap-7">
             <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
                 <img class="w-20 h-10" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}" alt="Partner 1" />
@@ -212,6 +222,18 @@
                 {{ __('footer.partner_1_desc') }}
             </div>
 
+        </div>
+
+        <div class="w-px h-10 bg-zinc-600"></div>
+
+
+        <div class="flex justify-start items-center gap-8">
+            <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
+                <img class="w-20 h-10" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}" alt="Partner 2" />
+            </a>
+            <div class="w-60 h-14 opacity-80 justify-center text-white text-xs font-normal leading-6">
+                {{ __('footer.partner_2_desc') }}
+            </div>
         </div>
 
     </div>
@@ -236,14 +258,14 @@
                     <p class="text-xs font-bold text-gray-300 mb-1">
                         {{ __('footer.date_label') }}
                     </p>
-                    <p class="text-xs text-white">06 - 10</p>
+                    <p class="text-xs text-white font-bold" dir="ltr">06 - 10</p>
                     <p class="text-xs text-white">{{ __('footer.date_month_year') }}</p>
                 </div>
                 <div>
                     <p class="text-xs font-bold text-gray-300 mb-1">
                         {{ __('footer.location_label') }}
                     </p>
-                    <p class="text-xs text-white">{{ __('footer.location_city') }}</p>
+                    <p class="text-xs text-white font-bold">{{ __('footer.location_city') }}</p>
                     <p class="text-xs text-white">{{ __('footer.location_country') }}</p>
                 </div>
             </div>
@@ -304,16 +326,7 @@
             <div class="text-center pt-4">
                 <h4 class="text-xs font-bold text-white mb-4">{{ __('footer.organizers') }}</h4>
                 <div class="space-y-4">
-                    <div class="space-y-2">
-                        <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                            <img class="w-16 h-auto mx-auto"
-                                src="{{ asset('storage/footer-img/birba-logo-white.webp') }}" alt="Birba" />
-                        </a>
-                        <p class="text-xs text-gray-400">
-                            {{ __('footer.partner_2_desc') }}
-                        </p>
-                    </div>
-                    <div class="w-px h-4 bg-zinc-600 mx-auto"></div>
+
                     <div class="space-y-2">
                         <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
                             <img class="w-16 h-auto mx-auto" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}"
@@ -323,6 +336,20 @@
                             {{ __('footer.partner_1_desc') }}
                         </p>
                     </div>
+
+
+                    <div class="w-px h-4 bg-zinc-600 mx-auto"></div>
+
+                    <div class="space-y-2">
+                        <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
+                            <img class="w-16 h-auto mx-auto"
+                                src="{{ asset('storage/footer-img/birba-logo-white.webp') }}" alt="Birba" />
+                        </a>
+                        <p class="text-xs text-gray-400">
+                            {{ __('footer.partner_2_desc') }}
+                        </p>
+                    </div>
+
                 </div>
             </div>
 
