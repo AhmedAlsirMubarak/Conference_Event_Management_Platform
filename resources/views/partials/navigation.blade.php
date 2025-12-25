@@ -60,7 +60,7 @@
 
                     <!-- Partner Button -->
                     <a href="#"
-                        class="px-2 py-1 sm:px-3 sm:py-2 bg-[#3C94C5] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm">
+                        class="hidden sm:block px-2 py-1 sm:px-3 sm:py-2 bg-[#3C94C5] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm">
                         {{ __('navigation.become_partner') }}
                     </a>
 
@@ -129,6 +129,10 @@
             <a href="/contact"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.contact') }}
+            </a>
+            <a href="#"
+                class="block px-3 py-2 bg-[#3C94C5] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm mt-2">
+                {{ __('navigation.become_partner') }}
             </a>
         </div>
     </div>
