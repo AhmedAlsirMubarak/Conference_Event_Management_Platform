@@ -382,6 +382,10 @@
                         // After all requests complete, reload page
                         if (deleteCount === contactIds.length) {
                             setTimeout(() => {
+                                // Show success message before reload
+                                if (successCount > 0) {
+                                    alert(`${successCount} contact(s) deleted successfully!`);
+                                }
                                 location.reload();
                             }, 500);
                         }
