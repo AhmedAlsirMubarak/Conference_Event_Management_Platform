@@ -179,23 +179,36 @@ class ContactController extends Controller
             
             // Check if user is authenticated
             if (!$user) {
-                return response()->json(['error' => 'You must be logged in to delete contacts.'], 401);
+                if (request()->expectsJson()) {
+                    return response()->json(['error' => 'You must be logged in to delete contacts.'], 401);
+                }
+                return redirect('/login');
             }
             
             // Check if user has admin role
             if ($user->role !== 'admin') {
                 Log::warning('Delete attempt by non-admin user', ['user_id' => $user->id, 'user_role' => $user->role]);
-                return response()->json(['error' => 'You do not have permission to delete contacts.'], 403);
+                if (request()->expectsJson()) {
+                    return response()->json(['error' => 'You do not have permission to delete contacts.'], 403);
+                }
+                return redirect()->back()->with('error', 'You do not have permission to delete contacts.');
             }
 
             $contact = contacts::findOrFail($id);
             $contact->delete();
             Log::info('Contact deleted', ['contact_id' => $id, 'deleted_by' => $user->id]);
 
-            return response()->json(['success' => 'Contact deleted successfully!'], 200);
+            if (request()->expectsJson()) {
+                return response()->json(['success' => 'Contact deleted successfully!'], 200);
+            }
+
+            return redirect(route('getAllContacts'))->with('success', 'Contact deleted successfully!');
         } catch (\Exception $e) {
             Log::error('Error deleting contact: ' . $e->getMessage());
-            return response()->json(['error' => 'Unable to delete contact or database unavailable.'], 500);
+            if (request()->expectsJson()) {
+                return response()->json(['error' => 'Unable to delete contact or database unavailable.'], 500);
+            }
+            return redirect()->back()->with('error', 'Unable to delete contact: ' . $e->getMessage());
         }
     }
 
