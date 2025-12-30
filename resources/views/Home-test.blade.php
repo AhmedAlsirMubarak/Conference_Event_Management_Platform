@@ -13,7 +13,7 @@
     <!-- Include Navigation -->
     @include('partials.navigation')
 
-    <!-- Main Content - Hero Section -->
+
 
 
     <!-- Desktop Hero Section (lg and above) -->

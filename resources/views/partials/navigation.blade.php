@@ -80,9 +80,7 @@
             <a href="/test/home" class="text-gray-300 hover:text-white font-medium transition-colors">
                 {{ __('navigation.home') }}
             </a>
-            <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
-                {{ __('navigation.about') }}
-            </a>
+
             <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
                 {{ __('navigation.speakers') }}
             </a>
@@ -92,9 +90,11 @@
             <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
                 {{ __('navigation.exhibitors') }}
             </a>
-            <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
-                {{ __('navigation.schedule') }}
+
+            <a href="/climate-leaders" class="text-gray-300 hover:text-white font-medium transition-colors">
+                {{ __('navigation.climate_leaders') }}
             </a>
+
             <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
                 {{ __('navigation.contact') }}
             </a>
@@ -116,10 +116,7 @@
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.home') }}
             </a>
-            <a href="/about"
-                class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
-                {{ __('navigation.about') }}
-            </a>
+
             <a href="/speakers"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.speakers') }}
@@ -132,10 +129,12 @@
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.exhibitors') }}
             </a>
-            <a href="/schedule"
+
+            <a href="/climate-leaders"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
-                {{ __('navigation.schedule') }}
+                {{ __('navigation.climate_leaders') }}
             </a>
+
             <a href="/contact"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.contact') }}

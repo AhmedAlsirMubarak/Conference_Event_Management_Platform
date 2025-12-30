@@ -29,6 +29,11 @@ Route::get('/lang/{locale}', function($locale) {
 
 
 
+// Home 100 climate leaders  Route
+Route::get('/100climateleaders', function () {
+    return view('100climateleaders');
+})->name('100climateleaders');
+
 // Home Test Route
 Route::get('/test/home', function () {
     return view('Home-test');

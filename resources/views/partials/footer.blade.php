@@ -123,6 +123,10 @@
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.speakers') }}
                         </a>
+                        <a href="/climate-leaders"
+                            class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
+                            {{ __('footer.climate_leaders') }}
+                        </a>
                         <a href="#"
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.contact') }}
