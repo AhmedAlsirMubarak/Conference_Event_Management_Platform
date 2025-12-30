@@ -2,11 +2,10 @@
 
 return [
     'home' => 'الرئيسية',
-    'about' => 'عن المؤتمر',
     'speakers' => 'المتحدثون',
     'sponsors' => 'الرعاة',
     'exhibitors' => 'العارضون',
-    'schedule' => 'البرنامج',
+    '100 climate leaders' => 'مئة قائد مناخي',
     'contact' => 'اتصل بنا',
     'register' => 'سجل معنا',
     'become_partner' => 'كن شريكاً',

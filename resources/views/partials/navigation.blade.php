@@ -81,6 +81,10 @@
                 {{ __('navigation.home') }}
             </a>
 
+            <a href="/climate-leaders" class="text-gray-300 hover:text-white font-medium transition-colors">
+                {{ __('navigation.100 climate leaders') }}
+            </a>
+
             <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
                 {{ __('navigation.speakers') }}
             </a>
@@ -91,9 +95,6 @@
                 {{ __('navigation.exhibitors') }}
             </a>
 
-            <a href="/climate-leaders" class="text-gray-300 hover:text-white font-medium transition-colors">
-                {{ __('navigation.climate_leaders') }}
-            </a>
 
             <a href="#" class="text-gray-300 hover:text-white font-medium transition-colors">
                 {{ __('navigation.contact') }}

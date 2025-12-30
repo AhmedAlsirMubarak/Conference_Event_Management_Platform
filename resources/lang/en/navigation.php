@@ -2,11 +2,10 @@
 
 return [
     'home' => 'Home',
-    'about' => 'About',
     'speakers' => 'Speakers',
     'sponsors' => 'Sponsors',
     'exhibitors' => 'Exhibitors',
-    'schedule' => 'Schedule',
+    '100 climate leaders' => '100 Climate Leaders',
     'contact' => 'Contact',
     'register' => 'Register',
     'become_partner' => 'Become Partner',
