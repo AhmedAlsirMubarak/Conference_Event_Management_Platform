@@ -122,20 +122,13 @@ class ClimateLeadersController extends Controller
                 Log::error('Failed to send confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
-            // Send notification email to multiple team members
+            // Send notification email to team
             try {
-                $teamEmailsString = env('CLIMATE_LEADERS_TEAM_EMAILS', 'climate-leaders@saudiclimateweek.com');
-                $teamEmails = array_map('trim', explode(',', $teamEmailsString));
-                
-                foreach ($teamEmails as $teamEmail) {
-                    if (!empty($teamEmail)) {
-                        Mail::to($teamEmail)->send(new ClimateLeaderTeamNotification($climateLeader));
-                    }
-                }
-                
-                Log::info('Notification emails sent to team successfully', ['climate_leader_id' => $climateLeader->id, 'team_emails' => $teamEmails]);
+                $teamEmail = config('app.team_email') ?? env('TEAM_EMAIL', 'climate-leaders@saudiclimateweek.com');
+                Mail::to($teamEmail)->send(new ClimateLeaderTeamNotification($climateLeader));
+                Log::info('Notification email sent to team successfully', ['climate_leader_id' => $climateLeader->id, 'team_email' => $teamEmail]);
             } catch (\Exception $e) {
-                Log::error('Failed to send notification emails to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+                Log::error('Failed to send notification email to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
             // Return JSON for AJAX requests, redirect for form submissions
@@ -410,75 +403,4 @@ class ClimateLeadersController extends Controller
             return redirect()->back()->with('error', 'Climate Leader not found.');
         }
     }
-
-    /**
-     * Test email functionality for Climate Leaders form
-     */
-    public function testEmail()
-    {
-        try {
-            // Create a test climate leader record
-            $testClimateLeader = ClimateLeaders::create([
-                'fullname' => 'Test User',
-                'email' => 'test@example.com',
-                'country_code' => '+966',
-                'phone' => '501234567',
-                'Country_of_Nationality' => 'Saudi Arabia',
-                'Country_of_Residence' => 'Saudi Arabia',
-                'organization' => 'Test Organization',
-                'bio' => 'This is a test submission for email verification.',
-                'linkedin_profile' => 'https://linkedin.com/in/testuser',
-            ]);
-
-            Log::info('Test Climate Leader created', ['id' => $testClimateLeader->id]);
-
-            // Send confirmation email to test user
-            try {
-                Mail::to($testClimateLeader->email)->send(new ClimateLeaderSubmissionNotification($testClimateLeader));
-                Log::info('Test confirmation email sent successfully', ['climate_leader_id' => $testClimateLeader->id]);
-            } catch (\Exception $e) {
-                Log::error('Failed to send test confirmation email: ' . $e->getMessage());
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Failed to send test confirmation email: ' . $e->getMessage()
-                ], 500);
-            }
-
-            // Send test notification email to team
-            try {
-                $teamEmailsString = env('CLIMATE_LEADERS_TEAM_EMAILS', 'climate-leaders@saudiclimateweek.com');
-                $teamEmails = array_map('trim', explode(',', $teamEmailsString));
-                
-                foreach ($teamEmails as $teamEmail) {
-                    if (!empty($teamEmail)) {
-                        Mail::to($teamEmail)->send(new ClimateLeaderTeamNotification($testClimateLeader));
-                    }
-                }
-                
-                Log::info('Test team notification emails sent successfully', ['team_emails' => $teamEmails]);
-            } catch (\Exception $e) {
-                Log::error('Failed to send test team notification emails: ' . $e->getMessage());
-                return response()->json([
-                    'success' => false,
-                    'message' => 'Failed to send test team notification emails: ' . $e->getMessage()
-                ], 500);
-            }
-
-            return response()->json([
-                'success' => true,
-                'message' => 'Test emails sent successfully!',
-                'test_user_email' => $testClimateLeader->email,
-                'team_emails' => $teamEmails ?? [],
-                'test_record_id' => $testClimateLeader->id
-            ]);
-
-        } catch (\Exception $e) {
-            Log::error('Test email error: ' . $e->getMessage());
-            return response()->json([
-                'success' => false,
-                'message' => 'Error testing emails: ' . $e->getMessage()
-            ], 500);
-        }
-    }
 }
-

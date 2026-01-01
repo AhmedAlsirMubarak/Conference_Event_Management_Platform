@@ -55,4 +55,3 @@ class ClimateLeaderSubmissionNotification extends Notification
             ->line('Saudi Climate Week 2026 Team');
     }
 }
-

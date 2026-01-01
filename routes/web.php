@@ -162,6 +162,3 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsReadUser'])->name('notifications.markAllRead');
     Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('notifications.delete');
 });
-
-// Test Email Route (for development only)
-Route::get('/test-climate-leaders-email', [ClimateLeadersController::class, 'testEmail'])->name('test.climate-leaders-email');
