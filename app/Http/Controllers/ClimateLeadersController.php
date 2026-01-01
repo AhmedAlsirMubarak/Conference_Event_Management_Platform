@@ -122,13 +122,20 @@ class ClimateLeadersController extends Controller
                 Log::error('Failed to send confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
-            // Send notification email to team
+            // Send notification email to multiple team members
             try {
-                $teamEmail = config('app.team_email') ?? env('TEAM_EMAIL', 'climate-leaders@saudiclimateweek.com');
-                Mail::to($teamEmail)->send(new ClimateLeaderTeamNotification($climateLeader));
-                Log::info('Notification email sent to team successfully', ['climate_leader_id' => $climateLeader->id, 'team_email' => $teamEmail]);
+                $teamEmailsString = env('CLIMATE_LEADERS_TEAM_EMAILS', 'climate-leaders@saudiclimateweek.com');
+                $teamEmails = array_map('trim', explode(',', $teamEmailsString));
+                
+                foreach ($teamEmails as $teamEmail) {
+                    if (!empty($teamEmail)) {
+                        Mail::to($teamEmail)->send(new ClimateLeaderTeamNotification($climateLeader));
+                    }
+                }
+                
+                Log::info('Notification emails sent to team successfully', ['climate_leader_id' => $climateLeader->id, 'team_emails' => $teamEmails]);
             } catch (\Exception $e) {
-                Log::error('Failed to send notification email to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+                Log::error('Failed to send notification emails to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
             // Return JSON for AJAX requests, redirect for form submissions
