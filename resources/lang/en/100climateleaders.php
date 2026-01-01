@@ -81,7 +81,7 @@ return [
     'nomination_bio' => 'Short Biography',
     'nomination_bio_placeholder' => 'Tell us about your climate leadership work, achievements, and impact',
     'nomination_email' => 'Email Address',
-    'nomination_email_placeholder' => 'your.email@example.com',
+    'nomination_email_placeholder' => 'user@domain.com',
     'nomination_phone' => 'Phone Number',
     'nomination_phone_placeholder' => '+966 xx xxx xxx',
     'nomination_linkedin' => 'LinkedIn Profile',
