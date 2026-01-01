@@ -1,11 +1,12 @@
 <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
     <div style="max-width: 600px; margin: 0 auto; padding: 20px;">
         <h2 style="color: #2c3e50;">Dear {{ $climateLeader->fullname }},</h2>
-        
+
         <p>Thank you for submitting your nomination to become a Climate Leader at Saudi Climate Week 2026!</p>
-        
-        <p>We have successfully received your submission. Our selection committee will review your application and get back to you shortly.</p>
-        
+
+        <p>We have successfully received your submission. Our selection committee will review your application and get
+            back to you shortly.</p>
+
         <h3 style="color: #2c3e50; margin-top: 30px;">Your Submission Summary:</h3>
         <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
             <tr style="background-color: #f5f5f5;">
@@ -18,7 +19,8 @@
             </tr>
             <tr style="background-color: #f5f5f5;">
                 <td style="padding: 10px; border: 1px solid #ddd;"><strong>Phone:</strong></td>
-                <td style="padding: 10px; border: 1px solid #ddd;">{{ $climateLeader->country_code }} {{ $climateLeader->phone }}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">{{ $climateLeader->country_code }}
+                    {{ $climateLeader->phone }}</td>
             </tr>
             <tr>
                 <td style="padding: 10px; border: 1px solid #ddd;"><strong>Organization:</strong></td>
@@ -34,12 +36,13 @@
             </tr>
             <tr style="background-color: #f5f5f5;">
                 <td style="padding: 10px; border: 1px solid #ddd;"><strong>LinkedIn Profile:</strong></td>
-                <td style="padding: 10px; border: 1px solid #ddd;">{{ $climateLeader->linkedin_profile ?? 'Not provided' }}</td>
+                <td style="padding: 10px; border: 1px solid #ddd;">
+                    {{ $climateLeader->linkedin_profile ?? 'Not provided' }}</td>
             </tr>
         </table>
-        
+
         <p style="margin-top: 30px;">Thank you for your commitment to climate leadership and sustainability!</p>
-        
+
         <p style="margin-top: 30px; color: #555;">
             Best regards,<br>
             <strong>Saudi Climate Week 2026 Team</strong>
