@@ -14,6 +14,7 @@ use App\Http\Controllers\TechnicalCommitteeController;
 use App\Http\Controllers\StrategicSpeakerController;
 use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
+use App\Http\Controllers\ClimateLeadersController;
 
 // Language Switcher - stores in session and redirects with query param for immediate effect
 Route::get('/lang/{locale}', function($locale) {
@@ -34,13 +35,16 @@ Route::get('/100climateleaders', function () {
     return view('100climateleaders');
 })->name('100climateleaders');
 
-// Home Test Route
-Route::get('/test/home', function () {
-    return view('Home-test');
-})->name('test.home');
+// Public Climate Leaders Nomination Form
+Route::post('/climate-leaders', [ClimateLeadersController::class, 'store'])->name('climate-leaders.store');
+
+// Home  Route
+Route::get('/home', function () {
+    return view('Home');
+})->name('home');
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('Home');
 });
 
 Route::fallback(fn() => view('404'))->name('404');
@@ -82,6 +86,12 @@ Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
     Route::resource('technical_committees', TechnicalCommitteeController::class);
     Route::resource('strategic_speakers', StrategicSpeakerController::class);
     Route::resource('technical_speakers', TechnicalSpeakerController::class);
+
+    // Climate Leaders Routes
+    Route::get('/climate-leaders/search', [ClimateLeadersController::class, 'search'])->name('climateLeaders.search');
+    Route::get('/climate-leaders/export', [ClimateLeadersController::class, 'exportExcel'])->name('climateLeaders.export');
+    Route::post('/climate-leaders/{id}/notes', [ClimateLeadersController::class, 'updateAdminNotes'])->name('climate-leaders.notes');
+    Route::resource('climate-leaders', ClimateLeadersController::class, ['except' => ['store']]);
 
     // Session Management Routes
     Route::get('/sessions', [SessionController::class, 'adminSessions'])->name('sessions.index');
@@ -132,6 +142,12 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::get(uri: '/strategic-speakers/{id}', action: [UserController::class, 'showStrategicSpeaker'])->name(name: 'strategic_speakers.show');
     Route::get(uri: '/technical-speakers', action: [UserController::class, 'listTechnicalSpeakers'])->name(name: 'technical_speakers.index');
     Route::get(uri: '/technical-speakers/{id}', action: [UserController::class, 'showTechnicalSpeaker'])->name(name: 'technical_speakers.show');
+
+    // Climate Leaders Routes (User)
+    Route::get('/climate-leaders', [ClimateLeadersController::class, 'userIndex'])->name('climate-leaders.index');
+    Route::get('/climate-leaders/{id}', [ClimateLeadersController::class, 'userShow'])->name('climate-leaders.show');
+    Route::post('/climate-leaders/{id}/notes', [ClimateLeadersController::class, 'updateAdminNotes'])->name('climate-leaders.notes');
+    Route::get('/climate-leaders/export/csv', [ClimateLeadersController::class, 'exportExcel'])->name('climate-leaders.export');
 
     // Export Routes (User)
     Route::get('/export/strategic-speakers', [UserController::class, 'exportStrategicSpeakers'])->name('strategic_speakers.export');

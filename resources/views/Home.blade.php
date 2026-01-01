@@ -20,24 +20,14 @@
     <section class="hidden lg:block">
         <div class="relative w-full h-[633px]">
             {{-- Background Image --}}
-            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? 'home-hero.webp' : 'hero-homeeng.webp' }}"
+            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp' }}"
                 class="w-full h-full object-cover object-center" alt="Saudi Climate Week 2026 Hero Image" />
 
-            {{-- Badge/Welcome Message --}}
-            <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-10 flex items-center justify-center">
-                <span
-                    class="w-[390px] h-[37px] inline-flex items-center justify-center rounded-full bg-[#211d1d4d] text-[19px] ring-1 ring-[#E6813E]/40 backdrop-blur-md">
-                    <span
-                        class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent line-clamp-2 px-1">
-                        {{ __('hero.badge') }}
-                    </span>
-                </span>
-            </div>
+
 
             {{-- Main Headline --}}
             <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-35 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
+                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-40' }} top-35 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                 <h1 class="text-[80px] font-bold text-white leading-[95px] max-w-[538px]">
                     {{ __('hero.headline') }}
                 </h1>
@@ -45,7 +35,7 @@
 
             {{-- Subtitle --}}
             <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-85 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
+                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-40' }} top-85 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                 <p class="text-2xl font-medium text-white leading-10 max-w-[570px]">
                     {{ __('hero.subtitle') }}
                 </p>
@@ -53,7 +43,7 @@
 
             {{-- Location & Date Section --}}
             <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-50' }} top-[425px] flex items-end gap-8">
+                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-40' }} top-[425px] flex items-end gap-8">
                 {{-- Location --}}
                 <div class="flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                     <span class="text-4xl font-bold text-white leading-tight">
@@ -85,7 +75,7 @@
     <section class="lg:hidden">
         <div class="relative w-full h-[350px] md:h-[550px] flex flex-col items-center justify-center pt-30pb-10">
             {{-- Background Image --}}
-            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? 'home-hero.webp' : 'hero-homeeng.webp' }}"
+            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp' }}"
                 class="absolute inset-0 w-full h-full object-cover object-center"
                 alt="Saudi Climate Week 2026 Hero Image" />
 
@@ -93,30 +83,18 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
 
             {{-- Content Wrapper (centered) --}}
-            <div class="relative z-10 w-full h-full flex flex-col items-start justify-center px-4 md:px-8">
+            <div class="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8">
 
-                {{-- Badge/Welcome Message --}}
-                <div class="flex items-center justify-center mb-4 md:mb-6">
-                    <span
-                        class="w-auto px-3 md:px-6 h-[24px] md:h-[35px] inline-flex items-center justify-center rounded-full bg-[#211d1d4d] text-[8.6px] md:text-base ring-1 ring-[#E6813E]/40 backdrop-blur-md whitespace-normal text-center max-w-[200px] md:max-w-full">
-                        <span
-                            class="bg-linear-to-r from-[#FFFFFF] to-[#E6813E] bg-clip-text text-transparent line-clamp-2">
-                            {{ __('hero.badge') }}
-                        </span>
-                    </span>
-                </div>
 
                 {{-- Main Headline --}}
-                <div
-                    class="flex flex-col {{ app()->getLocale() === 'ar' ? 'items-end text-right w-[160px] ' : 'items-start text-left w-[200px]' }} mb-3 md:mb-4">
+                <div class="flex flex-col items-center text-center mb-3 md:mb-4">
                     <h1 class="text-2xl md:text-5xl font-bold text-white leading-tight max-w-xs md:max-w-2xl">
                         {{ __('hero.headline') }}
                     </h1>
                 </div>
 
                 {{-- Subtitle --}}
-                <div
-                    class="flex flex-col {{ app()->getLocale() === 'ar' ? 'items-end text-right w-[160px] ' : 'items-start text-left w-[170px]' }} mb-6 md:mb-8">
+                <div class="flex flex-col items-center text-center mb-6 md:mb-8">
                     <p
                         class="text-[10px] md:text-base font-medium text-white leading-relaxed md:leading-7 max-w-[260px] md:max-w-xl">
                         {{ __('hero.subtitle') }}

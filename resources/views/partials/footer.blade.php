@@ -139,7 +139,7 @@
                     class="col-span-2 flex flex-col justify-start {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }} gap-8">
                     <div
                         class="w-32 h-18 justify-center {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }}">
-                        <a href="https://saudiclimateweek.com/">
+                        <a href="/home">
                             <img class="w-[100px] h-[69px]" src="{{ asset('storage/footer-img/scw-logo.webp') }}"
                                 alt="SCW Logo" />
                         </a>
@@ -238,7 +238,7 @@
     <div class="max-w-full mx-auto space-y-5">
         <!-- Mobile Logo and Description -->
         <div class="space-y-2 text-center">
-            <a href="https://saudiclimateweek.com/">
+            <a href="/home">
                 <img src="{{ asset('storage/footer-img/scw-logo.webp') }}" alt="SCW Logo"
                     class="w-12 h-auto mx-auto pb-2">
             </a>

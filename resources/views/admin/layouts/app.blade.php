@@ -173,6 +173,20 @@
                     }, 300);
                 });
             });
+
+            // Handle Submissions menu toggle
+            const submissionsToggles = document.querySelectorAll('.submissions-toggle');
+            submissionsToggles.forEach(toggle => {
+                toggle.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const submissionsMenu = this.closest('.submissions-menu');
+                    const submissionsItems = submissionsMenu.querySelector('.submissions-items');
+                    const arrow = submissionsMenu.querySelector('.submissions-arrow');
+
+                    submissionsItems.classList.toggle('hidden');
+                    arrow.classList.toggle('rotate-180');
+                });
+            });
         });
     </script>
 </body>

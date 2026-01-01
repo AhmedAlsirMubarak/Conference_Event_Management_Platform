@@ -19,7 +19,12 @@ return [
     'terms' => 'Terms of Use',
     'copyright' => '© All rights reserved - Saudi Climate Week',
     'organizers' => 'Organizers',
-    'partner_1_desc' => 'Specialized in sustainability solutions and corporate strategy development.',
+    'partner_1_desc' => 'A Saudi consulting company 
+        specializing in sustainability 
+        solutions and corporate 
+        strategy development, 
+        combining local expertise with 
+        global standards.',
     'partner_2_desc' => 'Omani company specializing in event organization and content production for sustainable economies.',
     'date_label' => 'Date',
     'date_month_year' => 'Sep, 2026',

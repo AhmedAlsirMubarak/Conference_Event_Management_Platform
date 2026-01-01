@@ -25,15 +25,47 @@
             <span class="truncate">Dashboard</span>
         </a>
 
-        <!-- Contacts -->
-        <a href="{{ route('user.contacts.index') }}"
-            class="flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('user.contacts.index', 'user.contacts.show')) bg-green-50 text-green-600 @else text-gray-700 hover:bg-gray-50 @endif">
-            <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                    d="M12 4.354a4 4 0 110 5.292M15 12H9m4 5h-4m7-12a8 8 0 100 16 8 8 0 000-16z" />
-            </svg>
-            <span class="truncate">Contacts</span>
-        </a>
+        <!-- Submissions Parent -->
+        <div class="submissions-menu">
+            <!-- Submissions Toggle Button -->
+            <button type="button"
+                class="submissions-toggle w-full flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('user.contacts.index', 'user.contacts.show', 'user.climate-leaders.index', 'user.climate-leaders.show')) bg-green-50 text-green-600 @else text-gray-700 hover:bg-gray-50 @endif">
+                <svg class="w-5 h-5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <span class="truncate flex-1">Submissions</span>
+                <svg class="submissions-arrow w-4 h-4 flex-shrink-0 transition-transform @if (request()->routeIs('user.contacts.index', 'user.contacts.show', 'user.climate-leaders.index', 'user.climate-leaders.show')) rotate-180 @endif"
+                    fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+            </button>
+
+            <!-- Submissions Sub-items -->
+            <div
+                class="submissions-items @if (!request()->routeIs('user.contacts.index', 'user.contacts.show', 'user.climate-leaders.index', 'user.climate-leaders.show')) hidden @endif ml-4 mt-1 space-y-1">
+                <!-- Contacts -->
+                <a href="{{ route('user.contacts.index') }}"
+                    class="flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('user.contacts.index', 'user.contacts.show')) bg-green-100 text-green-600 @else text-gray-600 hover:bg-gray-50 @endif">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 4.354a4 4 0 110 5.292M15 12H9m4 5h-4m7-12a8 8 0 100 16 8 8 0 000-16z" />
+                    </svg>
+                    <span class="truncate">Contacts</span>
+                </a>
+
+                <!-- Climate Leaders -->
+                <a href="{{ route('user.climate-leaders.index') }}"
+                    class="flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('user.climate-leaders.index', 'user.climate-leaders.show')) bg-green-100 text-green-600 @else text-gray-600 hover:bg-gray-50 @endif">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span class="truncate">Climate Leaders</span>
+                </a>
+            </div>
+        </div>
 
         <!-- Sponsors -->
         <a href="{{ route('user.sponsors.index') }}"
