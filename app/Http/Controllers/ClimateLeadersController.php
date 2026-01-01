@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ClimateLeaders;
-use App\Notifications\ClimateLeaderSubmissionNotification;
-use App\Notifications\ClimateLeaderTeamNotification;
+use App\Mail\ClimateLeaderSubmissionMail;
+use App\Mail\ClimateLeaderTeamMail;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -116,7 +116,7 @@ class ClimateLeadersController extends Controller
 
             // Send confirmation email to the user
             try {
-                Mail::to($climateLeader->email)->send(new ClimateLeaderSubmissionNotification($climateLeader));
+                Mail::to($climateLeader->email)->send(new ClimateLeaderSubmissionMail($climateLeader));
                 Log::info('Confirmation email sent to user successfully', ['climate_leader_id' => $climateLeader->id]);
             } catch (\Exception $e) {
                 Log::error('Failed to send confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
@@ -125,7 +125,7 @@ class ClimateLeadersController extends Controller
             // Send notification email to team
             try {
                 $teamEmail = config('app.team_email') ?? env('TEAM_EMAIL', 'climate-leaders@saudiclimateweek.com');
-                Mail::to($teamEmail)->send(new ClimateLeaderTeamNotification($climateLeader));
+                Mail::to($teamEmail)->send(new ClimateLeaderTeamMail($climateLeader));
                 Log::info('Notification email sent to team successfully', ['climate_leader_id' => $climateLeader->id, 'team_email' => $teamEmail]);
             } catch (\Exception $e) {
                 Log::error('Failed to send notification email to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
