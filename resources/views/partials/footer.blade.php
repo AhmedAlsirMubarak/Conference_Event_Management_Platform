@@ -349,12 +349,12 @@
         </div>
 
         <!-- Organizers Section (Mobile) -->
-        <div class="text-center pt-4 border-t border-gray-800">
-            <h4 class="text-xs font-bold text-white mb-4">{{ __('footer.organizers') }}</h4>
-            <div class="flex justify-center items-center gap-6">
+        <div class="text-center py-2 border-t border-gray-800">
+            <h4 class="text-xs font-bold text-white mb-2">{{ __('footer.organizers') }}</h4>
+            <div class="flex justify-center items-center gap-3">
                 <div>
                     <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
-                        <img class="w-16 h-auto" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}"
+                        <img class="w-14 h-auto" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}"
                             alt="Ecocode" />
                     </a>
                     <p class="text-xs text-gray-400" hidden>
@@ -362,11 +362,11 @@
                     </p>
                 </div>
 
-                <div class="w-px h-4 bg-zinc-600"></div>
+                <div class="w-px h-3 bg-zinc-600"></div>
 
                 <div>
                     <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                        <img class="w-16 h-auto" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}"
+                        <img class="w-14 h-auto" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}"
                             alt="Birba" />
                     </a>
                     <p class="text-xs text-gray-400" hidden>
