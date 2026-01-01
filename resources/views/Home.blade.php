@@ -88,7 +88,7 @@
 
                 {{-- Main Headline --}}
                 <div class="flex flex-col items-center text-center mb-3 md:mb-4">
-                    <h1 class="text-2xl md:text-5xl font-bold text-white leading-tight max-w-xs md:max-w-2xl">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white leading-tight max-w-xs md:max-w-2xl">
                         {{ __('hero.headline') }}
                     </h1>
                 </div>
