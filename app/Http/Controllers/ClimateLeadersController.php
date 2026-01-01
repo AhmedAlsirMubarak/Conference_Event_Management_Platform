@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ClimateLeaders;
+use App\Notifications\ClimateLeaderSubmissionNotification;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ClimateLeadersController extends Controller
 {
@@ -110,6 +112,14 @@ class ClimateLeadersController extends Controller
             ]);
 
             Log::info('Climate Leader created successfully', ['climate_leader_id' => $climateLeader->id]);
+
+            // Send confirmation email to the user
+            try {
+                Mail::to($climateLeader->email)->send(new ClimateLeaderSubmissionNotification($climateLeader));
+                Log::info('Confirmation email sent successfully', ['climate_leader_id' => $climateLeader->id]);
+            } catch (\Exception $e) {
+                Log::error('Failed to send confirmation email: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+            }
 
             // Return JSON for AJAX requests, redirect for form submissions
             if ($request->expectsJson()) {
