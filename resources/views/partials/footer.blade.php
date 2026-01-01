@@ -200,7 +200,7 @@
                         </a>
                         <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-zinc-400 hover:text-white transition">
-                            ecocode.sa
+                            www.ecocode.sa
                         </a>
                         <div class="w-52 opacity-80 text-white text-xs font-normal leading-6 hidden">
                             {{ __('footer.partner_1_desc') }}
@@ -216,7 +216,7 @@
                         </a>
                         <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer"
                             class="text-xs text-zinc-400 hover:text-white transition">
-                            birba.om
+                            www.birba.om
                         </a>
                         <div class="w-60 opacity-80 text-white text-xs font-normal leading-6 hidden">
                             {{ __('footer.partner_2_desc') }}
@@ -370,7 +370,7 @@
                     </a>
                     <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer"
                         class="text-xs text-zinc-400 hover:text-white transition">
-                        ecocode.sa
+                        www.ecocode.sa
                     </a>
                     <p class="text-xs text-gray-400" hidden>
                         {{ __('footer.partner_1_desc') }}
@@ -386,7 +386,7 @@
                     </a>
                     <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer"
                         class="text-xs text-zinc-400 hover:text-white transition">
-                        birba.om
+                        www.birba.om
                     </a>
                     <p class="text-xs text-gray-400" hidden>
                         {{ __('footer.partner_2_desc') }}

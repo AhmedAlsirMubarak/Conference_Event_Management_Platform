@@ -7,7 +7,7 @@ return [
     'about' => 'About',
     'schedule' => 'Schedule',
     'speakers' => 'Speakers',
-    'climate_leaders' => 'Climate Leaders',
+    'climate_leaders' => '100 Climate Leaders',
     'contact' => 'Contact',
     'contact_title' => 'Contact Us',
     'sales_team' => 'Sales Team',
