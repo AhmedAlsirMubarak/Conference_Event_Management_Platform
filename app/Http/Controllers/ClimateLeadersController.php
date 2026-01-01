@@ -114,21 +114,21 @@ class ClimateLeadersController extends Controller
 
             Log::info('Climate Leader created successfully', ['climate_leader_id' => $climateLeader->id]);
 
-            // Send confirmation email to the user
+            // Send confirmation email to the user (queued)
             try {
-                Mail::to($climateLeader->email)->send(new ClimateLeaderSubmissionMail($climateLeader));
-                Log::info('Confirmation email sent to user successfully', ['climate_leader_id' => $climateLeader->id]);
+                Mail::to($climateLeader->email)->queue(new ClimateLeaderSubmissionMail($climateLeader));
+                Log::info('Confirmation email queued for user', ['climate_leader_id' => $climateLeader->id]);
             } catch (\Exception $e) {
-                Log::error('Failed to send confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+                Log::error('Failed to queue confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
-            // Send notification email to team
+            // Send notification email to team (queued)
             try {
                 $teamEmail = config('app.team_email') ?? env('TEAM_EMAIL', 'climate-leaders@saudiclimateweek.com');
-                Mail::to($teamEmail)->send(new ClimateLeaderTeamMail($climateLeader));
-                Log::info('Notification email sent to team successfully', ['climate_leader_id' => $climateLeader->id, 'team_email' => $teamEmail]);
+                Mail::to($teamEmail)->queue(new ClimateLeaderTeamMail($climateLeader));
+                Log::info('Notification email queued for team', ['climate_leader_id' => $climateLeader->id, 'team_email' => $teamEmail]);
             } catch (\Exception $e) {
-                Log::error('Failed to send notification email to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+                Log::error('Failed to queue notification email to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
             // Return JSON for AJAX requests, redirect for form submissions
