@@ -885,7 +885,7 @@
             style="background-image:url('{{ asset('storage/mix/submit-nomination.webp') }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
 
         {{-- Subtle warm glow --}}
         <div class="absolute -right-40 top-0 h-[420px] w-[420px]
@@ -895,7 +895,7 @@
         <div class="absolute inset-0 bg-gradient-to-r
            from-gray-900/95 via-gray-900/40 to-transparent" aria-hidden="true"></div>
 
-        <div class="relative mx-auto max-w-full px-4 md:px-8 py-12 md:py-16">
+        <div class="relative mx-auto max-w-full px-4 md:px-8 py-0 pb-10 md:py-16 mt-[-30px]">
             <div class="flex flex-col items-center">
                 {{-- FORM --}}
                 <div class="w-full max-w-md">
@@ -1615,7 +1615,7 @@
             style="background-image:url('{{ asset('storage/mix/submit-nomination.webp') }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
-        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
+        <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
 
         {{-- Subtle warm glow (top-right like design) --}}
         <div class="absolute -right-40 top-0 h-[520px] w-[520px]
@@ -1625,7 +1625,7 @@
         <div class="absolute inset-0 bg-gradient-to-r
            from-gray-900/95 via-gray-900/40 to-transparent" aria-hidden="true"></div>
 
-        <div class="relative mx-auto max-w-6xl px-6 py-16">
+        <div class="relative mx-auto max-w-6xl px-6 pt-3 pb-32">
             <div class="grid gap-12 lg:grid-cols-12">
                 {{-- LEFT: FORM --}}
                 <div class="lg:col-span-6">
