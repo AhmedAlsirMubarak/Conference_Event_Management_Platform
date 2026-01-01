@@ -1373,10 +1373,15 @@
 
                         {{-- Email + Phone --}}
                         <div class="grid gap-4 sm:grid-cols-2">
-                            <input name="email" placeholder="{{ __('100climateleaders.nomination_email_placeholder') }}"
-                                required
-                                class="rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white" />
-                            <div class="flex gap-2">
+                            <div>
+                                <label class="block text-[10px] font-semibold text-white/70">{{ __('100climateleaders.nomination_email_placeholder') }}</label>
+                                <input name="email" placeholder="{{ __('100climateleaders.nomination_email_placeholder') }}"
+                                    required
+                                    class="mt-2 rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white" />
+                            </div>
+                            <div>
+                                <label class="block text-[10px] font-semibold text-white/70">{{ __('100climateleaders.nomination_phone_placeholder') }}</label>
+                                <div class="mt-2 flex gap-2">
                                 <select name="country_code" required class="w-24 rounded-md border border-gray-600 bg-gray-800 px-3 py-2.5 text-sm text-white outline-none
                                      focus:border-orange-400/60 focus:ring-2 focus:ring-orange-400/20">
                                     <option value="" disabled selected>Code</option>
@@ -1587,6 +1592,7 @@
                                     placeholder="{{ __('100climateleaders.nomination_phone_placeholder') }}" required
                                     class="flex-1 rounded-md border border-white/10 bg-white/5 px-4 py-2.5 text-sm text-white"
                                     dir="ltr" />
+                                </div>
                             </div>
                         </div>
 
