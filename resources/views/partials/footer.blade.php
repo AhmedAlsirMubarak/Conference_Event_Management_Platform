@@ -1,7 +1,7 @@
 <div class="w-full h-auto bg-gray-900 overflow-hidden" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
     <!-- Desktop Footer -->
-    <div class="hidden lg:block bg-gray-900 text-white py-16">
+    <div class="hidden lg:block bg-gray-900 text-white py-5 pt-15">
         <!-- Main Content -->
         <div class="mx-auto max-w-6xl px-8">
             <div class="grid grid-cols-5 gap-8 mb-12">
