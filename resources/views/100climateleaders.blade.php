@@ -415,7 +415,7 @@
     <section class="hidden lg:block relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="/storage/mix/Eligibility Criteria-bg.webp" alt="" class="w-full h-full object-cover">
+            <img src="/storage/mix/eligibility-criteria-bg.webp" alt="" class="w-full h-full object-cover">
         </div>
 
 
@@ -551,7 +551,7 @@
     <section class="lg:hidden relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="hidden absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="/storage/mix/Eligibility Criteria-bg.webp" alt="" class="w-full h-full object-cover">
+            <img src="/storage/mix/eligibility-criteria-bg.webp" alt="" class="w-full h-full object-cover">
         </div>
 
         <div class="relative mx-auto max-w-full px-4 md:px-8 py-12 md:py-16">
