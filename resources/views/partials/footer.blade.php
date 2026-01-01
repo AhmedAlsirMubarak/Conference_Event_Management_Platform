@@ -193,10 +193,14 @@
                 <h3 class="text-center text-white text-xs font-normal mb-6">{{ __('footer.organizers') }}</h3>
                 <div class="flex justify-center items-center gap-11"
                     dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
-                    <div class="flex justify-start items-center gap-7">
+                    <div class="flex flex-col justify-start items-center gap-2">
                         <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
                             <img class="w-20 h-10" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}"
                                 alt="Partner 1" />
+                        </a>
+                        <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-zinc-400 hover:text-white transition">
+                            ecocode.sa
                         </a>
                         <div class="w-52 opacity-80 text-white text-xs font-normal leading-6 hidden">
                             {{ __('footer.partner_1_desc') }}
@@ -205,10 +209,14 @@
 
                     <div class="w-px h-10 bg-zinc-600"></div>
 
-                    <div class="flex justify-start items-center gap-8">
+                    <div class="flex flex-col justify-start items-center gap-2">
                         <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
                             <img class="w-20 h-10" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}"
                                 alt="Partner 2" />
+                        </a>
+                        <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer"
+                            class="text-xs text-zinc-400 hover:text-white transition">
+                            birba.om
                         </a>
                         <div class="w-60 opacity-80 text-white text-xs font-normal leading-6 hidden">
                             {{ __('footer.partner_2_desc') }}
@@ -355,10 +363,14 @@
         <div class="text-center py-2 border-t border-gray-800">
             <h4 class="text-xs font-bold text-white mb-2">{{ __('footer.organizers') }}</h4>
             <div class="flex justify-center items-center gap-3">
-                <div>
+                <div class="flex flex-col items-center gap-1">
                     <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
                         <img class="w-14 h-auto" src="{{ asset('storage/footer-img/ecocode-logo.webp') }}"
                             alt="Ecocode" />
+                    </a>
+                    <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer"
+                        class="text-xs text-zinc-400 hover:text-white transition">
+                        ecocode.sa
                     </a>
                     <p class="text-xs text-gray-400" hidden>
                         {{ __('footer.partner_1_desc') }}
@@ -367,10 +379,14 @@
 
                 <div class="w-px h-3 bg-zinc-600"></div>
 
-                <div>
+                <div class="flex flex-col items-center gap-1">
                     <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
                         <img class="w-14 h-auto" src="{{ asset('storage/footer-img/birba-logo-white.webp') }}"
                             alt="Birba" />
+                    </a>
+                    <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer"
+                        class="text-xs text-zinc-400 hover:text-white transition">
+                        birba.om
                     </a>
                     <p class="text-xs text-gray-400" hidden>
                         {{ __('footer.partner_2_desc') }}
