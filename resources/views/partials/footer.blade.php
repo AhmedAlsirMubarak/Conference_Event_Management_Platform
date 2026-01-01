@@ -123,7 +123,7 @@
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.speakers') }}
                         </a>
-                        <a href="/climate-leaders"
+                        <a href="/100climateleaders"
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.climate_leaders') }}
                         </a>
@@ -276,6 +276,9 @@
                 </li>
                 <li><a href="/speakers"
                         class="text-xs text-gray-400 hover:text-white transition">{{ __('footer.speakers') }}</a>
+                </li>
+                <li><a href="/100climateleaders"
+                        class="text-xs text-gray-400 hover:text-white transition">{{ __('footer.climate_leaders') }}</a>
                 </li>
                 <li><a href="/contact"
                         class="text-xs text-gray-400 hover:text-white transition">{{ __('footer.contact') }}</a>
