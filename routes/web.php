@@ -16,18 +16,23 @@ use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ClimateLeadersController;
 
-// Language Switcher - stores in session and redirects
+// Language Switcher - Switch language and persist to session/cookie
 Route::get('/lang/{locale}', function($locale) {
+    // Validate and set locale
     if(in_array($locale, ['ar', 'en'])) {
-        // Explicitly store in session
-        session()->put('locale', $locale);
+        // Store in session
+        session(['locale' => $locale]);
         
-        // Create response and attach cookie
+        // Set app locale immediately 
+        app()->setLocale($locale);
+        
+        // Redirect with cookie attached
         $response = redirect()->back();
-        $response->cookie('locale', $locale, 60 * 24 * 365); // 1 year
+        $response->cookie('locale', $locale, 60 * 24 * 365);
         
         return $response;
     }
+    
     return redirect()->back();
 })->name('lang.switch');
 

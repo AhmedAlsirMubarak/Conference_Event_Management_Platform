@@ -10,41 +10,54 @@ class SetLocale
 {
     /**
      * Handle an incoming request.
-     *
-     * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Priority: URL query parameter > session > cookie > config
-        $locale = $request->query('locale');
+        // Determine locale with priority: URL query > session > cookie > config
+        $locale = null;
         
+        // 1. Check URL query parameter (highest priority)
+        if ($request->has('locale')) {
+            $locale = $request->query('locale');
+        }
+        
+        // 2. Check session
+        if (!$locale && $request->session()->has('locale')) {
+            $locale = $request->session()->get('locale');
+        }
+        
+        // 3. Check cookie
+        if (!$locale && $request->hasCookie('locale')) {
+            $locale = $request->cookie('locale');
+        }
+        
+        // 4. Use config default
         if (!$locale) {
-            // Try to get from session first (this persists across requests)
-            if ($request->session()->has('locale')) {
-                $locale = $request->session()->get('locale');
-            } else {
-                // Fall back to cookie or config
-                $locale = $request->cookie('locale') ?? config('app.locale');
-            }
+            $locale = config('app.locale', 'en');
         }
         
-        // Validate locale is one of our supported locales
-        if (!in_array($locale, ['ar', 'en'])) {
-            $locale = config('app.locale');
+        // Validate locale is supported
+        if (!in_array($locale, ['ar', 'en'], true)) {
+            $locale = config('app.locale', 'en');
         }
         
-        // Set application locale - this affects the __() function and translations
+        // Set the application locale
         app()->setLocale($locale);
         
-        // Store in session for persistence across requests
-        $request->session()->put('locale', $locale);
+        // Store in session for persistence
+        try {
+            $request->session()->put('locale', $locale);
+        } catch (\Exception $e) {
+            // Fallback if session fails
+        }
         
-        // Queue cookie for response (1 year duration)
+        // Queue cookie for response
         \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
         
-        // Share with views
+        // Share with all views
         view()->share('locale', $locale);
         
         return $next($request);
     }
 }
+
