@@ -27,12 +27,17 @@ class SetLocale
             $locale = config('app.locale');
         }
         
-        // Set application locale
+        // Set application locale FIRST
         app()->setLocale($locale);
         
-        // Always store in session and cookie
-        session(['locale' => $locale]);
+        // Always store in session - session must be started before storing
+        session()->put('locale', $locale);
+        
+        // Queue cookie for response
         \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
+        
+        // Pass locale to view through middleware
+        view()->share('locale', $locale);
         
         return $next($request);
     }
