@@ -130,7 +130,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[600px] pt-[110px]">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="/storage/mix/100-hero.webp" alt="100 Climate Leaders">
+            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp' }}" alt="100 Climate Leaders">
         </div>
 
         <!-- Dark overlay -->
@@ -183,7 +183,7 @@
     <section class="lg:hidden relative w-full overflow-hidden pt-10 pb-10">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="/storage/mix/100-hero.webp" alt="100 Climate Leaders" class="w-full h-full object-cover">
+            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp' }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
         <!-- Dark overlay for readability -->
@@ -259,8 +259,7 @@
             <div class="mt-16 grid gap-10 grid-cols-3">
                 <!-- Item 1 -->
                 <div class="relative px-0">
-                    <div
-                        class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/70 text-orange-400">
+                    <div class="flex h-12 w-12 items-center justify-center">
                         <!-- icon -->
                         <img src="/storage/mix/earth-1.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                     </div>
@@ -281,8 +280,7 @@
 
                 <!-- Item 2 -->
                 <div class="relative px-0 pl-6">
-                    <div
-                        class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/70 text-orange-400">
+                    <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
                         <img src="/storage/mix/chat.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                     </div>
@@ -303,8 +301,7 @@
 
                 <!-- Item 3 -->
                 <div class="px-0 pl-6">
-                    <div
-                        class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/70 text-orange-400">
+                    <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
                         <img src="/storage/mix/earth.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
 
@@ -354,8 +351,7 @@
                 <!-- Item 1 -->
                 <div class="w-full max-w-sm px-4">
                     <div class="flex justify-center mb-6">
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/70 text-orange-400">
+                        <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
                             <img src="/storage/mix/earth-1.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
@@ -373,8 +369,7 @@
                 <!-- Item 2 -->
                 <div class="w-full max-w-sm px-4">
                     <div class="flex justify-center mb-6">
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/70 text-orange-400">
+                        <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
                             <img src="/storage/mix/chat.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
@@ -392,8 +387,7 @@
                 <!-- Item 3 -->
                 <div class="w-full max-w-sm px-4">
                     <div class="flex justify-center mb-6">
-                        <div
-                            class="flex h-12 w-12 items-center justify-center rounded-full border border-orange-500/70 text-orange-400">
+                        <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
                             <img src="/storage/mix/earth.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
@@ -882,7 +876,7 @@
     <section id="nominationForm" class="lg:hidden relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image:url('{{ asset('storage/mix/submit-nomination.webp') }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp'  : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
         <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
@@ -1625,18 +1619,18 @@
     <section id="nominationForm" class="hidden lg:block relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-right"
-            style="background-image:url('{{ asset('storage/mix/submit-nomination.webp') }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
-        <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
+        <div class="absolute inset-0 {{ app()->getLocale() === 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-gray-900/30 to-gray-900/5 transition" aria-hidden="true"></div>
 
         {{-- Subtle warm glow (top-right like design) --}}
-        <div class="absolute -right-40 top-0 h-[520px] w-[520px]
-           rounded-full bg-[#F08C3A]/20 blur-3xl" aria-hidden="true"></div>
+        <div class="absolute {{ app()->getLocale() === 'ar' ? '-left-40' : '-right-40' }} top-0 h-[520px] w-[520px]
+            rounded-full bg-[#F08C3A]/15 blur-3xl" aria-hidden="true"></div>
 
         {{-- Left readability fade --}}
-        <div class="absolute inset-0 bg-gradient-to-r
-           from-gray-900/95 via-gray-900/40 to-transparent" aria-hidden="true"></div>
+        <div class="absolute inset-0 {{ app()->getLocale() === 'ar' ? 'bg-linear-to-r' : 'bg-linear-to-l' }}
+           from-gray-900/50 via-gray-900/20 to-transparent" aria-hidden="true"></div>
 
         <div class="relative mx-auto max-w-6xl px-6 pt-3 pb-32">
             <div class="grid gap-12 lg:grid-cols-12">
