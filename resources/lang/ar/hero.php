@@ -8,6 +8,10 @@ return [
     'location_country' => 'المملكة العربية السعودية',
     'date' => '06 - 10',
     'date_month' => 'سبتمبر 2026',
+    
+    // Hero Buttons
+    'button_speakers' => 'المتحدثون',
+    'button_exhibitors' => 'العارضون',
 
     // Event Info Section
     'event_label' => 'تعريف الحدث',

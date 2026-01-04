@@ -8,6 +8,10 @@ return [
     'location_country' => 'Saudi Arabia',
     'date' => '06 - 10',
     'date_month' => 'Sep, 2026',
+    
+    // Hero Buttons
+    'button_speakers' => 'Speakers',
+    'button_exhibitors' => 'Exhibitors',
 
     // Event Info Section
     'event_label' => 'Event Definition',

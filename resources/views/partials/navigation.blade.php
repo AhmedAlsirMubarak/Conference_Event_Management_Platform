@@ -49,7 +49,7 @@
                     <!-- Language Switcher -->
                     <div class="flex items-center bg-gray-800 rounded-lg p-0.5 gap-1">
                         @if(app()->getLocale() === 'ar')
-                            <button class="px-2 py-1 text-xs font-bold bg-blue-600 text-white rounded transition-colors">
+                            <button class="px-2 py-1 text-xs font-bold bg-[#3C94C5] text-white rounded transition-colors">
                                 AR
                             </button>
                             <a href="{{ route('lang.switch', 'en') }}"
@@ -61,7 +61,7 @@
                                 class="px-2 py-1 text-xs text-gray-400 hover:text-white font-medium transition-colors">
                                 AR
                             </a>
-                            <button class="px-2 py-1 text-xs font-bold bg-blue-600 text-white rounded transition-colors">
+                            <button class="px-2 py-1 text-xs font-bold bg-[#3C94C5] text-white rounded transition-colors">
                                 EN
                             </button>
                         @endif

@@ -23,51 +23,58 @@
             <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp' }}"
                 class="w-full h-full object-cover object-center" alt="Saudi Climate Week 2026 Hero Image" />
 
-
-
-            {{-- Main Headline --}}
-            <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-40' }} top-35 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                <h1 class="text-[80px] font-bold text-white leading-[95px] max-w-[538px]">
-                    {{ __('hero.headline') }}
-                </h1>
-            </div>
-
-            {{-- Subtitle --}}
-            <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-40' }} top-85 flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                <p class="text-2xl font-medium text-white leading-10 max-w-[570px]">
-                    {{ __('hero.subtitle') }}
-                </p>
-            </div>
-
-            {{-- Location & Date Section --}}
-            <div
-                class="absolute {{ app()->getLocale() === 'ar' ? 'right-50' : 'left-40' }} top-[425px] flex items-end gap-8">
-                {{-- Location --}}
-                <div class="flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                    <span class="text-4xl font-bold text-white leading-tight">
-                        {{ __('hero.location_city') }}
-                    </span>
-                    <span class="text-2xl font-medium text-white leading-snug">
-                        {{ __('hero.location_country') }}
-                    </span>
+            {{-- Content Wrapper (centered) --}}
+            <div class="absolute inset-0 flex flex-col items-center justify-center">
+                {{-- Main Headline --}}
+                <div class="flex flex-col items-center text-center">
+                    <h1 class="text-[80px] font-bold text-white leading-[95px] max-w-[1134x]">
+                        {{ __('hero.headline') }}
+                    </h1>
                 </div>
 
-                {{-- Divider Line --}}
-                <div class="w-px h-20 bg-[#E6813E]/50"></div>
+                {{-- Subtitle --}}
+                <div class="flex flex-col items-center text-center mt-4">
+                    <p class="text-2xl font-medium text-white leading-10 max-w-[871px]">
+                        {{ __('hero.subtitle') }}
+                    </p>
+                </div>
 
-                {{-- Date --}}
-                <div class="flex flex-col {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
-                    <span class="text-4xl font-bold text-white leading-tight">
-                        {{ __('hero.date') }}
-                    </span>
-                    <span class="text-2xl font-medium text-white leading-snug">
-                        {{ __('hero.date_month') }}
-                    </span>
+                {{-- Location & Date Section --}}
+                <div class="flex items-end gap-8 mt-16">
+                    {{-- Location --}}
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl font-bold text-white leading-tight">
+                            {{ __('hero.location_city') }}
+                        </span>
+                        <span class="text-2xl font-medium text-white leading-snug">
+                            {{ __('hero.location_country') }}
+                        </span>
+                    </div>
+
+                    {{-- Divider Line --}}
+                    <div class="w-px h-20 bg-[#E6813E]/50"></div>
+
+                    {{-- Date --}}
+                    <div class="flex flex-col items-center text-center">
+                        <span class="text-4xl font-bold text-white leading-tight">
+                            {{ __('hero.date') }}
+                        </span>
+                        <span class="text-2xl font-medium text-white leading-snug">
+                            {{ __('hero.date_month') }}
+                        </span>
+                    </div>
+                </div>
+
+                {{-- Action Buttons --}}
+                <div class="flex items-center gap-4 mt-12">
+                    <a href="#speakers" class="px-8 py-3 bg-[#7D876B] hover:bg-[#6d765b] text-white font-semibold rounded-lg transition-colors duration-300">
+                        {{ __('hero.button_speakers') ?? 'Speakers' }}
+                    </a>
+                    <a href="#exhibitors" class="px-8 py-3 bg-[#E6813E] hover:bg-[#d96e2f] text-white font-semibold rounded-lg transition-colors duration-300">
+                        {{ __('hero.button_exhibitors') ?? 'Exhibitors' }}
+                    </a>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -80,11 +87,10 @@
                 alt="Saudi Climate Week 2026 Hero Image" />
 
             {{-- Overlay gradient for mobile readability --}}
-            <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent"></div>
 
             {{-- Content Wrapper (centered) --}}
             <div class="relative z-10 w-full h-full flex flex-col items-center justify-center px-4 md:px-8">
-
 
                 {{-- Main Headline --}}
                 <div class="flex flex-col items-center text-center mb-3 md:mb-4">
@@ -387,7 +393,7 @@
 
     <!-- Speaker Apply Now Banner -->
     <section>
-        <div class="w-full h-12 md:h-14 bg-blue-500 flex items-center justify-center">
+        <div class="w-full h-12 md:h-14 bg-[#3C94C5] flex items-center justify-center">
             <div class="flex items-center h-full max-w-6xl mx-auto px-4 gap-3 md:gap-4 w-full justify-center">
                 {{-- Arrow Direction Based on Language --}}
                 <div class="flex flex-shrink-0 {{ app()->getLocale() === 'ar' ? 'order-last' : 'order-first' }}">
