@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ClimateLeaders;
 use App\Mail\ClimateLeaderSubmissionMail;
-use App\Mail\ClimateLeaderTeamMail;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -120,15 +119,6 @@ class ClimateLeadersController extends Controller
                 Log::info('Confirmation email queued for user', ['climate_leader_id' => $climateLeader->id]);
             } catch (\Exception $e) {
                 Log::error('Failed to queue confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
-            }
-
-            // Send notification email to team (queued)
-            try {
-                $teamEmail = config('app.team_email') ?? env('TEAM_EMAIL', 'climate-leaders@saudiclimateweek.com');
-                Mail::to($teamEmail)->queue(new ClimateLeaderTeamMail($climateLeader));
-                Log::info('Notification email queued for team', ['climate_leader_id' => $climateLeader->id, 'team_email' => $teamEmail]);
-            } catch (\Exception $e) {
-                Log::error('Failed to queue notification email to team: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
             // Return JSON for AJAX requests, redirect for form submissions
