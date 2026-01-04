@@ -19,12 +19,12 @@ use App\Http\Controllers\ClimateLeadersController;
 // Language Switcher - stores in session and redirects
 Route::get('/lang/{locale}', function($locale) {
     if(in_array($locale, ['ar', 'en'])) {
-        // Store in session
-        session(['locale' => $locale]);
+        // Explicitly store in session
+        session()->put('locale', $locale);
         
         // Create response and attach cookie
         $response = redirect()->back();
-        $response->cookie('locale', $locale, 60 * 24 * 365); // 1 year cookie
+        $response->cookie('locale', $locale, 60 * 24 * 365); // 1 year
         
         return $response;
     }

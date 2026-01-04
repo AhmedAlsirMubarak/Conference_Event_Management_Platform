@@ -19,24 +19,30 @@ class SetLocale
         $locale = $request->query('locale');
         
         if (!$locale) {
-            $locale = session('locale') ?? $request->cookie('locale') ?? config('app.locale');
+            // Try to get from session first (this persists across requests)
+            if ($request->session()->has('locale')) {
+                $locale = $request->session()->get('locale');
+            } else {
+                // Fall back to cookie or config
+                $locale = $request->cookie('locale') ?? config('app.locale');
+            }
         }
         
-        // Validate locale
+        // Validate locale is one of our supported locales
         if (!in_array($locale, ['ar', 'en'])) {
             $locale = config('app.locale');
         }
         
-        // Set application locale FIRST
+        // Set application locale - this affects the __() function and translations
         app()->setLocale($locale);
         
-        // Always store in session - session must be started before storing
-        session()->put('locale', $locale);
+        // Store in session for persistence across requests
+        $request->session()->put('locale', $locale);
         
-        // Queue cookie for response
+        // Queue cookie for response (1 year duration)
         \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
         
-        // Pass locale to view through middleware
+        // Share with views
         view()->share('locale', $locale);
         
         return $next($request);
