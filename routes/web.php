@@ -16,16 +16,13 @@ use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ClimateLeadersController;
 
-// Language Switcher - stores in session and redirects with query param for immediate effect
+// Language Switcher - stores in session and redirects
 Route::get('/lang/{locale}', function($locale) {
     if(in_array($locale, ['ar', 'en'])) {
         session(['locale' => $locale]);
         \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
     }
-    // Redirect back with locale query parameter for immediate application
-    $url = redirect()->back()->getTargetUrl();
-    $separator = strpos($url, '?') === false ? '?' : '&';
-    return redirect($url . $separator . 'locale=' . $locale);
+    return redirect()->back();
 })->name('lang.switch');
 
 
