@@ -351,7 +351,7 @@
                     <a href="#" class="w-5 h-5 hover:opacity-70 transition" title="Facebook">
                         <img src="{{ asset('storage/footer-img/facebook.svg') }}" alt="Facebook" class="w-full h-full">
                     </a>
-                    <a href="https://www.linkedin.com/company/saudi-climate-week/" target="_blank"
+                    <a href="https://www.linkedin.com/company/saudiclimate-week" target="_blank"
                         rel="noopener noreferrer" class="w-5 h-5 hover:opacity-70 transition" title="LinkedIn">
                         <img src="{{ asset('storage/footer-img/linkedin.svg') }}" alt="LinkedIn" class="w-full h-full">
                     </a>
