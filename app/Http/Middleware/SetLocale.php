@@ -21,13 +21,13 @@ class SetLocale
             $locale = $request->query('locale');
         }
         
-        // 2. Check session
-        if (!$locale && $request->session()->has('locale')) {
-            $locale = $request->session()->get('locale');
+        // 2. Check session (session middleware has already run by this point)
+        if (!$locale) {
+            $locale = session('locale');
         }
         
         // 3. Check cookie
-        if (!$locale && $request->hasCookie('locale')) {
+        if (!$locale) {
             $locale = $request->cookie('locale');
         }
         
@@ -44,17 +44,13 @@ class SetLocale
         // Set the application locale
         app()->setLocale($locale);
         
-        // Store in session for persistence
-        try {
-            $request->session()->put('locale', $locale);
-        } catch (\Exception $e) {
-            // Fallback if session fails
-        }
+        // Store in session for persistence across requests
+        session(['locale' => $locale]);
         
-        // Queue cookie for response
+        // Queue cookie for response (1 year)
         \Illuminate\Support\Facades\Cookie::queue('locale', $locale, 60 * 24 * 365);
         
-        // Share with all views
+        // Share locale with all views
         view()->share('locale', $locale);
         
         return $next($request);
