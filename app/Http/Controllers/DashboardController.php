@@ -41,26 +41,13 @@ class DashboardController extends Controller
                 'totalStrategicCommittees',
                 'totalTechnicalCommittees'
             ));
-        } catch (\Throwable $e) {
-            \Log::error('Dashboard error: ' . $e->getMessage(), [
-                'file' => $e->getFile(),
-                'line' => $e->getLine(),
-                'trace' => $e->getTraceAsString()
-            ]);
-            
-            // Return dashboard with zero values if any error occurs
+        } catch (\Exception $e) {
             return view('admin.dashboard', [
                 'totalContacts' => 0,
                 'thisWeekContacts' => 0,
                 'todayContacts' => 0,
                 'totalSponsors' => 0,
                 'totalStrategicSpeakers' => 0,
-                'totalTechnicalSpeakers' => 0,
-                'totalStrategicCommittees' => 0,
-                'totalTechnicalCommittees' => 0
-            ]);
-        }
-    }
                 'totalTechnicalSpeakers' => 0,
                 'totalStrategicCommittees' => 0,
                 'totalTechnicalCommittees' => 0
