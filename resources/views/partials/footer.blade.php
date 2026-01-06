@@ -140,7 +140,7 @@
                     <div
                         class="w-32 h-18 justify-center {{ app()->getLocale() === 'ar' ? 'items-end' : 'items-start' }}">
                         <a href="/home">
-                            <img class="w-[100px] h-[69px]" src="{{ asset('storage/uploads/nav-img/scw-logo.webp') }}"
+                            <img class="w-[100px] h-[69px]" src="{{ asset('storage/uploads/footer-img/scw-logo.webp') }}"
                                 alt="SCW Logo" />
                         </a>
                     </div>
@@ -247,7 +247,7 @@
         <!-- Mobile Logo and Description -->
         <div class="space-y-2 text-center">
             <a href="/home">
-                <img src="{{ asset('storage/uploads/nav-img/scw-logo.webp') }}" alt="SCW Logo"
+                <img src="{{ asset('storage/uploads/footer-img/scw-logo.webp') }}" alt="SCW Logo"
                     class="w-12 h-auto mx-auto pb-2">
             </a>
             <p class="text-xs text-gray-400 leading-tight">

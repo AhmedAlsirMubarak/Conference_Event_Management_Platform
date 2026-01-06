@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#E68238">
     <meta name="apple-mobile-web-app-title" content="{{ __('100climateleaders.page_title') }}">
 
-    <link rel="icon" type="image/webp" href="{{ asset('storage/uploads/nav-img/scw-logo.webp') }}">
+    <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Smooth scroll behavior -->
@@ -130,7 +130,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[600px] pt-[110px]">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders">
+            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp' }}" alt="100 Climate Leaders">
         </div>
 
         <!-- Dark overlay -->
@@ -183,7 +183,7 @@
     <section class="lg:hidden relative w-full overflow-hidden pt-10 pb-10">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
+            <img src="/storage/mix/{{ app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp' }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
         <!-- Dark overlay for readability -->
@@ -261,7 +261,7 @@
                 <div class="relative px-0">
                     <div class="flex h-12 w-12 items-center justify-center">
                         <!-- icon -->
-                        <img src="{{ asset('storage/uploads/mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="/storage/mix/earth-1.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                     </div>
 
                     <h3
@@ -282,7 +282,7 @@
                 <div class="relative px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('storage/uploads/mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="/storage/mix/chat.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                     </div>
 
                     <h3
@@ -303,7 +303,7 @@
                 <div class="px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('storage/uploads/mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="/storage/mix/earth.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
 
                     </div>
 
@@ -353,7 +353,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/uploads/mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="/storage/mix/earth-1.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -371,7 +371,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/uploads/mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="/storage/mix/chat.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -389,7 +389,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/uploads/mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="/storage/mix/earth.svg" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -409,7 +409,7 @@
     <section class="hidden lg:block relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('storage/uploads/mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
+            <img src="/storage/mix/eligibility-criteria-bg.webp" alt="" class="w-full h-full object-cover">
         </div>
 
 
@@ -440,10 +440,10 @@
 
                         <article class="relative overflow-hidden rounded-2xl">
                             <div class="relative rounded-2xl p-10 h-[420px] w-[270px] bg-cover "
-                                style="background-image: url('{{ asset('storage/uploads/mix/leading-bg.webp') }}')">
+                                style="background-image: url('/storage/mix/leading-bg.webp')">
                                 <!-- Icon -->
                                 <div class="text-white/90">
-                                    <img src="{{ asset('storage/uploads/mix/earth-3.webp') }}" alt="">
+                                    <img src="/storage/mix/earth-3.webp" alt="">
                                 </div>
 
                                 <h3 class="mt-8 text-[24px] font-bold leading-snug text-white w-[184px]">
@@ -467,12 +467,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-[180px] {{ app()->getLocale() === 'ar' ? 'mr-[-90px]' : 'ml-[-90px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('storage/uploads/mix/proven-impact-bg.webp') }}')">
+                                style="background-image: url('/storage/mix/proven-impact-bg.webp')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('storage/uploads/mix/green-energy.webp') }}" alt="">
+                                        <img src="/storage/mix/green-energy.webp" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -491,12 +491,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-32 {{ app()->getLocale() === 'ar' ? 'mr-[-60px]' : 'ml-[-60px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('storage/uploads/mix/across-bg.webp') }}')">
+                                style="background-image: url('/storage/mix/across-bg.webp')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('storage/uploads/mix/earth-4.webp') }}" alt="">
+                                        <img src="/storage/mix/earth-4.webp" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -515,12 +515,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-[70px] {{ app()->getLocale() === 'ar' ? 'mr-[-30px]' : 'ml-[-30px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('storage/uploads/mix/commitment-bg.webp') }}')">
+                                style="background-image: url('/storage/mix/commitment-bg.webp')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('storage/uploads/mix/recycle.webp') }}" alt="">
+                                        <img src="/storage/mix/recycle.webp" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -545,7 +545,7 @@
     <section class="lg:hidden relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="hidden absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('storage/uploads/mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
+            <img src="/storage/mix/eligibility-criteria-bg.webp" alt="" class="w-full h-full object-cover">
         </div>
 
         <div class="relative mx-auto max-w-full px-4 md:px-8 py-12 md:py-16">
@@ -576,10 +576,10 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h- md:h-[420px] w-full bg-cover"
-                            style="background-image: url('{{ asset('storage/uploads/mix/leading-bg.webp') }}')">
+                            style="background-image: url('/storage/mix/leading-bg.webp')">
                             <!-- Icon -->
                             <div class="text-white/90 h-12 w-12">
-                                <img src="{{ asset('storage/uploads/mix/earth-3.webp') }}" alt="">
+                                <img src="/storage/mix/earth-3.webp" alt="">
                             </div>
 
                             <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -599,12 +599,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('storage/uploads/mix/proven-impact-bg.webp') }}')">
+                            style="background-image: url('/storage/mix/proven-impact-bg.webp')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('storage/uploads/mix/green-energy.webp') }}" alt="">
+                                    <img src="/storage/mix/green-energy.webp" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -625,12 +625,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('storage/uploads/mix/across-bg.webp') }}')">
+                            style="background-image: url('/storage/mix/across-bg.webp')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('storage/uploads/mix/earth-4.webp') }}" alt="">
+                                    <img src="/storage/mix/earth-4.webp" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -651,12 +651,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('storage/uploads/mix/commitment-bg.webp') }}')">
+                            style="background-image: url('/storage/mix/commitment-bg.webp')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('storage/uploads/mix/recycle.webp') }}" alt="">
+                                    <img src="/storage/mix/recycle.webp" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -701,7 +701,7 @@
                 <div class="text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/uploads/mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
+                        <img src="/storage/mix/open-self.webp" alt="Saudi Climate Week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -716,7 +716,7 @@
                 <!-- Step 2 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/uploads/mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="/storage/mix/independent.webp" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -731,7 +731,7 @@
                 <!-- Step 3 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/uploads/mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="/storage/mix/multi.webp" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -746,7 +746,7 @@
                 <!-- Step 4 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/uploads/mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="/storage/mix/final.webp" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -766,18 +766,18 @@
                     <div class="grid grid-cols-4">
                         <!-- Arrow 1 -->
                         <div class="relative">
-                            <img src="{{ asset('storage/uploads/mix/arrow.webp') }}" alt="Arrow"
+                            <img src="/storage/mix/arrow.webp" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 2 -->
                         <div class="relative">
 
-                            <img src="{{ asset('storage/uploads/mix/arrow.webp') }}" alt="Arrow"
+                            <img src="/storage/mix/arrow.webp" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 3 -->
                         <div class="relative">
-                            <img src="{{ asset('storage/uploads/mix/arrow.webp') }}" alt="Arrow"
+                            <img src="/storage/mix/arrow.webp" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
 
@@ -811,7 +811,7 @@
                 <div class="w-full max-w-xs text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/uploads/mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
+                        <img src="/storage/mix/open-self.webp" alt="Saudi Climate Week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -826,7 +826,7 @@
                 <!-- Step 2 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/uploads/mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="/storage/mix/independent.webp" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -841,7 +841,7 @@
                 <!-- Step 3 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/uploads/mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="/storage/mix/multi.webp" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -856,7 +856,7 @@
                 <!-- Step 4 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/uploads/mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="/storage/mix/final.webp" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -876,7 +876,7 @@
     <section id="nominationForm" class="lg:hidden relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image:url('{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp'  : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp'  : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
         <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
@@ -1381,208 +1381,208 @@
                                     <select name="country_code" required class="w-24 rounded-md border border-gray-600 bg-gray-800 px-3 py-2.5 text-sm text-white outline-none
                                      focus:border-orange-400/60 focus:ring-2 focus:ring-orange-400/20">
                                         <option value="" disabled selected>Code</option>
-                                        <option value="+93">ðŸ‡¦ðŸ‡« +93</option>
-                                        <option value="+355">ðŸ‡¦ðŸ‡± +355</option>
-                                        <option value="+213">ðŸ‡©ðŸ‡¿ +213</option>
-                                        <option value="+1-684">ðŸ‡¦ðŸ‡¸ +1-684</option>
-                                        <option value="+376">ðŸ‡¦ðŸ‡© +376</option>
-                                        <option value="+244">ðŸ‡¦ðŸ‡´ +244</option>
-                                        <option value="+1-268">ðŸ‡¦ðŸ‡¬ +1-268</option>
-                                        <option value="+54">ðŸ‡¦ðŸ‡· +54</option>
-                                        <option value="+374">ðŸ‡¦ðŸ‡² +374</option>
-                                        <option value="+297">ðŸ‡¦ðŸ‡¼ +297</option>
-                                        <option value="+61">ðŸ‡¦ðŸ‡º +61</option>
-                                        <option value="+43">ðŸ‡¦ðŸ‡¹ +43</option>
-                                        <option value="+994">ðŸ‡¦ðŸ‡¿ +994</option>
-                                        <option value="+1-242">ðŸ‡§ðŸ‡¸ +1-242</option>
-                                        <option value="+973">ðŸ‡§ðŸ‡­ +973</option>
-                                        <option value="+880">ðŸ‡§ðŸ‡© +880</option>
-                                        <option value="+1-246">ðŸ‡§ðŸ‡§ +1-246</option>
-                                        <option value="+375">ðŸ‡§ðŸ‡¾ +375</option>
-                                        <option value="+32">ðŸ‡§ðŸ‡ª +32</option>
-                                        <option value="+501">ðŸ‡§ðŸ‡¿ +501</option>
-                                        <option value="+229">ðŸ‡§ðŸ‡¯ +229</option>
-                                        <option value="+1-441">ðŸ‡§ðŸ‡² +1-441</option>
-                                        <option value="+975">ðŸ‡§ðŸ‡¹ +975</option>
-                                        <option value="+591">ðŸ‡§ðŸ‡´ +591</option>
-                                        <option value="+387">ðŸ‡§ðŸ‡¦ +387</option>
-                                        <option value="+267">ðŸ‡§ðŸ‡¼ +267</option>
-                                        <option value="+55">ðŸ‡§ðŸ‡· +55</option>
-                                        <option value="+246">ðŸ‡¬ðŸ‡§ +246</option>
-                                        <option value="+673">ðŸ‡§ðŸ‡³ +673</option>
-                                        <option value="+359">ðŸ‡§ðŸ‡¬ +359</option>
-                                        <option value="+226">ðŸ‡§ðŸ‡« +226</option>
-                                        <option value="+257">ðŸ‡§ðŸ‡® +257</option>
-                                        <option value="+855">ðŸ‡°ðŸ‡­ +855</option>
-                                        <option value="+237">ðŸ‡¨ðŸ‡² +237</option>
-                                        <option value="+1">ðŸ‡¨ðŸ‡¦ +1</option>
-                                        <option value="+238">ðŸ‡¨ðŸ‡» +238</option>
-                                        <option value="+1-345">ðŸ‡°ðŸ‡¾ +1-345</option>
-                                        <option value="+236">ðŸ‡¨ðŸ‡« +236</option>
-                                        <option value="+235">ðŸ‡¹ðŸ‡© +235</option>
-                                        <option value="+56">ðŸ‡¨ðŸ‡± +56</option>
-                                        <option value="+86">ðŸ‡¨ðŸ‡³ +86</option>
-                                        <option value="+57">ðŸ‡¨ðŸ‡´ +57</option>
-                                        <option value="+269">ðŸ‡°ðŸ‡² +269</option>
-                                        <option value="+242">ðŸ‡¨ðŸ‡¬ +242</option>
-                                        <option value="+506">ðŸ‡¨ðŸ‡· +506</option>
-                                        <option value="+385">ðŸ‡­ðŸ‡· +385</option>
-                                        <option value="+53">ðŸ‡¨ðŸ‡º +53</option>
-                                        <option value="+357">ðŸ‡¨ðŸ‡¾ +357</option>
-                                        <option value="+420">ðŸ‡¨ðŸ‡¿ +420</option>
-                                        <option value="+45">ðŸ‡©ðŸ‡° +45</option>
-                                        <option value="+246">ðŸ‡©ðŸ‡¬ +246</option>
-                                        <option value="+1-767">ðŸ‡©ðŸ‡² +1-767</option>
-                                        <option value="+1-809">ðŸ‡©ðŸ‡´ +1-809</option>
-                                        <option value="+593">ðŸ‡ªðŸ‡¨ +593</option>
-                                        <option value="+20">ðŸ‡ªðŸ‡¬ +20</option>
-                                        <option value="+503">ðŸ‡¸ðŸ‡» +503</option>
-                                        <option value="+240">ðŸ‡¬ðŸ‡¶ +240</option>
-                                        <option value="+291">ðŸ‡ªðŸ‡· +291</option>
-                                        <option value="+372">ðŸ‡ªðŸ‡ª +372</option>
-                                        <option value="+251">ðŸ‡ªðŸ‡¹ +251</option>
-                                        <option value="+298">ðŸ‡«ðŸ‡´ +298</option>
-                                        <option value="+679">ðŸ‡«ðŸ‡¯ +679</option>
-                                        <option value="+358">ðŸ‡«ðŸ‡® +358</option>
-                                        <option value="+33">ðŸ‡«ðŸ‡· +33</option>
-                                        <option value="+241">ðŸ‡¬ðŸ‡¦ +241</option>
-                                        <option value="+220">ðŸ‡¬ðŸ‡² +220</option>
-                                        <option value="+995">ðŸ‡¬ðŸ‡ª +995</option>
-                                        <option value="+49">ðŸ‡©ðŸ‡ª +49</option>
-                                        <option value="+233">ðŸ‡¬ðŸ‡­ +233</option>
-                                        <option value="+350">ðŸ‡¬ðŸ‡® +350</option>
-                                        <option value="+30">ðŸ‡¬ðŸ‡· +30</option>
-                                        <option value="+299">ðŸ‡¬ðŸ‡± +299</option>
-                                        <option value="+1-473">ðŸ‡¬ðŸ‡© +1-473</option>
-                                        <option value="+1-671">ðŸ‡¬ðŸ‡º +1-671</option>
-                                        <option value="+502">ðŸ‡¬ðŸ‡¹ +502</option>
-                                        <option value="+224">ðŸ‡¬ðŸ‡³ +224</option>
-                                        <option value="+245">ðŸ‡¬ðŸ‡¼ +245</option>
-                                        <option value="+592">ðŸ‡¬ðŸ‡¾ +592</option>
-                                        <option value="+509">ðŸ‡­ðŸ‡¹ +509</option>
-                                        <option value="+504">ðŸ‡­ðŸ‡³ +504</option>
-                                        <option value="+852">ðŸ‡­ðŸ‡° +852</option>
-                                        <option value="+36">ðŸ‡­ðŸ‡º +36</option>
-                                        <option value="+354">ðŸ‡®ðŸ‡¸ +354</option>
-                                        <option value="+91">ðŸ‡®ðŸ‡³ +91</option>
-                                        <option value="+62">ðŸ‡®ðŸ‡© +62</option>
-                                        <option value="+98">ðŸ‡®ðŸ‡· +98</option>
-                                        <option value="+964">ðŸ‡®ðŸ‡¶ +964</option>
-                                        <option value="+353">ðŸ‡®ðŸ‡ª +353</option>
-                                        <option value="+972">ðŸ‡®ðŸ‡± +972</option>
-                                        <option value="+39">ðŸ‡®ðŸ‡¹ +39</option>
-                                        <option value="+1-876">ðŸ‡¯ðŸ‡² +1-876</option>
-                                        <option value="+81">ðŸ‡¯ðŸ‡µ +81</option>
-                                        <option value="+962">ðŸ‡¯ðŸ‡´ +962</option>
-                                        <option value="+7">ðŸ‡°ðŸ‡¿ +7</option>
-                                        <option value="+254">ðŸ‡°ðŸ‡ª +254</option>
-                                        <option value="+686">ðŸ‡°ðŸ‡® +686</option>
-                                        <option value="+82">ðŸ‡°ðŸ‡· +82</option>
-                                        <option value="+965">ðŸ‡°ðŸ‡¼ +965</option>
-                                        <option value="+996">ðŸ‡°ðŸ‡¬ +996</option>
-                                        <option value="+856">ðŸ‡±ðŸ‡¦ +856</option>
-                                        <option value="+371">ðŸ‡±ðŸ‡» +371</option>
-                                        <option value="+961">ðŸ‡±ðŸ‡§ +961</option>
-                                        <option value="+266">ðŸ‡±ðŸ‡¸ +266</option>
-                                        <option value="+231">ðŸ‡±ðŸ‡· +231</option>
-                                        <option value="+218">ðŸ‡±ðŸ‡¾ +218</option>
-                                        <option value="+423">ðŸ‡±ðŸ‡® +423</option>
-                                        <option value="+370">ðŸ‡±ðŸ‡¹ +370</option>
-                                        <option value="+352">ðŸ‡±ðŸ‡º +352</option>
-                                        <option value="+853">ðŸ‡²ðŸ‡´ +853</option>
-                                        <option value="+389">ðŸ‡²ðŸ‡° +389</option>
-                                        <option value="+261">ðŸ‡²ðŸ‡¬ +261</option>
-                                        <option value="+265">ðŸ‡²ðŸ‡¼ +265</option>
-                                        <option value="+60">ðŸ‡²ðŸ‡¾ +60</option>
-                                        <option value="+960">ðŸ‡²ðŸ‡» +960</option>
-                                        <option value="+223">ðŸ‡²ðŸ‡± +223</option>
-                                        <option value="+356">ðŸ‡²ðŸ‡¹ +356</option>
-                                        <option value="+692">ðŸ‡²ðŸ‡­ +692</option>
-                                        <option value="+222">ðŸ‡²ðŸ‡· +222</option>
-                                        <option value="+230">ðŸ‡²ðŸ‡º +230</option>
-                                        <option value="+52">ðŸ‡²ðŸ‡½ +52</option>
-                                        <option value="+691">ðŸ‡«ðŸ‡² +691</option>
-                                        <option value="+373">ðŸ‡²ðŸ‡© +373</option>
-                                        <option value="+377">ðŸ‡²ðŸ‡¨ +377</option>
-                                        <option value="+976">ðŸ‡²ðŸ‡³ +976</option>
-                                        <option value="+382">ðŸ‡²ðŸ‡ª +382</option>
-                                        <option value="+212">ðŸ‡²ðŸ‡¦ +212</option>
-                                        <option value="+258">ðŸ‡²ðŸ‡¿ +258</option>
-                                        <option value="+95">ðŸ‡²ðŸ‡² +95</option>
-                                        <option value="+264">ðŸ‡³ðŸ‡¦ +264</option>
-                                        <option value="+674">ðŸ‡³ðŸ‡· +674</option>
-                                        <option value="+977">ðŸ‡³ðŸ‡µ +977</option>
-                                        <option value="+31">ðŸ‡³ðŸ‡± +31</option>
-                                        <option value="+64">ðŸ‡³ðŸ‡¿ +64</option>
-                                        <option value="+505">ðŸ‡³ðŸ‡® +505</option>
-                                        <option value="+227">ðŸ‡³ðŸ‡ª +227</option>
-                                        <option value="+234">ðŸ‡³ðŸ‡¬ +234</option>
-                                        <option value="+47">ðŸ‡³ðŸ‡´ +47</option>
-                                        <option value="+968">ðŸ‡´ðŸ‡² +968</option>
-                                        <option value="+92">ðŸ‡µðŸ‡° +92</option>
-                                        <option value="+680">ðŸ‡µðŸ‡¼ +680</option>
-                                        <option value="+507">ðŸ‡µðŸ‡¦ +507</option>
-                                        <option value="+675">ðŸ‡µðŸ‡¬ +675</option>
-                                        <option value="+595">ðŸ‡µðŸ‡¾ +595</option>
-                                        <option value="+51">ðŸ‡µðŸ‡ª +51</option>
-                                        <option value="+63">ðŸ‡µðŸ‡­ +63</option>
-                                        <option value="+48">ðŸ‡µðŸ‡± +48</option>
-                                        <option value="+351">ðŸ‡µðŸ‡¹ +351</option>
-                                        <option value="+974">ðŸ‡¶ðŸ‡¦ +974</option>
-                                        <option value="+40">ðŸ‡·ðŸ‡´ +40</option>
-                                        <option value="+7">ðŸ‡·ðŸ‡º +7</option>
-                                        <option value="+250">ðŸ‡·ðŸ‡¼ +250</option>
-                                        <option value="+1-869">ðŸ‡°ðŸ‡³ +1-869</option>
-                                        <option value="+1-758">ðŸ‡±ðŸ‡¨ +1-758</option>
-                                        <option value="+1-784">ðŸ‡»ðŸ‡¨ +1-784</option>
-                                        <option value="+685">ðŸ‡¼ðŸ‡¸ +685</option>
-                                        <option value="+378">ðŸ‡¸ðŸ‡² +378</option>
-                                        <option value="+239">ðŸ‡¸ðŸ‡¹ +239</option>
-                                        <option value="+966">ðŸ‡¸ðŸ‡¦ +966</option>
-                                        <option value="+221">ðŸ‡¸ðŸ‡³ +221</option>
-                                        <option value="+381">ðŸ‡·ðŸ‡¸ +381</option>
-                                        <option value="+248">ðŸ‡¸ðŸ‡¨ +248</option>
-                                        <option value="+232">ðŸ‡¸ðŸ‡± +232</option>
-                                        <option value="+65">ðŸ‡¸ðŸ‡¬ +65</option>
-                                        <option value="+421">ðŸ‡¸ðŸ‡° +421</option>
-                                        <option value="+386">ðŸ‡¸ðŸ‡® +386</option>
-                                        <option value="+677">ðŸ‡¸ðŸ‡§ +677</option>
-                                        <option value="+252">ðŸ‡¸ðŸ‡´ +252</option>
-                                        <option value="+27">ðŸ‡¿ðŸ‡¦ +27</option>
-                                        <option value="+34">ðŸ‡ªðŸ‡¸ +34</option>
-                                        <option value="+94">ðŸ‡±ðŸ‡° +94</option>
-                                        <option value="+249">ðŸ‡¸ðŸ‡© +249</option>
-                                        <option value="+597">ðŸ‡¸ðŸ‡· +597</option>
-                                        <option value="+46">ðŸ‡¸ðŸ‡ª +46</option>
-                                        <option value="+41">ðŸ‡¨ðŸ‡­ +41</option>
-                                        <option value="+963">ðŸ‡¸ðŸ‡¾ +963</option>
-                                        <option value="+886">ðŸ‡¹ðŸ‡¼ +886</option>
-                                        <option value="+992">ðŸ‡¹ðŸ‡¯ +992</option>
-                                        <option value="+255">ðŸ‡¹ðŸ‡¿ +255</option>
-                                        <option value="+66">ðŸ‡¹ðŸ‡­ +66</option>
-                                        <option value="+670">ðŸ‡¹ðŸ‡± +670</option>
-                                        <option value="+228">ðŸ‡¹ðŸ‡¬ +228</option>
-                                        <option value="+676">ðŸ‡¹ðŸ‡´ +676</option>
-                                        <option value="+1-868">ðŸ‡¹ðŸ‡¹ +1-868</option>
-                                        <option value="+216">ðŸ‡¹ðŸ‡³ +216</option>
-                                        <option value="+90">ðŸ‡¹ðŸ‡· +90</option>
-                                        <option value="+993">ðŸ‡¹ðŸ‡² +993</option>
-                                        <option value="+1-649">ðŸ‡¹ðŸ‡¨ +1-649</option>
-                                        <option value="+688">ðŸ‡¹ðŸ‡» +688</option>
-                                        <option value="+256">ðŸ‡ºðŸ‡¬ +256</option>
-                                        <option value="+380">ðŸ‡ºðŸ‡¦ +380</option>
-                                        <option value="+971">ðŸ‡¦ðŸ‡ª +971</option>
-                                        <option value="+44">ðŸ‡¬ðŸ‡§ +44</option>
-                                        <option value="+1">ðŸ‡ºðŸ‡¸ +1</option>
-                                        <option value="+598">ðŸ‡ºðŸ‡¾ +598</option>
-                                        <option value="+998">ðŸ‡ºðŸ‡¿ +998</option>
-                                        <option value="+678">ðŸ‡»ðŸ‡º +678</option>
-                                        <option value="+58">ðŸ‡»ðŸ‡ª +58</option>
-                                        <option value="+84">ðŸ‡»ðŸ‡³ +84</option>
-                                        <option value="+1-340">ðŸ‡»ðŸ‡® +1-340</option>
-                                        <option value="+967">ðŸ‡¾ðŸ‡ª +967</option>
-                                        <option value="+260">ðŸ‡¿ðŸ‡² +260</option>
-                                        <option value="+263">ðŸ‡¿ðŸ‡¼ +263</option>
+                                        <option value="+93">🇦🇫 +93</option>
+                                        <option value="+355">🇦🇱 +355</option>
+                                        <option value="+213">🇩🇿 +213</option>
+                                        <option value="+1-684">🇦🇸 +1-684</option>
+                                        <option value="+376">🇦🇩 +376</option>
+                                        <option value="+244">🇦🇴 +244</option>
+                                        <option value="+1-268">🇦🇬 +1-268</option>
+                                        <option value="+54">🇦🇷 +54</option>
+                                        <option value="+374">🇦🇲 +374</option>
+                                        <option value="+297">🇦🇼 +297</option>
+                                        <option value="+61">🇦🇺 +61</option>
+                                        <option value="+43">🇦🇹 +43</option>
+                                        <option value="+994">🇦🇿 +994</option>
+                                        <option value="+1-242">🇧🇸 +1-242</option>
+                                        <option value="+973">🇧🇭 +973</option>
+                                        <option value="+880">🇧🇩 +880</option>
+                                        <option value="+1-246">🇧🇧 +1-246</option>
+                                        <option value="+375">🇧🇾 +375</option>
+                                        <option value="+32">🇧🇪 +32</option>
+                                        <option value="+501">🇧🇿 +501</option>
+                                        <option value="+229">🇧🇯 +229</option>
+                                        <option value="+1-441">🇧🇲 +1-441</option>
+                                        <option value="+975">🇧🇹 +975</option>
+                                        <option value="+591">🇧🇴 +591</option>
+                                        <option value="+387">🇧🇦 +387</option>
+                                        <option value="+267">🇧🇼 +267</option>
+                                        <option value="+55">🇧🇷 +55</option>
+                                        <option value="+246">🇬🇧 +246</option>
+                                        <option value="+673">🇧🇳 +673</option>
+                                        <option value="+359">🇧🇬 +359</option>
+                                        <option value="+226">🇧🇫 +226</option>
+                                        <option value="+257">🇧🇮 +257</option>
+                                        <option value="+855">🇰🇭 +855</option>
+                                        <option value="+237">🇨🇲 +237</option>
+                                        <option value="+1">🇨🇦 +1</option>
+                                        <option value="+238">🇨🇻 +238</option>
+                                        <option value="+1-345">🇰🇾 +1-345</option>
+                                        <option value="+236">🇨🇫 +236</option>
+                                        <option value="+235">🇹🇩 +235</option>
+                                        <option value="+56">🇨🇱 +56</option>
+                                        <option value="+86">🇨🇳 +86</option>
+                                        <option value="+57">🇨🇴 +57</option>
+                                        <option value="+269">🇰🇲 +269</option>
+                                        <option value="+242">🇨🇬 +242</option>
+                                        <option value="+506">🇨🇷 +506</option>
+                                        <option value="+385">🇭🇷 +385</option>
+                                        <option value="+53">🇨🇺 +53</option>
+                                        <option value="+357">🇨🇾 +357</option>
+                                        <option value="+420">🇨🇿 +420</option>
+                                        <option value="+45">🇩🇰 +45</option>
+                                        <option value="+246">🇩🇬 +246</option>
+                                        <option value="+1-767">🇩🇲 +1-767</option>
+                                        <option value="+1-809">🇩🇴 +1-809</option>
+                                        <option value="+593">🇪🇨 +593</option>
+                                        <option value="+20">🇪🇬 +20</option>
+                                        <option value="+503">🇸🇻 +503</option>
+                                        <option value="+240">🇬🇶 +240</option>
+                                        <option value="+291">🇪🇷 +291</option>
+                                        <option value="+372">🇪🇪 +372</option>
+                                        <option value="+251">🇪🇹 +251</option>
+                                        <option value="+298">🇫🇴 +298</option>
+                                        <option value="+679">🇫🇯 +679</option>
+                                        <option value="+358">🇫🇮 +358</option>
+                                        <option value="+33">🇫🇷 +33</option>
+                                        <option value="+241">🇬🇦 +241</option>
+                                        <option value="+220">🇬🇲 +220</option>
+                                        <option value="+995">🇬🇪 +995</option>
+                                        <option value="+49">🇩🇪 +49</option>
+                                        <option value="+233">🇬🇭 +233</option>
+                                        <option value="+350">🇬🇮 +350</option>
+                                        <option value="+30">🇬🇷 +30</option>
+                                        <option value="+299">🇬🇱 +299</option>
+                                        <option value="+1-473">🇬🇩 +1-473</option>
+                                        <option value="+1-671">🇬🇺 +1-671</option>
+                                        <option value="+502">🇬🇹 +502</option>
+                                        <option value="+224">🇬🇳 +224</option>
+                                        <option value="+245">🇬🇼 +245</option>
+                                        <option value="+592">🇬🇾 +592</option>
+                                        <option value="+509">🇭🇹 +509</option>
+                                        <option value="+504">🇭🇳 +504</option>
+                                        <option value="+852">🇭🇰 +852</option>
+                                        <option value="+36">🇭🇺 +36</option>
+                                        <option value="+354">🇮🇸 +354</option>
+                                        <option value="+91">🇮🇳 +91</option>
+                                        <option value="+62">🇮🇩 +62</option>
+                                        <option value="+98">🇮🇷 +98</option>
+                                        <option value="+964">🇮🇶 +964</option>
+                                        <option value="+353">🇮🇪 +353</option>
+                                        <option value="+972">🇮🇱 +972</option>
+                                        <option value="+39">🇮🇹 +39</option>
+                                        <option value="+1-876">🇯🇲 +1-876</option>
+                                        <option value="+81">🇯🇵 +81</option>
+                                        <option value="+962">🇯🇴 +962</option>
+                                        <option value="+7">🇰🇿 +7</option>
+                                        <option value="+254">🇰🇪 +254</option>
+                                        <option value="+686">🇰🇮 +686</option>
+                                        <option value="+82">🇰🇷 +82</option>
+                                        <option value="+965">🇰🇼 +965</option>
+                                        <option value="+996">🇰🇬 +996</option>
+                                        <option value="+856">🇱🇦 +856</option>
+                                        <option value="+371">🇱🇻 +371</option>
+                                        <option value="+961">🇱🇧 +961</option>
+                                        <option value="+266">🇱🇸 +266</option>
+                                        <option value="+231">🇱🇷 +231</option>
+                                        <option value="+218">🇱🇾 +218</option>
+                                        <option value="+423">🇱🇮 +423</option>
+                                        <option value="+370">🇱🇹 +370</option>
+                                        <option value="+352">🇱🇺 +352</option>
+                                        <option value="+853">🇲🇴 +853</option>
+                                        <option value="+389">🇲🇰 +389</option>
+                                        <option value="+261">🇲🇬 +261</option>
+                                        <option value="+265">🇲🇼 +265</option>
+                                        <option value="+60">🇲🇾 +60</option>
+                                        <option value="+960">🇲🇻 +960</option>
+                                        <option value="+223">🇲🇱 +223</option>
+                                        <option value="+356">🇲🇹 +356</option>
+                                        <option value="+692">🇲🇭 +692</option>
+                                        <option value="+222">🇲🇷 +222</option>
+                                        <option value="+230">🇲🇺 +230</option>
+                                        <option value="+52">🇲🇽 +52</option>
+                                        <option value="+691">🇫🇲 +691</option>
+                                        <option value="+373">🇲🇩 +373</option>
+                                        <option value="+377">🇲🇨 +377</option>
+                                        <option value="+976">🇲🇳 +976</option>
+                                        <option value="+382">🇲🇪 +382</option>
+                                        <option value="+212">🇲🇦 +212</option>
+                                        <option value="+258">🇲🇿 +258</option>
+                                        <option value="+95">🇲🇲 +95</option>
+                                        <option value="+264">🇳🇦 +264</option>
+                                        <option value="+674">🇳🇷 +674</option>
+                                        <option value="+977">🇳🇵 +977</option>
+                                        <option value="+31">🇳🇱 +31</option>
+                                        <option value="+64">🇳🇿 +64</option>
+                                        <option value="+505">🇳🇮 +505</option>
+                                        <option value="+227">🇳🇪 +227</option>
+                                        <option value="+234">🇳🇬 +234</option>
+                                        <option value="+47">🇳🇴 +47</option>
+                                        <option value="+968">🇴🇲 +968</option>
+                                        <option value="+92">🇵🇰 +92</option>
+                                        <option value="+680">🇵🇼 +680</option>
+                                        <option value="+507">🇵🇦 +507</option>
+                                        <option value="+675">🇵🇬 +675</option>
+                                        <option value="+595">🇵🇾 +595</option>
+                                        <option value="+51">🇵🇪 +51</option>
+                                        <option value="+63">🇵🇭 +63</option>
+                                        <option value="+48">🇵🇱 +48</option>
+                                        <option value="+351">🇵🇹 +351</option>
+                                        <option value="+974">🇶🇦 +974</option>
+                                        <option value="+40">🇷🇴 +40</option>
+                                        <option value="+7">🇷🇺 +7</option>
+                                        <option value="+250">🇷🇼 +250</option>
+                                        <option value="+1-869">🇰🇳 +1-869</option>
+                                        <option value="+1-758">🇱🇨 +1-758</option>
+                                        <option value="+1-784">🇻🇨 +1-784</option>
+                                        <option value="+685">🇼🇸 +685</option>
+                                        <option value="+378">🇸🇲 +378</option>
+                                        <option value="+239">🇸🇹 +239</option>
+                                        <option value="+966">🇸🇦 +966</option>
+                                        <option value="+221">🇸🇳 +221</option>
+                                        <option value="+381">🇷🇸 +381</option>
+                                        <option value="+248">🇸🇨 +248</option>
+                                        <option value="+232">🇸🇱 +232</option>
+                                        <option value="+65">🇸🇬 +65</option>
+                                        <option value="+421">🇸🇰 +421</option>
+                                        <option value="+386">🇸🇮 +386</option>
+                                        <option value="+677">🇸🇧 +677</option>
+                                        <option value="+252">🇸🇴 +252</option>
+                                        <option value="+27">🇿🇦 +27</option>
+                                        <option value="+34">🇪🇸 +34</option>
+                                        <option value="+94">🇱🇰 +94</option>
+                                        <option value="+249">🇸🇩 +249</option>
+                                        <option value="+597">🇸🇷 +597</option>
+                                        <option value="+46">🇸🇪 +46</option>
+                                        <option value="+41">🇨🇭 +41</option>
+                                        <option value="+963">🇸🇾 +963</option>
+                                        <option value="+886">🇹🇼 +886</option>
+                                        <option value="+992">🇹🇯 +992</option>
+                                        <option value="+255">🇹🇿 +255</option>
+                                        <option value="+66">🇹🇭 +66</option>
+                                        <option value="+670">🇹🇱 +670</option>
+                                        <option value="+228">🇹🇬 +228</option>
+                                        <option value="+676">🇹🇴 +676</option>
+                                        <option value="+1-868">🇹🇹 +1-868</option>
+                                        <option value="+216">🇹🇳 +216</option>
+                                        <option value="+90">🇹🇷 +90</option>
+                                        <option value="+993">🇹🇲 +993</option>
+                                        <option value="+1-649">🇹🇨 +1-649</option>
+                                        <option value="+688">🇹🇻 +688</option>
+                                        <option value="+256">🇺🇬 +256</option>
+                                        <option value="+380">🇺🇦 +380</option>
+                                        <option value="+971">🇦🇪 +971</option>
+                                        <option value="+44">🇬🇧 +44</option>
+                                        <option value="+1">🇺🇸 +1</option>
+                                        <option value="+598">🇺🇾 +598</option>
+                                        <option value="+998">🇺🇿 +998</option>
+                                        <option value="+678">🇻🇺 +678</option>
+                                        <option value="+58">🇻🇪 +58</option>
+                                        <option value="+84">🇻🇳 +84</option>
+                                        <option value="+1-340">🇻🇮 +1-340</option>
+                                        <option value="+967">🇾🇪 +967</option>
+                                        <option value="+260">🇿🇲 +260</option>
+                                        <option value="+263">🇿🇼 +263</option>
                                     </select>
                                     <input name="phone"
                                         placeholder="{{ __('100climateleaders.nomination_phone_placeholder') }}"
@@ -1619,7 +1619,7 @@
     <section id="nominationForm" class="hidden lg:block relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-right"
-            style="background-image:url('{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
         <div class="absolute inset-0 {{ app()->getLocale() === 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-gray-900/30 to-gray-900/5 transition" aria-hidden="true"></div>
@@ -2128,208 +2128,208 @@
                                         <select name="country_code" required class="w-24 rounded-md border border-gray-600 bg-gray-800 px-3 py-2.5 text-sm text-white outline-none
                                          focus:border-orange-400/60 focus:ring-2 focus:ring-orange-400/20">
                                             <option value="" disabled selected>Code</option>
-                                            <option value="+93">ðŸ‡¦ðŸ‡« +93</option>
-                                            <option value="+355">ðŸ‡¦ðŸ‡± +355</option>
-                                            <option value="+213">ðŸ‡©ðŸ‡¿ +213</option>
-                                            <option value="+1-684">ðŸ‡¦ðŸ‡¸ +1-684</option>
-                                            <option value="+376">ðŸ‡¦ðŸ‡© +376</option>
-                                            <option value="+244">ðŸ‡¦ðŸ‡´ +244</option>
-                                            <option value="+1-268">ðŸ‡¦ðŸ‡¬ +1-268</option>
-                                            <option value="+54">ðŸ‡¦ðŸ‡· +54</option>
-                                            <option value="+374">ðŸ‡¦ðŸ‡² +374</option>
-                                            <option value="+297">ðŸ‡¦ðŸ‡¼ +297</option>
-                                            <option value="+61">ðŸ‡¦ðŸ‡º +61</option>
-                                            <option value="+43">ðŸ‡¦ðŸ‡¹ +43</option>
-                                            <option value="+994">ðŸ‡¦ðŸ‡¿ +994</option>
-                                            <option value="+1-242">ðŸ‡§ðŸ‡¸ +1-242</option>
-                                            <option value="+973">ðŸ‡§ðŸ‡­ +973</option>
-                                            <option value="+880">ðŸ‡§ðŸ‡© +880</option>
-                                            <option value="+1-246">ðŸ‡§ðŸ‡§ +1-246</option>
-                                            <option value="+375">ðŸ‡§ðŸ‡¾ +375</option>
-                                            <option value="+32">ðŸ‡§ðŸ‡ª +32</option>
-                                            <option value="+501">ðŸ‡§ðŸ‡¿ +501</option>
-                                            <option value="+229">ðŸ‡§ðŸ‡¯ +229</option>
-                                            <option value="+1-441">ðŸ‡§ðŸ‡² +1-441</option>
-                                            <option value="+975">ðŸ‡§ðŸ‡¹ +975</option>
-                                            <option value="+591">ðŸ‡§ðŸ‡´ +591</option>
-                                            <option value="+387">ðŸ‡§ðŸ‡¦ +387</option>
-                                            <option value="+267">ðŸ‡§ðŸ‡¼ +267</option>
-                                            <option value="+55">ðŸ‡§ðŸ‡· +55</option>
-                                            <option value="+246">ðŸ‡¬ðŸ‡§ +246</option>
-                                            <option value="+673">ðŸ‡§ðŸ‡³ +673</option>
-                                            <option value="+359">ðŸ‡§ðŸ‡¬ +359</option>
-                                            <option value="+226">ðŸ‡§ðŸ‡« +226</option>
-                                            <option value="+257">ðŸ‡§ðŸ‡® +257</option>
-                                            <option value="+855">ðŸ‡°ðŸ‡­ +855</option>
-                                            <option value="+237">ðŸ‡¨ðŸ‡² +237</option>
-                                            <option value="+1">ðŸ‡¨ðŸ‡¦ +1</option>
-                                            <option value="+238">ðŸ‡¨ðŸ‡» +238</option>
-                                            <option value="+1-345">ðŸ‡°ðŸ‡¾ +1-345</option>
-                                            <option value="+236">ðŸ‡¨ðŸ‡« +236</option>
-                                            <option value="+235">ðŸ‡¹ðŸ‡© +235</option>
-                                            <option value="+56">ðŸ‡¨ðŸ‡± +56</option>
-                                            <option value="+86">ðŸ‡¨ðŸ‡³ +86</option>
-                                            <option value="+57">ðŸ‡¨ðŸ‡´ +57</option>
-                                            <option value="+269">ðŸ‡°ðŸ‡² +269</option>
-                                            <option value="+242">ðŸ‡¨ðŸ‡¬ +242</option>
-                                            <option value="+506">ðŸ‡¨ðŸ‡· +506</option>
-                                            <option value="+385">ðŸ‡­ðŸ‡· +385</option>
-                                            <option value="+53">ðŸ‡¨ðŸ‡º +53</option>
-                                            <option value="+357">ðŸ‡¨ðŸ‡¾ +357</option>
-                                            <option value="+420">ðŸ‡¨ðŸ‡¿ +420</option>
-                                            <option value="+45">ðŸ‡©ðŸ‡° +45</option>
-                                            <option value="+246">ðŸ‡©ðŸ‡¬ +246</option>
-                                            <option value="+1-767">ðŸ‡©ðŸ‡² +1-767</option>
-                                            <option value="+1-809">ðŸ‡©ðŸ‡´ +1-809</option>
-                                            <option value="+593">ðŸ‡ªðŸ‡¨ +593</option>
-                                            <option value="+20">ðŸ‡ªðŸ‡¬ +20</option>
-                                            <option value="+503">ðŸ‡¸ðŸ‡» +503</option>
-                                            <option value="+240">ðŸ‡¬ðŸ‡¶ +240</option>
-                                            <option value="+291">ðŸ‡ªðŸ‡· +291</option>
-                                            <option value="+372">ðŸ‡ªðŸ‡ª +372</option>
-                                            <option value="+251">ðŸ‡ªðŸ‡¹ +251</option>
-                                            <option value="+298">ðŸ‡«ðŸ‡´ +298</option>
-                                            <option value="+679">ðŸ‡«ðŸ‡¯ +679</option>
-                                            <option value="+358">ðŸ‡«ðŸ‡® +358</option>
-                                            <option value="+33">ðŸ‡«ðŸ‡· +33</option>
-                                            <option value="+241">ðŸ‡¬ðŸ‡¦ +241</option>
-                                            <option value="+220">ðŸ‡¬ðŸ‡² +220</option>
-                                            <option value="+995">ðŸ‡¬ðŸ‡ª +995</option>
-                                            <option value="+49">ðŸ‡©ðŸ‡ª +49</option>
-                                            <option value="+233">ðŸ‡¬ðŸ‡­ +233</option>
-                                            <option value="+350">ðŸ‡¬ðŸ‡® +350</option>
-                                            <option value="+30">ðŸ‡¬ðŸ‡· +30</option>
-                                            <option value="+299">ðŸ‡¬ðŸ‡± +299</option>
-                                            <option value="+1-473">ðŸ‡¬ðŸ‡© +1-473</option>
-                                            <option value="+1-671">ðŸ‡¬ðŸ‡º +1-671</option>
-                                            <option value="+502">ðŸ‡¬ðŸ‡¹ +502</option>
-                                            <option value="+224">ðŸ‡¬ðŸ‡³ +224</option>
-                                            <option value="+245">ðŸ‡¬ðŸ‡¼ +245</option>
-                                            <option value="+592">ðŸ‡¬ðŸ‡¾ +592</option>
-                                            <option value="+509">ðŸ‡­ðŸ‡¹ +509</option>
-                                            <option value="+504">ðŸ‡­ðŸ‡³ +504</option>
-                                            <option value="+852">ðŸ‡­ðŸ‡° +852</option>
-                                            <option value="+36">ðŸ‡­ðŸ‡º +36</option>
-                                            <option value="+354">ðŸ‡®ðŸ‡¸ +354</option>
-                                            <option value="+91">ðŸ‡®ðŸ‡³ +91</option>
-                                            <option value="+62">ðŸ‡®ðŸ‡© +62</option>
-                                            <option value="+98">ðŸ‡®ðŸ‡· +98</option>
-                                            <option value="+964">ðŸ‡®ðŸ‡¶ +964</option>
-                                            <option value="+353">ðŸ‡®ðŸ‡ª +353</option>
-                                            <option value="+972">ðŸ‡®ðŸ‡± +972</option>
-                                            <option value="+39">ðŸ‡®ðŸ‡¹ +39</option>
-                                            <option value="+1-876">ðŸ‡¯ðŸ‡² +1-876</option>
-                                            <option value="+81">ðŸ‡¯ðŸ‡µ +81</option>
-                                            <option value="+962">ðŸ‡¯ðŸ‡´ +962</option>
-                                            <option value="+7">ðŸ‡°ðŸ‡¿ +7</option>
-                                            <option value="+254">ðŸ‡°ðŸ‡ª +254</option>
-                                            <option value="+686">ðŸ‡°ðŸ‡® +686</option>
-                                            <option value="+82">ðŸ‡°ðŸ‡· +82</option>
-                                            <option value="+965">ðŸ‡°ðŸ‡¼ +965</option>
-                                            <option value="+996">ðŸ‡°ðŸ‡¬ +996</option>
-                                            <option value="+856">ðŸ‡±ðŸ‡¦ +856</option>
-                                            <option value="+371">ðŸ‡±ðŸ‡» +371</option>
-                                            <option value="+961">ðŸ‡±ðŸ‡§ +961</option>
-                                            <option value="+266">ðŸ‡±ðŸ‡¸ +266</option>
-                                            <option value="+231">ðŸ‡±ðŸ‡· +231</option>
-                                            <option value="+218">ðŸ‡±ðŸ‡¾ +218</option>
-                                            <option value="+423">ðŸ‡±ðŸ‡® +423</option>
-                                            <option value="+370">ðŸ‡±ðŸ‡¹ +370</option>
-                                            <option value="+352">ðŸ‡±ðŸ‡º +352</option>
-                                            <option value="+853">ðŸ‡²ðŸ‡´ +853</option>
-                                            <option value="+389">ðŸ‡²ðŸ‡° +389</option>
-                                            <option value="+261">ðŸ‡²ðŸ‡¬ +261</option>
-                                            <option value="+265">ðŸ‡²ðŸ‡¼ +265</option>
-                                            <option value="+60">ðŸ‡²ðŸ‡¾ +60</option>
-                                            <option value="+960">ðŸ‡²ðŸ‡» +960</option>
-                                            <option value="+223">ðŸ‡²ðŸ‡± +223</option>
-                                            <option value="+356">ðŸ‡²ðŸ‡¹ +356</option>
-                                            <option value="+692">ðŸ‡²ðŸ‡­ +692</option>
-                                            <option value="+222">ðŸ‡²ðŸ‡· +222</option>
-                                            <option value="+230">ðŸ‡²ðŸ‡º +230</option>
-                                            <option value="+52">ðŸ‡²ðŸ‡½ +52</option>
-                                            <option value="+691">ðŸ‡«ðŸ‡² +691</option>
-                                            <option value="+373">ðŸ‡²ðŸ‡© +373</option>
-                                            <option value="+377">ðŸ‡²ðŸ‡¨ +377</option>
-                                            <option value="+976">ðŸ‡²ðŸ‡³ +976</option>
-                                            <option value="+382">ðŸ‡²ðŸ‡ª +382</option>
-                                            <option value="+212">ðŸ‡²ðŸ‡¦ +212</option>
-                                            <option value="+258">ðŸ‡²ðŸ‡¿ +258</option>
-                                            <option value="+95">ðŸ‡²ðŸ‡² +95</option>
-                                            <option value="+264">ðŸ‡³ðŸ‡¦ +264</option>
-                                            <option value="+674">ðŸ‡³ðŸ‡· +674</option>
-                                            <option value="+977">ðŸ‡³ðŸ‡µ +977</option>
-                                            <option value="+31">ðŸ‡³ðŸ‡± +31</option>
-                                            <option value="+64">ðŸ‡³ðŸ‡¿ +64</option>
-                                            <option value="+505">ðŸ‡³ðŸ‡® +505</option>
-                                            <option value="+227">ðŸ‡³ðŸ‡ª +227</option>
-                                            <option value="+234">ðŸ‡³ðŸ‡¬ +234</option>
-                                            <option value="+47">ðŸ‡³ðŸ‡´ +47</option>
-                                            <option value="+968">ðŸ‡´ðŸ‡² +968</option>
-                                            <option value="+92">ðŸ‡µðŸ‡° +92</option>
-                                            <option value="+680">ðŸ‡µðŸ‡¼ +680</option>
-                                            <option value="+507">ðŸ‡µðŸ‡¦ +507</option>
-                                            <option value="+675">ðŸ‡µðŸ‡¬ +675</option>
-                                            <option value="+595">ðŸ‡µðŸ‡¾ +595</option>
-                                            <option value="+51">ðŸ‡µðŸ‡ª +51</option>
-                                            <option value="+63">ðŸ‡µðŸ‡­ +63</option>
-                                            <option value="+48">ðŸ‡µðŸ‡± +48</option>
-                                            <option value="+351">ðŸ‡µðŸ‡¹ +351</option>
-                                            <option value="+974">ðŸ‡¶ðŸ‡¦ +974</option>
-                                            <option value="+40">ðŸ‡·ðŸ‡´ +40</option>
-                                            <option value="+7">ðŸ‡·ðŸ‡º +7</option>
-                                            <option value="+250">ðŸ‡·ðŸ‡¼ +250</option>
-                                            <option value="+1-869">ðŸ‡°ðŸ‡³ +1-869</option>
-                                            <option value="+1-758">ðŸ‡±ðŸ‡¨ +1-758</option>
-                                            <option value="+1-784">ðŸ‡»ðŸ‡¨ +1-784</option>
-                                            <option value="+685">ðŸ‡¼ðŸ‡¸ +685</option>
-                                            <option value="+378">ðŸ‡¸ðŸ‡² +378</option>
-                                            <option value="+239">ðŸ‡¸ðŸ‡¹ +239</option>
-                                            <option value="+966">ðŸ‡¸ðŸ‡¦ +966</option>
-                                            <option value="+221">ðŸ‡¸ðŸ‡³ +221</option>
-                                            <option value="+381">ðŸ‡·ðŸ‡¸ +381</option>
-                                            <option value="+248">ðŸ‡¸ðŸ‡¨ +248</option>
-                                            <option value="+232">ðŸ‡¸ðŸ‡± +232</option>
-                                            <option value="+65">ðŸ‡¸ðŸ‡¬ +65</option>
-                                            <option value="+421">ðŸ‡¸ðŸ‡° +421</option>
-                                            <option value="+386">ðŸ‡¸ðŸ‡® +386</option>
-                                            <option value="+677">ðŸ‡¸ðŸ‡§ +677</option>
-                                            <option value="+252">ðŸ‡¸ðŸ‡´ +252</option>
-                                            <option value="+27">ðŸ‡¿ðŸ‡¦ +27</option>
-                                            <option value="+34">ðŸ‡ªðŸ‡¸ +34</option>
-                                            <option value="+94">ðŸ‡±ðŸ‡° +94</option>
-                                            <option value="+249">ðŸ‡¸ðŸ‡© +249</option>
-                                            <option value="+597">ðŸ‡¸ðŸ‡· +597</option>
-                                            <option value="+46">ðŸ‡¸ðŸ‡ª +46</option>
-                                            <option value="+41">ðŸ‡¨ðŸ‡­ +41</option>
-                                            <option value="+963">ðŸ‡¸ðŸ‡¾ +963</option>
-                                            <option value="+886">ðŸ‡¹ðŸ‡¼ +886</option>
-                                            <option value="+992">ðŸ‡¹ðŸ‡¯ +992</option>
-                                            <option value="+255">ðŸ‡¹ðŸ‡¿ +255</option>
-                                            <option value="+66">ðŸ‡¹ðŸ‡­ +66</option>
-                                            <option value="+670">ðŸ‡¹ðŸ‡± +670</option>
-                                            <option value="+228">ðŸ‡¹ðŸ‡¬ +228</option>
-                                            <option value="+676">ðŸ‡¹ðŸ‡´ +676</option>
-                                            <option value="+1-868">ðŸ‡¹ðŸ‡¹ +1-868</option>
-                                            <option value="+216">ðŸ‡¹ðŸ‡³ +216</option>
-                                            <option value="+90">ðŸ‡¹ðŸ‡· +90</option>
-                                            <option value="+993">ðŸ‡¹ðŸ‡² +993</option>
-                                            <option value="+1-649">ðŸ‡¹ðŸ‡¨ +1-649</option>
-                                            <option value="+688">ðŸ‡¹ðŸ‡» +688</option>
-                                            <option value="+256">ðŸ‡ºðŸ‡¬ +256</option>
-                                            <option value="+380">ðŸ‡ºðŸ‡¦ +380</option>
-                                            <option value="+971">ðŸ‡¦ðŸ‡ª +971</option>
-                                            <option value="+44">ðŸ‡¬ðŸ‡§ +44</option>
-                                            <option value="+1">ðŸ‡ºðŸ‡¸ +1</option>
-                                            <option value="+598">ðŸ‡ºðŸ‡¾ +598</option>
-                                            <option value="+998">ðŸ‡ºðŸ‡¿ +998</option>
-                                            <option value="+678">ðŸ‡»ðŸ‡º +678</option>
-                                            <option value="+58">ðŸ‡»ðŸ‡ª +58</option>
-                                            <option value="+84">ðŸ‡»ðŸ‡³ +84</option>
-                                            <option value="+1-340">ðŸ‡»ðŸ‡® +1-340</option>
-                                            <option value="+967">ðŸ‡¾ðŸ‡ª +967</option>
-                                            <option value="+260">ðŸ‡¿ðŸ‡² +260</option>
-                                            <option value="+263">ðŸ‡¿ðŸ‡¼ +263</option>
+                                            <option value="+93">🇦🇫 +93</option>
+                                            <option value="+355">🇦🇱 +355</option>
+                                            <option value="+213">🇩🇿 +213</option>
+                                            <option value="+1-684">🇦🇸 +1-684</option>
+                                            <option value="+376">🇦🇩 +376</option>
+                                            <option value="+244">🇦🇴 +244</option>
+                                            <option value="+1-268">🇦🇬 +1-268</option>
+                                            <option value="+54">🇦🇷 +54</option>
+                                            <option value="+374">🇦🇲 +374</option>
+                                            <option value="+297">🇦🇼 +297</option>
+                                            <option value="+61">🇦🇺 +61</option>
+                                            <option value="+43">🇦🇹 +43</option>
+                                            <option value="+994">🇦🇿 +994</option>
+                                            <option value="+1-242">🇧🇸 +1-242</option>
+                                            <option value="+973">🇧🇭 +973</option>
+                                            <option value="+880">🇧🇩 +880</option>
+                                            <option value="+1-246">🇧🇧 +1-246</option>
+                                            <option value="+375">🇧🇾 +375</option>
+                                            <option value="+32">🇧🇪 +32</option>
+                                            <option value="+501">🇧🇿 +501</option>
+                                            <option value="+229">🇧🇯 +229</option>
+                                            <option value="+1-441">🇧🇲 +1-441</option>
+                                            <option value="+975">🇧🇹 +975</option>
+                                            <option value="+591">🇧🇴 +591</option>
+                                            <option value="+387">🇧🇦 +387</option>
+                                            <option value="+267">🇧🇼 +267</option>
+                                            <option value="+55">🇧🇷 +55</option>
+                                            <option value="+246">🇬🇧 +246</option>
+                                            <option value="+673">🇧🇳 +673</option>
+                                            <option value="+359">🇧🇬 +359</option>
+                                            <option value="+226">🇧🇫 +226</option>
+                                            <option value="+257">🇧🇮 +257</option>
+                                            <option value="+855">🇰🇭 +855</option>
+                                            <option value="+237">🇨🇲 +237</option>
+                                            <option value="+1">🇨🇦 +1</option>
+                                            <option value="+238">🇨🇻 +238</option>
+                                            <option value="+1-345">🇰🇾 +1-345</option>
+                                            <option value="+236">🇨🇫 +236</option>
+                                            <option value="+235">🇹🇩 +235</option>
+                                            <option value="+56">🇨🇱 +56</option>
+                                            <option value="+86">🇨🇳 +86</option>
+                                            <option value="+57">🇨🇴 +57</option>
+                                            <option value="+269">🇰🇲 +269</option>
+                                            <option value="+242">🇨🇬 +242</option>
+                                            <option value="+506">🇨🇷 +506</option>
+                                            <option value="+385">🇭🇷 +385</option>
+                                            <option value="+53">🇨🇺 +53</option>
+                                            <option value="+357">🇨🇾 +357</option>
+                                            <option value="+420">🇨🇿 +420</option>
+                                            <option value="+45">🇩🇰 +45</option>
+                                            <option value="+246">🇩🇬 +246</option>
+                                            <option value="+1-767">🇩🇲 +1-767</option>
+                                            <option value="+1-809">🇩🇴 +1-809</option>
+                                            <option value="+593">🇪🇨 +593</option>
+                                            <option value="+20">🇪🇬 +20</option>
+                                            <option value="+503">🇸🇻 +503</option>
+                                            <option value="+240">🇬🇶 +240</option>
+                                            <option value="+291">🇪🇷 +291</option>
+                                            <option value="+372">🇪🇪 +372</option>
+                                            <option value="+251">🇪🇹 +251</option>
+                                            <option value="+298">🇫🇴 +298</option>
+                                            <option value="+679">🇫🇯 +679</option>
+                                            <option value="+358">🇫🇮 +358</option>
+                                            <option value="+33">🇫🇷 +33</option>
+                                            <option value="+241">🇬🇦 +241</option>
+                                            <option value="+220">🇬🇲 +220</option>
+                                            <option value="+995">🇬🇪 +995</option>
+                                            <option value="+49">🇩🇪 +49</option>
+                                            <option value="+233">🇬🇭 +233</option>
+                                            <option value="+350">🇬🇮 +350</option>
+                                            <option value="+30">🇬🇷 +30</option>
+                                            <option value="+299">🇬🇱 +299</option>
+                                            <option value="+1-473">🇬🇩 +1-473</option>
+                                            <option value="+1-671">🇬🇺 +1-671</option>
+                                            <option value="+502">🇬🇹 +502</option>
+                                            <option value="+224">🇬🇳 +224</option>
+                                            <option value="+245">🇬🇼 +245</option>
+                                            <option value="+592">🇬🇾 +592</option>
+                                            <option value="+509">🇭🇹 +509</option>
+                                            <option value="+504">🇭🇳 +504</option>
+                                            <option value="+852">🇭🇰 +852</option>
+                                            <option value="+36">🇭🇺 +36</option>
+                                            <option value="+354">🇮🇸 +354</option>
+                                            <option value="+91">🇮🇳 +91</option>
+                                            <option value="+62">🇮🇩 +62</option>
+                                            <option value="+98">🇮🇷 +98</option>
+                                            <option value="+964">🇮🇶 +964</option>
+                                            <option value="+353">🇮🇪 +353</option>
+                                            <option value="+972">🇮🇱 +972</option>
+                                            <option value="+39">🇮🇹 +39</option>
+                                            <option value="+1-876">🇯🇲 +1-876</option>
+                                            <option value="+81">🇯🇵 +81</option>
+                                            <option value="+962">🇯🇴 +962</option>
+                                            <option value="+7">🇰🇿 +7</option>
+                                            <option value="+254">🇰🇪 +254</option>
+                                            <option value="+686">🇰🇮 +686</option>
+                                            <option value="+82">🇰🇷 +82</option>
+                                            <option value="+965">🇰🇼 +965</option>
+                                            <option value="+996">🇰🇬 +996</option>
+                                            <option value="+856">🇱🇦 +856</option>
+                                            <option value="+371">🇱🇻 +371</option>
+                                            <option value="+961">🇱🇧 +961</option>
+                                            <option value="+266">🇱🇸 +266</option>
+                                            <option value="+231">🇱🇷 +231</option>
+                                            <option value="+218">🇱🇾 +218</option>
+                                            <option value="+423">🇱🇮 +423</option>
+                                            <option value="+370">🇱🇹 +370</option>
+                                            <option value="+352">🇱🇺 +352</option>
+                                            <option value="+853">🇲🇴 +853</option>
+                                            <option value="+389">🇲🇰 +389</option>
+                                            <option value="+261">🇲🇬 +261</option>
+                                            <option value="+265">🇲🇼 +265</option>
+                                            <option value="+60">🇲🇾 +60</option>
+                                            <option value="+960">🇲🇻 +960</option>
+                                            <option value="+223">🇲🇱 +223</option>
+                                            <option value="+356">🇲🇹 +356</option>
+                                            <option value="+692">🇲🇭 +692</option>
+                                            <option value="+222">🇲🇷 +222</option>
+                                            <option value="+230">🇲🇺 +230</option>
+                                            <option value="+52">🇲🇽 +52</option>
+                                            <option value="+691">🇫🇲 +691</option>
+                                            <option value="+373">🇲🇩 +373</option>
+                                            <option value="+377">🇲🇨 +377</option>
+                                            <option value="+976">🇲🇳 +976</option>
+                                            <option value="+382">🇲🇪 +382</option>
+                                            <option value="+212">🇲🇦 +212</option>
+                                            <option value="+258">🇲🇿 +258</option>
+                                            <option value="+95">🇲🇲 +95</option>
+                                            <option value="+264">🇳🇦 +264</option>
+                                            <option value="+674">🇳🇷 +674</option>
+                                            <option value="+977">🇳🇵 +977</option>
+                                            <option value="+31">🇳🇱 +31</option>
+                                            <option value="+64">🇳🇿 +64</option>
+                                            <option value="+505">🇳🇮 +505</option>
+                                            <option value="+227">🇳🇪 +227</option>
+                                            <option value="+234">🇳🇬 +234</option>
+                                            <option value="+47">🇳🇴 +47</option>
+                                            <option value="+968">🇴🇲 +968</option>
+                                            <option value="+92">🇵🇰 +92</option>
+                                            <option value="+680">🇵🇼 +680</option>
+                                            <option value="+507">🇵🇦 +507</option>
+                                            <option value="+675">🇵🇬 +675</option>
+                                            <option value="+595">🇵🇾 +595</option>
+                                            <option value="+51">🇵🇪 +51</option>
+                                            <option value="+63">🇵🇭 +63</option>
+                                            <option value="+48">🇵🇱 +48</option>
+                                            <option value="+351">🇵🇹 +351</option>
+                                            <option value="+974">🇶🇦 +974</option>
+                                            <option value="+40">🇷🇴 +40</option>
+                                            <option value="+7">🇷🇺 +7</option>
+                                            <option value="+250">🇷🇼 +250</option>
+                                            <option value="+1-869">🇰🇳 +1-869</option>
+                                            <option value="+1-758">🇱🇨 +1-758</option>
+                                            <option value="+1-784">🇻🇨 +1-784</option>
+                                            <option value="+685">🇼🇸 +685</option>
+                                            <option value="+378">🇸🇲 +378</option>
+                                            <option value="+239">🇸🇹 +239</option>
+                                            <option value="+966">🇸🇦 +966</option>
+                                            <option value="+221">🇸🇳 +221</option>
+                                            <option value="+381">🇷🇸 +381</option>
+                                            <option value="+248">🇸🇨 +248</option>
+                                            <option value="+232">🇸🇱 +232</option>
+                                            <option value="+65">🇸🇬 +65</option>
+                                            <option value="+421">🇸🇰 +421</option>
+                                            <option value="+386">🇸🇮 +386</option>
+                                            <option value="+677">🇸🇧 +677</option>
+                                            <option value="+252">🇸🇴 +252</option>
+                                            <option value="+27">🇿🇦 +27</option>
+                                            <option value="+34">🇪🇸 +34</option>
+                                            <option value="+94">🇱🇰 +94</option>
+                                            <option value="+249">🇸🇩 +249</option>
+                                            <option value="+597">🇸🇷 +597</option>
+                                            <option value="+46">🇸🇪 +46</option>
+                                            <option value="+41">🇨🇭 +41</option>
+                                            <option value="+963">🇸🇾 +963</option>
+                                            <option value="+886">🇹🇼 +886</option>
+                                            <option value="+992">🇹🇯 +992</option>
+                                            <option value="+255">🇹🇿 +255</option>
+                                            <option value="+66">🇹🇭 +66</option>
+                                            <option value="+670">🇹🇱 +670</option>
+                                            <option value="+228">🇹🇬 +228</option>
+                                            <option value="+676">🇹🇴 +676</option>
+                                            <option value="+1-868">🇹🇹 +1-868</option>
+                                            <option value="+216">🇹🇳 +216</option>
+                                            <option value="+90">🇹🇷 +90</option>
+                                            <option value="+993">🇹🇲 +993</option>
+                                            <option value="+1-649">🇹🇨 +1-649</option>
+                                            <option value="+688">🇹🇻 +688</option>
+                                            <option value="+256">🇺🇬 +256</option>
+                                            <option value="+380">🇺🇦 +380</option>
+                                            <option value="+971">🇦🇪 +971</option>
+                                            <option value="+44">🇬🇧 +44</option>
+                                            <option value="+1">🇺🇸 +1</option>
+                                            <option value="+598">🇺🇾 +598</option>
+                                            <option value="+998">🇺🇿 +998</option>
+                                            <option value="+678">🇻🇺 +678</option>
+                                            <option value="+58">🇻🇪 +58</option>
+                                            <option value="+84">🇻🇳 +84</option>
+                                            <option value="+1-340">🇻🇮 +1-340</option>
+                                            <option value="+967">🇾🇪 +967</option>
+                                            <option value="+260">🇿🇲 +260</option>
+                                            <option value="+263">🇿🇼 +263</option>
                                         </select>
                                         <input name="phone" required
                                             placeholder="{{ __('100climateleaders.nomination_phone_placeholder') }}"
@@ -2433,7 +2433,7 @@
                             const errorMessages = errors[field];
                             errorMessages.forEach(error => {
                                 const li = document.createElement('li');
-                                li.textContent = 'â€¢ ' + error;
+                                li.textContent = '• ' + error;
                                 errorList.appendChild(li);
                             });
                         });
@@ -2470,7 +2470,7 @@
                                             const errors = data.errors[field];
                                             errors.forEach(error => {
                                                 const li = document.createElement('li');
-                                                li.textContent = 'â€¢ ' + error;
+                                                li.textContent = '• ' + error;
                                                 errorList.appendChild(li);
                                             });
                                         });
@@ -2488,7 +2488,7 @@
                         .catch(err => {
                             console.error('Error:', err);
                             const errorList = document.getElementById(config.errorList);
-                            errorList.innerHTML = '<li>â€¢ An error occurred while submitting the form. Please try again.</li>';
+                            errorList.innerHTML = '<li>• An error occurred while submitting the form. Please try again.</li>';
                             document.getElementById(config.errorMsg).classList.remove('hidden');
                         });
                 });

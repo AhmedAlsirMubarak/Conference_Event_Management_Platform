@@ -19,7 +19,7 @@
             <div class="grid grid-cols-3 gap-6 p-6 border-b border-gray-200">
                 <div>
                     @if ($speaker->logo)
-                        <img src="{{ asset('storage/uploads/' . $speaker->logo) }}" alt="Logo" class="h-24 w-24 object-contain">
+                        <img src="/storage/{{ $speaker->logo }}" alt="Logo" class="h-24 w-24 object-contain">
                     @else
                         <div class="h-24 w-24 bg-gray-100 rounded-lg flex items-center justify-center">
                             <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
