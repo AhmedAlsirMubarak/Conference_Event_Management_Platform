@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
 // Logo Carousel - Pure JavaScript (No Alpine.js needed)
 document.addEventListener('DOMContentLoaded', function() {
     const items = [
-        { src: "/storage/mix/AI-and-partner.webp", alt: "AI & Partners", url: "https://www.ai-and-partners.com/" },
-        { src: "/storage/mix/CBR-Logo.webp", alt: "Circular Business Review", height: "72px", maxWidth: "146px", url: "https://www.circularbusinessreview.com/" },
-        { src: "/storage/mix/makka-logo.webp", alt: "Makkah Logo", url: "#" },
-        { src: "/storage/mix/gulftimes-logo.webp", alt: "Gulf Times", url: "https://www.gulf-times.com/" },
-        { src: "/storage/mix/energytalks-logo.webp", alt: "Energy Talks", url: "#" },
+        { src: "/storage/uploads/mix/AI-and-partner.webp", alt: "AI & Partners", url: "https://www.ai-and-partners.com/" },
+        { src: "/storage/uploads/mix/CBR-Logo.webp", alt: "Circular Business Review", height: "72px", maxWidth: "146px", url: "https://www.circularbusinessreview.com/" },
+        { src: "/storage/uploads/mix/makka-logo.webp", alt: "Makkah Logo", url: "#" },
+        { src: "/storage/uploads/mix/gulftimes-logo.webp", alt: "Gulf Times", url: "https://www.gulf-times.com/" },
+        { src: "/storage/uploads/mix/energytalks-logo.webp", alt: "Energy Talks", url: "#" },
     ];
 
     const isRTL = document.documentElement.dir === 'rtl';

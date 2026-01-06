@@ -59,7 +59,7 @@
                     <label for="logo" class="block text-sm font-medium text-gray-700 mb-2">Logo</label>
                     @if ($member->logo)
                         <div class="mb-4">
-                            <img src="/storage/{{ $member->logo }}" alt="{{ $member->name }}"
+                            <img src="{{ asset('storage/uploads/' . $member->logo) }}" alt="{{ $member->name }}"
                                 class="h-20 rounded-lg object-contain">
                             <p class="text-sm text-gray-500 mt-2">Current logo</p>
                         </div>
@@ -85,7 +85,7 @@
                     <label for="photo" class="block text-sm font-medium text-gray-700 mb-2">Photo</label>
                     @if ($member->photo)
                         <div class="mb-4">
-                            <img src="/storage/{{ $member->photo }}" alt="{{ $member->name }}"
+                            <img src="{{ asset('storage/uploads/' . $member->photo) }}" alt="{{ $member->name }}"
                                 class="h-32 rounded-lg object-cover">
                             <p class="text-sm text-gray-500 mt-2">Current photo</p>
                         </div>

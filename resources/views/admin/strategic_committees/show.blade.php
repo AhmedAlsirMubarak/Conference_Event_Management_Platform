@@ -22,7 +22,7 @@
                 <div>
                     <div class="h-40 bg-gray-100 flex items-center justify-center rounded-lg">
                         @if ($member->photo)
-                            <img src="/storage/{{ $member->photo }}" alt="{{ $member->name }}"
+                            <img src="{{ asset('storage/uploads/' . $member->photo) }}" alt="{{ $member->name }}"
                                 class="w-full h-full object-contain">
                         @else
                             <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,7 +37,8 @@
                         <div class="mt-4">
                             <label class="text-xs font-medium text-gray-500 uppercase">Logo</label>
                             <div class="mt-2 w-20 h-20 bg-gray-100 rounded-lg flex items-center justify-center">
-                                <img src="/storage/{{ $member->logo }}" alt="Logo" class="max-w-[90px] h-full object-contain">
+                                <img src="{{ asset('storage/uploads/' . $member->logo) }}" alt="Logo"
+                                    class="max-w-[90px] h-full object-contain">
                             </div>
                         </div>
                     @endif
