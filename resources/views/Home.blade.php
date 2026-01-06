@@ -82,7 +82,7 @@
     <section class="lg:hidden">
         <div class="relative w-full h-[350px] md:h-[550px] flex flex-col items-center justify-center pt-30pb-10">
             {{-- Background Image --}}
-            <img src="{{ asset('storage/uploads/mix/home-dark-bg.webp') }}"
+            <img src="{{ asset('mix/{{ app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp' }}"
                 class="absolute inset-0 w-full h-full object-cover object-center"
                 alt="Saudi Climate Week 2026 Hero Image" />
 
