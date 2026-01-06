@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
-    <link rel="icon" type="image/webp" href="{{ asset('images/nav-img/scw-logo.webp') }}">
+    <link rel="icon" type="image/webp" href="{{ asset('storage/uploads/nav-img/scw-logo.webp') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -20,7 +20,7 @@
     <section class="hidden lg:block">
         <div class="relative w-full h-[633px]">
             {{-- Background Image --}}
-            <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp')) }}"
+            <img src="{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp')) }}"
                 class="w-full h-full object-cover object-center" alt="Saudi Climate Week 2026 Hero Image" />
 
             {{-- Content Wrapper (centered) --}}
@@ -84,7 +84,7 @@
     <section class="lg:hidden">
         <div class="relative w-full h-[350px] md:h-[550px] flex flex-col items-center justify-center pt-30pb-10">
             {{-- Background Image --}}
-            <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp')) }}"
+            <img src="{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp')) }}"
                 class="absolute inset-0 w-full h-full object-cover object-center"
                 alt="Saudi Climate Week 2026 Hero Image" />
 
@@ -173,7 +173,7 @@
                     <div class="mb-4">
                         <div class="flex items-center gap-2 mb-4">
                             <div>
-                                <img src="{{ asset('images/mix/Radar-animation.gif') }}" class="h-[45px] w-[45px]"
+                                <img src="{{ asset('storage/uploads/mix/Radar-animation.gif') }}" class="h-[45px] w-[45px]"
                                     alt="Pillars Icon" />
                             </div>
                             <h3 class="text-xl font-bold text-white">
@@ -184,25 +184,25 @@
                         {{-- Pillars List --}}
                         <div class="grid grid-cols-2 gap-3">
                             <div class="flex items-center gap-2">
-                                <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-lg flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_1') }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-lg flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_2') }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2">
-                                <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-lg flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_3') }}
                                 </span>
                             </div>
                             <div class="flex items-center gap-2 ">
-                                <span class="text-[#E6813E] text-lg flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-lg flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-sm">
                                     {{ __('hero.pillar_4') }}
                                 </span>
@@ -215,7 +215,7 @@
                 {{-- Right Container - Image --}}
                 <div class="w-1/2 flex items-center justify-center p-12">
                     <div class="w-full h-full rounded-lg overflow-hidden shadow-lg">
-                        <img src="{{ asset('images/mix/hero-info.webp') }}" alt="Event Team"
+                        <img src="{{ asset('storage/uploads/mix/hero-info.webp') }}" alt="Event Team"
                             class="w-full h-full object-cover">
                     </div>
                 </div>
@@ -234,7 +234,7 @@
 
                 {{-- Top Container - Image --}}
                 <div class="w-full h-64 md:h-80 flex items-center justify-center overflow-hidden">
-                    <img src="{{ asset('images/mix/hero-info.webp') }}" alt="Event Team"
+                    <img src="{{ asset('storage/uploads/mix/hero-info.webp') }}" alt="Event Team"
                         class="max-w-[250px] h-full object-cover">
                 </div>
 
@@ -264,7 +264,7 @@
                     <div class="mb-4 w-full">
                         <div class="flex items-center gap-2 mb-3 justify-center">
                             <div>
-                                <img src="{{ asset('images/mix/Radar-animation.gif') }}" class="h-8 w-8 md:h-10 md:w-10"
+                                <img src="{{ asset('storage/uploads/mix/Radar-animation.gif') }}" class="h-8 w-8 md:h-10 md:w-10"
                                     alt="Pillars Icon" />
                             </div>
                             <h3 class="text-sm md:text-base font-bold text-white">
@@ -275,25 +275,25 @@
                         {{-- Pillars List --}}
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-2 max-w-sm mx-auto">
                             <div class="flex items-center justify-center gap-2">
-                                <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-base flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_1') }}
                                 </span>
                             </div>
                             <div class="flex items-center justify-center gap-2">
-                                <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-base flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_2') }}
                                 </span>
                             </div>
                             <div class="flex items-center justify-center gap-2">
-                                <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-base flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_3') }}
                                 </span>
                             </div>
                             <div class="flex items-center justify-center gap-2">
-                                <span class="text-[#E6813E] text-base flex-shrink-0">✓</span>
+                                <span class="text-[#E6813E] text-base flex-shrink-0">âœ“</span>
                                 <span class="text-gray-300 text-xs md:text-sm">
                                     {{ __('hero.pillar_4') }}
                                 </span>
@@ -401,7 +401,7 @@
             <div class="flex items-center h-full max-w-6xl mx-auto px-4 gap-3 md:gap-4 w-full justify-center">
                 {{-- Arrow Direction Based on Language --}}
                 <div class="flex flex-shrink-0 {{ app()->getLocale() === 'ar' ? 'order-last' : 'order-first' }}">
-                    <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'Left-arrow.svg' : 'right-arrow.svg')) }}"
+                    <img src="{{ asset('storage/uploads/mix/' . (app()->getLocale() === 'ar' ? 'Left-arrow.svg' : 'right-arrow.svg')) }}"
                         alt="Arrow" class="w-6 h-4 md:w-7">
                 </div>
                 {{-- Banner Text --}}
@@ -439,7 +439,7 @@
                     <!-- Top inset colored header (rounded top only) -->
                     <div class="flex h-[110px] items-center justify-center overflow-hidden bg-[#7D876B]
                         rounded-t-[20px] rounded-b-none">
-                        <img src="{{ asset('images/mix/city-energy.gif') }}" alt="Innovation" class="h-[93px] w-[166px]" />
+                        <img src="{{ asset('storage/uploads/mix/city-energy.gif') }}" alt="Innovation" class="h-[93px] w-[166px]" />
                     </div>
 
                     <!-- Body -->
@@ -457,7 +457,7 @@
                 <div class="w-full max-w-sm rounded-[28px] border border-[#CBD5E1] bg-white p-4">
                     <div class="flex h-[110px] items-center justify-center overflow-hidden bg-[#E7B954]
                         rounded-t-[20px] rounded-b-none">
-                        <img src="{{ asset('images/mix/city-planning.gif') }}" alt="Adaptation" class="h-[95px] w-[169px]" />
+                        <img src="{{ asset('storage/uploads/mix/city-planning.gif') }}" alt="Adaptation" class="h-[95px] w-[169px]" />
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
@@ -474,7 +474,7 @@
                 <div class="w-full max-w-sm rounded-[28px] border border-[#CBD5E1] bg-white p-4">
                     <div class="flex h-[110px] items-center justify-center overflow-hidden bg-[#3C94C5]
                         rounded-t-[20px] rounded-b-none">
-                        <img src="{{ asset('images/mix/Recycling.gif') }}" alt="Circular Economy" class="h-[88px] w-[156px]" />
+                        <img src="{{ asset('storage/uploads/mix/Recycling.gif') }}" alt="Circular Economy" class="h-[88px] w-[156px]" />
                     </div>
 
                     <div class="px-4 py-6 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
@@ -491,7 +491,7 @@
                 <div class="w-full max-w-sm rounded-[28px] border border-[#CBD5E1] bg-white p-4">
                     <div class="flex h-[110px] items-center justify-center overflow-hidden bg-[#E68238]
                         rounded-t-[20px] rounded-b-none">
-                        <img src="{{ asset('images/mix/Investment-icon.gif') }}" alt="Climate Finance"
+                        <img src="{{ asset('storage/uploads/mix/Investment-icon.gif') }}" alt="Climate Finance"
                             class="h-[98px] w-[98px]" />
                     </div>
 
@@ -539,7 +539,7 @@
                         class="flex items-center gap-4 bg-white px-6 py-4
                     border border-slate-50 w-full max-w-[352px] h-[108px]
                     shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
-                        <img src="{{ asset('images/mix/book.svg') }}" class="w-[49px] h-[45px]" alt="">
+                        <img src="{{ asset('storage/uploads/mix/book.svg') }}" class="w-[49px] h-[45px]" alt="">
                         <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                             <p class="text-xl font-semibold text-[#121D24]">
                                 {{ __('hero.attendee_research_institutions') }}
@@ -553,7 +553,7 @@
                     border border-slate-50 w-full max-w-[352px] h-[108px]
                     shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
 
-                        <img src="{{ asset('images/mix/world.svg') }}" class="w-[49px] h-[49px]" alt="">
+                        <img src="{{ asset('storage/uploads/mix/world.svg') }}" class="w-[49px] h-[49px]" alt="">
 
                         <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                             <p class="text-[19px] font-semibold text-[#121D24]">
@@ -568,7 +568,7 @@
                     border border-slate-50 w-full max-w-[352px] h-[108px]
                     shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
 
-                        <img src="{{ asset('images/mix/chart.svg') }}" class="w-[49px] h-[49px]" alt="">
+                        <img src="{{ asset('storage/uploads/mix/chart.svg') }}" class="w-[49px] h-[49px]" alt="">
 
                         <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                             <p class="text-xl font-semibold text-[#121D24]">{{ __('hero.attendee_investors_banks') }}
@@ -584,7 +584,7 @@
                 <div class="lg:col-span-4">
                     <!-- Image -->
                     <div class="mx-auto max-w-[320px] overflow-hidden rounded-2xl border border-slate-200">
-                        <img src="{{ asset('images/mix/attendee-section.webp') }}" alt="Attendees"
+                        <img src="{{ asset('storage/uploads/mix/attendee-section.webp') }}" alt="Attendees"
                             class="h-[402px] w-[374px] object-cover" />
                     </div>
 
@@ -595,7 +595,7 @@
                       border border-slate-50 w-full max-w-[352px] h-[108px]
                       shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
 
-                            <img src="{{ asset('images/mix/newspaper.svg') }}" class="w-[49px] h-[49px]" alt="">
+                            <img src="{{ asset('storage/uploads/mix/newspaper.svg') }}" class="w-[49px] h-[49px]" alt="">
 
                             <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                                 <p class="text-xl font-semibold text-[#121D24]">{{ __('hero.attendee_media_outlets') }}
@@ -614,7 +614,7 @@
                     border border-slate-50 w-full max-w-[352px] h-[108px]
                     shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
 
-                        <img src="{{ asset('images/mix/building.svg') }}" class="w-[49px] h-[49px]" alt="">
+                        <img src="{{ asset('storage/uploads/mix/building.svg') }}" class="w-[49px] h-[49px]" alt="">
 
                         <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                             <p class="text-xl font-semibold text-[#121D24]">{{ __('hero.attendee_gov_agencies') }}</p>
@@ -628,7 +628,7 @@
                     border border-slate-50 w-full max-w-[352px] h-[108px]
                     shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
 
-                        <img src="{{ asset('images/mix/industry.svg') }}" class="w-[49px] h-[49px]" alt="">
+                        <img src="{{ asset('storage/uploads/mix/industry.svg') }}" class="w-[49px] h-[49px]" alt="">
 
                         <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                             <p class="text-xl font-semibold text-[#121D24]">
@@ -644,7 +644,7 @@
                     border border-slate-50 w-full max-w-[352px] h-[108px]
                     shadow-[0_6px_24px_rgba(0,0,0,0.06)] transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 rounded-lg cursor-pointer">
 
-                        <img src="{{ asset('images/mix/rocket.svg') }}" class="w-[49px] h-[49px]" alt="">
+                        <img src="{{ asset('storage/uploads/mix/rocket.svg') }}" class="w-[49px] h-[49px]" alt="">
 
                         <div class="{{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }}">
                             <p class="text-xl font-semibold text-[#121D24]">{{ __('hero.attendee_tech_providers') }}
@@ -682,7 +682,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/book.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/book.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[45px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -699,7 +699,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/world.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/world.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -714,7 +714,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/chart.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/chart.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -731,7 +731,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/building.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/building.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -748,7 +748,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/industry.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/industry.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -765,7 +765,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/rocket.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/rocket.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -781,7 +781,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg sm:col-span-2 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('images/mix/newspaper.svg') }}"
+                    <img src="{{ asset('storage/uploads/mix/newspaper.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -833,13 +833,13 @@
 
                     <!-- FULL TOP BACKGROUND IMAGE -->
                     <div class="relative h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
 
                         <!-- ICON -->
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/police.svg') }}" alt="" class="h-10 w-10" />
+                            <img src="{{ asset('storage/uploads/mix/police.svg') }}" alt="" class="h-10 w-10" />
                         </div>
                     </div>
 
@@ -860,11 +860,11 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/graduation-cap.svg') }}" alt="" class="h-10 w-10" />
+                            <img src="{{ asset('storage/uploads/mix/graduation-cap.svg') }}" alt="" class="h-10 w-10" />
                         </div>
                     </div>
 
@@ -884,11 +884,11 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/bubble.svg') }}" alt="" class="h-10 w-10" />
+                            <img src="{{ asset('storage/uploads/mix/bubble.svg') }}" alt="" class="h-10 w-10" />
                         </div>
                     </div>
 
@@ -908,11 +908,11 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/discussion.svg') }}" alt="" class="h-10 w-10" />
+                            <img src="{{ asset('storage/uploads/mix/discussion.svg') }}" alt="" class="h-10 w-10" />
                         </div>
                     </div>
 
@@ -967,13 +967,13 @@
 
                     <!-- FULL TOP BACKGROUND IMAGE -->
                     <div class="relative h-28 md:h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
 
                         <!-- ICON -->
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/police.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
+                            <img src="{{ asset('storage/uploads/mix/police.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
                         </div>
                     </div>
 
@@ -994,11 +994,11 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-28 md:h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/graduation-cap.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
+                            <img src="{{ asset('storage/uploads/mix/graduation-cap.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
                         </div>
                     </div>
 
@@ -1018,11 +1018,11 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-28 md:h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/bubble.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
+                            <img src="{{ asset('storage/uploads/mix/bubble.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
                         </div>
                     </div>
 
@@ -1042,11 +1042,11 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-28 md:h-36">
-                        <img src="{{ asset('images/mix/back-icon.webp') }}" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
-                            <img src="{{ asset('images/mix/discussion.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
+                            <img src="{{ asset('storage/uploads/mix/discussion.svg') }}" alt="" class="h-8 md:h-10 w-8 md:w-10" />
                         </div>
                     </div>
 
@@ -1168,6 +1168,76 @@
         .carousel-dots button.active {
             background: linear-gradient(135deg, #E6813E 0%, #d96e2f 100%);
             box-shadow: 0 4px 12px rgba(230, 129, 62, 0.4);
+            transform: scale(1.1);
+        }
+
+        .carousel-dots button.active::after {
+            content: '';
+            position: absolute;
+            top: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 2px;
+            background: #E6813E;
+            border-radius: 2px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+
+    <!-- Event sponsors Section - Mobile & Tablet (below lg) -->
+    <section class="lg:hidden bg-white py-8 sm:py-12">
+        <div class="mx-auto max-w-6xl px-4">
+            <!-- Heading -->
+            <div class="text-center mb-4">
+                <p class="text-sm font-bold text-orange-500 animate-fade-in">
+                    {{ __('hero.sponsors_label') }}
+                </p>
+                <h2 class="mt-2 text-xl sm:text-2xl font-bold text-slate-900 animate-fade-in-up">
+                    {{ __('hero.sponsors_title') }}
+                </h2>
+                <p class="mt-3 mx-auto max-w-2xl text-xs sm:text-sm text-slate-500 animate-fade-in-up">
+                    {{ __('hero.sponsors_subtitle') }}
+                </p>
+            </div>
+
+            <!-- Carousel -->
+            <div data-carousel="sponsors-mobile" class="mt-8">
+                <!-- Track viewport -->
+                <div class="overflow-hidden rounded-lg">
+                    <!-- Track -->
+                    <div class="carousel-track flex gap-3 sm:gap-4 transition-transform duration-500 ease-out"
+                        style="will-change: transform;">
+                        <!-- Items rendered by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Dots (dashes) -->
+                <div class="carousel-dots mt-6 flex items-center justify-center gap-2">
+                    <!-- Dots rendered by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    @include('partials.footer')
+</body>
+
+</html>
+2, 0.4);
             transform: scale(1.1);
         }
 

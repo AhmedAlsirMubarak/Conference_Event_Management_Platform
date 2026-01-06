@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+﻿@extends('admin.layouts.app')
 
 @section('title', 'Strategic Committee | Admin Dashboard')
 
@@ -61,7 +61,7 @@
                     <!-- Photo Section -->
                     <div class="h-24 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($member->photo)
-                            <img src="{{ asset('images/' . $member->photo) }}" alt="{{ $member->name }}"
+                            <img src="{{ asset('storage/uploads/' . $member->photo) }}" alt="{{ $member->name }}"
                                 class="w-full h-full object-contain">
                         @else
                             <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -89,7 +89,7 @@
                         <!-- Logo -->
                         @if ($member->logo)
                             <div class="flex justify-center mb-4">
-                                <img src="{{ asset('images/' . $member->logo) }}" alt="Logo" class="h-16 w-16 object-contain">
+                                <img src="{{ asset('storage/uploads/' . $member->logo) }}" alt="Logo" class="h-16 w-16 object-contain">
                             </div>
                         @endif
 

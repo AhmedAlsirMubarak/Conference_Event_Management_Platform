@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+﻿@extends('admin.layouts.app')
 
 @section('title', 'Exhibitors | Admin Dashboard')
 
@@ -49,7 +49,7 @@
                     <!-- Logo Section -->
                     <div class="h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($exhibitor->logo)
-                            <img src="{{ asset('images/' . $exhibitor->logo) }}" alt="{{ $exhibitor->name }}"
+                            <img src="{{ asset('storage/uploads/' . $exhibitor->logo) }}" alt="{{ $exhibitor->name }}"
                                 class="max-w-[150px] h-full object-contain">
                         @else
                             <div class="text-gray-400 text-center">

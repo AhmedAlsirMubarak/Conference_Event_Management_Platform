@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SCW</title>
-    <link rel="icon" type="image/webp" href="{{ asset('images/scw-logo.webp') }}">
+    <link rel="icon" type="image/webp" href="{{ asset('storage/uploads/scw-logo.webp') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -56,7 +56,7 @@
                     </label>
                     <input type="password" id="password" name="password" required
                         class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition"
-                        placeholder="••••••••">
+                        placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢">
                     @error('password')
                         <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                     @enderror
@@ -107,7 +107,7 @@
 
         <!-- Footer -->
         <div class="mt-8 text-center text-sm text-gray-600">
-            <p>© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
+            <p>Â© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
                     rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 font-medium">Ahmed Alsir
                     Mubarak</a>. All rights reserved.</p>
         </div>

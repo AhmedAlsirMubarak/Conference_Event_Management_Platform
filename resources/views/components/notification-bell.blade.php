@@ -220,3 +220,13 @@
     });
 </script>
 @endauth
+       };
+
+        // Poll for new notifications every 5 seconds
+        setInterval(loadNotifications, 5000);
+
+        // Load notifications on page load
+        loadNotifications();
+    });
+</script>
+@endauth

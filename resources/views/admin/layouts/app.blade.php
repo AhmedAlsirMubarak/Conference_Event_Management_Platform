@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/webp" href="{{ asset('images/scw-logo.webp') }}">
+    <link rel="icon" type="image/webp" href="{{ asset('storage/uploads/scw-logo.webp') }}">
     @vite('resources/css/app.css')
     <title>@yield('title', 'Admin Dashboard')</title>
     <style>
@@ -108,7 +108,7 @@
             <!-- Footer -->
             <footer class="bg-white border-t border-gray-200 px-3 sm:px-6 py-4">
                 <div class="text-center text-xs text-gray-600">
-                    <p>© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
+                    <p>Â© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
                             rel="noopener noreferrer" class="text-blue-600 hover:text-blue-700 font-medium">Ahmed Alsir
                             Mubarak</a>. All rights reserved.</p>
                 </div>
