@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#E68238">
     <meta name="apple-mobile-web-app-title" content="{{ __('100climateleaders.page_title') }}">
 
-    <link rel="icon" type="image/webp" href="{{ asset('nav-img/scw-logo.webp') }}">
+    <link rel="icon" type="image/webp" href="{{ asset('images/nav-img/scw-logo.webp') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Smooth scroll behavior -->
@@ -130,7 +130,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[600px] pt-[110px]">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders">
+            <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders">
         </div>
 
         <!-- Dark overlay -->
@@ -183,7 +183,7 @@
     <section class="lg:hidden relative w-full overflow-hidden pt-10 pb-10">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
+            <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
         <!-- Dark overlay for readability -->
@@ -261,7 +261,7 @@
                 <div class="relative px-0">
                     <div class="flex h-12 w-12 items-center justify-center">
                         <!-- icon -->
-                        <img src="{{ asset('mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="{{ asset('images/mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                     </div>
 
                     <h3
@@ -282,7 +282,7 @@
                 <div class="relative px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="{{ asset('images/mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                     </div>
 
                     <h3
@@ -303,7 +303,7 @@
                 <div class="px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="{{ asset('images/mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
 
                     </div>
 
@@ -353,7 +353,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="{{ asset('images/mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -371,7 +371,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="{{ asset('images/mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -389,7 +389,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="{{ asset('images/mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -409,7 +409,7 @@
     <section class="hidden lg:block relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
+            <img src="{{ asset('images/mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
         </div>
 
 
@@ -440,10 +440,10 @@
 
                         <article class="relative overflow-hidden rounded-2xl">
                             <div class="relative rounded-2xl p-10 h-[420px] w-[270px] bg-cover "
-                                style="background-image: url('{{ asset('mix/leading-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/leading-bg.webp') }}')">
                                 <!-- Icon -->
                                 <div class="text-white/90">
-                                    <img src="{{ asset('mix/earth-3.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/earth-3.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-8 text-[24px] font-bold leading-snug text-white w-[184px]">
@@ -467,12 +467,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-[180px] {{ app()->getLocale() === 'ar' ? 'mr-[-90px]' : 'ml-[-90px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('mix/proven-impact-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/proven-impact-bg.webp') }}')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('mix/green-energy.webp') }}" alt="">
+                                        <img src="{{ asset('images/mix/green-energy.webp') }}" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -491,12 +491,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-32 {{ app()->getLocale() === 'ar' ? 'mr-[-60px]' : 'ml-[-60px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('mix/across-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/across-bg.webp') }}')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('mix/earth-4.webp') }}" alt="">
+                                        <img src="{{ asset('images/mix/earth-4.webp') }}" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -515,12 +515,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-[70px] {{ app()->getLocale() === 'ar' ? 'mr-[-30px]' : 'ml-[-30px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('mix/commitment-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/commitment-bg.webp') }}')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('mix/recycle.webp') }}" alt="">
+                                        <img src="{{ asset('images/mix/recycle.webp') }}" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -545,7 +545,7 @@
     <section class="lg:hidden relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="hidden absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
+            <img src="{{ asset('images/mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
         </div>
 
         <div class="relative mx-auto max-w-full px-4 md:px-8 py-12 md:py-16">
@@ -576,10 +576,10 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h- md:h-[420px] w-full bg-cover"
-                            style="background-image: url('{{ asset('mix/leading-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/leading-bg.webp') }}')">
                             <!-- Icon -->
                             <div class="text-white/90 h-12 w-12">
-                                <img src="{{ asset('mix/earth-3.webp') }}" alt="">
+                                <img src="{{ asset('images/mix/earth-3.webp') }}" alt="">
                             </div>
 
                             <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -599,12 +599,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('mix/proven-impact-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/proven-impact-bg.webp') }}')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('mix/green-energy.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/green-energy.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -625,12 +625,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('mix/across-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/across-bg.webp') }}')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('mix/earth-4.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/earth-4.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -651,12 +651,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('mix/commitment-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/commitment-bg.webp') }}')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('mix/recycle.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/recycle.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -701,7 +701,7 @@
                 <div class="text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -716,7 +716,7 @@
                 <!-- Step 2 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -731,7 +731,7 @@
                 <!-- Step 3 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -746,7 +746,7 @@
                 <!-- Step 4 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -766,18 +766,18 @@
                     <div class="grid grid-cols-4">
                         <!-- Arrow 1 -->
                         <div class="relative">
-                            <img src="{{ asset('mix/arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('images/mix/arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 2 -->
                         <div class="relative">
 
-                            <img src="{{ asset('mix/arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('images/mix/arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 3 -->
                         <div class="relative">
-                            <img src="{{ asset('mix/arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('images/mix/arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
 
@@ -811,7 +811,7 @@
                 <div class="w-full max-w-xs text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -826,7 +826,7 @@
                 <!-- Step 2 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -841,7 +841,7 @@
                 <!-- Step 3 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -856,7 +856,7 @@
                 <!-- Step 4 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('images/mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -876,7 +876,7 @@
     <section id="nominationForm" class="lg:hidden relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image:url('{{ asset('mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp'  : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp'  : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
         <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
@@ -1619,7 +1619,7 @@
     <section id="nominationForm" class="hidden lg:block relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-right"
-            style="background-image:url('{{ asset('mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
 
         {{-- Global overlay --}}
         <div class="absolute inset-0 {{ app()->getLocale() === 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-gray-900/30 to-gray-900/5 transition" aria-hidden="true"></div>
