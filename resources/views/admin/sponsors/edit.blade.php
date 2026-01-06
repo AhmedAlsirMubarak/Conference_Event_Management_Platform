@@ -1,4 +1,4 @@
-﻿@extends('admin.layouts.app')
+@extends('admin.layouts.app')
 
 @section('title', 'Edit Sponsor | Admin')
 
@@ -26,7 +26,7 @@
                     <label for="logo" class="block text-sm font-medium text-gray-700 mb-2">Logo</label>
                     @if ($sponsor->logo)
                         <div class="mb-4">
-                            <img src="{{ asset('storage/uploads/' . $sponsor->logo) }}" alt="{{ $sponsor->name }}"
+                            <img src="{{ asset('images/' . $sponsor->logo) }}" alt="{{ $sponsor->name }}"
                                 class="h-32 rounded-lg object-contain w-full">
                             <p class="text-xs text-gray-500 mt-2">Current logo</p>
                         </div>

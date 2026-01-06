@@ -1,4 +1,4 @@
-﻿<!-- Navigation Bar -->
+<!-- Navigation Bar -->
 <nav class="sticky top-0 z-50 bg-gray-900 text-white shadow-lg" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
     <style>
         .nav-link-underline::after {
@@ -23,7 +23,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="/home" class="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
-                        <img src="{{ asset('storage/uploads/nav-img/scw-logo.webp') }}" alt="SCW Logo" class="w-[97.99px] h-[69px]">
+                        <img src="{{ asset('images/nav-img/scw-logo.webp') }}" alt="SCW Logo" class="w-[97.99px] h-[69px]">
                     </a>
                 </div>
 
@@ -34,13 +34,13 @@
                     </span>
                     <div class="flex items-center gap-3">
                         <a href="https://birba.om/" target="_blank">
-                            <img src="{{ asset('storage/uploads/nav-img/birba-logo-white.webp') }}" alt="Organizer 1"
+                            <img src="{{ asset('images/nav-img/birba-logo-white.webp') }}" alt="Organizer 1"
                                 class="h-10 rounded">
                         </a>
 
                         <div class="w-px h-6 bg-gray-700"></div>
                         <a href="https://ecocode.sa/" target="_blank">
-                            <img src="{{ asset('storage/uploads/nav-img/ecocode-logo.webp') }}" alt="Organizer 2" class="h-10 rounded">
+                            <img src="{{ asset('images/nav-img/ecocode-logo.webp') }}" alt="Organizer 2" class="h-10 rounded">
                         </a>
                     </div>
                 </div>
