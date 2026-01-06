@@ -69,21 +69,22 @@ class NotificationController extends Controller
                 return response()->json(['count' => 0, 'notifications' => []], 401);
             }
 
-            // Fetch all unread notifications with a single query
-            // Using get() without count() to avoid extra database call
+            Log::info('Getting unread notifications', [
+                'user_id' => $user->id,
+                'user_name' => $user->name,
+                'user_role' => $user->role,
+            ]);
+
+            // Fetch from contact_notifications table for reliable storage
             $unreadNotifications = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->latest()
-                ->limit(50) // Increased limit for better UX
+                ->limit(10)
                 ->get();
             
-            // Get count from already-fetched collection instead of extra query
-            $unreadCount = $unreadNotifications->count();
-            
-            Log::info('Retrieved unread notifications', [
-                'user_id' => $user->id,
-                'count' => $unreadCount,
-            ]);
+            $unreadCount = ContactNotification::where('user_id', $user->id)
+                ->whereNull('read_at')
+                ->count();
             
             return response()->json([
                 'count' => $unreadCount,
@@ -104,8 +105,7 @@ class NotificationController extends Controller
             ]);
         } catch (\Exception $e) {
             Log::error('Error fetching notifications: ' . $e->getMessage(), [
-                'user_id' => Auth::id(),
-                'exception' => $e
+                'user_id' => Auth::id()
             ]);
             return response()->json([
                 'error' => 'Failed to load notifications'
