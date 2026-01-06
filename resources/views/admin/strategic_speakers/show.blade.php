@@ -26,7 +26,7 @@
                         <div
                             class="w-32 h-32 bg-white rounded-xl border-2 border-blue-200 flex items-center justify-center overflow-hidden shadow-md">
                             @if ($speaker->photo)
-                                <img src="{{ asset('storage/' . $speaker->photo) }}" alt="{{ $speaker->name }}"
+                                <img src="/storage/{{ $speaker->photo }}" alt="{{ $speaker->name }}"
                                     class="w-full h-full object-cover">
                             @else
                                 <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -53,8 +53,7 @@
                         <div class="flex-shrink-0 text-center">
                             <p class="text-xs font-medium text-gray-500 uppercase mb-2">Company Logo</p>
                             <div class="w-24 h-24 bg-white rounded-lg border border-gray-200 flex items-center justify-center">
-                                <img src="{{ asset('storage/' . $speaker->logo) }}" alt="Logo"
-                                    class="max-w-[90%] h-auto object-contain">
+                                <img src="/storage/{{ $speaker->logo }}" alt="Logo" class="max-w-[90%] h-auto object-contain">
                             </div>
                         </div>
                     @endif
