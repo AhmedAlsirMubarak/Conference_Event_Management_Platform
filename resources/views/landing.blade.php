@@ -20,7 +20,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16 sm:h-20">
                 <div class="flex items-center">
-                    <img class="h-10 sm:h-12 w-auto" src="{{ asset('images/nav-img/scw-logo.webp') }}" alt="SCW Logo">
+                    <img class="h-10 sm:h-12 w-auto" src="{{ asset('nav-img/scw-logo.webp') }}" alt="SCW Logo">
                 </div>
                 <div class="hidden sm:flex items-center gap-4">
                     <span class="text-white text-sm font-medium">May 24-27, 2026 • Riyadh</span>
@@ -37,7 +37,7 @@
     <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image with Overlay -->
         <div class="absolute inset-0">
-            <img class="w-full h-full object-cover" src="{{ asset('images/mix/hero-homeeng.webp') }}"
+            <img class="w-full h-full object-cover" src="{{ asset('mix/hero-homeeng.webp') }}"
                 alt="Saudi Climate Week">
             <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black"></div>
         </div>
@@ -125,10 +125,10 @@
                         <div class="pt-4 border-t border-zinc-700">
                             <p class="text-gray-400 text-sm mb-4">Organized by:</p>
                             <div class="flex items-center gap-4">
-                                <img src="{{ asset('images/nav-img/ecocode-logo.webp') }}" alt="Ecocode"
+                                <img src="{{ asset('nav-img/ecocode-logo.webp') }}" alt="Ecocode"
                                     class="h-8 w-auto">
                                 <div class="w-px h-8 bg-zinc-700"></div>
-                                <img src="{{ asset('images/nav-img/birba-logo-white.webp') }}" alt="Birba"
+                                <img src="{{ asset('nav-img/birba-logo-white.webp') }}" alt="Birba"
                                     class="h-8 w-auto">
                             </div>
                         </div>

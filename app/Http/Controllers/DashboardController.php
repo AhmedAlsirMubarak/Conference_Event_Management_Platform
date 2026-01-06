@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use App\Models\contacts;
 use App\Models\Sponsor;
 use App\Models\StrategicSpeaker;
@@ -41,7 +42,14 @@ class DashboardController extends Controller
                 'totalStrategicCommittees',
                 'totalTechnicalCommittees'
             ));
-        } catch (\Exception $e) {
+        } catch (\Throwable $e) {
+            Log::error('Dashboard error: ' . $e->getMessage(), [
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+                'trace' => $e->getTraceAsString()
+            ]);
+            
+            // Return dashboard with zero values if any error occurs
             return view('admin.dashboard', [
                 'totalContacts' => 0,
                 'thisWeekContacts' => 0,

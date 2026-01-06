@@ -15,6 +15,14 @@
 /node_modules
 /public/build
 /public/hot
+# But allow image directories
+!/public/nav-img/**
+!/public/footer-img/**
+!/public/mix/**
+!/public/speakers/**
+!/public/sponsor_logos/**
+!/public/exhibitor_logos/**
+!/public/Committe/**
 /storage/*.key
 /storage/pail
 /vendor

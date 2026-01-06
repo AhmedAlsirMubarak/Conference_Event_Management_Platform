@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link rel="icon" type="image/webp" href="{{ asset('images/scw-logo.webp') }}">
-    @vite('resources/css/app.css')
+    <link rel="icon" type="image/webp" href="{{ asset('nav-img/scw-logo.webp') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <title>@yield('title', 'Admin Dashboard')</title>
     <style>
         html,
