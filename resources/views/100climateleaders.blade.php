@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#E68238">
     <meta name="apple-mobile-web-app-title" content="{{ __('100climateleaders.page_title') }}">
 
-    <link rel="icon" type="image/webp" href="{{ asset('nav-img/scw-logo.webp') }}">
+    <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <!-- Smooth scroll behavior -->
