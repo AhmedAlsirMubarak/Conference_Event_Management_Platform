@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home page</title>
-    <link rel="icon" type="image/webp" href="{{ asset('nav-img/scw-logo.webp">
+    <link rel="icon" type="image/webp" href="{{ asset('nav-img/scw-logo.webp') }}">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -20,7 +20,7 @@
     <section class="hidden lg:block">
         <div class="relative w-full h-[633px]">
             {{-- Background Image --}}
-            <img src="{{ asset('mix/{{ app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp' }}"
+            <img src="{{ asset('mix/' . (app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp')) }}"
                 class="w-full h-full object-cover object-center" alt="Saudi Climate Week 2026 Hero Image" />
 
             {{-- Content Wrapper (centered) --}}
@@ -82,7 +82,7 @@
     <section class="lg:hidden">
         <div class="relative w-full h-[350px] md:h-[550px] flex flex-col items-center justify-center pt-30pb-10">
             {{-- Background Image --}}
-            <img src="{{ asset('mix/{{ app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp' }}"
+            <img src="{{ asset('mix/' . (app()->getLocale() === 'ar' ? 'home-dark-bg.webp' : 'home-dark-bg.webp')) }}"
                 class="absolute inset-0 w-full h-full object-cover object-center"
                 alt="Saudi Climate Week 2026 Hero Image" />
 
@@ -397,7 +397,7 @@
             <div class="flex items-center h-full max-w-6xl mx-auto px-4 gap-3 md:gap-4 w-full justify-center">
                 {{-- Arrow Direction Based on Language --}}
                 <div class="flex flex-shrink-0 {{ app()->getLocale() === 'ar' ? 'order-last' : 'order-first' }}">
-                    <img src="{{ asset('mix/{{ app()->getLocale() === 'ar' ? 'Left-arrow.svg' : 'right-arrow.svg' }}"
+                    <img src="{{ asset('mix/' . (app()->getLocale() === 'ar' ? 'Left-arrow.svg' : 'right-arrow.svg')) }}"
                         alt="Arrow" class="w-6 h-4 md:w-7">
                 </div>
                 {{-- Banner Text --}}
@@ -677,7 +677,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/book.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[45px] flex-shrink-0"
+                    <img src="{{ asset('mix/book.svg') }}" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[45px] flex-shrink-0"
                         alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -694,7 +694,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/world.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                    <img src="{{ asset('mix/world.svg') }}" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
                         alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -709,7 +709,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/chart.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                    <img src="{{ asset('mix/chart.svg') }}" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
                         alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -726,7 +726,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/building.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                    <img src="{{ asset('mix/building.svg') }}" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
                         alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -743,7 +743,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/industry.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                    <img src="{{ asset('mix/industry.svg') }}" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
                         alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
@@ -760,7 +760,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/rocket.svg" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
+                    <img src="{{ asset('mix/rocket.svg') }}" class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0"
                         alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
