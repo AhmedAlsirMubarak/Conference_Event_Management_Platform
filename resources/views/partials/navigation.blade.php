@@ -34,8 +34,7 @@
                     </span>
                     <div class="flex items-center gap-3">
                         <a href="https://birba.om/" target="_blank">
-                            <img src="{{ asset('nav-img/birba-logo-white.webp') }}" alt="Organizer 1"
-                                class="h-10 rounded">
+                            <img src="{{ asset('nav-img/birba-logo-white.webp') }}" alt="Organizer 1" class="h-10 rounded">
                         </a>
 
                         <div class="w-px h-6 bg-gray-700"></div>
