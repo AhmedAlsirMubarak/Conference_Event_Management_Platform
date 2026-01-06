@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use App\Models\contacts;
 use App\Models\Sponsor;
 use App\Models\StrategicSpeaker;
@@ -43,7 +42,7 @@ class DashboardController extends Controller
                 'totalTechnicalCommittees'
             ));
         } catch (\Throwable $e) {
-            Log::error('Dashboard error: ' . $e->getMessage(), [
+            \Log::error('Dashboard error: ' . $e->getMessage(), [
                 'file' => $e->getFile(),
                 'line' => $e->getLine(),
                 'trace' => $e->getTraceAsString()
@@ -56,6 +55,12 @@ class DashboardController extends Controller
                 'todayContacts' => 0,
                 'totalSponsors' => 0,
                 'totalStrategicSpeakers' => 0,
+                'totalTechnicalSpeakers' => 0,
+                'totalStrategicCommittees' => 0,
+                'totalTechnicalCommittees' => 0
+            ]);
+        }
+    }
                 'totalTechnicalSpeakers' => 0,
                 'totalStrategicCommittees' => 0,
                 'totalTechnicalCommittees' => 0
