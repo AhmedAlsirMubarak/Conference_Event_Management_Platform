@@ -115,7 +115,6 @@ Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
     // Admin Notification Routes
     Route::get('/notifications', [NotificationController::class, 'adminIndex'])->name('admin.notifications.index');
     Route::get('/api/notifications', [NotificationController::class, 'getAll'])->name('admin.notifications.all');
-    Route::get('/api/notifications/unread', [NotificationController::class, 'getUnread'])->name('admin.notifications.unread');
     Route::post('/api/notifications/mark-all-read', [NotificationController::class, 'markAllAsReadAdmin'])->name('admin.notifications.markAllRead');
     Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('admin.notifications.delete');
 });
