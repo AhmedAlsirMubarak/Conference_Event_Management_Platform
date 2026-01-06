@@ -855,7 +855,7 @@
                   shadow-[0_22px_55px_rgba(0,0,0,0.45)]">
 
                     <div class="relative h-36">
-                        <img src="{{ asset('mix/back-icon.webp" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
                         <div class="relative z-10 flex h-full items-center justify-center">
