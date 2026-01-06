@@ -1,4 +1,3 @@
-@auth
 <div id="notification-container" class="relative">
     <!-- Notification Bell Button -->
     @php
@@ -216,5 +215,3 @@
         loadNotifications();
     });
 </script>
-</div>
-@endauth
