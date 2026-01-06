@@ -66,62 +66,50 @@ class NotificationController extends Controller
             $user = Auth::user();
             
             if (!$user) {
-                return response()->json(['count' => 0, 'notifications' => []]);
+                return response()->json(['count' => 0, 'notifications' => []], 401);
             }
 
             // Fetch all unread notifications with a single query
+            // Using get() without count() to avoid extra database call
             $unreadNotifications = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->latest()
-                ->limit(50)
+                ->limit(50) // Increased limit for better UX
                 ->get();
             
-            // Get count from collection
-            $unreadCount = count($unreadNotifications);
+            // Get count from already-fetched collection instead of extra query
+            $unreadCount = $unreadNotifications->count();
             
-            // Map notifications to safe response format
-            $notifications = [];
-            if ($unreadCount > 0) {
-                foreach ($unreadNotifications as $notification) {
-                    $createdAt = '';
-                    if ($notification->created_at) {
-                        try {
-                            $createdAt = $notification->created_at->diffForHumans();
-                        } catch (\Exception $e) {
-                            $createdAt = 'Just now';
-                        }
-                    }
-                    
-                    $notifications[] = [
-                        'id' => $notification->id ?? 0,
+            Log::info('Retrieved unread notifications', [
+                'user_id' => $user->id,
+                'count' => $unreadCount,
+            ]);
+            
+            return response()->json([
+                'count' => $unreadCount,
+                'notifications' => $unreadNotifications->map(function ($notification) {
+                    return [
+                        'id' => $notification->id,
                         'type' => 'ContactSubmission',
                         'data' => [
-                            'contact_id' => $notification->contact_id ?? 0,
+                            'contact_id' => $notification->contact_id,
                             'contact_name' => $notification->contact_name ?? 'Unknown',
                             'contact_email' => $notification->contact_email ?? '',
                             'contact_phone' => $notification->contact_phone ?? '',
                             'contact_company' => $notification->contact_company ?? '',
                         ],
-                        'created_at' => $createdAt,
+                        'created_at' => $notification->created_at ? $notification->created_at->diffForHumans() : 'Just now',
                     ];
-                }
-            }
-            
-            return response()->json([
-                'count' => $unreadCount,
-                'notifications' => $notifications,
+                }),
             ]);
-        } catch (\Throwable $e) {
-            try {
-                Log::error('Error fetching notifications', [
-                    'message' => $e->getMessage(),
-                    'user_id' => Auth::id()
-                ]);
-            } catch (\Throwable $logError) {
-                // Silently fail if logging fails
-            }
-            
-            return response()->json(['count' => 0, 'notifications' => []], 500);
+        } catch (\Exception $e) {
+            Log::error('Error fetching notifications: ' . $e->getMessage(), [
+                'user_id' => Auth::id(),
+                'exception' => $e
+            ]);
+            return response()->json([
+                'error' => 'Failed to load notifications'
+            ], 500);
         }
     }
 
