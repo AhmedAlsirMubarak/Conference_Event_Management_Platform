@@ -16,37 +16,6 @@ use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ClimateLeadersController;
 
-// Serve public images with correct MIME types (must be before other routes)
-Route::get('/images/{path}', function ($path) {
-    $file = public_path("images/{$path}");
-    
-    // Security: prevent directory traversal
-    if (!realpath($file) || !str_starts_with(realpath($file), public_path('images'))) {
-        abort(403);
-    }
-    
-    if (!file_exists($file)) {
-        abort(404);
-    }
-    
-    $mimeTypes = [
-        'webp' => 'image/webp',
-        'png' => 'image/png',
-        'jpg' => 'image/jpeg',
-        'jpeg' => 'image/jpeg',
-        'gif' => 'image/gif',
-        'svg' => 'image/svg+xml',
-    ];
-    
-    $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
-    $mimeType = $mimeTypes[$ext] ?? 'application/octet-stream';
-    
-    return response()->file($file, [
-        'Content-Type' => $mimeType,
-        'Cache-Control' => 'public, max-age=2592000',
-    ]);
-})->where('path', '.*');
-
 // Language Switcher - Switch language and persist to session/cookie
 Route::get('/lang/{locale}', function($locale) {
     // Validate and set locale
