@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="icon" type="image/webp" href="{{ asset('nav-img/scw-logo.webp') }}">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    @vite('resources/css/app.css')
     <title>@yield('title', 'User Dashboard')</title>
     <style>
         html,
