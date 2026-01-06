@@ -828,7 +828,7 @@
 
                     <!-- FULL TOP BACKGROUND IMAGE -->
                     <div class="relative h-36">
-                        <img src="{{ asset('mix/back-icon.webp" alt=""
+                        <img src="{{ asset('storage/uploads/mix/back-icon.webp') }}" alt=""
                             class="absolute inset-0 h-full w-full object-cover" />
                         <div class="absolute inset-0"></div>
 
