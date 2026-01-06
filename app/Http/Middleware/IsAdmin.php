@@ -19,6 +19,13 @@ class IsAdmin
         if (Auth::check() && Auth::user()->role === 'admin') {
             return $next($request);
         }
+        
+        // Log the issue for debugging
+        \Log::warning('Admin access denied', [
+            'user_id' => Auth::id(),
+            'user_role' => Auth::user()?->role ?? 'not authenticated'
+        ]);
+        
         return redirect('/')->withErrors(['You do not have admin access.']);
     }
 }
