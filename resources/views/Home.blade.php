@@ -776,7 +776,7 @@
                     class="flex flex-col items-center justify-center gap-3 bg-white px-4 sm:px-6 py-4
                 border border-slate-50 min-h-[100px]
                 shadow-[0_6px_24px_rgba(0,0,0,0.06)] rounded-lg sm:col-span-2 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(0,0,0,0.12)] hover:scale-105 cursor-pointer">
-                    <img src="{{ asset('mix/newspaper.svg"
+                    <img src="{{ asset('storage/uploads/mix/newspaper.svg') }}"
                         class="w-[40px] sm:w-[49px] h-[40px] sm:h-[49px] flex-shrink-0" alt="">
                     <div class="text-center">
                         <p class="text-sm sm:text-base font-semibold text-[#121D24]">
