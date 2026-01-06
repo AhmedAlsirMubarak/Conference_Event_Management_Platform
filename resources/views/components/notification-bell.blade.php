@@ -1,19 +1,15 @@
 <div id="notification-container" class="relative">
     <!-- Notification Bell Button -->
-    @auth
     @php
         $isAdminRole = $notificationRole === 'admin';
         $roleForBell = $notificationRole ?? 'user';
-        $unreadRoute = $isAdminRole ? route('admin.notifications.unread') : route('notifications.unread');
-        $markAllRoute = $isAdminRole ? route('admin.notifications.markAllRead') : route('notifications.markAllRead');
-        $indexRoute = $isAdminRole ? route('admin.notifications.index') : route('notifications.index');
     @endphp
     <button id="notification-bell" class="relative p-2 text-gray-700 hover:bg-gray-100 rounded-lg transition-colors"
         aria-label="Notifications" data-user-role="{{ $roleForBell }}" data-user-id="{{ Auth::id() }}"
         data-is-admin="{{ $isAdminRole ? 'true' : 'false' }}"
-        data-unread-url="{{ $unreadRoute }}"
-        data-mark-all-url="{{ $markAllRoute }}"
-        data-index-url="{{ $indexRoute }}"
+        data-unread-url="{{ $isAdminRole ? route('admin.notifications.unread') : route('user.notifications.unread') }}"
+        data-mark-all-url="{{ $isAdminRole ? route('admin.notifications.markAllRead') : route('user.notifications.markAllRead') }}"
+        data-index-url="{{ $isAdminRole ? route('admin.notifications.index') : route('user.notifications.index') }}"
         data-delete-prefix="{{ $isAdminRole ? '/api/notifications' : '/user/api/notifications' }}">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -219,4 +215,3 @@
         loadNotifications();
     });
 </script>
-@endauth
