@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
 
 <head>
@@ -408,8 +408,7 @@
     <!-- ==================== DESKTOP: Eligibility Criteria (lg and above) ==================== -->
     <section class="hidden lg:block relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
-        <div class="absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('storage/mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
+        <div class="absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-r from-green-50 to-emerald-50" aria-hidden="true">
         </div>
 
 
@@ -544,8 +543,7 @@
     <!-- ==================== MOBILE & TABLET: Eligibility Criteria (below lg) ==================== -->
     <section class="lg:hidden relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
-        <div class="hidden absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('storage/mix/eligibility-criteria-bg.webp') }}" alt="" class="w-full h-full object-cover">
+        <div class="hidden absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-r from-green-50 to-emerald-50" aria-hidden="true">
         </div>
 
         <div class="relative mx-auto max-w-full px-4 md:px-8 py-12 md:py-16">
