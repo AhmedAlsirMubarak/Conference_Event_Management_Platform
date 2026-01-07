@@ -39,8 +39,9 @@ class SponsorController extends Controller
 
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
-            $path = $request->file('logo')->store('uploads/sponsor_logos');
-            $validated['logo'] = $path;
+            $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
+            $request->file('logo')->move(public_path('uploads/sponsor_logos'), $filename);
+            $validated['logo'] = 'uploads/sponsor_logos/' . $filename;
         }
 
         Sponsor::create($validated);
@@ -86,8 +87,9 @@ class SponsorController extends Controller
             if ($sponsor->logo && file_exists(public_path($sponsor->logo))) {
                 unlink(public_path($sponsor->logo));
             }
-            $path = $request->file('logo')->store('uploads/sponsor_logos');
-            $validated['logo'] = $path;
+            $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
+            $request->file('logo')->move(public_path('uploads/sponsor_logos'), $filename);
+            $validated['logo'] = 'uploads/sponsor_logos/' . $filename;
         }
 
         $sponsor->update($validated);

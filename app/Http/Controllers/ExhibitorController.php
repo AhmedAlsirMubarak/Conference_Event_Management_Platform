@@ -38,8 +38,9 @@ class ExhibitorController extends Controller
 
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
-            $path = $request->file('logo')->store('uploads/exhibitor_logos');
-            $validated['logo'] = $path;
+            $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
+            $request->file('logo')->move(public_path('uploads/exhibitor_logos'), $filename);
+            $validated['logo'] = 'uploads/exhibitor_logos/' . $filename;
         }
 
         Exhibitor::create($validated);
@@ -80,8 +81,13 @@ class ExhibitorController extends Controller
 
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
-            $path = $request->file('logo')->store('uploads/exhibitor_logos');
-            $validated['logo'] = $path;
+            // Delete old logo if it exists
+            if ($exhibitor->logo && file_exists(public_path($exhibitor->logo))) {
+                unlink(public_path($exhibitor->logo));
+            }
+            $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
+            $request->file('logo')->move(public_path('uploads/exhibitor_logos'), $filename);
+            $validated['logo'] = 'uploads/exhibitor_logos/' . $filename;
         }
 
         $exhibitor->update($validated);
