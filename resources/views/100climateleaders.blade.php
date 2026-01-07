@@ -130,7 +130,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[600px] pt-[110px]">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders">
+            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
         <!-- Dark overlay -->
@@ -408,7 +408,8 @@
     <!-- ==================== DESKTOP: Eligibility Criteria (lg and above) ==================== -->
     <section class="hidden lg:block relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
-        <div class="absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-r from-green-50 to-emerald-50" aria-hidden="true">
+        <div class="absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
+            <img src="{{ asset('storage/mix/Imgbg.webp') }}" alt="Olive Field">
         </div>
 
 
