@@ -40,6 +40,8 @@ class SponsorController extends Controller
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
             $path = $request->file('logo')->store('sponsor_logos', 'public');
+            // Set proper permissions for the uploaded file
+            @chmod(storage_path('app/public/' . $path), 0644);
             $validated['logo'] = $path;
         }
 
@@ -87,6 +89,8 @@ class SponsorController extends Controller
                 unlink(storage_path('app/public/' . $sponsor->logo));
             }
             $path = $request->file('logo')->store('sponsor_logos', 'public');
+            // Set proper permissions for the uploaded file
+            @chmod(storage_path('app/public/' . $path), 0644);
             $validated['logo'] = $path;
         }
 
