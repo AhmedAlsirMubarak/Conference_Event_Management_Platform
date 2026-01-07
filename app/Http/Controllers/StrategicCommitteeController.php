@@ -51,15 +51,15 @@ class StrategicCommitteeController extends Controller
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
             $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
-            $request->file('logo')->move(public_path('storage/Committe'), $filename);
-            $validated['logo'] = 'Committe/' . $filename;
+            $request->file('logo')->move(public_path('uploads/committees'), $filename);
+            $validated['logo'] = 'uploads/committees/' . $filename;
         }
 
         // Handle photo upload if provided
         if ($request->hasFile('photo')) {
             $filename = time() . '_' . uniqid() . '.' . $request->file('photo')->extension();
-            $request->file('photo')->move(public_path('storage/Committe'), $filename);
-            $validated['photo'] = 'Committe/' . $filename;
+            $request->file('photo')->move(public_path('uploads/committees'), $filename);
+            $validated['photo'] = 'uploads/committees/' . $filename;
         }
 
         StrategicCommittee::create($validated);
@@ -105,28 +105,28 @@ class StrategicCommitteeController extends Controller
         if ($request->hasFile('logo')) {
             // Delete old logo if exists
             if ($member->logo) {
-                $oldPath = public_path('storage/' . $member->logo);
+                $oldPath = public_path($member->logo);
                 if (file_exists($oldPath)) {
                     unlink($oldPath);
                 }
             }
             $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
-            $request->file('logo')->move(public_path('storage/Committe'), $filename);
-            $validated['logo'] = 'Committe/' . $filename;
+            $request->file('logo')->move(public_path('uploads/committees'), $filename);
+            $validated['logo'] = 'uploads/committees/' . $filename;
         }
 
         // Handle photo upload if provided
         if ($request->hasFile('photo')) {
             // Delete old photo if exists
             if ($member->photo) {
-                $oldPath = public_path('storage/' . $member->photo);
+                $oldPath = public_path($member->photo);
                 if (file_exists($oldPath)) {
                     unlink($oldPath);
                 }
             }
             $filename = time() . '_' . uniqid() . '.' . $request->file('photo')->extension();
-            $request->file('photo')->move(public_path('storage/Committe'), $filename);
-            $validated['photo'] = 'Committe/' . $filename;
+            $request->file('photo')->move(public_path('uploads/committees'), $filename);
+            $validated['photo'] = 'uploads/committees/' . $filename;
         }
 
         $member->update($validated);
@@ -143,7 +143,7 @@ class StrategicCommitteeController extends Controller
         
         // Delete logo if exists
         if ($member->logo) {
-            $logoPath = public_path('storage/' . $member->logo);
+            $logoPath = public_path($member->logo);
             if (file_exists($logoPath)) {
                 unlink($logoPath);
             }
@@ -151,7 +151,7 @@ class StrategicCommitteeController extends Controller
 
         // Delete photo if exists
         if ($member->photo) {
-            $photoPath = public_path('storage/' . $member->photo);
+            $photoPath = public_path($member->photo);
             if (file_exists($photoPath)) {
                 unlink($photoPath);
             }

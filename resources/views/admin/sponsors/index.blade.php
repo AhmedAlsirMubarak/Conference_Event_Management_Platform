@@ -48,7 +48,7 @@
                     <!-- Logo Section -->
                     <div class="h-40 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($sponsor->logo)
-                            <img src="{{ asset(path: 'storage/' . $sponsor->logo) }}" alt="{{ $sponsor->name }}"
+                            <img src="{{ asset(path: $sponsor->logo) }}" alt="{{ $sponsor->name }}"
                                 class="max-w-[150px] h-full object-contain">
                         @else
                             <div class="text-gray-400 text-center">

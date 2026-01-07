@@ -22,7 +22,7 @@
                 <div>
                     <div class="h-32 bg-gray-100 flex items-center justify-center rounded-lg">
                         @if ($exhibitor->logo)
-                            <img src="{{ asset('storage/' . $exhibitor->logo) }}" alt="{{ $exhibitor->name }}"
+                            <img src="{{ asset($exhibitor->logo) }}" alt="{{ $exhibitor->name }}"
                                 class="w-full h-full object-contain">
                         @else
                             <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

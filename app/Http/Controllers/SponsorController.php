@@ -39,9 +39,7 @@ class SponsorController extends Controller
 
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
-            $path = $request->file('logo')->store('sponsor_logos', 'public');
-            // Set proper permissions for the uploaded file
-            @chmod(storage_path('app/public/' . $path), 0644);
+            $path = $request->file('logo')->store('uploads/sponsor_logos');
             $validated['logo'] = $path;
         }
 
@@ -85,12 +83,10 @@ class SponsorController extends Controller
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
             // Delete old logo if it exists
-            if ($sponsor->logo && file_exists(storage_path('app/public/' . $sponsor->logo))) {
-                unlink(storage_path('app/public/' . $sponsor->logo));
+            if ($sponsor->logo && file_exists(public_path($sponsor->logo))) {
+                unlink(public_path($sponsor->logo));
             }
-            $path = $request->file('logo')->store('sponsor_logos', 'public');
-            // Set proper permissions for the uploaded file
-            @chmod(storage_path('app/public/' . $path), 0644);
+            $path = $request->file('logo')->store('uploads/sponsor_logos');
             $validated['logo'] = $path;
         }
 

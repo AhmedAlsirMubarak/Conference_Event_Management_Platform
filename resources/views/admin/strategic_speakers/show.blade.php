@@ -26,7 +26,7 @@
                         <div
                             class="w-32 h-32 bg-white rounded-xl border-2 border-blue-200 flex items-center justify-center overflow-hidden shadow-md">
                             @if ($speaker->photo)
-                                <img src="/storage/{{ $speaker->photo }}" alt="{{ $speaker->name }}"
+                                <img src="/{{ $speaker->photo }}" alt="{{ $speaker->name }}"
                                     class="w-full h-full object-cover">
                             @else
                                 <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

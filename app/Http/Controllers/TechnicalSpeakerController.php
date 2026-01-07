@@ -51,15 +51,15 @@ class TechnicalSpeakerController extends Controller
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
             $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
-            $request->file('logo')->move(public_path('storage/speakers'), $filename);
-            $validated['logo'] = 'speakers/' . $filename;
+            $request->file('logo')->move(public_path('uploads/speakers'), $filename);
+            $validated['logo'] = 'uploads/speakers/' . $filename;
         }
 
         // Handle photo upload if provided
         if ($request->hasFile('photo')) {
             $filename = time() . '_' . uniqid() . '.' . $request->file('photo')->extension();
-            $request->file('photo')->move(public_path('storage/speakers'), $filename);
-            $validated['photo'] = 'speakers/' . $filename;
+            $request->file('photo')->move(public_path('uploads/speakers'), $filename);
+            $validated['photo'] = 'uploads/speakers/' . $filename;
         }
 
         TechnicalSpeaker::create($validated);
@@ -104,15 +104,15 @@ class TechnicalSpeakerController extends Controller
         // Handle logo upload if provided
         if ($request->hasFile('logo')) {
             $filename = time() . '_' . uniqid() . '.' . $request->file('logo')->extension();
-            $request->file('logo')->move(public_path('storage/speakers'), $filename);
-            $validated['logo'] = 'speakers/' . $filename;
+            $request->file('logo')->move(public_path('uploads/speakers'), $filename);
+            $validated['logo'] = 'uploads/speakers/' . $filename;
         }
 
         // Handle photo upload if provided
         if ($request->hasFile('photo')) {
             $filename = time() . '_' . uniqid() . '.' . $request->file('photo')->extension();
-            $request->file('photo')->move(public_path('storage/speakers'), $filename);
-            $validated['photo'] = 'speakers/' . $filename;
+            $request->file('photo')->move(public_path('uploads/speakers'), $filename);
+            $validated['photo'] = 'uploads/speakers/' . $filename;
         }
 
         $speaker->update($validated);
