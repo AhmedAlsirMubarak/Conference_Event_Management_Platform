@@ -715,7 +715,7 @@
                 <!-- Step 2 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -765,18 +765,18 @@
                     <div class="grid grid-cols-4">
                         <!-- Arrow 1 -->
                         <div class="relative">
-                            <img src="{{ asset('storage/mix/arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('storage/mix/Arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 2 -->
                         <div class="relative">
 
-                            <img src="{{ asset('storage/mix/arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('storage/mix/Arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 3 -->
                         <div class="relative">
-                            <img src="{{ asset('storage/mix/arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('storage/mix/Arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
 
@@ -825,7 +825,7 @@
                 <!-- Step 2 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
