@@ -144,20 +144,20 @@
                 {{ __('navigation.100 climate leaders') }}
             </a>
 
-            <a href="/speakers"
+            <a href="#"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.speakers') }}
             </a>
-            <a href="/sponsors"
+            <a href="#"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.sponsors') }}
             </a>
-            <a href="/exhibitors"
+            <a href="#"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.exhibitors') }}
             </a>
 
-            <a href="/contact"
+            <a href="#"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.contact') }}
             </a>
