@@ -26,8 +26,7 @@
                         <div
                             class="w-32 h-32 bg-white rounded-xl border-2 border-orange-200 flex items-center justify-center overflow-hidden shadow-md">
                             @if ($member->photo)
-                                <img src="/{{ $member->photo }}" alt="{{ $member->name }}"
-                                    class="w-full h-full object-cover">
+                                <img src="/{{ $member->photo }}" alt="{{ $member->name }}" class="w-full h-full object-cover">
                             @else
                                 <svg class="w-16 h-16 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

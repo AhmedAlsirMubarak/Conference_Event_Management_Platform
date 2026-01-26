@@ -21,6 +21,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+        // Register Microsoft Graph mail transport
+        \Illuminate\Support\Facades\Mail::extend('graph', function () {
+            return new \App\Mail\Transport\MicrosoftGraphTransport(
+                $this->app->make(\App\Services\MicrosoftGraphMailService::class)
+            );
+        });
+
         // Register event listeners
         $this->app['events']->listen(
             ContactSubmitted::class,

@@ -29,6 +29,7 @@ class ClimateLeaderSubmissionMail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            to: [$this->climateLeader->email],
             subject: 'Thank You for Your Climate Leaders Nomination - Saudi Climate Week 2026',
         );
     }

@@ -61,8 +61,7 @@
                     <!-- Photo Section -->
                     <div class="h-24 bg-gray-100 flex items-center justify-center overflow-hidden">
                         @if ($speaker->photo)
-                            <img src="/{{ $speaker->photo }}" alt="{{ $speaker->name }}"
-                                class="w-full h-full object-contain">
+                            <img src="/{{ $speaker->photo }}" alt="{{ $speaker->name }}" class="w-full h-full object-contain">
                         @else
                             <svg class="w-12 h-12 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
