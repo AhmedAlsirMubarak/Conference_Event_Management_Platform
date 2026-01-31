@@ -1,0 +1,41 @@
+<?php
+
+return [
+    'hero_label' => 'Program & Content',
+    'hero_title' => 'Speakers',
+    'hero_description' => 'Voices shaping climate policy, innovation, investment, and implementation',
+    'hero_cta' => 'Submit Speaker Interest',
+    
+    'section_intro' => 'Saudi Climate Week invites leaders, experts, and practitioners to contribute to a dynamic program focused on',
+    'policy' => 'Policy',
+    'innovation' => 'Innovation',
+    'investment' => 'Investment',
+    'implementation' => 'Implementation',
+    
+    'take_part_title' => 'Speakers will take part in',
+    'keynote_sessions' => 'Keynote sessions',
+    'panels' => 'Panels',
+    'workshops' => 'Workshops',
+    'technical_sessions' => 'Focused technical sessions',
+    
+    'form_label' => 'Register Your Interest',
+    'form_title' => 'Speakers Enquiry',
+    'form_description' => 'Register your interest to exhibit at Saudi Climate Week, and our team will contact you with suitable exhibition opportunities.',
+    'contact_person_label' => 'Contact Person Full name',
+    'contact_person_placeholder' => 'Contact Person Full name',
+    'job_title_label' => 'Job Title',
+    'job_title_placeholder' => 'Job Title',
+    'organization_label' => 'Organization Name',
+    'organization_placeholder' => 'Organization Name',
+    'email_label' => 'Enter Your Email',
+    'email_placeholder' => 'your_email@example.com',
+    'phone_label' => 'Phone Number',
+    'phone_placeholder' => '+966 xx xxx xxx',
+    'country' => 'Country',
+    'select_country' => 'Select your country',
+    'speaker_bio_label' => 'Speaker Profile / Biography',
+    'speaker_bio_placeholder' => 'briefly describe your expertise and experience',
+    'submit_button' => 'Submit Exhibition Request',
+    'fix_errors' => 'Please fix the following errors:',
+    'thank_you' => 'Thank you for your submission!',
+];

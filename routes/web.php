@@ -15,6 +15,10 @@ use App\Http\Controllers\StrategicSpeakerController;
 use App\Http\Controllers\TechnicalSpeakerController;
 use App\Http\Controllers\SessionController;
 use App\Http\Controllers\ClimateLeadersController;
+use App\Http\Controllers\SpeakersSubmissionsController;
+
+
+
 
 // Language Switcher - Switch language and persist to session/cookie
 Route::get('/lang/{locale}', function($locale) {
@@ -43,6 +47,11 @@ Route::get('/100climateleaders', function () {
     return view('100climateleaders');
 })->name('100climateleaders');
 
+// Speakers Route
+Route::get('/speakers', function () {
+    return view('speakers');
+})->name('speakers'); 
+
 // Public Climate Leaders Nomination Form
 Route::post('/climate-leaders', [ClimateLeadersController::class, 'store'])->name('climate-leaders.store');
 
@@ -64,12 +73,13 @@ Route::post('/logout', [AuthController::class, 'logout'])
 Route::get('/login', [AuthController::class, 'getLoginPage'])
     ->name('login.page');
 
+// Form Submission Routes
 Route::post('/contacts', [ContactController::class, 'create'])->name('create');
-
+Route::post('/speakers-submissions', [SpeakersSubmissionsController::class, 'create'])->name('create.speakersubmission');
 
 
 // Admin Routes
-Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/search', [DashboardController::class, 'globalSearch'])->name('admin.search');
     
@@ -83,12 +93,24 @@ Route::group(['middleware' => ['auth', IsAdmin::class]], function () {
     Route::resource('sponsors', SponsorController::class);
     Route::get('/exhibitors/search', [ExhibitorController::class, 'search'])->name('exhibitors.search');
     Route::resource('exhibitors', ExhibitorController::class);
+   
+    
+    //speaker Submissions Routes
+    Route::get('/speaker-submissions', [SpeakersSubmissionsController::class, 'getallSpeakersSubmissions'])->name('speaker-submissions.index');
+    Route::get('/speaker-submissions/search', [SpeakersSubmissionsController::class, 'search'])->name('speaker-submissions.search');
+    Route::get('/speaker-submissions/export/excel', [SpeakersSubmissionsController::class, 'exportExcel'])->name('speaker-submissions.exportExcel');
+    Route::get('/speaker-submissions/{id}', [SpeakersSubmissionsController::class, 'show'])->name('speaker-submissions.show');  
+    Route::post('/speaker-submissions/{id}/notes', [SpeakersSubmissionsController::class, 'updateNotes'])->name('speaker-submissions.updateNotes');
+    Route::delete('/speaker-submissions/{id}', [SpeakersSubmissionsController::class, 'destroy'])->name('speaker-submissions.destroy');    
+    
 
+    
     // Export Routes (Admin) - Must come BEFORE resource routes
     Route::get('/strategic_speakers/export', [StrategicSpeakerController::class, 'export'])->name('strategic_speakers.export');
     Route::get('/technical_speakers/export', [TechnicalSpeakerController::class, 'export'])->name('technical_speakers.export');
     Route::get('/strategic_committees/export', [StrategicCommitteeController::class, 'export'])->name('strategic_committees.export');
     Route::get('/technical_committees/export', [TechnicalCommitteeController::class, 'export'])->name('technical_committees.export');
+    
 
     Route::resource('strategic_committees', StrategicCommitteeController::class);
     Route::resource('technical_committees', TechnicalCommitteeController::class);
@@ -131,6 +153,14 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::get('/contacts/{id}', [UserController::class, 'showContact'])->name('contacts.show');
     Route::post('/contacts/{id}/notes', [UserController::class, 'updateNotes'])->name('contacts.updateNotes');
     
+
+    // Speaker Submissions routes
+    Route::get('/speaker-submissions', [SpeakersSubmissionsController::class, 'userIndex'])->name('speaker-submissions.index');
+    Route::get('/speaker-submissions/search', [SpeakersSubmissionsController::class, 'search'])->name('speaker-submissions.search');
+    Route::get('/speaker-submissions/export/excel', [SpeakersSubmissionsController::class, 'exportExcel'])->name('speaker-submissions.exportExcel');
+    Route::get('/speaker-submissions/{id}', [SpeakersSubmissionsController::class, 'userShow'])->name('speaker-submissions.show');  
+    Route::post('/speaker-submissions/{id}/notes', [SpeakersSubmissionsController::class, 'updateNotes'])->name('speaker-submissions.updateNotes');
+    
     // Sponsors routes - search BEFORE show to avoid {id} conflict
     Route::get('/sponsors', [UserController::class, 'indexSponsors'])->name('sponsors.index');
     Route::get('/sponsors/search', [UserController::class, 'searchSponsors'])->name('sponsors.search');
@@ -162,6 +192,7 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::get('/export/technical-speakers', [UserController::class, 'exportTechnicalSpeakers'])->name('technical_speakers.export');
     Route::get('/export/strategic-committees', [UserController::class, 'exportStrategicCommittees'])->name('strategic_committees.export');
     Route::get('/export/technical-committees', [UserController::class, 'exportTechnicalCommittees'])->name('technical_committees.export');
+    Route::get('/export/speaker-submissions', [SpeakersSubmissionsController::class, 'exportSpeakerSubmissions'])->name('speaker_submissions.export');
     
     // User Notification Routes
     Route::get('/notifications', [NotificationController::class, 'userIndex'])->name('notifications.index');

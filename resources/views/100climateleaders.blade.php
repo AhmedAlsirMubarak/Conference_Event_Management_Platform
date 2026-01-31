@@ -130,7 +130,8 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[600px] pt-[110px]">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
+            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}"
+                alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
         <!-- Dark overlay -->
@@ -183,7 +184,8 @@
     <section class="lg:hidden relative w-full overflow-hidden pt-10 pb-10">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}" alt="100 Climate Leaders" class="w-full h-full object-cover">
+            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}"
+                alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
         <!-- Dark overlay for readability -->
@@ -261,7 +263,8 @@
                 <div class="relative px-0">
                     <div class="flex h-12 w-12 items-center justify-center">
                         <!-- icon -->
-                        <img src="{{ asset('storage/mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="{{ asset('storage/mix/earth-1.svg') }}" alt="Saudi Climate Week"
+                            class="h-[70px] w-[70px]">
                     </div>
 
                     <h3
@@ -282,7 +285,8 @@
                 <div class="relative px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('storage/mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="{{ asset('storage/mix/chat.svg') }}" alt="Saudi Climate Week"
+                            class="h-[70px] w-[70px]">
                     </div>
 
                     <h3
@@ -303,7 +307,8 @@
                 <div class="px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('storage/mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                        <img src="{{ asset('storage/mix/earth.svg') }}" alt="Saudi Climate Week"
+                            class="h-[70px] w-[70px]">
 
                     </div>
 
@@ -353,7 +358,8 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/mix/earth-1.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="{{ asset('storage/mix/earth-1.svg') }}" alt="Saudi Climate Week"
+                                class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -371,7 +377,8 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/mix/chat.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="{{ asset('storage/mix/chat.svg') }}" alt="Saudi Climate Week"
+                                class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -389,7 +396,8 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/mix/earth.svg') }}" alt="Saudi Climate Week" class="h-[70px] w-[70px]">
+                            <img src="{{ asset('storage/mix/earth.svg') }}" alt="Saudi Climate Week"
+                                class="h-[70px] w-[70px]">
                         </div>
                     </div>
 
@@ -544,7 +552,8 @@
     <!-- ==================== MOBILE & TABLET: Eligibility Criteria (below lg) ==================== -->
     <section class="lg:hidden relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
-        <div class="hidden absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-r from-green-50 to-emerald-50" aria-hidden="true">
+        <div class="hidden absolute inset-x-0 bottom-0 h-[48%] bg-gradient-to-r from-green-50 to-emerald-50"
+            aria-hidden="true">
         </div>
 
         <div class="relative mx-auto max-w-full px-4 md:px-8 py-12 md:py-16">
@@ -700,7 +709,8 @@
                 <div class="text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/open-self.webp') }}" alt="Saudi Climate Week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -715,7 +725,8 @@
                 <!-- Step 2 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -730,7 +741,8 @@
                 <!-- Step 3 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/multi.webp') }}" alt="saudi climate week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -745,7 +757,8 @@
                 <!-- Step 4 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/final.webp') }}" alt="saudi climate week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-6 text-[24px] font-semibold text-slate-900">
@@ -810,7 +823,8 @@
                 <div class="w-full max-w-xs text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/open-self.webp') }}" alt="Saudi Climate Week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/open-self.webp') }}" alt="Saudi Climate Week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -825,7 +839,8 @@
                 <!-- Step 2 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -840,7 +855,8 @@
                 <!-- Step 3 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/multi.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/multi.webp') }}" alt="saudi climate week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -855,7 +871,8 @@
                 <!-- Step 4 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/final.webp') }}" alt="saudi climate week" class="max-w-full h-auto">
+                        <img src="{{ asset('storage/mix/final.webp') }}" alt="saudi climate week"
+                            class="max-w-full h-auto">
                     </div>
 
                     <h3 class="mt-4 md:mt-6 text-lg md:text-[24px] font-semibold text-slate-900">
@@ -875,7 +892,8 @@
     <section id="nominationForm" class="lg:hidden relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp'  : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');"
+            aria-hidden="true"></div>
 
         {{-- Global overlay --}}
         <div class="absolute inset-0 bg-linear-to-r from-gray-900 to-gray-900/20 transition" aria-hidden="true"></div>
@@ -1618,10 +1636,12 @@
     <section id="nominationForm" class="hidden lg:block relative overflow-hidden bg-gray-900 pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-right"
-            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');" aria-hidden="true"></div>
+            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');"
+            aria-hidden="true"></div>
 
         {{-- Global overlay --}}
-        <div class="absolute inset-0 {{ app()->getLocale() === 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-gray-900/30 to-gray-900/5 transition" aria-hidden="true"></div>
+        <div class="absolute inset-0 {{ app()->getLocale() === 'ar' ? 'bg-linear-to-l' : 'bg-linear-to-r' }} from-gray-900/30 to-gray-900/5 transition"
+            aria-hidden="true"></div>
 
         {{-- Subtle warm glow (top-right like design) --}}
         <div class="absolute {{ app()->getLocale() === 'ar' ? '-left-40' : '-right-40' }} top-0 h-[520px] w-[520px]

@@ -1,0 +1,22 @@
+Replace in SpeakersSubmissionsController.php:
+
+1. In create() method - validation rules:
+   Replace: 'Contact Person ' with 'contact_person'
+   Replace: 'Job Title' with 'job_title'  
+   Replace: 'Organization Name ' with 'organization_name'
+   Replace: 'Email Address ' with 'email_address'
+   Replace: 'Phone Number ' with 'phone_number'
+   Replace: 'Country ' with 'country'
+   Replace: 'Speaker Profile / Biography ' with 'speaker_biography'
+
+2. In exportExcel() - CSV export:
+   Replace: $submission->{'Contact Person '} with $submission->contact_person
+   Replace: $submission->{'Job Title'} with $submission->job_title
+   Replace: $submission->{'Organization Name '} with $submission->organization_name
+   Replace: $submission->{'Email Address '} with $submission->email_address
+   Replace: $submission->{'Phone Number '} with $submission->phone_number
+   Replace: $submission->{'Country '} with $submission->country
+   Replace: $submission->{'Speaker Profile / Biography '} with $submission->speaker_biography
+
+3. In searchSubmissions() - search query:
+   Replace WHERE clauses to use new column names

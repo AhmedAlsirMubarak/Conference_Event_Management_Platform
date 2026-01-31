@@ -101,6 +101,7 @@
                     return response.json();
                 })
                 .then(data => {
+                    console.log('Notifications received:', data);
                     updateBadge(data.count || 0);
                     renderNotifications(data.notifications || []);
                 })
@@ -112,41 +113,76 @@
 
         // Render notifications
         function renderNotifications(notifications) {
+            console.log('Rendering notifications:', notifications);
             if (notifications.length === 0) {
                 notificationsList.innerHTML = '<div class="p-4 text-center text-gray-500">No new notifications</div>';
                 return;
             }
 
             notificationsList.innerHTML = notifications.map(notif => {
+                console.log('Processing notification:', notif);
                 const data = notif.data || {};
-                const contactName = escapeHtml(data.contact_name || 'Unknown Contact');
-                const contactEmail = escapeHtml(data.contact_email || '');
-                const contactCompany = escapeHtml(data.contact_company || '');
-                const contactId = data.contact_id || '';
+                const notifType = notif.type || 'ContactSubmission';
+                console.log('Notification type:', notifType, 'Data:', data);
 
-                // Route based on user role (from data attribute)
-                const viewUrl = userRole === 'admin' ? `/contacts/${contactId}` : `/user/contacts/${contactId}`;
+                // Handle different notification types
+                if (notifType === 'SpeakerSubmissionNotification') {
+                    const speakerName = escapeHtml(data.contact_person || 'Unknown');
+                    const speakerEmail = escapeHtml(data.email_address || '');
+                    const organization = escapeHtml(data.organization_name || '');
+                    const message = escapeHtml(data.message || 'New speaker submission');
+                    const viewUrl = data.url || '#';
 
-                return `
-                <div class="p-4 hover:bg-gray-50 transition-colors flex justify-between items-start gap-3">
-                    <div class="flex-1 min-w-0">
-                        <p class="text-sm font-medium text-gray-900">New contact submission from ${contactName}</p>
-                        <p class="text-xs text-gray-500 mt-1">
-                            ${contactEmail ? `<strong>${contactEmail}</strong> • ` : ''}
-                            ${contactCompany ? `<strong>${contactCompany}</strong> • ` : ''}
-                            ${notif.created_at}
-                        </p>
-                        <a href="${viewUrl}" class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-block">
-                            View Contact →
-                        </a>
+                    return `
+                    <div class="p-4 hover:bg-gray-50 transition-colors flex justify-between items-start gap-3">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-gray-900">${message}</p>
+                            <p class="text-xs text-gray-500 mt-1">
+                                ${speakerEmail ? `<strong>${speakerEmail}</strong> • ` : ''}
+                                ${organization ? `<strong>${organization}</strong> • ` : ''}
+                                ${notif.created_at}
+                            </p>
+                            <a href="${viewUrl}" class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-block">
+                                View Submission →
+                            </a>
+                        </div>
+                        <button onclick="deleteNotification('${notif.id}')" class="text-gray-400 hover:text-red-600 transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
                     </div>
-                    <button onclick="deleteNotification('${notif.id}')" class="text-gray-400 hover:text-red-600 transition-colors flex-shrink-0">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
-                        </svg>
-                    </button>
-                </div>
-            `;
+                    `;
+                } else {
+                    // Default: Contact Submission
+                    const contactName = escapeHtml(data.contact_name || 'Unknown Contact');
+                    const contactEmail = escapeHtml(data.contact_email || '');
+                    const contactCompany = escapeHtml(data.contact_company || '');
+                    const contactId = data.contact_id || '';
+                    const message = escapeHtml(data.message || `New contact submission from ${contactName}`);
+                    const viewUrl = data.url || (userRole === 'admin' ? `/admin/contacts/${contactId}` : `/user/contacts/${contactId}`);
+
+                    return `
+                    <div class="p-4 hover:bg-gray-50 transition-colors flex justify-between items-start gap-3">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-gray-900">${message}</p>
+                            <p class="text-xs text-gray-500 mt-1">
+                                ${contactEmail ? `<strong>${contactEmail}</strong> • ` : ''}
+                                ${contactCompany ? `<strong>${contactCompany}</strong> • ` : ''}
+                                ${notif.created_at}
+                            </p>
+                            <a href="${viewUrl}" class="text-xs text-blue-600 hover:text-blue-800 mt-2 inline-block">
+                                View Contact →
+                            </a>
+                        </div>
+                        <button onclick="deleteNotification('${notif.id}')" class="text-gray-400 hover:text-red-600 transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    `;
+                }
             }).join('');
         }
 

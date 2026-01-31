@@ -1,0 +1,41 @@
+<?php
+
+return [
+    'hero_label' => 'البرنامج والمحتوى',
+    'hero_title' => 'المتحدثون',
+    'hero_description' => 'أصوات تشكل سياسة المناخ والابتكار والاستثمار والتنفيذ',
+    'hero_cta' => 'تقديم اهتمام المتحدث',
+    
+    'section_intro' => 'يدعو أسبوع المناخ السعودي القادة والخبراء والممارسين للمساهمة في برنامج ديناميكي يركز على',
+    'policy' => 'السياسة',
+    'innovation' => 'الابتكار',
+    'investment' => 'الاستثمار',
+    'implementation' => 'التنفيذ',
+    
+    'take_part_title' => 'سيشارك المتحدثون في',
+    'keynote_sessions' => 'الجلسات الرئيسية',
+    'panels' => 'اللجان',
+    'workshops' => 'ورش العمل',
+    'technical_sessions' => 'الجلسات التقنية المركزة',
+    
+    'form_label' => 'سجل اهتمامك',
+    'form_title' => 'استفسار المتحدثين',
+    'form_description' => 'سجل اهتمامك بالعرض في أسبوع المناخ السعودي، وسيتواصل معك فريقنا بفرص العرض المناسبة.',
+    'contact_person_label' => 'الاسم الكامل لجهة الاتصال',
+    'contact_person_placeholder' => 'الاسم الكامل لجهة الاتصال',
+    'job_title_label' => 'المسمى الوظيفي',
+    'job_title_placeholder' => 'المسمى الوظيفي',
+    'organization_label' => 'اسم المنظمة',
+    'organization_placeholder' => 'اسم المنظمة',
+    'email_label' => 'أدخل بريدك الإلكتروني',
+    'email_placeholder' => 'your_email@example.com',
+    'phone_label' => 'رقم الهاتف',
+    'phone_placeholder' => '+966 xx xxx xxx',
+    'country' => 'الدولة',
+    'select_country' => 'اختر دولتك',
+    'speaker_bio_label' => 'السيرة الذاتية للمتحدث',
+    'speaker_bio_placeholder' => 'قم بوصف خبرتك وتجربتك بإيجاز',
+    'submit_button' => 'إرسال طلب العرض',
+    'fix_errors' => 'يرجى تصحيح الأخطاء التالية:',
+    'thank_you' => 'شكراً لتقديم طلبك!',
+];

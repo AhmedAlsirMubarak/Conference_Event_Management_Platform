@@ -81,37 +81,18 @@
             <!-- Divider -->
             <div class="my-6 flex items-center">
                 <div class="grow border-t border-gray-300"></div>
-                <span class="px-3 text-sm text-gray-500">or</span>
                 <div class="grow border-t border-gray-300"></div>
             </div>
 
-            <!-- Footer Links -->
-            <div class="space-y-3 text-center">
-                @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}"
-                        class="text-sm text-cyan-600 hover:text-cyan-700 font-medium block">
-                        Forgot Your Password?
-                    </a>
-                @endif
 
-                @if (Route::has('register'))
-                    <div class="text-sm text-gray-600">
-                        Don't have an account?
-                        <a href="{{ route('register') }}" class="text-cyan-600 hover:text-cyan-700 font-medium">
-                            Sign Up
-                        </a>
-                    </div>
-                @endif
+
+            <!-- Footer -->
+            <div class="mt-8 text-center text-sm text-gray-600">
+                <p>© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
+                        rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 font-medium">Ahmed Alsir
+                        Mubarak</a>. All rights reserved.</p>
             </div>
         </div>
-
-        <!-- Footer -->
-        <div class="mt-8 text-center text-sm text-gray-600">
-            <p>© 2025 developed by <a href="https://www.linkedin.com/in/ahmed-alsir-20a3a8151/" target="_blank"
-                    rel="noopener noreferrer" class="text-cyan-600 hover:text-cyan-700 font-medium">Ahmed Alsir
-                    Mubarak</a>. All rights reserved.</p>
-        </div>
-    </div>
 </body>
 
 </html>

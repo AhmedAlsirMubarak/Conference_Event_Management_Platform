@@ -64,6 +64,17 @@
                     </svg>
                     <span class="truncate">Climate Leaders</span>
                 </a>
+
+                <!-- Speakers Submissions -->
+                <a href="{{ route('speaker-submissions.index') }}"
+                    class="flex items-center gap-3 px-3 sm:px-4 py-2 sm:py-3 rounded-lg font-medium text-sm sm:text-base transition-colors @if (request()->routeIs('speaker-submissions.*')) bg-blue-100 text-blue-600 @else text-gray-600 hover:bg-gray-50 @endif">
+                    <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span class="truncate">Speakers Submissions</span>
+                </a>
+
             </div>
         </div>
 

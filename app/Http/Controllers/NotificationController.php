@@ -75,33 +75,62 @@ class NotificationController extends Controller
                 'user_role' => $user->role,
             ]);
 
-            // Fetch from contact_notifications table for reliable storage
-            $unreadNotifications = ContactNotification::where('user_id', $user->id)
+            // Fetch from contact_notifications table
+            $contactNotifications = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->latest()
                 ->limit(10)
                 ->get();
             
-            $unreadCount = ContactNotification::where('user_id', $user->id)
+            // Fetch from Laravel notifications table (for speaker submissions)
+            $laravelNotifications = $user->unreadNotifications()
+                ->latest()
+                ->limit(10)
+                ->get();
+            
+            // Count total unread from both sources
+            $contactCount = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->count();
             
+            $laravelCount = $user->unreadNotifications()->count();
+            
+            $totalCount = $contactCount + $laravelCount;
+            
+            // Map contact notifications
+            $mappedContactNotifications = $contactNotifications->map(function ($notification) {
+                return [
+                    'id' => $notification->id,
+                    'type' => 'ContactSubmission',
+                    'data' => [
+                        'contact_id' => $notification->contact_id,
+                        'contact_name' => $notification->contact_name ?? 'Unknown',
+                        'contact_email' => $notification->contact_email ?? '',
+                        'contact_phone' => $notification->contact_phone ?? '',
+                        'contact_company' => $notification->contact_company ?? '',
+                        'message' => 'New contact submission from ' . ($notification->contact_name ?? 'Unknown'),
+                        'url' => url('/admin/contacts/' . $notification->contact_id),
+                    ],
+                    'created_at' => $notification->created_at ? $notification->created_at->diffForHumans() : 'Just now',
+                ];
+            });
+            
+            // Map Laravel notifications
+            $mappedLaravelNotifications = $laravelNotifications->map(function ($notification) {
+                return [
+                    'id' => $notification->id,
+                    'type' => class_basename($notification->type),
+                    'data' => $notification->data,
+                    'created_at' => $notification->created_at ? $notification->created_at->diffForHumans() : 'Just now',
+                ];
+            });
+            
+            // Merge and sort by creation time
+            $allNotifications = $mappedContactNotifications->concat($mappedLaravelNotifications);
+            
             return response()->json([
-                'count' => $unreadCount,
-                'notifications' => $unreadNotifications->map(function ($notification) {
-                    return [
-                        'id' => $notification->id,
-                        'type' => 'ContactSubmission',
-                        'data' => [
-                            'contact_id' => $notification->contact_id,
-                            'contact_name' => $notification->contact_name ?? 'Unknown',
-                            'contact_email' => $notification->contact_email ?? '',
-                            'contact_phone' => $notification->contact_phone ?? '',
-                            'contact_company' => $notification->contact_company ?? '',
-                        ],
-                        'created_at' => $notification->created_at ? $notification->created_at->diffForHumans() : 'Just now',
-                    ];
-                }),
+                'count' => $totalCount,
+                'notifications' => $allNotifications->take(10),
             ]);
         } catch (\Exception $e) {
             Log::error('Error fetching notifications: ' . $e->getMessage(), [
@@ -124,18 +153,23 @@ class NotificationController extends Controller
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
 
-            $updated = ContactNotification::where('user_id', $user->id)
+            // Mark contact notifications as read
+            $contactUpdated = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->update(['read_at' => now()]);
+            
+            // Mark Laravel notifications as read
+            $laravelUpdated = $user->unreadNotifications()->update(['read_at' => now()]);
             
             Log::info('Admin notifications marked as read', [
                 'user_id' => $user->id,
                 'user_name' => $user->name,
                 'user_role' => $user->role,
-                'updated_count' => $updated,
+                'contact_updated' => $contactUpdated,
+                'laravel_updated' => $laravelUpdated,
             ]);
             
-            return response()->json(['success' => true, 'updated' => $updated]);
+            return response()->json(['success' => true, 'updated' => $contactUpdated + $laravelUpdated]);
         } catch (\Exception $e) {
             Log::error('Error marking admin notifications as read: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to mark all as read'], 500);
@@ -153,18 +187,23 @@ class NotificationController extends Controller
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
 
-            $updated = ContactNotification::where('user_id', $user->id)
+            // Mark contact notifications as read
+            $contactUpdated = ContactNotification::where('user_id', $user->id)
                 ->whereNull('read_at')
                 ->update(['read_at' => now()]);
+            
+            // Mark Laravel notifications as read
+            $laravelUpdated = $user->unreadNotifications()->update(['read_at' => now()]);
             
             Log::info('User notifications marked as read', [
                 'user_id' => $user->id,
                 'user_name' => $user->name,
                 'user_role' => $user->role,
-                'updated_count' => $updated,
+                'contact_updated' => $contactUpdated,
+                'laravel_updated' => $laravelUpdated,
             ]);
             
-            return response()->json(['success' => true, 'updated' => $updated]);
+            return response()->json(['success' => true, 'updated' => $contactUpdated + $laravelUpdated]);
         } catch (\Exception $e) {
             Log::error('Error marking user notifications as read: ' . $e->getMessage());
             return response()->json(['error' => 'Failed to mark all as read'], 500);
