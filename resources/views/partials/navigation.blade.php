@@ -102,7 +102,7 @@
                 {{ __('navigation.100 climate leaders') }}
             </a>
 
-            <a href="#"
+            <a href="/speakers"
                 class="text-gray-300 hover:text-white font-medium transition-all duration-300 pb-2 relative nav-link-underline hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:h-0.5 {{ request()->is('speakers') ? 'nav-link-active text-white' : '' }}">
                 {{ __('navigation.speakers') }}
             </a>
@@ -144,7 +144,7 @@
                 {{ __('navigation.100 climate leaders') }}
             </a>
 
-            <a href="#"
+            <a href="/speakers"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.speakers') }}
             </a>
