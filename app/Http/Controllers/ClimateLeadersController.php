@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\ClimateLeaders;
 use App\Mail\ClimateLeaderSubmissionMail;
+use App\Notifications\ClimateLeaderTeamNotification;
+use App\Models\User;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -119,6 +121,28 @@ class ClimateLeadersController extends Controller
                 Log::info('Confirmation email queued for user', ['climate_leader_id' => $climateLeader->id]);
             } catch (\Exception $e) {
                 Log::error('Failed to queue confirmation email to user: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+            }
+
+            // Send notifications to all admin users
+            try {
+                $admins = User::where('role', 'admin')->get();
+                foreach ($admins as $admin) {
+                    $admin->notify(new ClimateLeaderTeamNotification($climateLeader));
+                }
+                Log::info('Admin notifications sent for climate leader submission', ['climate_leader_id' => $climateLeader->id]);
+            } catch (\Exception $e) {
+                Log::error('Failed to send admin notifications: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
+            }
+
+            // Send notifications to all regular users
+            try {
+                $users = User::where('role', '!=', 'admin')->get();
+                foreach ($users as $user) {
+                    $user->notify(new ClimateLeaderTeamNotification($climateLeader));
+                }
+                Log::info('User notifications sent for climate leader submission', ['climate_leader_id' => $climateLeader->id]);
+            } catch (\Exception $e) {
+                Log::error('Failed to send user notifications: ' . $e->getMessage(), ['climate_leader_id' => $climateLeader->id]);
             }
 
             // Return JSON for AJAX requests, redirect for form submissions
