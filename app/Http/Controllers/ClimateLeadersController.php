@@ -340,14 +340,17 @@ class ClimateLeadersController extends Controller
     /**
      * Destroy a climate leader (RESTful)
      */
-    public function destroy($climate_leader)
+    public function destroy(string $climate_leader)
     {
+        Log::info('Delete method called', ['climate_leader_id' => $climate_leader]);
+        
         try {
             $user = Auth::user();
             
             // Check if user is authenticated
             if (!$user) {
-                return response()->json(['error' => 'You must be logged in to delete climate leaders.'], 401);
+                Log::error('Delete attempt - User not authenticated');
+                return redirect()->back()->with('error', 'You must be logged in to delete climate leaders.');
             }
             
             // Check if user has admin role
@@ -357,10 +360,12 @@ class ClimateLeadersController extends Controller
             }
 
             $climateLeader = ClimateLeaders::findOrFail($climate_leader);
+            Log::info('Found climate leader to delete', ['id' => $climateLeader->id, 'name' => $climateLeader->fullname]);
+            
             $climateLeader->delete();
-            Log::info('Climate Leader deleted', ['climate_leader_id' => $climate_leader, 'deleted_by' => $user->id]);
+            Log::info('Climate Leader deleted successfully', ['climate_leader_id' => $climate_leader, 'deleted_by' => $user->id]);
 
-            return redirect(route('climate-leaders.index'))->with('success', 'Climate Leader deleted successfully!');
+            return redirect()->route('climate-leaders.index')->with('success', 'Climate Leader deleted successfully!');
         } catch (\Exception $e) {
             Log::error('Error deleting climate leader: ' . $e->getMessage());
             return redirect()->back()->with('error', 'Unable to delete climate leader: ' . $e->getMessage());

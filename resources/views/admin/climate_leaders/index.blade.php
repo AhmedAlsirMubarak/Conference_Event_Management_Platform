@@ -384,7 +384,7 @@
             let successCount = 0;
 
             leaderIds.forEach(id => {
-                fetch(`/climate-leaders/${id}`, {
+                fetch(`/admin/climate-leaders/${id}`, {
                     method: 'DELETE',
                     headers: {
                         'X-CSRF-TOKEN': token,
