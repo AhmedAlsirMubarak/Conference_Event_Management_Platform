@@ -340,7 +340,7 @@ class ClimateLeadersController extends Controller
     /**
      * Destroy a climate leader (RESTful)
      */
-    public function destroy($id)
+    public function destroy($climate_leader)
     {
         try {
             $user = Auth::user();
@@ -356,9 +356,9 @@ class ClimateLeadersController extends Controller
                 return redirect()->back()->with('error', 'You do not have permission to delete climate leaders.');
             }
 
-            $climateLeader = ClimateLeaders::findOrFail($id);
+            $climateLeader = ClimateLeaders::findOrFail($climate_leader);
             $climateLeader->delete();
-            Log::info('Climate Leader deleted', ['climate_leader_id' => $id, 'deleted_by' => $user->id]);
+            Log::info('Climate Leader deleted', ['climate_leader_id' => $climate_leader, 'deleted_by' => $user->id]);
 
             return redirect(route('climate-leaders.index'))->with('success', 'Climate Leader deleted successfully!');
         } catch (\Exception $e) {
