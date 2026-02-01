@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}" class="scroll-smooth">
 
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ __('speakers.page_title') }}</title>
+    <title>{{ __(key: 'speakers.hero_title') }}</title>
     <meta name="description" content="{{ __('speakers.meta_description') }}">
     <meta name="keywords" content="speakers, speakers enquiry, sustainability, recognition program, keynote sessions">
     <meta name="author" content="Saudi Climate Week">
@@ -18,6 +18,15 @@
 
     <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #speaker-enquiry-form {
+            scroll-margin-top: 120px;
+        }
+    </style>
 </head>
 
 <body class="overflow-x-hidden" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
@@ -106,7 +115,7 @@
                 </p>
 
                 <div class="mt-6">
-                    <a href="#spekerssubmissions"
+                    <a href="#speaker-enquiry-form"
                         class="inline-flex items-center justify-center rounded-lg bg-[#E68238] px-6 py-3 text-sm font-bold uppercase tracking-wide text-white shadow-lg transition hover:bg-orange-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-400 focus-visible:ring-offset-2">
                         {{ __('speakers.hero_cta') }}
                     </a>
@@ -137,7 +146,7 @@
                     </p>
 
                     <div class="mt-6">
-                        <a href="#spekerssubmissions"
+                        <a href="#speaker-enquiry-form"
                             class="inline-flex items-center justify-center rounded-[9px] bg-[#E68238] px-6 py-3 text-[14px] font-bold uppercase tracking-wide text-white shadow-sm transition hover:bg-orange-600 focus:outline-none focus-visible:ring-2
                              focus-visible:ring-orange-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-950">
                             {{ __('speakers.hero_cta') }}
@@ -286,12 +295,14 @@
         </div>
     </section>
 
+    {{-- Form Sections Anchor Point --}}
+    <div id="speaker-enquiry-form"></div>
 
     {{-- MOBILE: Submit Your Nomination (MATCHES FOOTER COLOR) --}}
     <section class="lg:hidden bg-slate-950 text-white py-12 px-4">
         <div class="max-w-md mx-auto">
             {{-- Form --}}
-            <div id="spekerssubmissions" class="text-center">
+            <div class="text-center">
                 <p class="text-[11px] font-semibold tracking-wide text-orange-400">
                     {{ __('speakers.form_label') }}
                 </p>
@@ -454,7 +465,7 @@
 
     {{-- DESKTOP: Submit Your Nomination (MATCHES FOOTER COLOR) (lg and above) --}}
 
-    <section id="spekerssubmissions" class="hidden lg:block bg-slate-950 text-white">
+    <section class="hidden lg:block bg-slate-950 text-white">
         <div class="mx-auto max-w-6xl px-6 py-12 lg:py-16">
             <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
                 {{-- Left: Form --}}
