@@ -20,7 +20,7 @@ find storage/app/public -type f -exec chmod 644 {} \;
 
 # Create storage link for uploads
 echo "📁 Creating storage symlink..."
-rm -f public/storage
+rm -rf public/storage
 php artisan storage:link
 
 
