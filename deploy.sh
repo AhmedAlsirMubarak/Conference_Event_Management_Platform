@@ -23,11 +23,7 @@ echo "📁 Creating storage symlink..."
 rm -f public/storage
 php artisan storage:link
 
-# Set web server ownership
-echo "👤 Setting web server ownership..."
-sudo chown -R www-data:www-data storage
-sudo chown -R www-data:www-data bootstrap/cache
-sudo chown -R www-data:www-data public/storage
+
 
 # Clear all caches
 echo "🧹 Clearing caches..."
@@ -46,7 +42,6 @@ php artisan view:cache
 echo "🎯 Optimizing application..."
 php artisan optimize
 
-echo "✅ Deployment complete!"
 echo ""
 echo "Next steps:"
 echo "1. Verify routes: php artisan route:list | grep strategic_committees"
