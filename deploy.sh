@@ -5,9 +5,7 @@
 
 echo "🚀 Starting deployment..."
 
-# Install/update dependencies
-echo "📦 Installing dependencies..."
-composer install --no-dev --optimize-autoloader
+
 
 # Run database migrations
 echo "🗄️  Running migrations..."
