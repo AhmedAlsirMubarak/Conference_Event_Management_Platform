@@ -29,11 +29,6 @@ echo "📁 Creating storage symlink..."
 rm -rf public/storage
 php artisan storage:link
 
-# Copy public files directly (workaround for ACL symlink restrictions)
-echo "📋 Copying public files..."
-cp -r storage/app/public/* public/storage/ 2>/dev/null || true
-chmod -R 755 public/storage 2>/dev/null || true
-
 
 
 # Clear all caches
