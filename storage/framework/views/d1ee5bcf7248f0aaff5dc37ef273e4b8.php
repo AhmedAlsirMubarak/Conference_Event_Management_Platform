@@ -165,16 +165,17 @@
                 <?php echo e(__('navigation.speakers')); ?>
 
             </a>
+            <a href="/exhibit"
+                class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
+                <?php echo e(__('navigation.exhibitors')); ?>
+
+            </a>
             <a href="#"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 <?php echo e(__('navigation.sponsors')); ?>
 
             </a>
-            <a href="#"
-                class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
-                <?php echo e(__('navigation.exhibitors')); ?>
 
-            </a>
 
             <a href="#"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
