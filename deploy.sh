@@ -17,17 +17,20 @@ composer install --no-dev --optimize-autoloader
 echo "🗄️  Running migrations..."
 php artisan migrate --force 2>/dev/null || true
 
-# Fix storage permissions (CRITICAL for images)
+# Fix storage permissions (for user uploads only)
 echo "🔐 Setting storage permissions..."
-chmod -R 775 storage
-chmod -R 775 bootstrap/cache
-chmod -R 755 storage/app/public
-find storage/app/public -type f -exec chmod 644 {} \;
+chmod -R 775 storage 2>/dev/null || true
+chmod -R 775 bootstrap/cache 2>/dev/null || true
 
-# Create storage link for uploads
-echo "📁 Creating storage symlink..."
-rm -rf public/storage
-php artisan storage:link
+# Create storage link for user-uploaded files (speaker logos, etc.)
+echo "📁 Creating storage symlink for uploads..."
+rm -rf public/storage 2>/dev/null || true
+php artisan storage:link 2>/dev/null || true
+
+# Set permissions for public/images (static assets)
+echo "📷 Setting permissions for static images..."
+chmod -R 755 public/images 2>/dev/null || true
+find public/images -type f -exec chmod 644 {} \; 2>/dev/null || true
 
 
 
