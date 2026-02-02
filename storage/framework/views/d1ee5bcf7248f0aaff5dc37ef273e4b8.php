@@ -23,7 +23,7 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="/home" class="text-2xl font-bold text-white hover:text-blue-400 transition-colors">
-                        <img src="/storage/nav-img/scw-logo.webp" alt="SCW Logo" class="w-[97.99px] h-[69px]">
+                        <img src="/images/nav-img/scw-logo.webp" alt="SCW Logo" class="w-[97.99px] h-[69px]">
                     </a>
                 </div>
 
@@ -35,12 +35,12 @@
                     </span>
                     <div class="flex items-center gap-3">
                         <a href="https://birba.om/" target="_blank">
-                            <img src="/storage/nav-img/birba-logo-white.webp" alt="Organizer 1" class="h-10 rounded">
+                            <img src="/images/nav-img/birba-logo-white.webp" alt="Organizer 1" class="h-10 rounded">
                         </a>
 
                         <div class="w-px h-6 bg-gray-700"></div>
                         <a href="https://ecocode.sa/" target="_blank">
-                            <img src="/storage/nav-img/ecocode-logo.webp" alt="Organizer 2" class="h-10 rounded">
+                            <img src="/images/nav-img/ecocode-logo.webp" alt="Organizer 2" class="h-10 rounded">
                         </a>
                     </div>
                 </div>
