@@ -8,7 +8,7 @@
     <meta name="description"
         content="Saudi Climate Week 2026 - Driving Regional Climate Action & Clean Energy Innovation in Riyadh, May 24-27, 2026">
     <meta name="keywords" content="Saudi Climate Week, SCW 2026, Climate Action, Clean Energy, Sustainability">
-    <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
+    <link rel="icon" type="image/webp" href="/images/nav-img/scw-logo.webp">
     @vite('resources/css/app.css')
     <title>Saudi Climate Week 2026 - Climate Action & Clean Energy</title>
 </head>
@@ -48,7 +48,7 @@
                 <!-- Left Content -->
                 <div class="flex flex-col gap-6 sm:gap-8">
                     <div>
-                        <img src="/storage/mix/back-icon.webp" alt="Section Icon"
+                        <img src="/images/mix/back-icon.webp" alt="Section Icon"
                             class="h-8 sm:h-10 w-auto mb-4 sm:mb-6">
                     </div>
                     <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">

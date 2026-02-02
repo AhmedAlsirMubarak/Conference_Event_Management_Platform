@@ -16,7 +16,7 @@
     <meta name="theme-color" content="#E68238">
     <meta name="apple-mobile-web-app-title" content="{{ __('speakers.page_title') }}">
 
-    <link rel="icon" type="image/webp" href="/storage/nav-img/scw-logo.webp">
+    <link rel="icon" type="image/webp" href="/images/nav-img/scw-logo.webp">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
         html {
@@ -205,19 +205,19 @@
             <!-- List -->
             <ul class="mt-6 space-y-4 text-center">
                 <li class="flex items-center justify-center gap-4">
-                    <img src="/storage/mix/keynote.svg" class="w-8 h-8" alt="">
+                    <img src="/images/mix/keynote.svg" class="w-8 h-8" alt="">
                     <p class="text-lg font-semibold text-slate-900">{{ __('speakers.keynote_sessions') }}</p>
                 </li>
                 <li class="flex items-center justify-center gap-4">
-                    <img src="/storage/mix/discussion-group.svg" class="w-8 h-8" alt="">
+                    <img src="/images/mix/discussion-group.svg" class="w-8 h-8" alt="">
                     <p class="text-lg font-semibold text-slate-900">{{ __('speakers.panels') }}</p>
                 </li>
                 <li class="flex items-center justify-center gap-4">
-                    <img src="/storage/mix/workshop.svg" class="w-8 h-8" alt="">
+                    <img src="/images/mix/workshop.svg" class="w-8 h-8" alt="">
                     <p class="text-lg font-semibold text-slate-900">{{ __('speakers.workshops') }}</p>
                 </li>
                 <li class="flex items-center justify-center gap-4">
-                    <img src="/storage/mix/sessions.svg" class="w-8 h-8" alt="">
+                    <img src="/images/mix/sessions.svg" class="w-8 h-8" alt="">
                     <p class="text-lg font-semibold text-slate-900">{{ __('speakers.technical_sessions') }}</p>
                 </li>
             </ul>
@@ -271,20 +271,20 @@
 
                     <ul class="mt-6 space-y-5">
                         <li class="flex items-start gap-4">
-                            <img src="/storage/mix/keynote.svg" class="w-10 h-10" alt="">
+                            <img src="/images/mix/keynote.svg" class="w-10 h-10" alt="">
                             <p class="text-[27px] font-semibold text-slate-900">{{ __('speakers.keynote_sessions') }}
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
-                            <img src="/storage/mix/discussion-group.svg" class="w-10 h-10" alt="">
+                            <img src="/images/mix/discussion-group.svg" class="w-10 h-10" alt="">
                             <p class="text-[27px] font-semibold text-slate-900">{{ __('speakers.panels') }}</p>
                         </li>
                         <li class="flex items-start gap-4">
-                            <img src="/storage/mix/workshop.svg" class="w-10 h-10" alt="">
+                            <img src="/images/mix/workshop.svg" class="w-10 h-10" alt="">
                             <p class="text-[27px] font-semibold text-slate-900">{{ __('speakers.workshops') }}</p>
                         </li>
                         <li class="flex items-start gap-4">
-                            <img src="/storage/mix/sessions.svg" class="w-10 h-10" alt="">
+                            <img src="/images/mix/sessions.svg" class="w-10 h-10" alt="">
                             <p class="text-[27px] font-semibold leading-9 text-slate-900">
                                 {{ __('speakers.technical_sessions') }}
                             </p>
