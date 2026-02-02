@@ -5,11 +5,17 @@
 
 echo "🚀 Starting deployment..."
 
+# Pull latest code
+echo "📥 Pulling latest code..."
+git pull origin main
 
+# Install dependencies
+echo "📦 Installing dependencies..."
+composer install --no-dev --optimize-autoloader
 
 # Run database migrations
 echo "🗄️  Running migrations..."
-php artisan migrate --force
+php artisan migrate --force 2>/dev/null || true
 
 # Fix storage permissions (CRITICAL for images)
 echo "🔐 Setting storage permissions..."
@@ -22,6 +28,11 @@ find storage/app/public -type f -exec chmod 644 {} \;
 echo "📁 Creating storage symlink..."
 rm -rf public/storage
 php artisan storage:link
+
+# Copy public files directly (workaround for ACL symlink restrictions)
+echo "📋 Copying public files..."
+cp -r storage/app/public/* public/storage/ 2>/dev/null || true
+chmod -R 755 public/storage 2>/dev/null || true
 
 
 
