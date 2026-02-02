@@ -222,7 +222,7 @@
                     <div class="rounded-2xl border border-slate-200 bg-white p-4">
                         <div class="flex flex-col items-center text-center gap-3">
                             <div class="flex shrink-0 items-center justify-center">
-                                <img src="/storage/mix/Government.svg" class="h-[50px] w-[50px]"
+                                <img src="/storage/mix/government.svg" class="h-[50px] w-[50px]"
                                     alt="government Icon" />
                             </div>
                             <div>
@@ -245,7 +245,7 @@
                     <div class="rounded-2xl border border-slate-200 bg-white p-4">
                         <div class="flex flex-col items-center text-center gap-3">
                             <div class="flex shrink-0 items-center justify-center">
-                                <img src="/storage/mix/Business.svg" class="h-[50px] w-[50px]" alt="Business Icon" />
+                                <img src="/storage/mix/business.svg" class="h-[50px] w-[50px]" alt="Business Icon" />
                             </div>
                             <div>
                                 <h4 class="text-[18px] font-bold text-slate-900">
@@ -279,7 +279,7 @@
                     <div class="rounded-2xl border border-slate-200 bg-white p-4">
                         <div class="flex flex-col items-center text-center gap-3">
                             <div class="flex shrink-0 items-center justify-center">
-                                <img src="/storage/mix/Cross.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
+                                <img src="/storage/mix/cross.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
                             </div>
                             <div>
                                 <h4 class="text-[18px] font-bold text-slate-900">
@@ -396,7 +396,7 @@
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
                             <div class="flex items-start gap-4">
                                 <div class="flex shrink-0 items-center justify-center">
-                                    <img src="/storage/mix/Business.svg" class="h-[50px] w-[50px]"
+                                    <img src="/storage/mix/business.svg" class="h-[50px] w-[50px]"
                                         alt="Business Icon" />
                                 </div>
                                 <div>
@@ -414,7 +414,7 @@
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
                             <div class="flex items-start gap-4">
                                 <div class="flex shrink-0 items-center justify-center">
-                                    <img src="/storage/mix/Brand.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
+                                    <img src="/storage/mix/brand.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
                                 </div>
                                 <div>
                                     <h4 class="text-[20px] font-bold leading-5 text-slate-900">
@@ -431,7 +431,7 @@
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
                             <div class="flex items-start gap-4">
                                 <div class="flex shrink-0 items-center justify-center">
-                                    <img src="/storage/mix/Cross.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
+                                    <img src="/storage/mix/cross.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
 
                                 </div>
                                 <div>
