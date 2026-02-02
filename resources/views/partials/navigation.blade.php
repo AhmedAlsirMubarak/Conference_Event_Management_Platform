@@ -106,14 +106,17 @@
                 class="text-gray-300 hover:text-white font-medium transition-all duration-300 pb-2 relative nav-link-underline hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:h-0.5 {{ request()->is('speakers') ? 'nav-link-active text-white' : '' }}">
                 {{ __('navigation.speakers') }}
             </a>
+
+            <a href="exhibit"
+                class="text-gray-300 hover:text-white font-medium transition-all duration-300 pb-2 relative nav-link-underline hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:h-0.5 {{ request()->is('exhibitors') ? 'nav-link-active text-white' : '' }}">
+                {{ __('navigation.exhibitors') }}
+            </a>
+
             <a href="#"
                 class="text-gray-300 hover:text-white font-medium transition-all duration-300 pb-2 relative nav-link-underline hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:h-0.5 {{ request()->is('sponsors') ? 'nav-link-active text-white' : '' }}">
                 {{ __('navigation.sponsors') }}
             </a>
-            <a href="#"
-                class="text-gray-300 hover:text-white font-medium transition-all duration-300 pb-2 relative nav-link-underline hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:h-0.5 {{ request()->is('exhibitors') ? 'nav-link-active text-white' : '' }}">
-                {{ __('navigation.exhibitors') }}
-            </a>
+
 
 
             <a href="#"

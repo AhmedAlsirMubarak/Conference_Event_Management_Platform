@@ -80,6 +80,52 @@
                 </div>
             </div>
         </div>
+
+        <!-- Speaker Submissions Card -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Speaker Submissions</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalSpeakersSubmissions ?? 0 }}</p>
+                    <a href="{{ route('speaker-submissions.index') }}"
+                        class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-purple-500 hover:bg-purple-600 text-white rounded text-xs font-medium transition-colors">
+                        View All
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-purple-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exhibit Submissions Card -->
+        <div class="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+            <div class="flex items-start justify-between">
+                <div>
+                    <p class="text-sm font-medium text-gray-500 uppercase tracking-wide">Exhibit Submissions</p>
+                    <p class="text-3xl font-bold text-gray-900 mt-2">{{ $totalExhibitSubmissions ?? 0 }}</p>
+                    <a href="{{ route('exhibit-submissions.index') }}"
+                        class="inline-flex items-center gap-2 mt-3 px-3 py-1.5 bg-orange-500 hover:bg-orange-600 text-white rounded text-xs font-medium transition-colors">
+                        View All
+                        <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+                <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-orange-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- Speakers and Committees Stats -->

@@ -1,0 +1,51 @@
+<?php
+return [
+    'hero_title' => 'Exhibit',
+    'meta_description' => 'Join us as an exhibitor and showcase your innovations at the 100 Climate Leaders event.',
+    'hero_label' => 'Exhibit at Saudi Climate Week',
+    'hero_description' => 'Showcase your solutions, connect with decision-makers, and be part of the Kingdom’s 
+    climate transformation.',
+    'hero_cta' => 'Register to Exhibit',
+    'about_title' => 'About the Exhibition',
+    'about_description' => 'The Saudi Climate Week exhibition brings together solution providers, innovators, and
+    organisations showcasing technologies, services, and initiatives that support climate-focused development 
+    and innovation.',
+    'about_paragraph_2' => 'The exhibition is designed to foster collaboration, partnership building, and business
+                            development across the Kingdom and the wider region.',
+    'about_why' => 'Why?',
+    'Targeted_Audience' => 'Targeted<br>Audience',
+    'Government_Engagement' => 'Government Engagement',
+    'targeted_audience_desc' => 'Showcase solutions to a high-level, decision-focused audience.',
+    ' Government_Engagement_desc' => 'Engage directly with government entities and project owners.',
+    'business_development' => 'Business<br>Development',
+    'business_development_desc' => 'Generate qualified leads and strategic partnerships.',
+    'brand_building' => 'Brand<br>Visibility',
+    'brand_building_desc' => 'Increase visibility before, during, and after the event.',
+    'cross_sector_connections' => 'Cross-Sector<br>Connections',
+    'cross_sector_connections_desc' => 'Connect with stakeholders across multiple sectors.',
+    'form_label' => 'Exhibitor Registration Form',
+    'form_cta' => 'Submit Registration',
+    'form_title' => 'Exhibitor Enquiry',
+    'form_description' => 'Register your interest to exhibit at Saudi Climate Week, and our 
+    team willcontact you with suitable exhibition opportunities.',
+    'fix_errors' => 'Please fix the errors below',
+    'thank_you' => 'Thank you for your submission. We will get back to you shortly.',
+    'contact_person_label' => 'Contact Person',
+    'contact_person_placeholder' => 'Enter full name',
+    'job_title_label' => 'Job Title',
+    'job_title_placeholder' => 'Enter your job title',
+    'organization_label' => 'Organization Name',
+    'organization_placeholder' => 'Enter organization name',
+    'email_label' => 'Email Address',
+    'email_placeholder' => 'email@domain.com',
+    'phone_label' => 'Phone Number',
+    'phone_placeholder' => '+968 0000 0000',
+    'country_label' => 'Country',
+    'country_placeholder' => 'Select your country',
+    'website_label' => 'Website URL',
+    'website_placeholder' => 'https://www.yourwebsite.com',
+    'additional_comments_label' => 'Additional Comments',
+    'additional_comments_placeholder' => 'Enter any additional information or questions here',
+    'submit_button' => 'Submit Exhibition Request',
+    
+];

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\contacts;
 use App\Models\Sponsor;
+use App\Models\SpeakersSubmissions;
+use App\Models\ExhibitSubmission;
 use App\Models\StrategicSpeaker;
 use App\Models\TechnicalSpeaker;
 use App\Models\StrategicCommittee;
@@ -27,6 +29,8 @@ class DashboardController extends Controller
             ])->count();
             $todayContacts = contacts::whereDate('created_at', Carbon::today())->count();
             $totalSponsors = Sponsor::count();
+            $totalSpeakersSubmissions = SpeakersSubmissions::count();
+            $totalExhibitSubmissions = ExhibitSubmission::count();
             $totalStrategicSpeakers = StrategicSpeaker::count();
             $totalTechnicalSpeakers = TechnicalSpeaker::count();
             $totalStrategicCommittees = StrategicCommittee::count();
@@ -37,6 +41,8 @@ class DashboardController extends Controller
                 'thisWeekContacts',
                 'todayContacts',
                 'totalSponsors',
+                'totalSpeakersSubmissions',
+                'totalExhibitSubmissions',
                 'totalStrategicSpeakers',
                 'totalTechnicalSpeakers',
                 'totalStrategicCommittees',
@@ -48,6 +54,8 @@ class DashboardController extends Controller
                 'thisWeekContacts' => 0,
                 'todayContacts' => 0,
                 'totalSponsors' => 0,
+                'totalSpeakersSubmissions' => 0,
+                'totalExhibitSubmissions' => 0,
                 'totalStrategicSpeakers' => 0,
                 'totalTechnicalSpeakers' => 0,
                 'totalStrategicCommittees' => 0,

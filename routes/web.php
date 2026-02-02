@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\ExhibitorController;
+use App\Http\Controllers\ExhibitSubmissionsController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\StrategicCommitteeController;
@@ -52,6 +53,11 @@ Route::get('/speakers', function () {
     return view('speakers');
 })->name('speakers'); 
 
+// Exhibit Route
+Route::get('/exhibit', function () {
+    return view('exhibit');
+})->name('exhibit');
+
 // Public Climate Leaders Nomination Form
 Route::post('/climate-leaders', [ClimateLeadersController::class, 'store'])->name('climate-leaders.store');
 
@@ -76,6 +82,8 @@ Route::get('/login', [AuthController::class, 'getLoginPage'])
 // Form Submission Routes
 Route::post('/contacts', [ContactController::class, 'create'])->name('create');
 Route::post('/speakers-submissions', [SpeakersSubmissionsController::class, 'create'])->name('create.speakersubmission');
+Route::post('/exhibit-submissions', [ExhibitSubmissionsController::class, 'create'])->name('create.exhibitsubmission');
+Route::post('/exhibitor', [ExhibitorController::class, 'create'])->name('create.exhibitor');
 
 
 // Admin Routes
@@ -102,6 +110,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::get('/speaker-submissions/{id}', [SpeakersSubmissionsController::class, 'show'])->name('speaker-submissions.show');  
     Route::post('/speaker-submissions/{id}/notes', [SpeakersSubmissionsController::class, 'updateNotes'])->name('speaker-submissions.updateNotes');
     Route::delete('/speaker-submissions/{id}', [SpeakersSubmissionsController::class, 'destroy'])->name('speaker-submissions.destroy');    
+    
+    // Exhibit Submissions Routes
+    Route::get('/exhibit-submissions', [ExhibitSubmissionsController::class, 'getAllExhibitSubmissions'])->name('exhibit-submissions.index');
+    Route::get('/exhibit-submissions/search', [ExhibitSubmissionsController::class, 'search'])->name('exhibit-submissions.search');
+    Route::get('/exhibit-submissions/export/excel', [ExhibitSubmissionsController::class, 'exportExcel'])->name('exhibit-submissions.exportExcel');
+    Route::get('/exhibit-submissions/{id}', [ExhibitSubmissionsController::class, 'show'])->name('exhibit-submissions.show');  
+    Route::post('/exhibit-submissions/{id}/notes', [ExhibitSubmissionsController::class, 'updateNotes'])->name('exhibit-submissions.updateNotes');
+    Route::delete('/exhibit-submissions/{id}', [ExhibitSubmissionsController::class, 'destroy'])->name('exhibit-submissions.destroy');    
     
 
     
@@ -142,8 +158,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::delete('/api/notifications/{id}', [NotificationController::class, 'delete'])->name('admin.notifications.delete');
 });
 
-// User Routes
-Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], function () {
+    // User Routes
+    Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('/search', [UserController::class, 'globalSearch'])->name('search');
     
@@ -160,6 +176,13 @@ Route::group(['middleware' => 'auth', 'prefix' => 'user', 'as' => 'user.'], func
     Route::get('/speaker-submissions/export/excel', [SpeakersSubmissionsController::class, 'exportExcel'])->name('speaker-submissions.exportExcel');
     Route::get('/speaker-submissions/{id}', [SpeakersSubmissionsController::class, 'userShow'])->name('speaker-submissions.show');  
     Route::post('/speaker-submissions/{id}/notes', [SpeakersSubmissionsController::class, 'updateNotes'])->name('speaker-submissions.updateNotes');
+    
+    // Exhibit Submissions routes
+    Route::get('/exhibit-submissions', [ExhibitSubmissionsController::class, 'userIndex'])->name('exhibit-submissions.index');
+    Route::get('/exhibit-submissions/search', [ExhibitSubmissionsController::class, 'search'])->name('exhibit-submissions.search');
+    Route::get('/exhibit-submissions/export/excel', [ExhibitSubmissionsController::class, 'exportExcel'])->name('exhibit-submissions.exportExcel');
+    Route::get('/exhibit-submissions/{id}', [ExhibitSubmissionsController::class, 'userShow'])->name('exhibit-submissions.show');  
+    Route::post('/exhibit-submissions/{id}/notes', [ExhibitSubmissionsController::class, 'updateNotes'])->name('exhibit-submissions.updateNotes');
     
     // Sponsors routes - search BEFORE show to avoid {id} conflict
     Route::get('/sponsors', [UserController::class, 'indexSponsors'])->name('sponsors.index');

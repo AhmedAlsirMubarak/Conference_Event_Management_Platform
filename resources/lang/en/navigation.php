@@ -4,7 +4,7 @@ return [
     'home' => 'Home',
     'speakers' => 'Speakers',
     'sponsors' => 'Sponsors',
-    'exhibitors' => 'Exhibitors',
+    'exhibitors' => 'Exhibit',
     '100 climate leaders' => '100 Climate Leaders',
     'contact' => 'Contact',
     'register' => 'Register',
