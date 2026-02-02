@@ -13,9 +13,23 @@ composer install --no-dev --optimize-autoloader
 echo "🗄️  Running migrations..."
 php artisan migrate --force
 
+# Fix storage permissions (CRITICAL for images)
+echo "🔐 Setting storage permissions..."
+chmod -R 775 storage
+chmod -R 775 bootstrap/cache
+chmod -R 755 storage/app/public
+find storage/app/public -type f -exec chmod 644 {} \;
+
 # Create storage link for uploads
 echo "📁 Creating storage symlink..."
+rm -f public/storage
 php artisan storage:link
+
+# Set web server ownership
+echo "👤 Setting web server ownership..."
+sudo chown -R www-data:www-data storage
+sudo chown -R www-data:www-data bootstrap/cache
+sudo chown -R www-data:www-data public/storage
 
 # Clear all caches
 echo "🧹 Clearing caches..."
