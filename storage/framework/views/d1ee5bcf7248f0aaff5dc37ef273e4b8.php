@@ -77,7 +77,7 @@
                     </a>
 
                     <!-- Partner Button -->
-                    <a href="#"
+                    <a href="/sponsors"
                         class="px-2 py-1 sm:px-3 sm:py-2 bg-[#3C94C5] text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm">
                         <?php echo e(__('navigation.become_partner')); ?>
 
