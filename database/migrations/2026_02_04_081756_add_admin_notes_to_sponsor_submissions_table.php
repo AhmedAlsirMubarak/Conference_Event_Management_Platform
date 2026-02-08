@@ -12,7 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('sponsor_submissions', function (Blueprint $table) {
-            $table->text('admin_notes')->nullable()->after('additional_comments');
+            if (!Schema::hasColumn('sponsor_submissions', 'admin_notes')) {
+                $table->text('admin_notes')->nullable()->after('additional_comments');
+            }
         });
     }
 
@@ -22,7 +24,9 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('sponsor_submissions', function (Blueprint $table) {
-            $table->dropColumn('admin_notes');
+            if (Schema::hasColumn('sponsor_submissions', 'admin_notes')) {
+                $table->dropColumn('admin_notes');
+            }
         });
     }
 };
