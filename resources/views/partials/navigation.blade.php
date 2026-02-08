@@ -1,5 +1,6 @@
 <!-- Navigation Bar -->
-<nav class="sticky top-0 z-50 bg-gray-900 text-white shadow-lg" dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
+<nav class="sticky top-0 z-50 bg-[#121D24] text-white shadow-lg"
+    dir="{{ app()->getLocale() === 'ar' ? 'rtl' : 'ltr' }}">
     <style>
         .nav-link-underline::after {
             background: linear-gradient(to right, transparent 0%, #E6813E 53%, transparent 100%);
@@ -112,7 +113,7 @@
                 {{ __('navigation.exhibitors') }}
             </a>
 
-            <a href="#"
+            <a href="/sponsors"
                 class="text-gray-300 hover:text-white font-medium transition-all duration-300 pb-2 relative nav-link-underline hover:after:content-[''] hover:after:absolute hover:after:bottom-0 hover:after:left-0 hover:after:right-0 hover:after:h-0.5 {{ request()->is('sponsors') ? 'nav-link-active text-white' : '' }}">
                 {{ __('navigation.sponsors') }}
             </a>
@@ -155,7 +156,7 @@
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.exhibitors') }}
             </a>
-            <a href="#"
+            <a href="/sponsors"
                 class="block px-3 py-2 text-gray-300 hover:text-white hover:bg-gray-800 rounded transition-colors">
                 {{ __('navigation.sponsors') }}
             </a>

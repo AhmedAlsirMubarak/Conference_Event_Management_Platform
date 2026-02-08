@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Sponsor;
+use App\Models\SponsorSubmission;
 
 class SponsorController extends Controller
 {
@@ -123,5 +124,36 @@ class SponsorController extends Controller
             ->get();
 
         return view('admin.sponsors.index', compact('sponsors'));
+    }
+
+    /**
+     * Handle sponsorship inquiry form submission from public website
+     */
+    public function submitInquiry(Request $request)
+    {
+        $validated = $request->validate([
+            'contact_person' => 'required|string|max:255',
+            'job_title' => 'required|string|max:255',
+            'organization_name' => 'required|string|max:255',
+            'email_address' => 'required|email|max:255',
+            'phone_number' => 'required|string|max:20',
+            'country' => 'required|string|max:100',
+            'website' => 'required|url|max:255',
+            'additional_comments' => 'nullable|string|max:1000',
+        ]);
+
+        // Add language and status
+        $validated['language'] = app()->getLocale();
+        $validated['status'] = 'pending';
+
+        try {
+            SponsorSubmission::create($validated);
+            
+            // Redirect back with success message on the same language
+            return redirect()->back()->with('success', __('sponsor.thank_you'));
+        } catch (\Exception $e) {
+            \Log::error('Sponsor submission error: ' . $e->getMessage());
+            return redirect()->back()->with('error', 'An error occurred. Please try again.');
+        }
     }
 }

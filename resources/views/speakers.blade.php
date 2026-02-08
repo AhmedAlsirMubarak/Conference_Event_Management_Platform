@@ -95,7 +95,7 @@
     <section class="lg:hidden relative w-full overflow-hidden h-[400px]">
         {{-- Background image --}}
         <div class="absolute inset-0 bg-center bg-cover"
-            style="background-image: url('{{ asset('storage/mix/speakers-hero.webp') }}');" aria-hidden="true"></div>
+            style="background-image: url('{{ asset('images/mix/speakers-hero.webp') }}');" aria-hidden="true"></div>
 
         {{-- Overlay for better text readability --}}
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
@@ -128,7 +128,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[320px] md:h-[400px] lg:h-[500px]">
         {{-- Background image --}}
         <div class="absolute inset-0 bg-center bg-cover"
-            style="background-image: url('{{ asset('storage/mix/speakers-hero.webp') }}');" aria-hidden="true"></div>
+            style="background-image: url('{{ asset('images/mix/speakers-hero.webp') }}');" aria-hidden="true"></div>
 
         <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-2">
             <div class="flex min-h-[260px] items-center justify-center py-10 md:min-h-80 md:py-14">
@@ -299,7 +299,7 @@
     <div id="speaker-enquiry-form"></div>
 
     {{-- MOBILE: Submit Your Nomination (MATCHES FOOTER COLOR) --}}
-    <section class="lg:hidden bg-slate-950 text-white py-12 px-4">
+    <section class="lg:hidden bg-[#121D24] text-white py-12 px-4">
         <div class="max-w-md mx-auto">
             {{-- Form --}}
             <div class="text-center">
@@ -456,7 +456,7 @@
             {{-- Image --}}
             <div class="mt-8">
                 <div class="overflow-hidden rounded-2xl">
-                    <img src="{{ asset('storage/mix/hand-presentation.webp') }}" alt=""
+                    <img src="{{ asset('images/mix/hand-presentation.webp') }}" alt=""
                         class="w-full h-auto object-cover" />
                 </div>
             </div>
@@ -465,7 +465,7 @@
 
     {{-- DESKTOP: Submit Your Nomination (MATCHES FOOTER COLOR) (lg and above) --}}
 
-    <section class="hidden lg:block bg-slate-950 text-white">
+    <section class="hidden lg:block bg-[#121D24] text-white">
         <div class="mx-auto max-w-6xl px-6 py-12 lg:py-16">
             <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
                 {{-- Left: Form --}}
@@ -817,7 +817,7 @@
                 <div class="lg:pt-8">
                     <div class="relative mx-auto w-[457px] max-w-md lg:max-w-none">
                         <div class="overflow-hidden rounded-[28px]">
-                            <img src="{{ asset('storage/mix/hand-presentation.webp') }}" alt=""
+                            <img src="{{ asset('images/mix/hand-presentation.webp') }}" alt=""
                                 class="h-[671px] w-[457px] object-cover" />
 
                         </div>

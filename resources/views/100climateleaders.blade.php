@@ -130,7 +130,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[600px] pt-[110px]">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}"
+            <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}"
                 alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
@@ -184,7 +184,7 @@
     <section class="lg:hidden relative w-full overflow-hidden pt-10 pb-10">
         <!-- Background image -->
         <div class="absolute inset-0 bg-cover bg-center" aria-hidden="true">
-            <img src="{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}"
+            <img src="{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? '100-arhero.webp' : '100-hero.webp')) }}"
                 alt="100 Climate Leaders" class="w-full h-full object-cover">
         </div>
 
@@ -263,7 +263,7 @@
                 <div class="relative px-0">
                     <div class="flex h-12 w-12 items-center justify-center">
                         <!-- icon -->
-                        <img src="{{ asset('storage/mix/earth-1.svg') }}" alt="Saudi Climate Week"
+                        <img src="{{ asset('images/mix/earth-1.svg') }}" alt="Saudi Climate Week"
                             class="h-[70px] w-[70px]">
                     </div>
 
@@ -285,7 +285,7 @@
                 <div class="relative px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('storage/mix/chat.svg') }}" alt="Saudi Climate Week"
+                        <img src="{{ asset('images/mix/chat.svg') }}" alt="Saudi Climate Week"
                             class="h-[70px] w-[70px]">
                     </div>
 
@@ -307,7 +307,7 @@
                 <div class="px-0 pl-6">
                     <div class="flex h-12 w-12 items-center justify-center ">
                         <!-- icon -->
-                        <img src="{{ asset('storage/mix/earth.svg') }}" alt="Saudi Climate Week"
+                        <img src="{{ asset('images/mix/earth.svg') }}" alt="Saudi Climate Week"
                             class="h-[70px] w-[70px]">
 
                     </div>
@@ -358,7 +358,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/mix/earth-1.svg') }}" alt="Saudi Climate Week"
+                            <img src="{{ asset('images/mix/earth-1.svg') }}" alt="Saudi Climate Week"
                                 class="h-[70px] w-[70px]">
                         </div>
                     </div>
@@ -377,7 +377,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/mix/chat.svg') }}" alt="Saudi Climate Week"
+                            <img src="{{ asset('images/mix/chat.svg') }}" alt="Saudi Climate Week"
                                 class="h-[70px] w-[70px]">
                         </div>
                     </div>
@@ -396,7 +396,7 @@
                     <div class="flex justify-center mb-6">
                         <div class="flex h-12 w-12 items-center justify-center ">
                             <!-- icon -->
-                            <img src="{{ asset('storage/mix/earth.svg') }}" alt="Saudi Climate Week"
+                            <img src="{{ asset('images/mix/earth.svg') }}" alt="Saudi Climate Week"
                                 class="h-[70px] w-[70px]">
                         </div>
                     </div>
@@ -417,7 +417,7 @@
     <section class="hidden lg:block relative overflow-hidden bg-white">
         <!-- Bottom olive field -->
         <div class="absolute inset-x-0 bottom-0 h-[48%] " aria-hidden="true">
-            <img src="{{ asset('storage/mix/Imgbg.webp') }}" alt="Olive Field">
+            <img src="{{ asset('images/mix/Imgbg.webp') }}" alt="Olive Field">
         </div>
 
 
@@ -448,10 +448,10 @@
 
                         <article class="relative overflow-hidden rounded-2xl">
                             <div class="relative rounded-2xl p-10 h-[420px] w-[270px] bg-cover "
-                                style="background-image: url('{{ asset('storage/mix/leading-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/leading-bg.webp') }}')">
                                 <!-- Icon -->
                                 <div class="text-white/90">
-                                    <img src="{{ asset('storage/mix/earth-3.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/earth-3.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-8 text-[24px] font-bold leading-snug text-white w-[184px]">
@@ -475,12 +475,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-[180px] {{ app()->getLocale() === 'ar' ? 'mr-[-90px]' : 'ml-[-90px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('storage/mix/proven-impact-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/proven-impact-bg.webp') }}')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('storage/mix/green-energy.webp') }}" alt="">
+                                        <img src="{{ asset('images/mix/green-energy.webp') }}" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -499,12 +499,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-32 {{ app()->getLocale() === 'ar' ? 'mr-[-60px]' : 'ml-[-60px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('storage/mix/across-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/across-bg.webp') }}')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('storage/mix/earth-4.webp') }}" alt="">
+                                        <img src="{{ asset('images/mix/earth-4.webp') }}" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -523,12 +523,12 @@
                         <article
                             class="relative overflow-hidden rounded-2xl w-[270px] pt-[70px] {{ app()->getLocale() === 'ar' ? 'mr-[-30px]' : 'ml-[-30px]' }}">
                             <div class="relative rounded-2xl p-10 h-[420px]  bg-cover bg-center"
-                                style="background-image: url('{{ asset('storage/mix/commitment-bg.webp') }}')">
+                                style="background-image: url('{{ asset('images/mix/commitment-bg.webp') }}')">
 
                                 <div class="relative h-[270px]">
                                     <!-- Icon -->
                                     <div class="text-white/90">
-                                        <img src="{{ asset('storage/mix/recycle.webp') }}" alt="">
+                                        <img src="{{ asset('images/mix/recycle.webp') }}" alt="">
                                     </div>
 
                                     <h3 class="mt-8 text-xl font-bold leading-snug text-white">
@@ -584,10 +584,10 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h- md:h-[420px] w-full bg-cover"
-                            style="background-image: url('{{ asset('storage/mix/leading-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/leading-bg.webp') }}')">
                             <!-- Icon -->
                             <div class="text-white/90 h-12 w-12">
-                                <img src="{{ asset('storage/mix/earth-3.webp') }}" alt="">
+                                <img src="{{ asset('images/mix/earth-3.webp') }}" alt="">
                             </div>
 
                             <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -607,12 +607,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('storage/mix/proven-impact-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/proven-impact-bg.webp') }}')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('storage/mix/green-energy.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/green-energy.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -633,12 +633,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('storage/mix/across-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/across-bg.webp') }}')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('storage/mix/earth-4.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/earth-4.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -659,12 +659,12 @@
                 <div class="w-full max-w-xs">
                     <article class="relative overflow-hidden rounded-2xl">
                         <div class="relative rounded-2xl p-8 h-[320px] md:h-[420px] w-full bg-cover bg-center"
-                            style="background-image: url('{{ asset('storage/mix/commitment-bg.webp') }}')">
+                            style="background-image: url('{{ asset('images/mix/commitment-bg.webp') }}')">
 
                             <div class="relative">
                                 <!-- Icon -->
                                 <div class="text-white/90 h-12 w-12">
-                                    <img src="{{ asset('storage/mix/recycle.webp') }}" alt="">
+                                    <img src="{{ asset('images/mix/recycle.webp') }}" alt="">
                                 </div>
 
                                 <h3 class="mt-6 md:mt-8 text-lg md:text-xl font-bold leading-snug text-white">
@@ -709,7 +709,7 @@
                 <div class="text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/open-self.webp') }}" alt="Saudi Climate Week"
+                        <img src="{{ asset('images/mix/open-self.webp') }}" alt="Saudi Climate Week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -725,7 +725,7 @@
                 <!-- Step 2 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week"
+                        <img src="{{ asset('images/mix/Independent.webp') }}" alt="saudi climate week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -741,7 +741,7 @@
                 <!-- Step 3 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/multi.webp') }}" alt="saudi climate week"
+                        <img src="{{ asset('images/mix/multi.webp') }}" alt="saudi climate week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -757,7 +757,7 @@
                 <!-- Step 4 -->
                 <div class="text-center">
                     <div class="relative mx-auto h-20 w-20">
-                        <img src="{{ asset('storage/mix/final.webp') }}" alt="saudi climate week"
+                        <img src="{{ asset('images/mix/final.webp') }}" alt="saudi climate week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -778,18 +778,18 @@
                     <div class="grid grid-cols-4">
                         <!-- Arrow 1 -->
                         <div class="relative">
-                            <img src="{{ asset('storage/mix/Arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('images/mix/Arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 2 -->
                         <div class="relative">
 
-                            <img src="{{ asset('storage/mix/Arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('images/mix/Arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
                         <!-- Arrow 3 -->
                         <div class="relative">
-                            <img src="{{ asset('storage/mix/Arrow.webp') }}" alt="Arrow"
+                            <img src="{{ asset('images/mix/Arrow.webp') }}" alt="Arrow"
                                 class="absolute {{ app()->getLocale() === 'ar' ? 'left-[-34px] scale-x-[-1]' : 'right-[-34px]' }} h-9 w-[88px]">
                         </div>
 
@@ -823,7 +823,7 @@
                 <div class="w-full max-w-xs text-center">
                     <!-- icon circle -->
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/open-self.webp') }}" alt="Saudi Climate Week"
+                        <img src="{{ asset('images/mix/open-self.webp') }}" alt="Saudi Climate Week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -839,7 +839,7 @@
                 <!-- Step 2 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/Independent.webp') }}" alt="saudi climate week"
+                        <img src="{{ asset('images/mix/Independent.webp') }}" alt="saudi climate week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -855,7 +855,7 @@
                 <!-- Step 3 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/multi.webp') }}" alt="saudi climate week"
+                        <img src="{{ asset('images/mix/multi.webp') }}" alt="saudi climate week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -871,7 +871,7 @@
                 <!-- Step 4 -->
                 <div class="w-full max-w-xs text-center">
                     <div class="relative mx-auto h-16 md:h-20 w-16 md:w-20">
-                        <img src="{{ asset('storage/mix/final.webp') }}" alt="saudi climate week"
+                        <img src="{{ asset('images/mix/final.webp') }}" alt="saudi climate week"
                             class="max-w-full h-auto">
                     </div>
 
@@ -889,10 +889,10 @@
 
 
     {{-- MOBILE & TABLET: Submit Your Nomination --}}
-    <section id="nominationForm" class="lg:hidden relative overflow-hidden bg-gray-900 pt-[100px]">
+    <section id="nominationForm" class="lg:hidden relative overflow-hidden bg-[#121D24] pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-center"
-            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');"
+            style="background-image:url('{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');"
             aria-hidden="true"></div>
 
         {{-- Global overlay --}}
@@ -1633,10 +1633,10 @@
     </section>
 
     {{-- DESKTOP: Submit Your Nomination (MATCHES FOOTER COLOR) (lg and above) --}}
-    <section id="nominationForm" class="hidden lg:block relative overflow-hidden bg-gray-900 pt-[100px]">
+    <section id="nominationForm" class="hidden lg:block relative overflow-hidden bg-[#121D24] pt-[100px]">
         {{-- Right background image --}}
         <div class="absolute inset-0 bg-cover bg-right"
-            style="background-image:url('{{ asset('storage/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');"
+            style="background-image:url('{{ asset('images/mix/' . (app()->getLocale() === 'ar' ? 'form-arBG.webp' : 'submit-nomination.webp')) }}');"
             aria-hidden="true"></div>
 
         {{-- Global overlay --}}
@@ -2452,7 +2452,7 @@
                             const errorMessages = errors[field];
                             errorMessages.forEach(error => {
                                 const li = document.createElement('li');
-                                li.textContent = '• ' + error;
+                                li.textContent = 'ï¿½ ' + error;
                                 errorList.appendChild(li);
                             });
                         });
@@ -2489,7 +2489,7 @@
                                             const errors = data.errors[field];
                                             errors.forEach(error => {
                                                 const li = document.createElement('li');
-                                                li.textContent = '• ' + error;
+                                                li.textContent = 'ï¿½ ' + error;
                                                 errorList.appendChild(li);
                                             });
                                         });
@@ -2507,7 +2507,7 @@
                         .catch(err => {
                             console.error('Error:', err);
                             const errorList = document.getElementById(config.errorList);
-                            errorList.innerHTML = '<li>• An error occurred while submitting the form. Please try again.</li>';
+                            errorList.innerHTML = '<li>ï¿½ An error occurred while submitting the form. Please try again.</li>';
                             document.getElementById(config.errorMsg).classList.remove('hidden');
                         });
                 });

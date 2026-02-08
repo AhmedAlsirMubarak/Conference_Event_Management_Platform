@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'page_title' => 'رعاية أسبوع المناخ السعودي',
+    'hero_title' => 'كن راعيًا',
+    'meta_description' => 'استكشف فرص الرعاية في أسبوع 
+    المناخ السعودي. شاركنا لتعزيز الاستدامة واكتساب الاعتراف العالمي من خلال الجلسات الرئيسية وبرنامج الاعتراف الخاص بنا.',
+    'hero_label' => 'فرص الشراكة',
+    'hero_subtitle' => 'راعي',
+    'hero_description' => 'وَفِّق مؤسستك مع الأولويات المناخية الوطنية والقيادة الإقليمية في الاستدامة والطاقة النظيفة.',
+    'hero_cta' => 'استفسر عن الرعاية',
+    'why_sponsor_title' => 'لماذا ترعى<br>أسبوع المناخ السعودي',
+    'why_sponsor_points' => 'يوفر أسبوع المناخ السعودي منصة رفيعة المستوى للمنظمات لتتوافق مع
+                                الأولويات المناخية الوطنية وتتفاعل مباشرة مع صانعي القرار وقادة الصناعة والمبتكرين من جميع أنحاء المملكة والمنطقة.',
+    'Thought_Leadership' => 'الريادة الفكرية',
+    'Showcase_expertise' => 'عرض الخبرة والريادة في المناخ والطاقة.',
+    'Strategic_Positioning' => 'التموضع الاستراتيجي',
+    'High-level_access' => 'تموضع رفيع المستوى إلى جانب قادة الحكومة والصناعة.',
+    'Cross-Sector_Engagement' => 'التفاعل عبر القطاعات',
+    'Engage_diverse_stakeholders' => 'التفاعل عبر قطاعات الطاقة والمالية والتكنولوجيا والقطاعات العامة.',
+    'Decision-Maker Access' => 'الوصول إلى صانعي القرار',
+    'Direct_engagement' => 'التفاعل المباشر مع صانعي السياسات والمنظمين والتنفيذيين.',
+    'Integrated_Visibility' => 'رؤية متكاملة',
+    'Visibility_across' => 'رؤية عبر القنوات الرقمية والميدانية والإعلامية.',
+
+    // Form translations
+    'form_label' => 'استفسار الرعاية',
+    'form_title' => 'قدم استفسار رعايتك',
+    'form_description' => 'هل تهتم برعاية أسبوع المناخ السعودي؟ خبرنا المزيد عن مؤسستك وأهدافك في الرعاية.',
+    'fix_errors' => 'يرجى تصحيح الأخطاء التالية:',
+    'thank_you' => 'شكرا! تم استلام استفسار الرعاية الخاص بك. سنتواصل معك قريبا.',
+    'contact_person_label' => 'الاسم',
+    'contact_person_placeholder' => 'أدخل اسمك',
+    'job_title_label' => 'المسمى الوظيفي',
+    'job_title_placeholder' => 'مثال: مدير التسويق',
+    'organization_label' => 'اسم المؤسسة',
+    'organization_placeholder' => 'شركتك أو مؤسستك',
+    'email_label' => 'عنوان البريد الإلكتروني',
+    'email_placeholder' => 'your.email@example.com',
+    'phone_label' => 'رقم الهاتف',
+    'phone_placeholder' => '+966 50 123 4567',
+    'country_label' => 'الدولة',
+    'country_placeholder' => 'اختر دولتك',
+    'website_label' => 'رابط الموقع',
+    'website_placeholder' => 'https://www.example.com',
+    'additional_comments_label' => 'تعليقات إضافية',
+    'additional_comments_placeholder' => 'خبرنا عن اهتماماتك في الرعاية...',
+    'submit_button' => 'إرسال الاستفسار',
+
+];

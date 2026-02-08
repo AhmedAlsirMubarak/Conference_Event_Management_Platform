@@ -7,6 +7,7 @@ use App\Models\contacts;
 use App\Models\Sponsor;
 use App\Models\SpeakersSubmissions;
 use App\Models\ExhibitSubmission;
+use App\Models\SponsorSubmission;
 use App\Models\StrategicSpeaker;
 use App\Models\TechnicalSpeaker;
 use App\Models\StrategicCommittee;
@@ -31,6 +32,7 @@ class DashboardController extends Controller
             $totalSponsors = Sponsor::count();
             $totalSpeakersSubmissions = SpeakersSubmissions::count();
             $totalExhibitSubmissions = ExhibitSubmission::count();
+            $totalSponsorSubmissions = SponsorSubmission::count();
             $totalStrategicSpeakers = StrategicSpeaker::count();
             $totalTechnicalSpeakers = TechnicalSpeaker::count();
             $totalStrategicCommittees = StrategicCommittee::count();
@@ -43,6 +45,7 @@ class DashboardController extends Controller
                 'totalSponsors',
                 'totalSpeakersSubmissions',
                 'totalExhibitSubmissions',
+                'totalSponsorSubmissions',
                 'totalStrategicSpeakers',
                 'totalTechnicalSpeakers',
                 'totalStrategicCommittees',

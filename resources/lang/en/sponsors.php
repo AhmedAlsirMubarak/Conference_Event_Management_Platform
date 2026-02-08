@@ -1,0 +1,50 @@
+<?php
+return [
+    'page_title' => 'Sponsor Saudi Climate Week',
+    'hero_title' => 'Become a Sponsor',
+    'meta_description' => 'Explore sponsorship opportunities at Saudi Climate Week. 
+    Partner with us to promote sustainability and gain global recognition 
+    through keynote sessions and our recognition program.',
+    'hero_label' => 'Partnership Opportunities',
+    'hero_subtitle' => 'Sponsors', 
+    'hero_description' => 'Align your organization with national climate priorities and regional leadership in sustainability and clean energy.',
+    'hero_cta' => 'Enquire About Sponsorship',
+    'why_sponsor_title' => 'Why Sponsor<br>Saudi Climate Week',
+    'why_sponsor_points' => ' Saudi Climate Week provides a high-level platform for organizations to align with
+                                national climate priorities and engage directly with decision-makers, industry leaders, and innovators from across the Kingdom and the region.',
+    'Thought_Leadership' => 'Thought Leadership',
+    'Showcase_expertise' => 'Showcase expertise and leadership in climate and energy.',
+    'Strategic_Positioning' => 'Strategic Positioning',
+    'High-level_access' => 'High-level positioning alongside government and industry leaders.',
+    'Cross-Sector_Engagement' => 'Cross-Sector Engagement',
+    'Engage_diverse_stakeholders' => 'Engage across energy, finance, technology, and public sectors.',
+    'Decision-Maker Access' => 'Decision-Maker Access',
+    'Direct_engagement' => 'Direct engagement with policymakers, regulators, and executives.',
+    'Integrated_Visibility' => 'Integrated Visibility',
+    'Visibility_across' => 'Visibility across digital, onsite, and media channels.',
+    
+    // Form translations
+    'form_label' => 'Sponsor Enquiry',
+    'form_title' => 'Submit Your Sponsorship Inquiry',
+    'form_description' => 'Interested in sponsoring Saudi Climate Week? Tell us more about your organization and sponsorship goals.',
+    'fix_errors' => 'Please fix the following errors:',
+    'thank_you' => 'Thank you! Your sponsorship inquiry has been received. We will contact you soon.',
+    'contact_person_label' => 'Contact Person',
+    'contact_person_placeholder' => 'Enter your name',
+    'job_title_label' => 'Job Title',
+    'job_title_placeholder' => 'e.g., Marketing Manager',
+    'organization_label' => 'Organization Name',
+    'organization_placeholder' => 'Your company or organization',
+    'email_label' => 'Email Address',
+    'email_placeholder' => 'your.email@example.com',
+    'phone_label' => 'Phone Number',
+    'phone_placeholder' => '+966 50 123 4567',
+    'country_label' => 'Country',
+    'country_placeholder' => 'Select your country',
+    'website_label' => 'Website URL',
+    'website_placeholder' => 'https://www.example.com',
+    'additional_comments_label' => 'Additional Comments',
+    'additional_comments_placeholder' => 'Tell us about your sponsorship interests...',
+    'submit_button' => 'Submit Inquiry',
+
+];

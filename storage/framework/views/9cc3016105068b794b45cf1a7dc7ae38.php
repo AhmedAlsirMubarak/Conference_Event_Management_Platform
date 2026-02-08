@@ -1,7 +1,7 @@
-<div class="w-full h-auto bg-gray-900 overflow-hidden" dir="<?php echo e(app()->getLocale() === 'ar' ? 'rtl' : 'ltr'); ?>">
+<div class="w-full h-auto bg-[#121D24] overflow-hidden" dir="<?php echo e(app()->getLocale() === 'ar' ? 'rtl' : 'ltr'); ?>">
 
     <!-- Desktop Footer -->
-    <div class="hidden lg:block bg-gray-900 text-white py-5 pt-15">
+    <div class="hidden lg:block bg-[#121D24] text-white py-5 pt-15">
         <!-- Main Content -->
         <div class="mx-auto max-w-6xl px-8">
             <div class="grid grid-cols-5 gap-8 mb-12">
@@ -28,7 +28,7 @@
                             </a>
                             <div class="flex items-center gap-3">
                                 <div class="w-5 h-5 relative shrink-0 flex items-center justify-center">
-                                    <img src="<?php echo e(asset('storage/footer-img/call.svg')); ?>" alt="Phone"
+                                    <img src="<?php echo e(asset('images/footer-img/call.svg')); ?>" alt="Phone"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <a href="tel:+966559509832" target="_blank" rel="noopener noreferrer"
@@ -40,7 +40,7 @@
 
                             <div class="flex items-center gap-3">
                                 <div class="w-5 h-5 relative shrink-0 flex items-center justify-center">
-                                    <img src="<?php echo e(asset('storage/footer-img/whatsapp.svg')); ?>" alt="whatsapp"
+                                    <img src="<?php echo e(asset('images/footer-img/whatsapp.svg')); ?>" alt="whatsapp"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <a href="https://wa.me/966510831535" target="_blank" rel="noopener noreferrer"
@@ -54,23 +54,23 @@
                             <div class="flex gap-4 mt-4">
                                 <a href="https://twitter.com/WeekSaudi87319" target="_blank" rel="noopener noreferrer"
                                     class="w-5 h-5 hover:opacity-70 transition" title="Twitter">
-                                    <img src="<?php echo e(asset('storage/footer-img/x.svg')); ?>" alt="Twitter"
+                                    <img src="<?php echo e(asset('images/footer-img/x.svg')); ?>" alt="Twitter"
                                         class="w-full h-full">
                                 </a>
                                 <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                                     class="w-5 h-5 hover:opacity-70 transition" title="Instagram" target="_blank"
                                     rel="noopener noreferrer">
-                                    <img src="<?php echo e(asset('storage/footer-img/insta.svg')); ?>" alt="Instagram"
+                                    <img src="<?php echo e(asset('images/footer-img/insta.svg')); ?>" alt="Instagram"
                                         class="w-full h-full">
                                 </a>
                                 <a href="#" class="w-5 h-5 hover:opacity-70 transition" title="Facebook">
-                                    <img src="<?php echo e(asset('storage/footer-img/facebook.svg')); ?>" alt="Facebook"
+                                    <img src="<?php echo e(asset('images/footer-img/facebook.svg')); ?>" alt="Facebook"
                                         class="w-full h-full">
                                 </a>
                                 <a href="https://www.linkedin.com/company/saudi-climate-week/" target="_blank"
                                     rel="noopener noreferrer" class="w-5 h-5 hover:opacity-70 transition"
                                     title="LinkedIn">
-                                    <img src="<?php echo e(asset('storage/footer-img/linkedin.svg')); ?>" alt="LinkedIn"
+                                    <img src="<?php echo e(asset('images/footer-img/linkedin.svg')); ?>" alt="LinkedIn"
                                         class="w-full h-full">
                                 </a>
                             </div>
@@ -153,7 +153,7 @@
                     <div
                         class="w-32 h-18 justify-center <?php echo e(app()->getLocale() === 'ar' ? 'items-end' : 'items-start'); ?>">
                         <a href="/home">
-                            <img class="w-[100px] h-[69px]" src="<?php echo e(asset('storage/footer-img/scw-logo.webp')); ?>"
+                            <img class="w-[100px] h-[69px]" src="<?php echo e(asset('images/footer-img/scw-logo.webp')); ?>"
                                 alt="SCW Logo" />
                         </a>
                     </div>
@@ -168,7 +168,7 @@
                             <!-- Date -->
                             <div class="flex items-center gap-3">
                                 <div class="w-5 h-5 relative shrink-0 flex items-center justify-center">
-                                    <img src="<?php echo e(asset('storage/footer-img/calendar 1.svg')); ?>" alt="Date"
+                                    <img src="<?php echo e(asset('images/footer-img/calendar 1.svg')); ?>" alt="Date"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <div class="<?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?>">
@@ -183,7 +183,7 @@
                             <!-- Location -->
                             <div class="flex items-center gap-3">
                                 <div class="w-5 h-5 relative shrink-0 flex items-center justify-center">
-                                    <img src="<?php echo e(asset('storage/footer-img/map.svg')); ?>" alt="Location"
+                                    <img src="<?php echo e(asset('images/footer-img/map.svg')); ?>" alt="Location"
                                         class="w-full h-full object-contain">
                                 </div>
                                 <div class="<?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?>">
@@ -211,7 +211,7 @@
                     dir="<?php echo e(app()->getLocale() === 'ar' ? 'rtl' : 'ltr'); ?>">
                     <div class="flex flex-col justify-start items-center gap-2">
                         <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
-                            <img class="w-20 h-10" src="<?php echo e(asset('storage/footer-img/ecocode-logo.webp')); ?>"
+                            <img class="w-20 h-10" src="<?php echo e(asset('images/footer-img/ecocode-logo.webp')); ?>"
                                 alt="Partner 1" />
                         </a>
                         <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer"
@@ -228,7 +228,7 @@
 
                     <div class="flex flex-col justify-start items-center gap-2">
                         <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                            <img class="w-20 h-10" src="<?php echo e(asset('storage/footer-img/birba-logo-white.webp')); ?>"
+                            <img class="w-20 h-10" src="<?php echo e(asset('images/footer-img/birba-logo-white.webp')); ?>"
                                 alt="Partner 2" />
                         </a>
                         <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer"
@@ -261,12 +261,12 @@
 </div>
 
 <!-- Mobile Footer (Responsive) -->
-<div class="lg:hidden bg-gray-900 text-white py-6 px-4" dir="<?php echo e(app()->getLocale() === 'ar' ? 'rtl' : 'ltr'); ?>">
+<div class="lg:hidden bg-[#121D24] text-white py-6 px-4" dir="<?php echo e(app()->getLocale() === 'ar' ? 'rtl' : 'ltr'); ?>">
     <div class="max-w-full mx-auto space-y-5">
         <!-- Mobile Logo and Description -->
         <div class="space-y-2 text-center">
             <a href="/home">
-                <img src="<?php echo e(asset('storage/footer-img/scw-logo.webp')); ?>" alt="SCW Logo"
+                <img src="<?php echo e(asset('images/footer-img/scw-logo.webp')); ?>" alt="SCW Logo"
                     class="w-12 h-auto mx-auto pb-2">
             </a>
             <p class="text-xs text-gray-400 leading-tight">
@@ -345,14 +345,14 @@
                     info@saudiclimateweek.com
                 </a>
                 <div class="flex items-center justify-center gap-2">
-                    <img src="<?php echo e(asset('storage/footer-img/call.svg')); ?>" alt="Phone" class="w-4 h-4">
+                    <img src="<?php echo e(asset('images/footer-img/call.svg')); ?>" alt="Phone" class="w-4 h-4">
                     <a href="tel:+966559509832" target="_blank" rel="noopener noreferrer"
                         class="text-xs text-gray-400 hover:text-white transition" dir="ltr">
                         +966 55 950 9832
                     </a>
                 </div>
                 <div class="flex items-center justify-center gap-2">
-                    <img src="<?php echo e(asset('storage/footer-img/whatsapp.svg')); ?>" alt="WhatsApp" class="w-4 h-4">
+                    <img src="<?php echo e(asset('images/footer-img/whatsapp.svg')); ?>" alt="WhatsApp" class="w-4 h-4">
                     <a href="https://wa.me/966510831535" target="_blank" rel="noopener noreferrer"
                         class="text-xs text-gray-400 hover:text-white transition" dir="ltr">
                         +966 51 083 1535
@@ -363,19 +363,19 @@
                 <div class="flex justify-center gap-4 pt-3">
                     <a href="https://twitter.com/WeekSaudi87319" target="_blank" rel="noopener noreferrer"
                         class="w-5 h-5 hover:opacity-70 transition" title="Twitter">
-                        <img src="<?php echo e(asset('storage/footer-img/x.svg')); ?>" alt="Twitter" class="w-full h-full">
+                        <img src="<?php echo e(asset('images/footer-img/x.svg')); ?>" alt="Twitter" class="w-full h-full">
                     </a>
                     <a href="https://www.instagram.com/saudiclimateweek?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                         class="w-5 h-5 hover:opacity-70 transition" title="Instagram" target="_blank"
                         rel="noopener noreferrer">
-                        <img src="<?php echo e(asset('storage/footer-img/insta.svg')); ?>" alt="Instagram" class="w-full h-full">
+                        <img src="<?php echo e(asset('images/footer-img/insta.svg')); ?>" alt="Instagram" class="w-full h-full">
                     </a>
                     <a href="#" class="w-5 h-5 hover:opacity-70 transition" title="Facebook">
-                        <img src="<?php echo e(asset('storage/footer-img/facebook.svg')); ?>" alt="Facebook" class="w-full h-full">
+                        <img src="<?php echo e(asset('images/footer-img/facebook.svg')); ?>" alt="Facebook" class="w-full h-full">
                     </a>
                     <a href="https://www.linkedin.com/company/saudiclimate-week/" target="_blank"
                         rel="noopener noreferrer" class="w-5 h-5 hover:opacity-70 transition" title="LinkedIn">
-                        <img src="<?php echo e(asset('storage/footer-img/linkedin.svg')); ?>" alt="LinkedIn" class="w-full h-full">
+                        <img src="<?php echo e(asset('images/footer-img/linkedin.svg')); ?>" alt="LinkedIn" class="w-full h-full">
                     </a>
                 </div>
             </div>
@@ -387,7 +387,7 @@
             <div class="flex justify-center items-center gap-3">
                 <div class="flex flex-col items-center gap-1">
                     <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer">
-                        <img class="w-14 h-auto" src="<?php echo e(asset('storage/footer-img/ecocode-logo.webp')); ?>"
+                        <img class="w-14 h-auto" src="<?php echo e(asset('images/footer-img/ecocode-logo.webp')); ?>"
                             alt="Ecocode" />
                     </a>
                     <a href="https://ecocode.sa/en/" target="_blank" rel="noopener noreferrer"
@@ -404,7 +404,7 @@
 
                 <div class="flex flex-col items-center gap-1">
                     <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer">
-                        <img class="w-14 h-auto" src="<?php echo e(asset('storage/footer-img/birba-logo-white.webp')); ?>"
+                        <img class="w-14 h-auto" src="<?php echo e(asset('images/footer-img/birba-logo-white.webp')); ?>"
                             alt="Birba" />
                     </a>
                     <a href="https://www.birba.om" target="_blank" rel="noopener noreferrer"

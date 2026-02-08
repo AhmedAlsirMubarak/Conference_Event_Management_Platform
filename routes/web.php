@@ -8,6 +8,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\SponsorController;
 use App\Http\Controllers\ExhibitorController;
 use App\Http\Controllers\ExhibitSubmissionsController;
+use App\Http\Controllers\SponsorSubmissionsController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Middleware\IsAdmin;
 use App\Http\Controllers\StrategicCommitteeController;
@@ -58,6 +59,11 @@ Route::get('/exhibit', function () {
     return view('exhibit');
 })->name('exhibit');
 
+// Sponsors Route
+Route::get('/sponsors', function () {
+    return view('sponsors');
+})->name('sponsors');
+
 // Public Climate Leaders Nomination Form
 Route::post('/climate-leaders', [ClimateLeadersController::class, 'store'])->name('climate-leaders.store');
 
@@ -83,6 +89,7 @@ Route::get('/login', [AuthController::class, 'getLoginPage'])
 Route::post('/contacts', [ContactController::class, 'create'])->name('create');
 Route::post('/speakers-submissions', [SpeakersSubmissionsController::class, 'create'])->name('create.speakersubmission');
 Route::post('/exhibit-submissions', [ExhibitSubmissionsController::class, 'create'])->name('create.exhibitsubmission');
+Route::post('/sponsor-submissions', [SponsorSubmissionsController::class, 'create'])->name('create.sponsorsubmission');
 Route::post('/exhibitor', [ExhibitorController::class, 'create'])->name('create.exhibitor');
 
 
@@ -119,6 +126,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::post('/exhibit-submissions/{id}/notes', [ExhibitSubmissionsController::class, 'updateNotes'])->name('exhibit-submissions.updateNotes');
     Route::delete('/exhibit-submissions/{id}', [ExhibitSubmissionsController::class, 'destroy'])->name('exhibit-submissions.destroy');    
     
+    // Sponsor Submissions Routes
+    Route::get('/sponsor-submissions', [SponsorSubmissionsController::class, 'getAllSponsorSubmissions'])->name('sponsor-submissions.index');
+    Route::get('/sponsor-submissions/search', [SponsorSubmissionsController::class, 'search'])->name('sponsor-submissions.search');
+    Route::get('/sponsor-submissions/export/excel', [SponsorSubmissionsController::class, 'exportExcel'])->name('sponsor-submissions.exportExcel');
+    Route::get('/sponsor-submissions/{id}', [SponsorSubmissionsController::class, 'show'])->name('sponsor-submissions.show');  
+    Route::post('/sponsor-submissions/{id}/notes', [SponsorSubmissionsController::class, 'updateNotes'])->name('sponsor-submissions.updateNotes');
+    Route::delete('/sponsor-submissions/{id}', [SponsorSubmissionsController::class, 'destroy'])->name('sponsor-submissions.destroy');    
 
     
     // Export Routes (Admin) - Must come BEFORE resource routes
@@ -183,6 +197,13 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth', IsAdmin::class]], fu
     Route::get('/exhibit-submissions/export/excel', [ExhibitSubmissionsController::class, 'exportExcel'])->name('exhibit-submissions.exportExcel');
     Route::get('/exhibit-submissions/{id}', [ExhibitSubmissionsController::class, 'userShow'])->name('exhibit-submissions.show');  
     Route::post('/exhibit-submissions/{id}/notes', [ExhibitSubmissionsController::class, 'updateNotes'])->name('exhibit-submissions.updateNotes');
+    
+    // Sponsor Submissions routes
+    Route::get('/sponsor-submissions', [SponsorSubmissionsController::class, 'userIndex'])->name('sponsor-submissions.index');
+    Route::get('/sponsor-submissions/search', [SponsorSubmissionsController::class, 'search'])->name('sponsor-submissions.search');
+    Route::get('/sponsor-submissions/export/excel', [SponsorSubmissionsController::class, 'exportExcel'])->name('sponsor-submissions.exportExcel');
+    Route::get('/sponsor-submissions/{id}', [SponsorSubmissionsController::class, 'userShow'])->name('sponsor-submissions.show');  
+    Route::post('/sponsor-submissions/{id}/notes', [SponsorSubmissionsController::class, 'updateNotes'])->name('sponsor-submissions.updateNotes');
     
     // Sponsors routes - search BEFORE show to avoid {id} conflict
     Route::get('/sponsors', [UserController::class, 'indexSponsors'])->name('sponsors.index');

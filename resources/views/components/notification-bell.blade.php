@@ -153,6 +153,48 @@
                         </button>
                     </div>
                     `;
+                } else if (notifType === 'ExhibitSubmissionNotification' || data.type === 'exhibit_submission') {
+                    const title = escapeHtml(data.title || 'New Exhibit Submission');
+                    const message = escapeHtml(data.message || 'New exhibit submission received');
+                    const viewUrl = data.route || '#';
+
+                    return `
+                    <div class="p-4 hover:bg-gray-50 transition-colors flex justify-between items-start gap-3">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-gray-900">${title}</p>
+                            <p class="text-xs text-gray-500 mt-1">${message} • ${notif.created_at}</p>
+                            <a href="${viewUrl}" class="text-xs text-orange-600 hover:text-orange-800 mt-2 inline-block">
+                                View Exhibit Submission →
+                            </a>
+                        </div>
+                        <button onclick="deleteNotification('${notif.id}')" class="text-gray-400 hover:text-red-600 transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    `;
+                } else if (notifType === 'SponsorSubmissionNotification' || data.type === 'sponsor_submission') {
+                    const title = escapeHtml(data.title || 'New Sponsor Submission');
+                    const message = escapeHtml(data.message || 'New sponsor submission received');
+                    const viewUrl = data.route || '#';
+
+                    return `
+                    <div class="p-4 hover:bg-gray-50 transition-colors flex justify-between items-start gap-3">
+                        <div class="flex-1 min-w-0">
+                            <p class="text-sm font-medium text-gray-900">${title}</p>
+                            <p class="text-xs text-gray-500 mt-1">${message} • ${notif.created_at}</p>
+                            <a href="${viewUrl}" class="text-xs text-purple-600 hover:text-purple-800 mt-2 inline-block">
+                                View Sponsor Submission →
+                            </a>
+                        </div>
+                        <button onclick="deleteNotification('${notif.id}')" class="text-gray-400 hover:text-red-600 transition-colors flex-shrink-0">
+                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </button>
+                    </div>
+                    `;
                 } else {
                     // Default: Contact Submission
                     const contactName = escapeHtml(data.contact_name || 'Unknown Contact');

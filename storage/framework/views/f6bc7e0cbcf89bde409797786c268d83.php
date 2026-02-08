@@ -95,7 +95,7 @@
     <section class="lg:hidden relative w-full overflow-hidden h-[400px]">
         
         <div class="absolute inset-0 bg-center bg-cover"
-            style="background-image: url('<?php echo e(asset('storage/mix/exhibit-hero.webp')); ?>');" aria-hidden="true"></div>
+            style="background-image: url('<?php echo e(asset('images/mix/exhibit-hero.webp')); ?>');" aria-hidden="true"></div>
 
         
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/50 to-black/60"></div>
@@ -131,7 +131,7 @@
     <section class="hidden lg:block relative w-full overflow-hidden h-[320px] md:h-[400px] lg:h-[500px]">
         
         <div class="absolute inset-0 bg-center bg-cover"
-            style="background-image: url('<?php echo e(asset('storage/mix/exhibit-hero.webp')); ?>');" aria-hidden="true"></div>
+            style="background-image: url('<?php echo e(asset('images/mix/exhibit-hero.webp')); ?>');" aria-hidden="true"></div>
 
         <div class="relative mx-auto max-w-7xl px-6 pt-20 pb-2">
             <div class="flex min-h-[260px] items-center justify-center py-10 md:min-h-80 md:py-14">
@@ -235,8 +235,7 @@
                     <div class="rounded-2xl border border-slate-200 bg-white p-4">
                         <div class="flex flex-col items-center text-center gap-3">
                             <div class="flex shrink-0 items-center justify-center">
-                                <img src="/images/mix/government.svg" class="h-[50px] w-[50px]"
-                                    alt="government Icon" />
+                                <img src="/images/mix/government.svg" class="h-[50px] w-[50px]" alt="government Icon" />
                             </div>
                             <div>
                                 <h4 class="text-[18px] font-bold text-slate-900">
@@ -423,8 +422,7 @@
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
                             <div class="flex items-start gap-4">
                                 <div class="flex shrink-0 items-center justify-center">
-                                    <img src="/images/mix/business.svg" class="h-[50px] w-[50px]"
-                                        alt="Business Icon" />
+                                    <img src="/images/mix/business.svg" class="h-[50px] w-[50px]" alt="Business Icon" />
                                 </div>
                                 <div>
                                     <h4 class="text-[20px] font-bold leading-7 text-slate-900">
@@ -491,7 +489,7 @@
     <div id="exhibit-enquiry-form"></div>
 
     
-    <section class="lg:hidden bg-slate-950 text-white py-12 px-4">
+    <section class="lg:hidden bg-[#121D24] text-white py-12 px-4">
         <div class="max-w-md mx-auto">
             
             <div class="text-center">
@@ -663,7 +661,7 @@
             
             <div class="mt-8">
                 <div class="overflow-hidden rounded-2xl">
-                    <img src="<?php echo e(asset('storage/mix/hand-presentation.webp')); ?>" alt=""
+                    <img src="<?php echo e(asset('images/mix/hand-presentation.webp')); ?>" alt=""
                         class="w-full h-auto object-cover" />
                 </div>
             </div>
@@ -672,7 +670,7 @@
 
     
 
-    <section class="hidden lg:block bg-slate-950 text-white">
+    <section class="hidden lg:block bg-[#121D24] text-white">
         <div class="mx-auto max-w-6xl px-6 py-12 lg:py-16">
             <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-14">
                 
@@ -1044,7 +1042,7 @@
                 <div class="lg:pt-8">
                     <div class="relative mx-auto w-[457px] max-w-md lg:max-w-none">
                         <div class="overflow-hidden rounded-[28px]">
-                            <img src="<?php echo e(asset('storage/mix/exhbit-form.webp')); ?>" alt=""
+                            <img src="<?php echo e(asset('images/mix/exhbit-form.webp')); ?>" alt=""
                                 class="h-[671px] w-[457px] object-cover" />
 
                         </div>
