@@ -411,16 +411,15 @@
                 <div class=" mt-7 grid gap-8 lg:grid-cols-3 ">
 
                     <!-- LEFT: Gray placeholder -->
-                    <div class="relative overflow-hidden bg-slate-100 min-h-[210px] rounded-2xl"
-                        :class="{ 'ltr:left-2  ltr:-ml-[50vw]': true, 'rtl:right-2 rtl:-mr-[50vw]': true }">
-                    </div>
+                    <img src="/images/mix/exh-about.webp" alt="saudi climate week exhibition"
+                        class="w-full h-[214px] object-cover rounded-2xl border border-slate-200 bg-slate-100" />
 
                     <!-- RIGHT: 3 cards in one line -->
                     <div class="grid gap-5 sm:grid-cols-3 w-3xl">
 
                         <!-- Business Development -->
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
-                            <div class="flex items-start gap-4">
+                            <div class="flex items-start gap-4 pt-2.5">
                                 <div class="flex shrink-0 items-center justify-center">
                                     <img src="/images/mix/business.svg" class="h-[50px] w-[50px]" alt="Business Icon" />
                                 </div>
@@ -439,7 +438,7 @@
 
                         <!-- Brand Visibility -->
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
-                            <div class="flex items-start gap-4">
+                            <div class="flex items-start gap-4 pt-2.5">
                                 <div class="flex shrink-0 items-center justify-center">
                                     <img src="/images/mix/brand.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
                                 </div>
@@ -458,7 +457,7 @@
 
                         <!-- Cross-Sector Connections -->
                         <div class="rounded-2xl border border-slate-200 bg-white p-5">
-                            <div class="flex items-start gap-4">
+                            <div class="flex items-start gap-4 pt-2.5">
                                 <div class="flex shrink-0 items-center justify-center">
                                     <img src="/images/mix/cross.svg" class="h-[50px] w-[50px]" alt="brand Icon" />
 

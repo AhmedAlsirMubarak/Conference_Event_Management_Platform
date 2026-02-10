@@ -18,7 +18,7 @@
                         <div
                             class="flex flex-col justify-start <?php echo e(app()->getLocale() === 'ar' ? 'items-end' : 'items-start'); ?> gap-2.5">
                             <div
-                                class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-zinc-400 text-sm font-normal leading-6">
+                                class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-white text-sm font-normal leading-6">
                                 <?php echo e(__('footer.sales_team')); ?>
 
                             </div>
@@ -92,14 +92,14 @@
                             <?php echo e(__('footer.register')); ?>
 
                         </a>
-                        <a href="/exhibitors"
+                        <a href="/exhibit"
                             class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             <?php echo e(__('footer.exhibitors')); ?>
 
                         </a>
-                        <a href="/partner"
+                        <a href="/sponsors"
                             class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-white text-sm font-normal leading-6 hover:opacity-100 transition">
-                            <?php echo e(__('footer.partnership')); ?>
+                            <?php echo e(__('footer.sponsors')); ?>
 
                         </a>
                         <a href="/media"
@@ -119,16 +119,7 @@
 
                     </div>
                     <div class="flex flex-col justify-start items-start gap-2.5">
-                        <a href="#"
-                            class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-white text-sm font-normal leading-6 hover:opacity-100 transition">
-                            <?php echo e(__('footer.about')); ?>
 
-                        </a>
-                        <a href="#"
-                            class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-white text-sm font-normal leading-6 hover:opacity-100 transition">
-                            <?php echo e(__('footer.schedule')); ?>
-
-                        </a>
                         <a href="#"
                             class="h-6 opacity-80 <?php echo e(app()->getLocale() === 'ar' ? 'text-right' : 'text-left'); ?> text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             <?php echo e(__('footer.speakers')); ?>
@@ -299,11 +290,7 @@
         <div class="text-center">
             <h4 class="text-xs font-bold text-white mb-2"><?php echo e(__('footer.quick_links')); ?></h4>
             <ul class="space-y-1">
-                <li><a href="/about"
-                        class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.about')); ?></a></li>
-                <li><a href="/schedule"
-                        class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.schedule')); ?></a>
-                </li>
+                
                 <li><a href="/speakers"
                         class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.speakers')); ?></a>
                 </li>
@@ -323,11 +310,11 @@
                 <li><a href="/register"
                         class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.register')); ?></a>
                 </li>
-                <li><a href="/exhibitors"
-                        class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.exhibitors')); ?></a>
+                <li><a href="/exhibit"
+                        class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.exhibit')); ?></a>
                 </li>
-                <li><a href="/partner"
-                        class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.partnership')); ?></a>
+                <li><a href="/sponsors"
+                        class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.sponsors')); ?></a>
                 </li>
                 <li><a href="/media"
                         class="text-xs text-gray-400 hover:text-white transition"><?php echo e(__('footer.media_center')); ?></a>
