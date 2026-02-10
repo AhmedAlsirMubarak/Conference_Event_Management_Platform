@@ -90,7 +90,7 @@
                         </a>
                         <a href="/exhibit"
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
-                            {{ __('footer.exhibitors') }}
+                            {{ __('footer.exhibit') }}
                         </a>
                         <a href="/sponsors"
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
@@ -270,7 +270,7 @@
         <div class="text-center">
             <h4 class="text-xs font-bold text-white mb-2">{{ __('footer.quick_links') }}</h4>
             <ul class="space-y-1">
-                
+
                 <li><a href="/speakers"
                         class="text-xs text-gray-400 hover:text-white transition">{{ __('footer.speakers') }}</a>
                 </li>
