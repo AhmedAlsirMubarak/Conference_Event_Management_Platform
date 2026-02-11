@@ -190,7 +190,7 @@
 
             <!-- Take Part Section -->
             <div class="inline-block">
-                <h3 class="text-2xl font-extrabold text-sky-600">
+                <h3 class="text-[2xl] font-extrabold text-sky-600">
                     {{ __('speakers.take_part_title') }}
                 </h3>
                 <!-- wavy underline -->
@@ -230,25 +230,25 @@
             <div class="grid gap-7 md:grid-cols-2 md:gap-35">
                 <!-- Left -->
                 <div class="max-w-[480px]">
-                    <p class="text-[32px] font-bold text-slate-900 leading-tight">
+                    <p class="text-[22px] font-bold text-slate-900 leading-tight">
                         {{ __('speakers.section_intro') }}
                     </p>
 
                     <div class="mt-6 flex flex-wrap gap-3">
                         <span
-                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[27px] font-semibold text-slate-900">
+                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[22px] font-semibold text-slate-900">
                             {{ __('speakers.policy') }}
                         </span>
                         <span
-                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[27px] font-semibold text-slate-900">
+                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[22px] font-semibold text-slate-900">
                             {{ __('speakers.innovation') }}
                         </span>
                         <span
-                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[27px] font-semibold text-slate-900">
+                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[22px] font-semibold text-slate-900">
                             {{ __('speakers.investment') }}
                         </span>
                         <span
-                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[27px] font-semibold text-slate-900">
+                            class="inline-flex items-center rounded-full bg-[#E68238]/35 px-5 py-2 text-[22px] font-semibold text-slate-900">
                             {{ __('speakers.implementation') }}
                         </span>
                     </div>
@@ -257,7 +257,7 @@
                 <!-- Right -->
                 <div>
                     <div class="inline-block">
-                        <h3 class="text-lg font-extrabold text-sky-600 md:text-[32px]">
+                        <h3 class="text-[25px] font-extrabold text-sky-600 ">
                             {{ __('speakers.take_part_title') }}
                         </h3>
                         <!-- wavy underline -->
@@ -272,20 +272,20 @@
                     <ul class="mt-6 space-y-5">
                         <li class="flex items-start gap-4">
                             <img src="/images/mix/keynote.svg" class="w-10 h-10" alt="">
-                            <p class="text-[27px] font-semibold text-slate-900">{{ __('speakers.keynote_sessions') }}
+                            <p class="text-[22px] font-semibold text-slate-900">{{ __('speakers.keynote_sessions') }}
                             </p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img src="/images/mix/discussion-group.svg" class="w-10 h-10" alt="">
-                            <p class="text-[27px] font-semibold text-slate-900">{{ __('speakers.panels') }}</p>
+                            <p class="text-[22px] font-semibold text-slate-900">{{ __('speakers.panels') }}</p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img src="/images/mix/workshop.svg" class="w-10 h-10" alt="">
-                            <p class="text-[27px] font-semibold text-slate-900">{{ __('speakers.workshops') }}</p>
+                            <p class="text-[22px] font-semibold text-slate-900">{{ __('speakers.workshops') }}</p>
                         </li>
                         <li class="flex items-start gap-4">
                             <img src="/images/mix/sessions.svg" class="w-10 h-10" alt="">
-                            <p class="text-[27px] font-semibold leading-9 text-slate-900">
+                            <p class="text-[22px] font-semibold leading-9 text-slate-900">
                                 {{ __('speakers.technical_sessions') }}
                             </p>
                         </li>

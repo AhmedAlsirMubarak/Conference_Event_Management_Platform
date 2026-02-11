@@ -96,7 +96,7 @@
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.sponsors') }}
                         </a>
-                        <a href="/media"
+                        <a href="#"
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.media_center') }}
                         </a>
@@ -112,7 +112,7 @@
                     </div>
                     <div class="flex flex-col justify-start items-start gap-2.5">
 
-                        <a href="#"
+                        <a href="/speakers"
                             class="h-6 opacity-80 {{ app()->getLocale() === 'ar' ? 'text-right' : 'text-left' }} text-white text-sm font-normal leading-6 hover:opacity-100 transition">
                             {{ __('footer.speakers') }}
                         </a>
