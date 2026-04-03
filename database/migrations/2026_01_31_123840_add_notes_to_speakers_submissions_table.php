@@ -11,9 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('speakers_submissions', function (Blueprint $table) {
-            $table->text('notes')->nullable()->after('speaker_biography');
-        });
+        if (!Schema::hasColumn('speakers_submissions', 'notes')) {
+            Schema::table('speakers_submissions', function (Blueprint $table) {
+                $table->text('notes')->nullable()->after('speaker_biography');
+            });
+        }
     }
 
     /**
